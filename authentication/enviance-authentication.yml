@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/enviance-restapi-openapi-original.json
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: Basic
+  type: http
+  scheme: basic
+  description: Forces authentication with credentials via an api gateway
+  sources:
+  - openapi/enviance-restapi-openapi-original.json
+- name: EnvianceAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions\
+    \ first"
+  sources:
+  - openapi/enviance-restapi-openapi-original.json
