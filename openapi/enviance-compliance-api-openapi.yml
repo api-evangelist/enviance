@@ -1,0 +1,908 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Compliance API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Compliance
+paths:
+  /ver2/ComplianceService.svc/locations:
+    post:
+      tags:
+      - Compliance
+      description: "\n\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\r\n**Security:** User with permission to Compliance Objects.\r\n\r\n**SDK API (create):**  `envianceSdk.compliance.createLocation (locationInfo, onsuccess, onerror)`\r\n\r\n**SDK API (create async):**  `envianceSdk.compliance.createLocationAsync (locationInfo, onsuccess, onerror)` \r\n\r\n**SDK API (copy):**  `envianceSdk.compliance.copyLocation(locationInfo, copyFrom, onsuccess, onerror)`\r\n\r\n**SDK API (copy async):**  `envianceSdk.compliance.copyLocationAsync (locationInfo, copyFrom, onsuccess, onerror)`\r\n\r\n```\r\n//EXAMPLE (CREATE)\r\n\r\nPOST /ver2/ComplianceService.svc/locations HTTP 1.1\r\nContent-Type: application/json; charset=utf-8\r\n\r\n{\r\n  \"locationInfo\": {\r\n    \"name\": \"Toy Manufacturing\",\r\n    \"type\": \"Facility\",\r\n    \"parentPath\": \"/Manufacturing Division/Toys/\",\r\n    \"timeZone\": { \"name\": \"Pacific Time (US & Canada) (UTC-08:00) (With DST)\" },\r\n    \"activeDate\": \"2012-01-01T00:00:00\",\r\n    \"fieldTemplate\": \"Manufacturing Facility\",\r\n    \"fieldValues\": [\r\n      {\"name\": \"Aspect\",\r\n      \"values\": [\"Air pollution control waste\"]},\r\n      {\"name\": \"Start Date\",\r\n      \"values\": [\"2012-09-19T20:00:00\"]},\r\n      {\"name\": \"Type\",\r\n      \"values\": [\"Spill\", \"Near Miss\"]},\r\n      {\"name\": \"Category\",\r\n      \"values\": [\"Cat1\", \"Cat1.1\", \"Cat1.1.1\"]}\r\n    ],\r\n  \"documents\": [\"/Folder A/Document.doc\"]\r\n  }\r\n}\r\n\r\n//EXAMPLE (COPY)\r\nPOST /ver2/ComplianceService.svc/locations HTTP 1.1\r\nContent-Type: application/json; charset=utf-8\r\n \r\n{\r\n  \"locationInfo\": {\r\n  \"name\": \"Toy Manufacturing\",\r\n  \"type\": \"Facility\",\r\n  \"parentPath\": \"/Manufacturing Division/Toys/\",\r\n  \"timeZone\": { \"name\": \"Pacific Time (US & Canada) (UTC-08:00) (With DST)\" },\r\n  \"activeDate\": \"2012-01-01T00:00:00\",\r\n  \"fieldTemplate\": \"Manufacturing Facility\",\r\n  \"fieldValues\": [\r\n    {\"name\": \"Aspect\",\r\n    \"values\": [\"Air pollution control waste\"]},\r\n    {\"name\": \"Start Date\",\r\n    \"values\": [\"2012-09-19T20:00:00\"]},\r\n    {\"name\": \"Type\",\r\n    \"values\": [\"Spill\", \"Near Miss\"]},\r\n    {\"name\": \"Category\",\r\n    \"values\": [\"Cat1\", \"Cat1.1\", \"Cat1.1.1\"]}\r\n  ],\r\n  \"documents\": [\"/Folder A/Document.doc\"]\r\n  },\r\n  \"copyFrom\": \"/Manufacturing Division/Books\"\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.compliance.createLocation\r\n```\r\n[\r\n  {\r\n    \"name\": \"Toy Manufacturing\",\r\n    \"type\": \"Facility\",\r\n    \"isSensitiveData\": true,\r\n    \"parentPath\": \"/Manufacturing Division/Toys/\",\r\n    \"timeZone\": {\r\n      \"name\": \"USA Pacific\"\r\n    },\r\n    \"fieldTemplate\": \"Manufacturing Facility\",\r\n    \"CorityCachedID\": 0,\r\n    \"CorityLink\": false,\r\n    \"fieldValues\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Category\",\r\n        \"values\": [\r\n          \"Cat1\",\r\n          \"Cat1.1\",\r\n          \"Cat1.1.1\"\r\n        ]\r\n      }\r\n    ],\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"DemoLoc POI (US)\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"documents\": [\r\n      \"/Folder A/Document.doc\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.CreateLocation
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateLocationWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateLocation'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/ComplianceService.svc/locations/{locationIdOrPath}:
+    get:
+      tags:
+      - Compliance
+      description: "\n\n\nenvianceSdk.compliance.getLocation\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.compliancePermission.getLocationPermission\r\n```\r\n[\r\n  \"324a63d8-35df-473f-b8d8-514872c7f70e\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.GetLocation
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: locationIdOrPath
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.LocationInfo'
+    patch:
+      tags:
+      - Compliance
+      description: "\n\nUpdates (and potentially moves) an existing Location object in the Compliance Model. Specifying a new parent path moves the Location underneath another parent Location. Updating the Custom Field Template of a Location object, if that object currently has no Template, adds the Template to the object. When switching from one Template to another Template, those values that belong to fields common to both Templates are kept, any values for fields not in the new Template are removed permanently. Setting the Template to null permanently removes all Custom Field values. This API does not support historical custom fields (those with Track Value History enabled).\r\n\r\n**Security:** User with permission to Compliance Objects.\r\n\r\n**SDK API:**  `envianceSdk.compliance.updateLocation (locationIdOrPath, locationInfo, onsuccess, onerror)`\r\n\r\n**SDK API (async):**  `envianceSdk.compliance.updateLocationAsync (locationIdOrPath, locationInfo, onsuccess, onerror)`\r\n\r\n```\r\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\r\nContent-Type: application/json; charset=utf-8\r\n \r\n{\r\n  \"locationInfo\": {\r\n  \"name\": \"Toy Manufacturing\",\r\n  \"fieldValues\": [\r\n    {\"name\": \"Aspect\", \"values\": [\"Air pollution control waste\"]},\r\n    {\"name\": \"Start Date\", \"values\": [\"2012-09-19T20:00:00\"]},\r\n    {\"name\": \"Type\", \"values\": [\"Spill\", \"Near Miss\"]},\r\n    {\"name\": \"Category\", \"values\": [\"Cat1\", \"Cat1.1\", \"Cat1.1.1\"]}\r\n  ],\r\n  \"documents\": [\"/Folder A/Document.doc\"]\r\n  }\r\n}\r\n\r\n//EXAMPLE with MOVE\r\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\r\nContent-Type: application/json; charset=utf-8\r\n \r\n{\r\n  \"locationInfo\": {\r\n  \"name\": \"Toy Manufacturing\",\r\n  \"parentPath\": \"/New Manufacturing Division/Toys/\"\r\n  }\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.compliance.updateLocation\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  {\r\n    \"name\": \"Toy Manufacturing\",\r\n    \"isSensitiveData\": true,\r\n    \"CorityCachedID\": 0,\r\n    \"CorityLink\": false,\r\n    \"fieldValues\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Category\",\r\n        \"values\": [\r\n          \"Cat1\",\r\n          \"Cat1.1\",\r\n          \"Cat1.1.1\"\r\n        ]\r\n      }\r\n    ],\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"DemoLoc POI (US)\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"documents\": [\r\n      \"/Folder A/Document.doc\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.UpdateLocation
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: locationIdOrPath
+        in: path
+        required: true
+        type: string
+      - name: UpdateLocationWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateLocation'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+    delete:
+      tags:
+      - Compliance
+      description: "\n\n\nenvianceSdk.compliance.deleteLocation\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n  true,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.DeleteLocation
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: locationIdOrPath
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/ComplianceService.svc/locations/overrides/{locationIdOrPath}:
+    get:
+      tags:
+      - Compliance
+      description: "\n\n\nenvianceSdk.compliance.getOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.GetOverrides
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: locationIdOrPath
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo'
+    patch:
+      tags:
+      - Compliance
+      description: "\n\n\nenvianceSdk.compliance.updateOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\",\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"name\": \"Role 1\"\r\n        },\r\n        \"users\": [\r\n          {\r\n            \"name\": \"478e9887-ca75-4fa8-afd0-fc79aa952345\"\r\n          }\r\n        ],\r\n        \"groups\": [\r\n          {\r\n            \"name\": \"Group1\"\r\n          },\r\n          {\r\n            \"name\": \"Group2\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"policiesOverride\": [\r\n      {\r\n        \"workflowDefinition\": {\r\n          \"name\": \"workflowType 1\"\r\n        },\r\n        \"policies\": [\r\n          {\r\n            \"name\": \"policy1\"\r\n          },\r\n          {\r\n            \"name\": \"policy2\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.compliance.updateOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\",\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"id\": \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\"\r\n        },\r\n        \"users\": [\r\n          {\r\n            \"id\": \"123e9887-ca75-4fa8-afd0-fc79aa952346\"\r\n          },\r\n          {\r\n            \"id\": \"234e9887-ca75-4fa8-afd0-fc79aa952126\"\r\n          }\r\n        ],\r\n        \"groups\": [\r\n          {\r\n            \"id\": \"678e9887-ca75-4fa8-afd0-fc79aa952456\"\r\n          },\r\n          {\r\n            \"id\": \"675e9887-ca75-4fa8-afd0-fc79aa952236\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"policiesOverride\": [\r\n      {\r\n        \"workflowType\": {\r\n          \"id\": \"674e9887-ca75-4fa8-afd0-fc79aa952126\"\r\n        },\r\n        \"policies\": [\r\n          {\r\n            \"id\": \"345e9887-ca75-4fa8-afd0-fc79aa952346\"\r\n          },\r\n          {\r\n            \"id\": \"465e9887-ca75-4fa8-afd0-fc79aa952786\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.UpdateOverrides
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: locationIdOrPath
+        in: path
+        required: true
+        type: string
+      - name: UpdateOverridesWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateOverrides'
+      responses:
+        default:
+          description: not available
+    delete:
+      tags:
+      - Compliance
+      description: "\n\n\nenvianceSdk.compliance.deleteOverrides\r\n```\r\n[\r\n  \"e2076afc-b3a1-4b87-ace7-fec821987789\",\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"name\": \"Role 1\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.compliance.deleteOverrides\r\n```\r\n[\r\n  \"e2076afc-b3a1-4b87-ace7-fec821987789\",\r\n  {\r\n    \"policiesOverride\": [\r\n      {\r\n        \"workflowType\": {\r\n          \"id\": \"433bc93f-ddc4-4938-9a6a-a1749864ea7d\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.DeleteOverrides
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: locationIdOrPath
+        in: path
+        required: true
+        type: string
+      - name: DeleteOverridesWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DeleteOverrides'
+      responses:
+        default:
+          description: not available
+definitions:
+  Enviance.RestServices.Ver2.ComplianceModel.LocationInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      isSensitiveData:
+        type: boolean
+        uniqueItems: false
+      CorityLink:
+        type: boolean
+        uniqueItems: false
+      CorityCachedID:
+        type: integer
+        format: int32
+        uniqueItems: false
+      CorityObjectType:
+        type: string
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+      parentPath:
+        type: string
+        uniqueItems: false
+      parentPathLocalized:
+        type: string
+        uniqueItems: false
+      timeZone:
+        $ref: '#/definitions/Enviance.RestServices.Common.TimeZoneInfo'
+      activeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      inactiveDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      responsibleUser:
+        type: string
+        uniqueItems: false
+      fieldTemplate:
+        type: string
+        uniqueItems: false
+      calcFieldTemplate:
+        type: string
+        uniqueItems: false
+      fieldValues:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Udfs.Property'
+        uniqueItems: false
+      calcFieldValues:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Udfs.Property'
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      address:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.Address'
+      documents:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      geoLocation:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.GeoLocation'
+      security:
+      - EnvianceAuth: []
+      - Basic: []
+      tags:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.TagAssociationInfo'
+        uniqueItems: false
+      namelocalized:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.LocalizationInfo'
+        uniqueItems: false
+      mailingAddress:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.MailingAddressInfo'
+      contactInformation:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.ContactInfo'
+      locationHistory:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.LocationHistoryInfo'
+        uniqueItems: false
+      regulatoryIdentification:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.RegulatoryIdentificationInfo'
+      note:
+        type: string
+        uniqueItems: false
+      SIC1:
+        type: string
+        uniqueItems: false
+      SIC2:
+        type: string
+        uniqueItems: false
+      dunBradNo:
+        type: string
+        uniqueItems: false
+      otherAddress:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.LocationInfo
+  Enviance.Business.Udf.Rest.UrlItem:
+    properties:
+      label:
+        type: string
+        uniqueItems: false
+      url:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.Udf.Rest.UrlItem
+  Enviance.RestServices.Ver2.ComplianceModel.LocationHistoryInfo:
+    properties:
+      BeginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      LocationId:
+        type: string
+        uniqueItems: false
+      Location:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.LocationHistoryInfo
+  Enviance.RestServices.Common.TimeZoneInfo:
+    properties:
+      id:
+        type: integer
+        format: int32
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      stdOffset:
+        type: integer
+        format: int32
+        uniqueItems: false
+      dstOffset:
+        type: integer
+        format: int32
+        uniqueItems: false
+      currentOffset:
+        type: integer
+        format: int32
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.TimeZoneInfo
+  DeleteOverrides:
+    properties:
+      overridesInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo'
+    type: object
+    format: DeleteOverrides
+  Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo:
+    properties:
+      roleOverrides:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.WorkflowRoleOverride'
+        uniqueItems: false
+      policiesOverride:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.WorkflowPoliciesOverride'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo
+  UpdateLocation:
+    properties:
+      locationInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.LocationInfo'
+    type: object
+    format: UpdateLocation
+  Enviance.RestServices.Ver2.ComplianceModel.GeoLocation:
+    properties:
+      latitude:
+        type: number
+        format: double
+        uniqueItems: false
+      longitude:
+        type: number
+        format: double
+        uniqueItems: false
+      latNS:
+        type: string
+        uniqueItems: false
+      latDeg:
+        type: integer
+        format: int32
+        uniqueItems: false
+      latMin:
+        type: integer
+        format: int32
+        uniqueItems: false
+      latSec:
+        type: number
+        format: double
+        uniqueItems: false
+      longEW:
+        type: string
+        uniqueItems: false
+      longDeg:
+        type: integer
+        format: int32
+        uniqueItems: false
+      longMin:
+        type: integer
+        format: int32
+        uniqueItems: false
+      longSec:
+        type: number
+        format: double
+        uniqueItems: false
+      utmZone:
+        type: string
+        uniqueItems: false
+      utmEast:
+        type: number
+        format: double
+        uniqueItems: false
+      utmNorth:
+        type: number
+        format: double
+        uniqueItems: false
+      formatType:
+        type: integer
+        format: int32
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.GeoLocation
+  Enviance.RestServices.Ver2.ComplianceModel.WorkflowPoliciesOverride:
+    required:
+    - workflowType
+    properties:
+      workflowType:
+        $ref: '#/definitions/Enviance.RestServices.Common.SimpleIdName'
+      policies:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.SimpleIdName'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.WorkflowPoliciesOverride
+  Enviance.Business.TaggingObjects.Tags.Entities.TagHistory:
+    properties:
+      BeginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      EndDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.TaggingObjects.Tags.Entities.TagHistory
+  UpdateOverrides:
+    properties:
+      overridesInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo'
+    type: object
+    format: UpdateOverrides
+  Enviance.RestServices.Common.SimpleIdName:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.SimpleIdName
+  CreateLocation:
+    properties:
+      locationInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.ComplianceModel.LocationInfo'
+      copyFrom:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CreateLocation
+  Enviance.RestServices.Ver2.ComplianceModel.WorkflowRoleOverride:
+    required:
+    - role
+    properties:
+      role:
+        $ref: '#/definitions/Enviance.RestServices.Common.SimpleIdName'
+      users:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.SimpleUserDto'
+        uniqueItems: false
+      groups:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.SimpleIdName'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.WorkflowRoleOverride
+  Enviance.RestServices.Ver2.ComplianceModel.Address:
+    properties:
+      street1:
+        type: string
+        uniqueItems: false
+      street2:
+        type: string
+        uniqueItems: false
+      street3:
+        type: string
+        uniqueItems: false
+      city:
+        type: string
+        uniqueItems: false
+      countyOrRegion:
+        type: string
+        uniqueItems: false
+      stateOrProvince:
+        type: string
+        uniqueItems: false
+      country:
+        type: string
+        uniqueItems: false
+      postalCode:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.Address
+  Enviance.RestServices.Ver2.ComplianceModel.ContactInfo:
+    properties:
+      FirstName:
+        type: string
+        uniqueItems: false
+      LastName:
+        type: string
+        uniqueItems: false
+      Title:
+        type: string
+        uniqueItems: false
+      Company:
+        type: string
+        uniqueItems: false
+      TelNo:
+        type: string
+        uniqueItems: false
+      FaxNo:
+        type: string
+        uniqueItems: false
+      Mobile:
+        type: string
+        uniqueItems: false
+      Email:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.ContactInfo
+  Enviance.RestServices.Udfs.Property:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      urlItems:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.Business.Udf.Rest.UrlItem'
+        uniqueItems: false
+      values:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      caption:
+        type: string
+        uniqueItems: false
+      captionLocalized:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Udfs.Property
+  Enviance.RestServices.Common.TagAssociationInfo:
+    properties:
+      tagScheme:
+        type: string
+        uniqueItems: false
+      tag:
+        type: string
+        uniqueItems: false
+      tagHistory:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.Business.TaggingObjects.Tags.Entities.TagHistory'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.TagAssociationInfo
+  Enviance.RestServices.Common.SimpleUserDto:
+    properties:
+      firstName:
+        type: string
+        uniqueItems: false
+      lastName:
+        type: string
+        uniqueItems: false
+      isDeleted:
+        type: boolean
+        uniqueItems: false
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.SimpleUserDto
+  Enviance.RestServices.Ver2.ComplianceModel.RegulatoryIdentificationInfo:
+    properties:
+      RCRA:
+        type: string
+        uniqueItems: false
+      TRI:
+        type: string
+        uniqueItems: false
+      RMP:
+        type: string
+        uniqueItems: false
+      StateID1:
+        type: string
+        uniqueItems: false
+      StateID2:
+        type: string
+        uniqueItems: false
+      StateID3:
+        type: string
+        uniqueItems: false
+      LocalID1:
+        type: string
+        uniqueItems: false
+      LocalID2:
+        type: string
+        uniqueItems: false
+      LocalID3:
+        type: string
+        uniqueItems: false
+      IDType1:
+        type: string
+        uniqueItems: false
+      IDType2:
+        type: string
+        uniqueItems: false
+      IDType3:
+        type: string
+        uniqueItems: false
+      IDNo1:
+        type: string
+        uniqueItems: false
+      IDNo2:
+        type: string
+        uniqueItems: false
+      IDNo3:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.RegulatoryIdentificationInfo
+  Enviance.RestServices.Common.LocalizationInfo:
+    properties:
+      culture:
+        type: string
+        uniqueItems: false
+      value:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.LocalizationInfo
+  Enviance.RestServices.Ver2.ComplianceModel.MailingAddressInfo:
+    properties:
+      Country:
+        type: string
+        uniqueItems: false
+      State:
+        type: string
+        uniqueItems: false
+      City:
+        type: string
+        uniqueItems: false
+      PostalCode:
+        type: string
+        uniqueItems: false
+      Address1:
+        type: string
+        uniqueItems: false
+      Address2:
+        type: string
+        uniqueItems: false
+      Address3:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.ComplianceModel.MailingAddressInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

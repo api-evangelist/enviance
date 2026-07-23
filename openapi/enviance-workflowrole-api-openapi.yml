@@ -1,0 +1,344 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity WorkflowRole API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: WorkflowRole
+paths:
+  /ver2/WorkflowRoleService.svc/workflowrole:
+    post:
+      tags:
+      - WorkflowRole
+      description: "\n\n\nenvianceSdk.workflows.createWorkflowRole\r\n```\r\n[\r\n  {\r\n    \"name\": \"WorkflowRole1\",\r\n    \"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\",\r\n    \"defaultMembers\": {\r\n      \"userIdsOrNames\": [\r\n        \"user1\"\r\n      ],\r\n      \"groupIdsOrNames\": [\r\n        \"group1\"\r\n      ]\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflowRoleAsync\r\n```\r\n[\r\n  {\r\n    \"name\": \"WorkflowRole1\",\r\n    \"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\",\r\n    \"defaultMembers\": {\r\n      \"userIdsOrNames\": [\r\n        \"user1\"\r\n      ],\r\n      \"groupIdsOrNames\": [\r\n        \"group1\"\r\n      ]\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.CreateWorkflowRole
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateWorkflowRoleWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateWorkflowRole'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/WorkflowRoleService.svc/workflowrole/{roleId}:
+    get:
+      tags:
+      - WorkflowRole
+      description: "\n\n\nenvianceSdk.workflows.getWorkflowRole\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.GetWorkflowRole
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: roleId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo'
+    patch:
+      tags:
+      - WorkflowRole
+      description: '
+
+
+
+        ["7bd06df1-041b-4d1e-8091-1e74f7dd7219",{"name":"WorkflowRole1update""description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo","defaultMembers": {"userIdsOrNames": ["User1"],"groupIdsOrNames": ["group1"]},"onsuccess","onerror"]["7bd06df1-041b-4d1e-8091-1e74f7dd7219",{"name":"WorkflowRole1update""description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo","defaultMembers": {"userIdsOrNames": ["User1"],"groupIdsOrNames": ["group1"]},"onsuccess","onerror"]
+
+        '
+      operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.UpdateWorkflowRole
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: roleId
+        in: path
+        required: true
+        type: string
+      - name: UpdateWorkflowRoleWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateWorkflowRole'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+    delete:
+      tags:
+      - WorkflowRole
+      description: "\n\n\nenvianceSdk.workflows.deleteWorkflowRole\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowRoleAsync\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.DeleteWorkflowRole
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: roleId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/WorkflowRoleService.svc/workflowrole/copy:
+    post:
+      tags:
+      - WorkflowRole
+      description: "\n\n\nenvianceSdk.workflows.copyWorkflowRole\r\n```\r\n[\r\n  \"5cd5138d-c792-4dec-ae92-8a6fc70ae4c4\",\r\n  \"WorkflowRole1copied\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.copyWorkflowRoleAsync\r\n```\r\n[\r\n  \"5cd5138d-c792-4dec-ae92-8a6fc70ae4c4\",\r\n  \"WorkflowRole1copied\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.CopyWorkflowRole
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CopyWorkflowRoleWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CopyWorkflowRole'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+definitions:
+  UpdateWorkflowRole:
+    properties:
+      workflowRoleInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo'
+    type: object
+    format: UpdateWorkflowRole
+  Enviance.RestServices.Ver2.Workflows.Role.DefaultMembers:
+    properties:
+      userIdsOrNames:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      groupIdsOrNames:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.Role.DefaultMembers
+  Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      defaultMembers:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.Role.DefaultMembers'
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo
+  CopyWorkflowRole:
+    properties:
+      sourceId:
+        type: string
+        uniqueItems: false
+      newRoleName:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CopyWorkflowRole
+  CreateWorkflowRole:
+    properties:
+      workflowRoleInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo'
+    type: object
+    format: CreateWorkflowRole
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

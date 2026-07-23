@@ -1,0 +1,1032 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Data API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Data
+paths:
+  /ver2/DataService.svc/calculations/calculationperiods:
+    post:
+      tags:
+      - Data
+      description: "\n\n\nenvianceSdk.data.getCalculationPeriods\r\n```\r\n[\r\n  {\r\n    \"start\": {\r\n      \"relativity\": \"Current\",\r\n      \"periodType\": \"CalendarDay\"\r\n    },\r\n    \"end\": {\r\n      \"relativity\": \"Current\",\r\n      \"periodType\": \"Day\",\r\n      \"periodCount\": 1\r\n    },\r\n    \"intervalType\": \"Hourly\",\r\n    \"factor\": 1,\r\n    \"limit\": 100,\r\n    \"timezones\": []\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n\r\n[\r\n  {\r\n    \"start\": {\r\n      \"relativity\": \"Absolute\",\r\n      \"absoluteDate\": \"2012-01-01T00:00:00\"\r\n    },\r\n    \"end\": {\r\n      \"relativity\": \"Current\",\r\n      \"periodType\": \"Day\",\r\n      \"periodCount\": 1\r\n    },\r\n    \"intervalType\": \"Hourly\",\r\n    \"factor\": 1,\r\n    \"limit\": 100,\r\n    \"timezones\": []\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n\r\n[\r\n  {\r\n    \"start\": {\r\n      \"relativity\": \"Following\",\r\n      \"periodType\": \"Day\",\r\n      \"periodCount\": 2\r\n    },\r\n    \"end\": {\r\n      \"relativity\": \"AfterStart\",\r\n      \"periodType\": \"Month\",\r\n      \"periodCount\": 6\r\n    },\r\n    \"intervalType\": \"Weekly\",\r\n    \"factor\": 2,\r\n    \"limit\": 100,\r\n    \"timezones\": []\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationPeriods
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: GetCalculationPeriodsWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GetCalculationPeriods'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.Data.Range.RangePeriod'
+  /ver2/DataService.svc/calculations/calculationranges:
+    post:
+      tags:
+      - Data
+      description: "\n\n\nenvianceSdk.data.getCalculationRanges\r\n```\r\n[\r\n  [\r\n    {\r\n      \"parameterIdOrTag\": \"Pay F0415 Fee\",\r\n      \"beginDate\": \"2012-12-01T23:00:00\",\r\n      \"endDate\": \"2012-12-02T23:00:00\"\r\n    },\r\n    {\r\n      \"parameterIdOrTag\": \"FEEP Submittal\",\r\n      \"beginDate\": \"2012-12-01T23:00:00\",\r\n      \"endDate\": \"2012-12-02T23:00:00\"\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationRanges
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: GetCalculationRangesWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GetCalculationRanges'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Data.Range.RangeResult'
+  /ver2/DataService.svc/calculations/getbydaterange:
+    get:
+      tags:
+      - Data
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationByDateRange
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: dateStart
+        in: query
+        required: true
+        type: string
+      - name: dateEnd
+        in: query
+        required: true
+        type: string
+      - name: objectId
+        in: query
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: object
+  /ver2/DataService.svc/nonnumericdata/deletedatacommands:
+    post:
+      tags:
+      - Data
+      description: "\n\nDeletes Non-Numeric Data Points for one Non-Numeric Requirement. Deleting Non-Numeric Data Points is an synchronous process. Deletions  of non-numeric datapoints in the Management System are *permanent*.\r\n\r\n**SDK API:** `envianceSdk.data.deleteNonNumericData(requirementIdOrPath, nonNumericDataPoints, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.data.deleteNonNumericData\r\n```\r\n[\r\n  \"Kuhar Division/Kuhar-Facility-NNR/Kuhar-NNR1\",\r\n  [\r\n    \"3e619f41-390d-4e88-9832-fb8f621a373c\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNonNumericData
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: DeleteNonNumericDataWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DeleteNonNumericData'
+      responses:
+        default:
+          description: not available
+  /ver2/DataService.svc/nonnumericdata/enterdatacommands:
+    post:
+      tags:
+      - Data
+      description: "\n\n\nenvianceSdk.data.enterNonNumericData\r\n```\r\n[\r\n  [\r\n    {\r\n      \"requirementIdOrPath\": \"Kuhar Division/Kuhar-Facility-NNR/Kuhar-NNR1\",\r\n      \"completeDate\": \"2017-04-03T08:00:00\",\r\n      \"beginDate\": \"2017-04-03T08:00:00\",\r\n      \"endDate\": \"2017-04-03T08:00:00\",\r\n      \"comply\": \"Yes\",\r\n      \"comments\": \"NNR Yes Comment\"\r\n    },\r\n    {\r\n      \"requirementIdOrPath\": \"59ebc2fd-cb4e-4839-bc44-87340186d628\",\r\n      \"completeDate\": \"2017-04-02T08:00:00\",\r\n      \"beginDate\": \"2017-04-03T02:00:00\",\r\n      \"endDate\": \"2017-04-03T02:00:00\",\r\n      \"comply\": \"YesWithComments\",\r\n      \"comments\": \"NNR YesWithComments\"\r\n    }\r\n  ],\r\n  \"NNR collector\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.data.enterNonNumericDataAsync\r\n```\r\n[\r\n  [\r\n    {\r\n      \"requirementIdOrPath\": \"Kuhar Division/Kuhar-Facility-NNR/Kuhar-NNR1\",\r\n      \"completeDate\": \"2017-04-03T08:00:00\",\r\n      \"beginDate\": \"2017-04-03T08:00:00\",\r\n      \"endDate\": \"2017-04-03T08:00:00\",\r\n      \"comply\": \"Yes\",\r\n      \"comments\": \"NNR Yes Comment\"\r\n    },\r\n    {\r\n      \"requirementIdOrPath\": \"59ebc2fd-cb4e-4839-bc44-87340186d628\",\r\n      \"completeDate\": \"2017-04-02T08:00:00\",\r\n      \"beginDate\": \"2017-04-03T02:00:00\",\r\n      \"endDate\": \"2017-04-03T02:00:00\",\r\n      \"comply\": \"YesWithComments\",\r\n      \"comments\": \"NNR YesWithComments\"\r\n    }\r\n  ],\r\n  \"NNR collector\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNonNumericData
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: EnterNonNumericDataWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/EnterNonNumericData'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/DataService.svc/numericdata/deletedatacommands:
+    post:
+      tags:
+      - Data
+      description: "\n\nDeletes all Data Points for a set of one or more Parameters, within a specified date range. Deleting Data Points is an asynchronous process. Upon successfully receiving and queueing the data, a command id is returned. With this command id, the Get Command API can be used to track completion or failure of the data entry command. *Deletions are permanent*.\r\n\r\n**SDK API:**  `envianceSdk.data.deleteNumericData(numericDataRanges, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.data.deleteNumericData\r\n```\r\n[\r\n    [\r\n        {\r\n            \"beginDate\": \"2012-12-01T23:00:00\",\r\n            \"endDate\": \"2012-12-02T23:00:00\",\r\n            \"parameterIdOrTag\": \"Pay F0415 Fee\"\r\n        },\r\n        {\r\n            \"beginDate\": \"2012-12-01T23:00:00\",\r\n            \"endDate\": \"2012-12-02T23:00:00\",\r\n            \"parameterIdOrTag\": \"FEEP Submittal\"\r\n        }\r\n    ],\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNumericData
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: DeleteNumericDataWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DeleteNumericData'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/DataService.svc/numericdata/enterdatacommands:
+    post:
+      tags:
+      - Data
+      description: "\n\nProcesses a set of one or more numeric Data Points. Entering Data Points is an asynchronous process. Upon successfully receiving and queueing the data, a command id is returned. With this command id, the Get Command API can be used to track completion or failure of the data entry command.\r\n\r\n**SDK API:**  `envianceSdk.data.enterNumericData (numericDataPoints, collector, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.data.enterNumericData\r\n```\r\n[\r\n  [\r\n    {\r\n      \"parameterIdOrTag\": \"94A716F3-DFE2-4B00-B405-D922BF6B74D8\",\r\n      \"completeDate\": \"2012-12-01T23:35:00\",\r\n      \"value\": \"2.567e-6\"\r\n    },\r\n    {\r\n      \"parameterIdOrTag\": \"94A716F3-DFE2-4B00-B405-D922BF6B74D8\",\r\n      \"completeDate\": \"2012-12-01T23:40:00\",\r\n      \"acronym\": \"\\u003Cstr_const1\\u003E\",\r\n      \"collector\": \"local collector\"\r\n    }\r\n  ],\r\n  \"general collector\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n[[{   \"parameterIdOrTag\": \"<GUID>\",   \"completeDate\": \"<ISO-DATE>\",   \"value\": \"<decimal>\",   \"acronym\": <acronymValue>, // if specified uses acronym const instead of \"value\"   [optional]\"collector\": <collectorNameOrNull>},{  \"parameterIdOrTag\": \"<ISO-DATE>\",  \"completeDate\": \"<ISO-DATE>\",  \"value\": \"<decimal>\",  \"acronym\": <acronymValue>, // if specified uses acronym const instead of \"value\"  [optional]\"collector\": <collectorNameOrNull>  \"qualityData\" : [    {      \"name\": \"<udfName1>\",      \"urlItems\" : [      { \"label\":\"<label1>\", \"url\": \"<url1>\" },    { \"label\":\"<label2>\", \"url\": \"<url2>\" },    ...    ]      \"values\" : [       \"<strValue1>\",       \"<strValue2>\",    ...    ]    },    ...  ]}],<collectorNameOrNull>,\"onsuccess\",\"onerror\"]\n"
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNumericData
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: EnterNumericDataWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/EnterNumericData'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/DataService.svc/numericdata/exceldata:
+    post:
+      tags:
+      - Data
+      description: "\n\nDownload Excel template.\r\n\r\n**SDK API:** `envianceSdk.data.downloadExcelData (options, onsuccess, onerror)`\r\nnull\n\n\n1. Start date and Time Period:[{  \"start\": {    \"relativity\": \"Current\",  // \"Previous|Current|Following\"    \"periodType\": \"CalendarQuarter\" // \"Day|CalendarDay|Week|Month|CalendarMonth|Quarter|CalendarQuarter|Year|CalendarYear\"  },  \"intervalType\": \"Weekly\",  // \"Minutes|Hourly|HourlyTimeBased|Daily|DailyTimeBased|Weekly|WeeklyTimeBased|Monthly|MonthlyTimeBased|QuarterlyTimeBased|Yearly|YearlyTimeBased\"  \"containerIdOrPath\": \"CB23E89F-A5EB-44D6-85AA-3E380567C295\",  \"parameterIdsOrTags\": [    \"E933D081-E2D7-47F0-B1C9-401194FCAC83\",    \"0F878AB3-8678-4F82-9E6F-F9B9DDDEDD29\",    \"4694DB95-387E-439E-B8FA-62DFC079D85A\"  ],  \"useFullPath\": false},\"onsuccess\",\"onerror\"]2. Start date and Time Period, Wildcard:[{  \"start\": {    \"relativity\": \"Current\",    \"periodType\": \"CalendarDay\"  },  \"intervalType\": \"Daily\",  \"containerIdOrPath\": \"CB23E89F-A5EB-44D6-85AA-3E380567C295\",  \"parameterWildcard\": \"*AG-*\",  \"includeAllChildren\" : false,  \"useFullPath\": false},\"onsuccess\",\"onerror\"]3. Start date and Number of occurrences:[{  \"start\": {    \"relativity\": \"Absolute\",    \"absoluteDate\": \"2015-04-01T00:00:00\"  },  \"limit\" : 3,  \"factor\": 1,  \"intervalType\": \"Yearly\",  \"containerIdOrPath\": \"CB23E89F-A5EB-44D6-85AA-3E380567C295\",  \"parameterWildcard\": \"*AG-*\",  \"includeAllChildren\" : true,  \"useFullPath\": true},\"onsuccess\",\"onerror\"]4. Date range:[{  \"start\": {    \"relativity\": \"Absolute\",    \"absoluteDate\": \"2015-04-01T00:00:00\"  },   \"end\": {    \"relativity\": \"Absolute\",    \"absoluteDate\": \"2015-04-30T00:00:00\"  },  \"factor\": 5,  \"intervalType\": \"Daily\",  \"containerIdOrPath\": \"CB23E89F-A5EB-44D6-85AA-3E380567C295\",  \"parameterWildcard\": \"*AG-*\",  \"includeAllChildren\" : true,  \"useFullPath\": true},\"onsuccess\",\"onerror\"]\n"
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.DownloadExcelData
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: DownloadExcelDataWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DownloadExcelData'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              type: string
+              format: byte
+  /ver2/DataService.svc/numericdata/uploadexcel2commands:
+    post:
+      tags:
+      - Data
+      summary: Upload excel file (base64)
+      description: 'Upload excel file (base64)
+
+
+
+        Portal import. Upload excel template with async Multipart/FormData POST request. Use anyone (just one) input control on Rest API Test Tool to specify .xls-file to upload file and specify it
+
+        '
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.UploadExcel2Data
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: UploadExcel2DataWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UploadExcel2Data'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.Business.Data.UploadExcel2Result'
+  /ver2/DataService.svc/numericdata/uploadexcelcommands:
+    post:
+      tags:
+      - Data
+      description: '
+
+
+
+        Upload excel template with async Multipart/FormData POST request. Use anyone (just one) input control on Rest API Test Tool to specify .xls-file to upload file and specify itUpload excel template with Ajax and Base64 Encoding. First parameter pass HttpFileInput html control or filecontent as Base64 encoded string. Use anyone (just one) input control on Rest API Test Tool to specify .xls-file to upload file and specify it
+
+        '
+      operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.UploadExcelData
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: UploadExcelDataWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UploadExcelData'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+definitions:
+  Enviance.Business.Udf.Rest.UrlItem:
+    properties:
+      label:
+        type: string
+        uniqueItems: false
+      url:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.Udf.Rest.UrlItem
+  GetCalculationRanges:
+    properties:
+      start:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Data.Range.RangeParamStart'
+      end:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Data.Range.RangeParamEnd'
+    type: object
+    format: GetCalculationRanges
+  Enviance.RestServices.Ver2.Data.NonNumeric.NonNumericDataPointInfo:
+    required:
+    - requirementIdOrPath
+    - completeDate
+    - beginDate
+    - endDate
+    properties:
+      requirementIdOrPath:
+        type: string
+        uniqueItems: false
+      completeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      collector:
+        type: string
+        uniqueItems: false
+      comments:
+        type: string
+        uniqueItems: false
+      comply:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Data.NonNumeric.NonNumericDataPointInfo
+  Enviance.RestServices.Ver2.Data.Range.RangeParamEnd:
+    properties:
+      relativity:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Absolute
+        - Current
+        - AfterStart
+      periodType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Day
+        - CalendarDay
+        - Week
+        - Month
+        - CalendarMonth
+        - Quarter
+        - CalendarQuarter
+        - Year
+        - CalendarYear
+      absoluteDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      periodCount:
+        type: integer
+        format: int32
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Data.Range.RangeParamEnd
+  DeleteNumericData:
+    properties:
+      numericDataRanges:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Data.NumericDataRangeInfo'
+        uniqueItems: false
+    type: object
+    format: DeleteNumericData
+  DeleteNonNumericData:
+    properties:
+      requirementIdOrPath:
+        type: string
+        uniqueItems: false
+      nonNumericDataPoints:
+        type: array
+        items:
+          type: string
+          format: guid
+        uniqueItems: false
+    type: object
+    format: DeleteNonNumericData
+  EnterNumericData:
+    properties:
+      numericDataPoints:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Data.NumericDataPointInfo'
+        uniqueItems: false
+      collector:
+        type: string
+        uniqueItems: false
+    type: object
+    format: EnterNumericData
+  Enviance.RestServices.Ver2.Data.Range.RangeResult:
+    properties:
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Data.Range.RangeResult
+  DownloadExcelData:
+    properties:
+      start:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Data.Range.RangeParamStart'
+      end:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Data.Range.RangeParamEnd'
+      intervalType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Minutes
+        - Hourly
+        - HourlyTimeBased
+        - Daily
+        - DailyTimeBased
+        - Weekly
+        - WeeklyTimeBased
+        - Monthly
+        - MonthlyTimeBased
+        - QuarterlyTimeBased
+        - Yearly
+        - YearlyTimeBased
+      factor:
+        type: integer
+        format: int32
+        uniqueItems: false
+      limit:
+        type: integer
+        format: int32
+        uniqueItems: false
+      completeDates:
+        type: array
+        items:
+          type: string
+          format: date-time
+        uniqueItems: false
+      containerIdOrPath:
+        type: string
+        uniqueItems: false
+      parameterIdsOrTags:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      parameterWildcard:
+        type: string
+        uniqueItems: false
+      includeAllChildren:
+        type: boolean
+        uniqueItems: false
+      useFullPath:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: DownloadExcelData
+  Enviance.RestServices.Ver2.Data.NumericDataPointInfo:
+    required:
+    - completeDate
+    properties:
+      parameterIdOrTag:
+        type: string
+        uniqueItems: false
+      completeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      value:
+        type: number
+        format: double
+        uniqueItems: false
+      qualityData:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Udfs.Property'
+        uniqueItems: false
+      collector:
+        type: string
+        uniqueItems: false
+      acronym:
+        type: string
+        uniqueItems: false
+      uomId:
+        type: string
+        format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Data.NumericDataPointInfo
+  GetCalculationPeriods:
+    properties:
+      start:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Data.Range.RangeParamStart'
+      end:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Data.Range.RangeParamEnd'
+      intervalType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Minutes
+        - Hourly
+        - HourlyTimeBased
+        - Daily
+        - DailyTimeBased
+        - Weekly
+        - WeeklyTimeBased
+        - Monthly
+        - MonthlyTimeBased
+        - QuarterlyTimeBased
+        - Yearly
+        - YearlyTimeBased
+      factor:
+        type: integer
+        format: int32
+        uniqueItems: false
+      limit:
+        type: integer
+        format: int32
+        uniqueItems: false
+      timezones:
+        type: array
+        items:
+          type: integer
+          format: int16
+        uniqueItems: false
+    type: object
+    format: GetCalculationPeriods
+  UploadExcelData:
+    properties:
+      content:
+        type: string
+        uniqueItems: false
+      excelProcessorType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Parameter
+        - MDLGroup
+      containerIdOrPath:
+        type: string
+        uniqueItems: false
+    type: object
+    format: UploadExcelData
+  UploadExcel2Data:
+    properties:
+      fileInfo:
+        $ref: '#/definitions/Enviance.Business.Data.ExcelFileInfo'
+      intervalType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Minutes
+        - Hourly
+        - HourlyTimeBased
+        - Daily
+        - DailyTimeBased
+        - Weekly
+        - WeeklyTimeBased
+        - Monthly
+        - MonthlyTimeBased
+        - QuarterlyTimeBased
+        - Yearly
+        - YearlyTimeBased
+      allowQualityData:
+        type: boolean
+        uniqueItems: false
+      timeForDaily:
+        type: string
+        uniqueItems: false
+    type: object
+    format: UploadExcel2Data
+  Enviance.RestServices.Udfs.Property:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      urlItems:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.Business.Udf.Rest.UrlItem'
+        uniqueItems: false
+      values:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      caption:
+        type: string
+        uniqueItems: false
+      captionLocalized:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Udfs.Property
+  Enviance.Business.Data.ExcelFileInfo:
+    properties:
+      FileName:
+        type: string
+        uniqueItems: false
+      MimeType:
+        type: string
+        uniqueItems: false
+      ContentBase64:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.Data.ExcelFileInfo
+  Enviance.Business.Data.CommandInfo:
+    properties:
+      CommandLogID:
+        type: string
+        format: guid
+        uniqueItems: false
+      ObjectID:
+        type: string
+        format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.Data.CommandInfo
+  Enviance.Business.Data.UploadExcel2Result:
+    properties:
+      CommandLog:
+        $ref: '#/definitions/Enviance.Business.Data.CommandInfo'
+      ContainsError:
+        type: boolean
+        uniqueItems: false
+      FileInfo:
+        $ref: '#/definitions/Enviance.Business.Data.ExcelFileInfo'
+    type: object
+    format: Enviance.Business.Data.UploadExcel2Result
+  Enviance.RestServices.Ver2.Data.Range.RangePeriod:
+    properties:
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      saveDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      dontExistInTimeZone:
+        type: array
+        items:
+          type: integer
+          format: int16
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Data.Range.RangePeriod
+  EnterNonNumericData:
+    properties:
+      nonNumericDataPoints:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Data.NonNumeric.NonNumericDataPointInfo'
+        uniqueItems: false
+      collector:
+        type: string
+        uniqueItems: false
+    type: object
+    format: EnterNonNumericData
+  Enviance.RestServices.Ver2.Data.NumericDataRangeInfo:
+    required:
+    - parameterIdOrTag
+    - beginDate
+    - endDate
+    properties:
+      parameterIdOrTag:
+        type: string
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      qualityData:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Udfs.Property'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Data.NumericDataRangeInfo
+  Enviance.RestServices.Ver2.Data.Range.RangeParamStart:
+    properties:
+      relativity:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Absolute
+        - Previous
+        - Current
+        - Following
+      periodType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Day
+        - CalendarDay
+        - Week
+        - Month
+        - CalendarMonth
+        - Quarter
+        - CalendarQuarter
+        - Year
+        - CalendarYear
+      absoluteDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      periodCount:
+        type: integer
+        format: int32
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Data.Range.RangeParamStart
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

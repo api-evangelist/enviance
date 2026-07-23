@@ -1,0 +1,392 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Material API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Material
+paths:
+  /ver2/MaterialService.svc/materials:
+    post:
+      tags:
+      - Material
+      description: "\n\n\nenvianceSdk.materials.createMaterial\r\n```\r\n[\r\n  {\r\n    \"name\": \"Material Name\",\r\n    \"description\": \"Material Description\",\r\n    \"templateIdOrName\": \"Template Name\",\r\n    \"materialAvailabilityFlag\": \"true\",\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      }\r\n    ],\r\n    \"chemicals\": [\r\n      {\r\n        \"chemicalIdOrAlias\": \"Chemical Alias\",\r\n        \"chemicalConcentrationHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"present\": \"true\",\r\n            \"minConc\": \"0\",\r\n            \"avgConc\": \"1\",\r\n            \"maxConc\": \"2\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2013-01-19T20:00:00\",\r\n            \"present\": \"true\",\r\n            \"minConc\": \"2\",\r\n            \"avgConc\": \"4\",\r\n            \"maxConc\": \"6\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"properties\": [\r\n      {\r\n        \"propertyIdOrName\": \"property name\",\r\n        \"valueHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"value\": \"1\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2012-02-20T20:00:00\",\r\n            \"value\": \"2\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"propertyIdOrName\": \"PFBP name\"\r\n      },\r\n      {\r\n        \"propertyIdOrName\": \"SFBP name\"\r\n      },\r\n      {\r\n        \"propertyIdOrName\": \"TFBP name\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.createMaterialGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Material Group Name\",\r\n    \"description\": \"Material Group Description\",\r\n    \"materialIdOrNames\": [\r\n      \"Material Name 1\",\r\n      \"Material Name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialTemplates.createMaterialTemplate\r\n```\r\n[\r\n  {\r\n    \"name\": \"Material Template Name\",\r\n    \"description\": \"Material Template Description\",\r\n    \"fields\": [\r\n      \"field name 1\",\r\n      \"field name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialProperties.createMaterialProperty\r\n```\r\n[\r\n  {\r\n    \"name\": \"PFBP Property Name\",\r\n    \"description\": \"VBP Description\",\r\n    \"propertyType\": \"Formula Based Primary\",\r\n    \"dataType\": \"Numeric\",\r\n    \"formulaHistory\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B SUM([Chem_MW])\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B [Prop_PFBP1]\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.CreateMaterial
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateMaterialWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateMaterial'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/MaterialService.svc/materials/{materialIdOrName}:
+    get:
+      tags:
+      - Material
+      description: "\n\n\nenvianceSdk.materials.getMaterial\r\n```\r\n[\r\n  \"Material Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.getMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialTemplates.getMaterialTemplate\r\n```\r\n[\r\n  \"Material Template Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialProperties.getMaterialProperty\r\n```\r\n[\r\n  \"Material Property Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.GetMaterial
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: materialIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo'
+    patch:
+      tags:
+      - Material
+      description: "\n\n\nenvianceSdk.materials.updateMaterial\r\n```\r\n[\r\n  \"Material Name\",\r\n  {\r\n    \"name\": \"Material Name\",\r\n    \"description\": \"Material Description\",\r\n    \"templateIdOrName\": \"Template Name\",\r\n    \"materialAvailabilityFlag\": \"true\",\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      }\r\n    ],\r\n    \"chemicals\": [\r\n      {\r\n        \"chemicalIdOrAlias\": \"Chemical Alias\",\r\n        \"chemicalConcentrationHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"present\": \"true\",\r\n            \"minConc\": \"0\",\r\n            \"avgConc\": \"1\",\r\n            \"maxConc\": \"2\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2013-01-19T20:00:00\",\r\n            \"present\": \"true\",\r\n            \"minConc\": \"2\",\r\n            \"avgConc\": \"3\",\r\n            \"maxConc\": \"6\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"properties\": [\r\n      {\r\n        \"propertyIdOrName\": \"property name\",\r\n        \"valueHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"value\": \"1\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2012-02-20T20:00:00\",\r\n            \"value\": \"2\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.updateMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  {\r\n    \"name\": \"Material Group Name\",\r\n    \"description\": \"Material Group Description\",\r\n    \"materialIdOrNames\": [\r\n      \"Material Name 1\",\r\n      \"Material Name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialTemplates.updateMaterialTemplate\r\n```\r\n[\r\n  \"Material Template Name\",\r\n  {\r\n    \"name\": \"Material Template Name\",\r\n    \"description\": \"Material Template Description\",\r\n    \"fields\": [\r\n      \"field name 1\",\r\n      \"field name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialProperties.updateMaterialProperty\r\n```\r\n[\r\n  \"Material Property Name\",\r\n  {\r\n    \"name\": \"PFBP Property Name\",\r\n    \"description\": \"VBP Description\",\r\n    \"dataType\": \"Numeric\",\r\n    \"formulaHistory\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B SUM([Chem_MW])\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B [Prop_PFBP1]\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.UpdateMaterial
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: materialIdOrName
+        in: path
+        required: true
+        type: string
+      - name: UpdateMaterialWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateMaterial'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+    delete:
+      tags:
+      - Material
+      description: "\n\n\nenvianceSdk.materials.deleteMaterial\r\n```\r\n[\r\n  \"Material Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.deleteMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialTemplates.deleteMaterialTemplate\r\n```\r\n[\r\n  \"Material Template Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialProperties.deleteMaterialProperty\r\n```\r\n[\r\n  \"Material Property Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialData.deleteMaterialData\r\n```\r\n[\r\n  \"/Division for MDLG/FAC for MDLG\",\r\n  [\r\n    \"6B6BB16B-C207-416C-B818-1DB075AA453C\",\r\n    \"004D8F0D-C03A-4A65-BFD1-3CFFDDF99569\"\r\n  ],\r\n  \"true\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.DeleteMaterial
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: materialIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+definitions:
+  Enviance.Business.Udf.Rest.UrlItem:
+    properties:
+      label:
+        type: string
+        uniqueItems: false
+      url:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.Udf.Rest.UrlItem
+  Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialChemicalMapInfo:
+    properties:
+      chemicalIdOrAlias:
+        type: string
+        uniqueItems: false
+      chemicalConcentrationHistory:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialChemicalMapInfo
+  Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      value:
+        type: number
+        format: double
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo
+  Enviance.RestServices.Udfs.Property:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      urlItems:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.Business.Udf.Rest.UrlItem'
+        uniqueItems: false
+      values:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      caption:
+        type: string
+        uniqueItems: false
+      captionLocalized:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Udfs.Property
+  Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      present:
+        type: boolean
+        uniqueItems: false
+      minConc:
+        type: number
+        format: double
+        uniqueItems: false
+      avgConc:
+        type: number
+        format: double
+        uniqueItems: false
+      maxConc:
+        type: number
+        format: double
+        uniqueItems: false
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo
+  CreateMaterial:
+    properties:
+      materialInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo'
+      copyFrom:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CreateMaterial
+  Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo:
+    properties:
+      propertyIdOrName:
+        type: string
+        uniqueItems: false
+      valueHistory:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo
+  UpdateMaterial:
+    properties:
+      materialInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo'
+    type: object
+    format: UpdateMaterial
+  Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      templateIdOrName:
+        type: string
+        uniqueItems: false
+      materialAvailabilityFlag:
+        type: boolean
+        uniqueItems: false
+      chemicals:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialChemicalMapInfo'
+        uniqueItems: false
+      fields:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Udfs.Property'
+        uniqueItems: false
+      properties:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

@@ -1,0 +1,2215 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Workflow API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Workflow
+paths:
+  /ver2/WorkflowService.svc/workflows:
+    post:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.createWorkflows\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        \"Folder1Document1.txt\",\r\n        \"Folder1Document2.txt\"\r\n      ]\r\n    },\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 2\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-2\",\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        \"Folder1Document1.txt\",\r\n        \"Folder1Document2.txt\"\r\n      ]\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflows21\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n        },\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n          \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 2\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-2\",\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n        },\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n          \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflow\r\n```\r\n[\r\n  {\r\n    \"workflowTypeName\": \"workflow Type Name\",\r\n    \"name\": \"workflow name 1\",\r\n    \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n    \"parentWorkflowSourceCustomField\": {\r\n      \"id\": null,\r\n      \"name\": \"UDF name\"\r\n    },\r\n    \"dueDate\": \"2013-02-07T00:00:00\",\r\n    \"comment\": \"my comment\",\r\n    \"calendars\": [\r\n      \"My\",\r\n      \"Object\",\r\n      \"System\"\r\n    ],\r\n    \"objects\": [\r\n      \"/Generation - 1/NE TV\"\r\n    ],\r\n    \"documents\": [\r\n      \"Folder1Document1.txt\",\r\n      \"Folder1Document2.txt\"\r\n    ]\r\n  },\r\n  null,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflowExt\r\n```\r\n[\r\n  {\r\n    \"workflowInfo\": {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        \"Folder1Document1.txt\",\r\n        \"Folder1Document2.txt\"\r\n      ]\r\n    },\r\n    \"initStepInfo\": null,\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59F\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflow21\r\n```\r\n[\r\n  {\r\n    \"workflowTypeName\": \"workflow Type Name\",\r\n    \"name\": \"workflow name 1\",\r\n    \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n    \"parentWorkflowSourceCustomField\": {\r\n      \"id\": null,\r\n      \"name\": \"UDF name\"\r\n    },\r\n    \"dueDate\": \"2013-02-07T00:00:00\",\r\n    \"comment\": \"my comment\",\r\n    \"calendars\": [\r\n      \"My\",\r\n      \"Object\",\r\n      \"System\"\r\n    ],\r\n    \"objects\": [\r\n      \"/Generation - 1/NE TV\"\r\n    ],\r\n    \"documents\": [\r\n      {\r\n        \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n      },\r\n      {\r\n        \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n        \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n      }\r\n    ]\r\n  },\r\n  null,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflow21Ext\r\n```\r\n[\r\n  {\r\n    \"workflowInfo\": {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n        },\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n          \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n        }\r\n      ]\r\n    },\r\n    \"initStepInfo\": null,\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59F\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflowType\r\n```\r\n[\r\n  {\r\n    \"name\": \"Workflow Type\",\r\n    \"workflowSteps\": [\r\n      {\r\n        \"name\": \"Step1\",\r\n        \"status\": \"Step1\",\r\n        \"formTemplate\": {\r\n          \"name\": \"FT-1\"\r\n        },\r\n        \"assignedRole\": \"R-1\",\r\n        \"stepActions\": [\r\n          {\r\n            \"name\": \"Go to Step2\",\r\n            \"destinationStep\": {\r\n              \"name\": \"Step2\"\r\n            },\r\n            \"allowedRoles\": [\r\n              \"R-1\"\r\n            ]\r\n          },\r\n          {\r\n            \"name\": \"Go to Step3\",\r\n            \"destinationStep\": {\r\n              \"name\": \"Step3\"\r\n            },\r\n            \"allowedRoles\": [\r\n              \"R-3\"\r\n            ]\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Step2\",\r\n        \"status\": \"Step2\",\r\n        \"formTemplate\": {\r\n          \"name\": \"FT-2\"\r\n        },\r\n        \"assignedRole\": \"R-2\",\r\n        \"stepActions\": [\r\n          {\r\n            \"name\": \"Go to Step3\",\r\n            \"destinationStep\": {\r\n              \"name\": \"Step3\"\r\n            },\r\n            \"allowedRoles\": [\r\n              \"R-2\"\r\n            ]\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Step3\",\r\n        \"status\": \"Step3\",\r\n        \"formTemplate\": {\r\n          \"name\": \"FT-3\"\r\n        },\r\n        \"assignedRole\": \"R-3\",\r\n        \"stepActions\": [\r\n          {\r\n            \"name\": \"Go to Step1\",\r\n            \"destinationStep\": {\r\n              \"name\": \"Step1\"\r\n            },\r\n            \"allowedRoles\": [\r\n              \"R-1\",\r\n              \"R-2\",\r\n              \"R-3\"\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"localFields\": [\r\n      \"Calculated Numeric\"\r\n    ],\r\n    \"workflowPermissions\": [\r\n      {\r\n        \"role\": \"R-1\",\r\n        \"flags\": [\r\n          \"FullAccess\",\r\n          \"AllFormFieldAccess\"\r\n        ]\r\n      },\r\n      {\r\n        \"role\": \"R-2\",\r\n        \"flags\": [\r\n          \"ViewAllFormFields\",\r\n          \"SetWorkflowID\",\r\n          \"Close\",\r\n          \"Reopen\",\r\n          \"Delete\",\r\n          \"Rename\",\r\n          \"Assign\",\r\n          \"Schedule\"\r\n        ]\r\n      },\r\n      {\r\n        \"role\": \"R-3\",\r\n        \"flags\": [\r\n          \"OverrideAllFormFields\",\r\n          \"Open\",\r\n          \"Report\",\r\n          \"SetWorkflowID\",\r\n          \"CompleteUnderlyingTask\",\r\n          \"ViewUnderlyingTask\"\r\n        ]\r\n      }\r\n    ],\r\n    \"stepPermissions\": [\r\n      {\r\n        \"role\": \"R-1\",\r\n        \"steps\": [\r\n          {\r\n            \"step\": \"Step1\",\r\n            \"allGlobal\": \"Edit\",\r\n            \"allLocal\": \"View\"\r\n          },\r\n          {\r\n            \"step\": \"Step2\",\r\n            \"allGlobal\": \"View\",\r\n            \"allLocal\": \"Edit\"\r\n          },\r\n          {\r\n            \"step\": \"Step3\",\r\n            \"allGlobal\": \"Override\",\r\n            \"allLocal\": \"Override\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflowRole\r\n```\r\n[\r\n  {\r\n    \"name\": \"WorkflowRole1\",\r\n    \"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\",\r\n    \"defaultMembers\": {\r\n      \"userIdsOrNames\": [\r\n        \"user1\"\r\n      ],\r\n      \"groupIdsOrNames\": [\r\n        \"group1\"\r\n      ]\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflowRoleAsync\r\n```\r\n[\r\n  {\r\n    \"name\": \"WorkflowRole1\",\r\n    \"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\",\r\n    \"defaultMembers\": {\r\n      \"userIdsOrNames\": [\r\n        \"user1\"\r\n      ],\r\n      \"groupIdsOrNames\": [\r\n        \"group1\"\r\n      ]\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflow
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateWorkflowWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateWorkflow'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}:
+    get:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.getWorkflow\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflow21\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowStep\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"Step1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowStepBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowIdOrUniqueId\": \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n      \"stepIdsOrNames\": [\r\n        \"WFStep1\"\r\n      ]\r\n    },\r\n    {\r\n      \"workflowIdOrUniqueId\": \"2017.03.23.11.2F39C8EC9325\",\r\n      \"stepIdsOrNames\": [\r\n        \"337989bf-832e-4e1f-8034-3b4327d52542\"\r\n      ]\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowCurrentStep\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowCurrentStepBulk\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n    \"2017.03.23.11.2F39C8EC9325\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowType\r\n```\r\n[\r\n  \"workflowTypeIdOrName\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowTypeVersion\r\n```\r\n[\r\n  \"workflowTypeIdOrName\",\r\n  \"versionNumber\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowRole\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflow
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
+    patch:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.updateWorkflowStep\r\n```\r\n[\r\n  \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n  \"Oleg FT Step1\",\r\n  {\r\n    \"comment\": \"my comment\",\r\n    \"transition\": {\r\n      \"dueDate\": \"2013-02-15T00:00:00\",\r\n      \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n      \"assignTo\": [\r\n        {\r\n          \"userIdOrName\": \"oleg\"\r\n        },\r\n        {\r\n          \"userIdOrName\": \"vitek\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"BL Group\"\r\n        }\r\n      ]\r\n    },\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Oleg FT 1 = dt date\",\r\n        \"values\": [\r\n          \"2013-02-01T00:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Oleg FT 1 = url\",\r\n        \"urlItems\": [\r\n          {\r\n            \"label\": \"may label\",\r\n            \"url\": \"http://mail.ru\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = num ddl linked 2\",\r\n        \"values\": [\r\n          \"100\",\r\n          \"100\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = text multi\",\r\n        \"values\": [\r\n          \"val1\",\r\n          \"val3\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflowStepExt\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n    \"stepIdOrName\": \"Oleg FT Step1\",\r\n    \"stepInfo\": {\r\n      \"comment\": \"my comment\",\r\n      \"transition\": {\r\n        \"dueDate\": \"2013-02-15T00:00:00\",\r\n        \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n        \"assignTo\": [\r\n          {\r\n            \"userIdOrName\": \"oleg\"\r\n          },\r\n          {\r\n            \"userIdOrName\": \"vitek\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"Administrators\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"BL Group\"\r\n          }\r\n        ]\r\n      },\r\n      \"fields\": [\r\n        {\r\n          \"name\": \"Oleg FT 1 = dt date\",\r\n          \"values\": [\r\n            \"2013-02-01T00:00:00\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"Oleg FT 1 = url\",\r\n          \"urlItems\": [\r\n            {\r\n              \"label\": \"may label\",\r\n              \"url\": \"http://mail.ru\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"oleg FT 1 = num ddl linked 2\",\r\n          \"values\": [\r\n            \"100\",\r\n            \"100\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"oleg FT 1 = text multi\",\r\n          \"values\": [\r\n            \"val1\",\r\n            \"val3\"\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59E\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflowCurrentStep\r\n```\r\n[\r\n  \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n  {\r\n    \"comment\": \"my comment\",\r\n    \"transition\": {\r\n      \"dueDate\": \"2013-02-15T00:00:00\",\r\n      \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n      \"assignTo\": [\r\n        {\r\n          \"userIdOrName\": \"oleg\"\r\n        },\r\n        {\r\n          \"userIdOrName\": \"vitek\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"BL Group\"\r\n        }\r\n      ]\r\n    },\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Oleg FT 1 = dt date\",\r\n        \"values\": [\r\n          \"2013-02-01T00:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Oleg FT 1 = url\",\r\n        \"urlItems\": [\r\n          {\r\n            \"label\": \"may label\",\r\n            \"url\": \"http://mail.ru\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = num ddl linked 2\",\r\n        \"values\": [\r\n          \"100\",\r\n          \"100\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = text multi\",\r\n        \"values\": [\r\n          \"val1\",\r\n          \"val3\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflowCurrentStepExt\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"a4f13c99-5c2c-46dc-bbff-4aea388ef3ca\",\r\n    \"stepInfo\": {\r\n      \"comment\": \"my comment\",\r\n      \"transition\": {\r\n        \"stepActionName\": \"go to step 2\",\r\n        \"assignTo\": [\r\n          {\r\n            \"userIdOrName\": \"oleg\"\r\n          },\r\n          {\r\n            \"userIdOrName\": \"vitek\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"Administrators\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"BL Group\"\r\n          }\r\n        ]\r\n      },\r\n      \"fields\": [\r\n        {\r\n          \"name\": \"Date\",\r\n          \"values\": [\r\n            \"2013-02-01T00:00:00\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"CitationHyperlink\",\r\n          \"urlItems\": [\r\n            {\r\n              \"label\": \"may label\",\r\n              \"url\": \"http://test.com\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"NumberDDL linked\",\r\n          \"values\": [\r\n            \"1.23456E-05\",\r\n            \"1.23456E-05\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"Text(MSLB)\",\r\n          \"values\": [\r\n            \"test1\",\r\n            \"test2\"\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    \"clientRequestId\": \"19AA5290-15F2-451B-9EF3-4494F66FE59F\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflow\r\n```\r\n[\r\n  \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n  {\r\n    \"dueDate\": \"2012-09-19T18:00:00\",\r\n    \"parentWorkflowSourceCustomField\": {\r\n      \"id\": null,\r\n      \"name\": \"UDF name\"\r\n    },\r\n    \"name\": \"test\",\r\n    \"objects\": [\r\n      \"/Generation - 1/NE TV\"\r\n    ],\r\n    \"documents\": [\r\n      \"/Folder/Folder/Doc.txt\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflowExt\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n    \"workflowInfo\": {\r\n      \"dueDate\": \"2012-09-19T18:00:00\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"name\": \"test\",\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        \"/Folder/Folder/Doc.txt\"\r\n      ]\r\n    },\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59E\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflow21\r\n```\r\n[\r\n  \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n  {\r\n    \"dueDate\": \"2012-09-19T18:00:00\",\r\n    \"parentWorkflowSourceCustomField\": {\r\n      \"id\": null,\r\n      \"name\": \"UDF name\"\r\n    },\r\n    \"name\": \"test\",\r\n    \"objects\": [\r\n      \"/Generation - 1/NE TV\"\r\n    ],\r\n    \"documents\": [\r\n      {\r\n        \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n      },\r\n      {\r\n        \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n        \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflow21Ext\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n    \"workflowInfo\": {\r\n      \"dueDate\": \"2012-09-19T18:00:00\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"name\": \"test\",\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n        },\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n          \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n        }\r\n      ]\r\n    },\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE49F\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflows\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowIdOrUniqueId\": \"2022.01.24.02.37D8CC867814\",\r\n      \"dueDate\": \"2021-01-24T04:00:00\",\r\n      \"name\": \"ryWIbulk-1-rename\",\r\n      \"assignedTo\": [\r\n        {\r\n          \"userIdOrName\": \"yuromanova\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"TESTGroup\"\r\n        }\r\n      ],\r\n      \"objects\": [\r\n        \"/-- div\"\r\n      ],\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"comment\": \"commentstest\",\r\n      \"documents\": [\r\n        \"/RY Folder WF/RY Folder 2/eql.txt\"\r\n      ],\r\n      \"step\": {\r\n        \"fields\": [\r\n          {\r\n            \"name\": \"GX2BooleanCB\",\r\n            \"values\": [\r\n              \"true\"\r\n            ]\r\n          },\r\n          {\r\n            \"name\": \"GX2NumberTextBox\",\r\n            \"values\": [\r\n              \"0\"\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"workflowIdOrUniqueId\": \"2022.01.24.02.37D8CC867815\",\r\n      \"dueDate\": \"2021-01-24T04:00:00\",\r\n      \"name\": \"ryWIbulk-2-rename\",\r\n      \"assignedTo\": [\r\n        {\r\n          \"userIdOrName\": \"yuromanova\"\r\n        }\r\n      ],\r\n      \"objects\": [\r\n        \"/-- div\"\r\n      ],\r\n      \"step\": {\r\n        \"fields\": [\r\n          {\r\n            \"name\": \"GX2BooleanCB\",\r\n            \"values\": [\r\n              \"true\"\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflowType\r\n```\r\n[\r\n  \"Workflow Type\",\r\n  {\r\n    \"name\": \"Workflow Type updated\",\r\n    \"description\": \"Workflow Type from preconditions should be updated successfully.\",\r\n    \"shouldCreateNewVersion\": \"true\",\r\n    \"versionComments\": \"New Comment for version\",\r\n    \"idGenScheme\": \"{Day}.{Hour}.{AlphaID}\",\r\n    \"workflowSteps\": [\r\n      {\r\n        \"name\": \"Step1\",\r\n        \"status\": \"Step 1 Status \",\r\n        \"formTemplate\": {\r\n          \"name\": \"FT-1\"\r\n        },\r\n        \"assignedRole\": \"R-1\"\r\n      }\r\n    ],\r\n    \"workflowPermissions\": [\r\n      {\r\n        \"role\": \"R-1\",\r\n        \"flags\": [\r\n          \"FullAccess\",\r\n          \"AllFormFieldAccess\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflowTypeInfo\r\n```\r\n[\r\n  \"workflowTypeIdOrName\",\r\n  \"newName\",\r\n  \"{Year}.{Month}.{Day}.{Hour}.{AlphaID}\",\r\n  \"description example\",\r\n  \"true\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.partialUpdateWorkflowType\r\n```\r\n[\r\n  \"WT test\",\r\n  {\r\n    \"description\": \"Workflow 1\",\r\n    \"shouldCreateNewVersion\": \"false\",\r\n    \"versionComments\": \"Version 3\",\r\n    \"idGenScheme\": \"{Year}.{Month}.{Day}.{Hour}.{AlphaID}\",\r\n    \"workflowSteps\": [\r\n      {\r\n        \"name\": \"Step1\",\r\n        \"status\": \"Open\",\r\n        \"associatedFormTemplate\": {\r\n          \"name\": \"FT-1\"\r\n        },\r\n        \"assignedRole\": \"R-1\",\r\n        \"stepActions\": [\r\n          {\r\n            \"name\": \"go to step 2\",\r\n            \"destinationStep\": \"Step2\",\r\n            \"allowedRoles\": [\r\n              \"R-1\"\r\n            ]\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Step2\",\r\n        \"status\": \" In progress\",\r\n        \"associatedFormTemplate\": {\r\n          \"name\": \"FT-1\"\r\n        },\r\n        \"assignedRole\": \"R-1\"\r\n      }\r\n    ],\r\n    \"stepRoles\": [\r\n      {\r\n        \"name\": \"R-1\",\r\n        \"users\": [\r\n          {\r\n            \"name\": \"primeAdmin\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"workflowPermissions\": [\r\n      {\r\n        \"role\": \"R-1\",\r\n        \"flags\": [\r\n          \"ViewAllFormFields\"\r\n        ]\r\n      }\r\n    ],\r\n    \"policies\": [\r\n      {\r\n        \"name\": \"Pol-1\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n[\"7bd06df1-041b-4d1e-8091-1e74f7dd7219\",{\"name\":\"WorkflowRole1update\"\"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\",\"defaultMembers\": {\"userIdsOrNames\": [\"User1\"],\"groupIdsOrNames\": [\"group1\"]},\"onsuccess\",\"onerror\"][\"7bd06df1-041b-4d1e-8091-1e74f7dd7219\",{\"name\":\"WorkflowRole1update\"\"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\",\"defaultMembers\": {\"userIdsOrNames\": [\"User1\"],\"groupIdsOrNames\": [\"group1\"]},\"onsuccess\",\"onerror\"]\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflow
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: UpdateWorkflowWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateWorkflow'
+      responses:
+        default:
+          description: not available
+    delete:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.deleteWorkflow\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowExt\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59E\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflows\r\n```\r\n[\r\n  [\r\n    \"wfid1\",\r\n    \"wfid2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowType\r\n```\r\n[\r\n  \"workflowTypeIdOrName\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowTypeBulk\r\n```\r\n[\r\n  [\r\n    \"workflowTypeIdOrName1\",\r\n    \"workflowTypeIdOrName2\",\r\n    \"workflowTypeIdOrName3\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowRole\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowRoleAsync\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflow
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments:
+    get:
+      tags:
+      - Workflow
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowAttachments
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentInfo'
+    post:
+      tags:
+      - Workflow
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateWorkflowAttachmentUploadUrl
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: GenerateWorkflowAttachmentUploadUrlWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GenerateWorkflowAttachmentUploadUrl'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentUploadUrlInfo'
+  /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments/{attachmentId}:
+    get:
+      tags:
+      - Workflow
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowAttachment
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: attachmentId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentInfo'
+    delete:
+      tags:
+      - Workflow
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflowAttachment
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: attachmentId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments/{attachmentId}/downloadUrl:
+    get:
+      tags:
+      - Workflow
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateWorkflowAttachmentDownloadUrl
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: attachmentId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentDownloadUrlInfo'
+  /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/children:
+    post:
+      tags:
+      - Workflow
+      description: "\n\nExecutes a Workflow Initiator action on the active Step of an existing Workflow, thereby creating a new child Workflow, and places the child on its Init Step. Information about Form Field values and Step Actions may optionally be specified in order to update or take action on the Init Step of the child Workflow.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User in \"Workflow Managers\" role of WF, or User with \"Manage Workflows\" on any objects associated with the workflow.\r\n\r\n**SDK API:**  `envianceSdk.workflows.initiateChildWorkflow(workflowIdOrUniqueId, childWorkflowInitiationInfo, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.workflows.initiateChildWorkflow\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  {\r\n    \"parentStepIdOrName\": \"Step1\",\r\n    \"initiatorIdOrName\": \"fc621b5a-739f-4cb7-9635-cb9d17f4cef6\",\r\n    \"childWorkflowInfo\": {\r\n      \"dueDate\": \"2012-09-19T18:00:00\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"name\": \"test\",\r\n      \"uniqueId\": \"1347398349600\",\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ]\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.initiateChildWorkflow21\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  {\r\n    \"parentStepIdOrName\": \"Step1\",\r\n    \"initiatorIdOrName\": \"fc621b5a-739f-4cb7-9635-cb9d17f4cef6\",\r\n    \"childWorkflowInfo\": {\r\n      \"dueDate\": \"2012-09-19T18:00:00\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"name\": \"test\",\r\n      \"uniqueId\": \"1347398349600\",\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n        },\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n          \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.initiateChildWorkflow21Ext\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n    \"childWorkflowInitiationInfo\": {\r\n      \"parentStepIdOrName\": \"Step1\",\r\n      \"initiatorIdOrName\": \"fc621b5a-739f-4cb7-9635-cb9d17f4cef6\",\r\n      \"childWorkflowInfo\": {\r\n        \"dueDate\": \"2012-09-19T18:00:00\",\r\n        \"parentWorkflowSourceCustomField\": {\r\n          \"id\": null,\r\n          \"name\": \"UDF name\"\r\n        },\r\n        \"name\": \"test\",\r\n        \"uniqueId\": \"1347398349600\",\r\n        \"objects\": [\r\n          \"/Generation - 1/NE TV\"\r\n        ],\r\n        \"documents\": [\r\n          {\r\n            \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n          },\r\n          {\r\n            \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n            \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n          }\r\n        ]\r\n      }\r\n    },\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE48F\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.initiateChildWorkflowExt\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n    \"childWorkflowInitiationInfo\": {\r\n      \"parentStepIdOrName\": \"Step1\",\r\n      \"initiatorIdOrName\": \"fc621b5a-739f-4cb7-9635-cb9d17f4cef6\",\r\n      \"childWorkflowInfo\": {\r\n        \"dueDate\": \"2012-09-19T18:00:00\",\r\n        \"parentWorkflowSourceCustomField\": {\r\n          \"id\": null,\r\n          \"name\": \"UDF name\"\r\n        },\r\n        \"name\": \"test\",\r\n        \"uniqueId\": \"1347398349600\",\r\n        \"objects\": [\r\n          \"/Generation - 1/NE TV\"\r\n        ]\r\n      }\r\n    },\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59E\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.InitiateChildWorkflow
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: InitiateChildWorkflowWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/InitiateChildWorkflow'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/steps/{stepIdOrName}:
+    get:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.getWorkflowStep\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"Step1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowStepBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowIdOrUniqueId\": \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n      \"stepIdsOrNames\": [\r\n        \"WFStep1\"\r\n      ]\r\n    },\r\n    {\r\n      \"workflowIdOrUniqueId\": \"2017.03.23.11.2F39C8EC9325\",\r\n      \"stepIdsOrNames\": [\r\n        \"337989bf-832e-4e1f-8034-3b4327d52542\"\r\n      ]\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowStep
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: stepIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+    patch:
+      tags:
+      - Workflow
+      description: "\n\nUpdates one or more values in the Form Fields of an existing Workflow Step. Any Form Fields *not* specified are left un-modified. A Step Action to invoke may also be specified, which will move (transition) the Workflow from the current Step to the destination Step of the Step Action.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User in \"Workflow Managers\" role of WF, or User with \"Manage Workflows\" on any objects associated with the workflow.\r\n\r\n**SDK API:** `envianceSdk.workflows.updateWorkflowStep(workflowIdOrUniqueId, stepIdOrName, stepInfo, onsuccess, onerror)`\r\n\r\n```\r\n<div class=\"code\">\r\n<pre>\r\nPATCH /ver2/WorkflowService.svc/workflows/7ef9655e-916b-414f-8c88-5753fa731558 HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n \r\n{\r\n  \"workflowInfo\": {\r\n    \"dueDate\": \"2012-09-19T18:00:00\",\r\n    \"name\": \"test\",\r\n    \"objects\": [\"/Generation - 1/NE TV\"],\r\n    \"documents\": [\"/Folder/Folder/Doc.txt\"]\r\n  }\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.workflows.updateWorkflowStep\r\n```\r\n[\r\n  \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n  \"Oleg FT Step1\",\r\n  {\r\n    \"comment\": \"my comment\",\r\n    \"transition\": {\r\n      \"dueDate\": \"2013-02-15T00:00:00\",\r\n      \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n      \"assignTo\": [\r\n        {\r\n          \"userIdOrName\": \"oleg\"\r\n        },\r\n        {\r\n          \"userIdOrName\": \"vitek\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"BL Group\"\r\n        }\r\n      ]\r\n    },\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Oleg FT 1 = dt date\",\r\n        \"values\": [\r\n          \"2013-02-01T00:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Oleg FT 1 = url\",\r\n        \"urlItems\": [\r\n          {\r\n            \"label\": \"may label\",\r\n            \"url\": \"http://mail.ru\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = num ddl linked 2\",\r\n        \"values\": [\r\n          \"100\",\r\n          \"100\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = text multi\",\r\n        \"values\": [\r\n          \"val1\",\r\n          \"val3\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflowStepExt\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n    \"stepIdOrName\": \"Oleg FT Step1\",\r\n    \"stepInfo\": {\r\n      \"comment\": \"my comment\",\r\n      \"transition\": {\r\n        \"dueDate\": \"2013-02-15T00:00:00\",\r\n        \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n        \"assignTo\": [\r\n          {\r\n            \"userIdOrName\": \"oleg\"\r\n          },\r\n          {\r\n            \"userIdOrName\": \"vitek\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"Administrators\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"BL Group\"\r\n          }\r\n        ]\r\n      },\r\n      \"fields\": [\r\n        {\r\n          \"name\": \"Oleg FT 1 = dt date\",\r\n          \"values\": [\r\n            \"2013-02-01T00:00:00\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"Oleg FT 1 = url\",\r\n          \"urlItems\": [\r\n            {\r\n              \"label\": \"may label\",\r\n              \"url\": \"http://mail.ru\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"oleg FT 1 = num ddl linked 2\",\r\n          \"values\": [\r\n            \"100\",\r\n            \"100\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"oleg FT 1 = text multi\",\r\n          \"values\": [\r\n            \"val1\",\r\n            \"val3\"\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59E\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflowStep
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: stepIdOrName
+        in: path
+        required: true
+        type: string
+      - name: UpdateWorkflowStepWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateWorkflowStep'
+      responses:
+        default:
+          description: not available
+  /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/steps/{stepIdOrName}/users/{userId}:
+    get:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.resolvePermissions\r\n```\r\n[\r\n  \"\\u003CworkflowIdOrUniqueId\\u003E\",\r\n  \"\\u003CstepIdOrName\\u003E\",\r\n  \"\\u003CuserId\\u003E\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.ResolvePermissions
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: stepIdOrName
+        in: path
+        required: true
+        type: string
+      - name: userId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepPermissionsInfo'
+  /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/steps/currentstep:
+    get:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.getWorkflowCurrentStep\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowCurrentStepBulk\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n    \"2017.03.23.11.2F39C8EC9325\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowCurrentStep
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+    patch:
+      tags:
+      - Workflow
+      description: "\n\nUpdates one or more values in the Form Fields of current Workflow Step. Any Form Fields *not* specified are left un-modified. A Step Action to invoke may also be specified, which will move (transition) the Workflow from the current Step to the destination Step of the Step Action. Using step transitions workflow instance can be ended or reopened. See SDK shortcut methods endWorkflow and reopenWorkflow.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User in \"Workflow Managers\" role of WF, or User with \"Manage Workflows\" on any objects associated with the workflow.\r\n\r\n**SDK API:**  `envianceSdk.workflows.updateWorkflowCurrentStep (workflowIdOrUniqueId, stepInfo, onsuccess, onerror)`\r\n\r\n**SDK API shortcut for end workflow:** `envianceSdk.workflows.endWorkflow (workflowIdOrUniqueId, comment, onsuccess, onerror)`\r\n\r\n**SDK API shortcut for reopen:** `envianceSdk.workflows.reopenWorkflow (workflowIdOrUniqueId, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.workflows.updateWorkflowCurrentStep\r\n```\r\n[\r\n  \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n  {\r\n    \"comment\": \"my comment\",\r\n    \"transition\": {\r\n      \"dueDate\": \"2013-02-15T00:00:00\",\r\n      \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n      \"assignTo\": [\r\n        {\r\n          \"userIdOrName\": \"oleg\"\r\n        },\r\n        {\r\n          \"userIdOrName\": \"vitek\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"BL Group\"\r\n        }\r\n      ]\r\n    },\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Oleg FT 1 = dt date\",\r\n        \"values\": [\r\n          \"2013-02-01T00:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Oleg FT 1 = url\",\r\n        \"urlItems\": [\r\n          {\r\n            \"label\": \"may label\",\r\n            \"url\": \"http://mail.ru\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = num ddl linked 2\",\r\n        \"values\": [\r\n          \"100\",\r\n          \"100\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = text multi\",\r\n        \"values\": [\r\n          \"val1\",\r\n          \"val3\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflowCurrentStepExt\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"a4f13c99-5c2c-46dc-bbff-4aea388ef3ca\",\r\n    \"stepInfo\": {\r\n      \"comment\": \"my comment\",\r\n      \"transition\": {\r\n        \"stepActionName\": \"go to step 2\",\r\n        \"assignTo\": [\r\n          {\r\n            \"userIdOrName\": \"oleg\"\r\n          },\r\n          {\r\n            \"userIdOrName\": \"vitek\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"Administrators\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"BL Group\"\r\n          }\r\n        ]\r\n      },\r\n      \"fields\": [\r\n        {\r\n          \"name\": \"Date\",\r\n          \"values\": [\r\n            \"2013-02-01T00:00:00\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"CitationHyperlink\",\r\n          \"urlItems\": [\r\n            {\r\n              \"label\": \"may label\",\r\n              \"url\": \"http://test.com\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"NumberDDL linked\",\r\n          \"values\": [\r\n            \"1.23456E-05\",\r\n            \"1.23456E-05\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"Text(MSLB)\",\r\n          \"values\": [\r\n            \"test1\",\r\n            \"test2\"\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    \"clientRequestId\": \"19AA5290-15F2-451B-9EF3-4494F66FE59F\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflowCurrentStep
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowIdOrUniqueId
+        in: path
+        required: true
+        type: string
+      - name: UpdateWorkflowCurrentStepWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateWorkflowCurrentStep'
+      responses:
+        default:
+          description: not available
+  /ver2/WorkflowService.svc/workflows/bulk:
+    post:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.createWorkflows\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        \"Folder1Document1.txt\",\r\n        \"Folder1Document2.txt\"\r\n      ]\r\n    },\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 2\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-2\",\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        \"Folder1Document1.txt\",\r\n        \"Folder1Document2.txt\"\r\n      ]\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflows21\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n        },\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n          \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 2\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-2\",\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n      ],\r\n      \"documents\": [\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document1.txt\"\r\n        },\r\n        {\r\n          \"documentIdOrPath\": \"Folder1Document2.txt\",\r\n          \"customFieldIdOrName\": \"udf-textbox-numeric\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflows
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateWorkflowsWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateWorkflows'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.Workflow.Business.Engine.ExecutionContext.WorkflowExecutionResult'
+    patch:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.updateWorkflowStep\r\n```\r\n[\r\n  \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n  \"Oleg FT Step1\",\r\n  {\r\n    \"comment\": \"my comment\",\r\n    \"transition\": {\r\n      \"dueDate\": \"2013-02-15T00:00:00\",\r\n      \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n      \"assignTo\": [\r\n        {\r\n          \"userIdOrName\": \"oleg\"\r\n        },\r\n        {\r\n          \"userIdOrName\": \"vitek\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"BL Group\"\r\n        }\r\n      ]\r\n    },\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Oleg FT 1 = dt date\",\r\n        \"values\": [\r\n          \"2013-02-01T00:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Oleg FT 1 = url\",\r\n        \"urlItems\": [\r\n          {\r\n            \"label\": \"may label\",\r\n            \"url\": \"http://mail.ru\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = num ddl linked 2\",\r\n        \"values\": [\r\n          \"100\",\r\n          \"100\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"oleg FT 1 = text multi\",\r\n        \"values\": [\r\n          \"val1\",\r\n          \"val3\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflowStepExt\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n    \"stepIdOrName\": \"Oleg FT Step1\",\r\n    \"stepInfo\": {\r\n      \"comment\": \"my comment\",\r\n      \"transition\": {\r\n        \"dueDate\": \"2013-02-15T00:00:00\",\r\n        \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n        \"assignTo\": [\r\n          {\r\n            \"userIdOrName\": \"oleg\"\r\n          },\r\n          {\r\n            \"userIdOrName\": \"vitek\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"Administrators\"\r\n          },\r\n          {\r\n            \"groupIdOrName\": \"BL Group\"\r\n          }\r\n        ]\r\n      },\r\n      \"fields\": [\r\n        {\r\n          \"name\": \"Oleg FT 1 = dt date\",\r\n          \"values\": [\r\n            \"2013-02-01T00:00:00\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"Oleg FT 1 = url\",\r\n          \"urlItems\": [\r\n            {\r\n              \"label\": \"may label\",\r\n              \"url\": \"http://mail.ru\"\r\n            }\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"oleg FT 1 = num ddl linked 2\",\r\n          \"values\": [\r\n            \"100\",\r\n            \"100\"\r\n          ]\r\n        },\r\n        {\r\n          \"name\": \"oleg FT 1 = text multi\",\r\n          \"values\": [\r\n            \"val1\",\r\n            \"val3\"\r\n          ]\r\n        }\r\n      ]\r\n    },\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59E\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.updateWorkflows\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowIdOrUniqueId\": \"2022.01.24.02.37D8CC867814\",\r\n      \"dueDate\": \"2021-01-24T04:00:00\",\r\n      \"name\": \"ryWIbulk-1-rename\",\r\n      \"assignedTo\": [\r\n        {\r\n          \"userIdOrName\": \"yuromanova\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"TESTGroup\"\r\n        }\r\n      ],\r\n      \"objects\": [\r\n        \"/-- div\"\r\n      ],\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"comment\": \"commentstest\",\r\n      \"documents\": [\r\n        \"/RY Folder WF/RY Folder 2/eql.txt\"\r\n      ],\r\n      \"step\": {\r\n        \"fields\": [\r\n          {\r\n            \"name\": \"GX2BooleanCB\",\r\n            \"values\": [\r\n              \"true\"\r\n            ]\r\n          },\r\n          {\r\n            \"name\": \"GX2NumberTextBox\",\r\n            \"values\": [\r\n              \"0\"\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    },\r\n    {\r\n      \"workflowIdOrUniqueId\": \"2022.01.24.02.37D8CC867815\",\r\n      \"dueDate\": \"2021-01-24T04:00:00\",\r\n      \"name\": \"ryWIbulk-2-rename\",\r\n      \"assignedTo\": [\r\n        {\r\n          \"userIdOrName\": \"yuromanova\"\r\n        }\r\n      ],\r\n      \"objects\": [\r\n        \"/-- div\"\r\n      ],\r\n      \"step\": {\r\n        \"fields\": [\r\n          {\r\n            \"name\": \"GX2BooleanCB\",\r\n            \"values\": [\r\n              \"true\"\r\n            ]\r\n          }\r\n        ]\r\n      }\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflows
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: UpdateWorkflowsWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateWorkflows'
+      responses:
+        default:
+          description: not available
+    delete:
+      tags:
+      - Workflow
+      description: "\n\n\nenvianceSdk.workflows.deleteWorkflows\r\n```\r\n[\r\n  [\r\n    \"wfid1\",\r\n    \"wfid2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflows
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: DeleteWorkflowsWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DeleteWorkflows'
+      responses:
+        default:
+          description: not available
+  /ver2/WorkflowService.svc/workflows/bulkold:
+    post:
+      tags:
+      - Workflow
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflowsOld
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateWorkflowsOldWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateWorkflowsOld'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.Workflow.Business.Engine.ExecutionContext.WorkflowExecutionResult'
+  /ver2/WorkflowService.svc/workflows/getuploadexcelresult/{commandLogId}:
+    get:
+      tags:
+      - Workflow
+      summary: Get excel file (base64)
+      description: 'Get excel file (base64)
+
+
+        '
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetUploadExcelWorkflowResult
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: commandLogId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.Workflow.Business.Engine.UploadExcel2Result'
+  /ver2/WorkflowService.svc/workflows/steps:
+    post:
+      tags:
+      - Workflow
+      description: "\n\nGets information about specified Steps of the specified Workflow Steps.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User in \"Workflow Managers\" role of WF, or User with \"Manage Workflows\" on any objects associated with the workflow.\r\n\r\n**SDK API:**  `envianceSdk.workflows.GetWorkflowStepBulk(workflowStepMaps, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.workflows.getWorkflowStepBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowIdOrUniqueId\": \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n      \"stepIdsOrNames\": [\r\n        \"WFStep1\"\r\n      ]\r\n    },\r\n    {\r\n      \"workflowIdOrUniqueId\": \"2017.03.23.11.2F39C8EC9325\",\r\n      \"stepIdsOrNames\": [\r\n        \"337989bf-832e-4e1f-8034-3b4327d52542\"\r\n      ]\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowStepBulk
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: GetWorkflowStepBulkWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GetWorkflowStepBulk'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+  /ver2/WorkflowService.svc/workflows/steps/currentsteps:
+    post:
+      tags:
+      - Workflow
+      description: "\n\nGets information about Current Steps of the specified Workflow Steps.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User in \"Workflow Managers\" role of WF, or User with \"Manage Workflows\" on any objects associated with the workflow.\r\n\r\n**SDK API:**  `envianceSdk.workflows.getWorkflowCurrentStepBulk(workflowIdsOrUniqueIds, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.workflows.getWorkflowCurrentStepBulk\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n    \"2017.03.23.11.2F39C8EC9325\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowCurrentStepBulk
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: GetWorkflowCurrentStepBulkWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GetWorkflowCurrentStepBulk'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+  /ver2/WorkflowService.svc/workflows/uploadexcel2commands:
+    post:
+      tags:
+      - Workflow
+      summary: Upload excel file (base64)
+      description: 'Upload excel file (base64)
+
+
+        '
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UploadExcel2Workflow
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: UploadExcel2WorkflowWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UploadExcel2Workflow'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/WorkflowService.svc/workflowtypes/{workflowTypeIdOrName}/guessPermissions:
+    post:
+      tags:
+      - Workflow
+      description: "\n\nFor a given Workflow Type and optional set of compliance objects, this method returns the permissions for all Roles and their  resolved members (users and groups), taking into account Role Overrides. (\"What are the users and user groups and what are their permissions in a workflow of this type?\")\r\n\r\n**Security:** Requires Manage Enviance Apps system right.\r\n\r\n**SDK API:**  `envianceSdk.workflows.guessPermissions (workflowTypeIdOrName, options, onsuccess, onerror) `\r\nnull\n\n\n[\"<workflowTypeIdOrName>\", {     \"objects\": [\"<objectIdOrPath1>\", \"<objectIdOrPath2>\", ...]     ,\"version\":<versionNumber>    ,\"stepIdOrName\":\"Some Step Name\"},\"onsuccess\",\"onerror\"][\"<workflowTypeIdOrName>\",\"<userId>\", {     \"objects\": [\"<objectIdOrPath1>\", \"<objectIdOrPath2>\", ...]     ,\"version\":<versionNumber>    ,\"stepIdOrName\":\"Some Step Name\"},\"onsuccess\",\"onerror\"]\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GuessPermissions
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowTypeIdOrName
+        in: path
+        required: true
+        type: string
+      - name: GuessPermissionsWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GuessPermissions'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepPermissionsInfo'
+  /ver2/WorkflowService.svc/workflowtypes/{workflowTypeIdOrName}/uniqueIds:
+    get:
+      tags:
+      - Workflow
+      description: "\n\nGenerate UniqueIDs for specific workflow type.\r\n\r\n**SDK API:**  `envianceSdk.workflows.generateUniqueIds(workflowTypeIdOrName, count, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.workflows.generateUniqueIds\r\n```\r\n[\r\n  \"Workflow Type Name\",\r\n  10,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateUniqueIDs
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowTypeIdOrName
+        in: path
+        required: true
+        type: string
+      - name: count
+        in: query
+        required: true
+        type: integer
+        format: int32
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              type: string
+  /ver2/WorkflowService.svc/workflowtypes/{workflowTypeIdOrName}/users/{userId}/guessPermissions:
+    post:
+      tags:
+      - Workflow
+      description: "\n\nFor a given Workflow Type and user and optional set of compliance objects, this method returns the permissions for the specified user(s), taking into account all Roles with which the users would be associated.\r\n\r\n**Security:** Requires Manage Enviance Apps system right.\r\n\r\n**SDK API:**  `envianceSdk.workflows.guessPermissionsByUser(workflowTypeIdOrName, userId, options, onsuccess, onerror)`\r\nnull\n\n\n[\"<workflowTypeIdOrName>\",\"<userId>\", {     \"objects\": [\"<objectIdOrPath1>\", \"<objectIdOrPath2>\", ...]     ,\"version\":<versionNumber>    ,\"stepIdOrName\":\"Some Step Name\"},\"onsuccess\",\"onerror\"]\n"
+      operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GuessPermissionsByUser
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: workflowTypeIdOrName
+        in: path
+        required: true
+        type: string
+      - name: userId
+        in: path
+        required: true
+        type: string
+      - name: GuessPermissionsByUserWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GuessPermissionsByUser'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepPermissionsInfo'
+definitions:
+  Enviance.Business.Udf.Rest.UrlItem:
+    properties:
+      label:
+        type: string
+        uniqueItems: false
+      url:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.Udf.Rest.UrlItem
+  UpdateWorkflowCurrentStep:
+    properties:
+      stepInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+    type: object
+    format: UpdateWorkflowCurrentStep
+  UpdateWorkflow:
+    properties:
+      workflowInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
+    type: object
+    format: UpdateWorkflow
+  GuessPermissions:
+    properties:
+      options:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions'
+    type: object
+    format: GuessPermissions
+  Enviance.RestServices.Ver2.Workflows.WorkflowWithStepUpdateInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      uniqueId:
+        type: string
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      workflowTypeName:
+        type: string
+        uniqueItems: false
+      parentUniqueId:
+        type: string
+        format: guid
+        uniqueItems: false
+      parentWorkflowSourceCustomField:
+        $ref: '#/definitions/Enviance.RestServices.Common.CustomFieldInfo'
+      dueDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      status:
+        type: string
+        uniqueItems: false
+      creator:
+        type: string
+        uniqueItems: false
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+      lastRun:
+        type: string
+        format: date-time
+        uniqueItems: false
+      assignedBy:
+        type: string
+        uniqueItems: false
+      assignedTo:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.AssigneeV2'
+        uniqueItems: false
+      objects:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      documents:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      calendars:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      comment:
+        type: string
+        uniqueItems: false
+      closeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      jsonData:
+        type: object
+      workflowIdOrUniqueId:
+        type: string
+        uniqueItems: false
+      step:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowWithStepUpdateInfo
+  Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentUploadUrlInfo:
+    properties:
+      uploadUrl:
+        type: string
+        uniqueItems: false
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+      ownerId:
+        type: string
+        format: guid
+        uniqueItems: false
+      workflowInstanceId:
+        type: string
+        format: guid
+        uniqueItems: false
+      provider:
+        type: string
+        uniqueItems: false
+      fileSize:
+        type: integer
+        format: int32
+        uniqueItems: false
+      mimeType:
+        type: string
+        uniqueItems: false
+      extension:
+        type: string
+        uniqueItems: false
+      label:
+        type: string
+        uniqueItems: false
+      workflowDefinitionID:
+        type: string
+        format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentUploadUrlInfo
+  Enviance.RestServices.Ver2.Workflows.Transition:
+    properties:
+      stepActionName:
+        type: string
+        uniqueItems: false
+      assignTo:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.AssigneeV2'
+        uniqueItems: false
+      dueDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      closeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.Transition
+  Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo:
+    properties:
+      statusChangeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      objectIdOrPath:
+        type: string
+        uniqueItems: false
+      dismissed:
+        type: boolean
+        uniqueItems: false
+      percentComplete:
+        type: string
+        format: byte
+        uniqueItems: false
+      hoursToComplete:
+        type: number
+        format: double
+        uniqueItems: false
+      costToComplete:
+        type: number
+        format: decimal
+        uniqueItems: false
+      comment:
+        type: string
+        uniqueItems: false
+      eventInstanceId:
+        type: string
+        format: guid
+        uniqueItems: false
+      compliancePeriodStartDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      compliancePeriodEndDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      comply:
+        type: string
+        uniqueItems: false
+      ObjectId:
+        type: string
+        format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo
+  Enviance.Workflow.Business.Engine.ExcelFileInfo:
+    properties:
+      fileName:
+        type: string
+        uniqueItems: false
+      mimeType:
+        type: string
+        uniqueItems: false
+      contentBase64:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.Workflow.Business.Engine.ExcelFileInfo
+  UploadExcel2Workflow:
+    properties:
+      fileInfo:
+        $ref: '#/definitions/Enviance.Workflow.Business.Engine.ExcelFileInfo'
+      requireAllColumns:
+        type: boolean
+        uniqueItems: false
+      wfType:
+        type: string
+        uniqueItems: false
+    type: object
+    format: UploadExcel2Workflow
+  Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentDownloadUrlInfo:
+    properties:
+      downloadUrl:
+        type: string
+        uniqueItems: false
+      provider:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentDownloadUrlInfo
+  Enviance.RestServices.Ver2.Workflows.WorkflowCreateAttachmentInfo:
+    properties:
+      fileSize:
+        type: integer
+        format: int32
+        uniqueItems: false
+      mimeType:
+        type: string
+        uniqueItems: false
+      extension:
+        type: string
+        uniqueItems: false
+      label:
+        type: string
+        uniqueItems: false
+      workflowDefinitionID:
+        type: string
+        format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowCreateAttachmentInfo
+  Enviance.RestServices.Ver2.Workflows.WorkflowWithStepInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      uniqueId:
+        type: string
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      workflowTypeName:
+        type: string
+        uniqueItems: false
+      parentUniqueId:
+        type: string
+        format: guid
+        uniqueItems: false
+      parentWorkflowSourceCustomField:
+        $ref: '#/definitions/Enviance.RestServices.Common.CustomFieldInfo'
+      dueDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      status:
+        type: string
+        uniqueItems: false
+      creator:
+        type: string
+        uniqueItems: false
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+      lastRun:
+        type: string
+        format: date-time
+        uniqueItems: false
+      assignedBy:
+        type: string
+        uniqueItems: false
+      assignedTo:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.AssigneeV2'
+        uniqueItems: false
+      objects:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      documents:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      calendars:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      comment:
+        type: string
+        uniqueItems: false
+      closeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      jsonData:
+        type: object
+      step:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowWithStepInfo
+  InitiateChildWorkflow:
+    properties:
+      childWorkflowInitiationInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.ChildWorkflowInitiationInfo'
+    type: object
+    format: InitiateChildWorkflow
+  Enviance.RestServices.Common.CustomFieldInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.CustomFieldInfo
+  DeleteWorkflows:
+    properties:
+      workflowIdOrUniqueIds:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: DeleteWorkflows
+  Enviance.RestServices.Ver2.Workflows.WorkflowInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      uniqueId:
+        type: string
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      workflowTypeName:
+        type: string
+        uniqueItems: false
+      parentUniqueId:
+        type: string
+        format: guid
+        uniqueItems: false
+      parentWorkflowSourceCustomField:
+        $ref: '#/definitions/Enviance.RestServices.Common.CustomFieldInfo'
+      dueDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      status:
+        type: string
+        uniqueItems: false
+      creator:
+        type: string
+        uniqueItems: false
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+      lastRun:
+        type: string
+        format: date-time
+        uniqueItems: false
+      assignedBy:
+        type: string
+        uniqueItems: false
+      assignedTo:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.AssigneeV2'
+        uniqueItems: false
+      objects:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      documents:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      calendars:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      comment:
+        type: string
+        uniqueItems: false
+      closeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      jsonData:
+        type: object
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowInfo
+  Enviance.RestServices.Ver2.Workflows.ChildWorkflowInitiationInfo:
+    properties:
+      parentStepIdOrName:
+        type: string
+        uniqueItems: false
+      initiatorIdOrName:
+        type: string
+        uniqueItems: false
+      childWorkflowInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
+      childInitStepInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.ChildWorkflowInitiationInfo
+  GenerateWorkflowAttachmentUploadUrl:
+    properties:
+      attachmentInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowCreateAttachmentInfo'
+    type: object
+    format: GenerateWorkflowAttachmentUploadUrl
+  Enviance.RestServices.Common.AssigneeV2:
+    properties:
+      userIdOrName:
+        type: string
+        uniqueItems: false
+      groupIdOrName:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.AssigneeV2
+  Enviance.RestServices.Common.SimpleIdName:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.SimpleIdName
+  Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+      ownerId:
+        type: string
+        format: guid
+        uniqueItems: false
+      workflowInstanceId:
+        type: string
+        format: guid
+        uniqueItems: false
+      provider:
+        type: string
+        uniqueItems: false
+      fileSize:
+        type: integer
+        format: int32
+        uniqueItems: false
+      mimeType:
+        type: string
+        uniqueItems: false
+      extension:
+        type: string
+        uniqueItems: false
+      label:
+        type: string
+        uniqueItems: false
+      workflowDefinitionID:
+        type: string
+        format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentInfo
+  UpdateWorkflowStep:
+    properties:
+      stepInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+    type: object
+    format: UpdateWorkflowStep
+  UpdateWorkflows:
+    properties:
+      workflowUpdateInfos:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowWithStepUpdateInfo'
+        uniqueItems: false
+    type: object
+    format: UpdateWorkflows
+  Enviance.RestServices.Ver2.Workflows.WorkflowStepMap:
+    properties:
+      workflowIdOrUniqueId:
+        type: string
+        uniqueItems: false
+      stepIdsOrNames:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowStepMap
+  GuessPermissionsByUser:
+    properties:
+      options:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions'
+    type: object
+    format: GuessPermissionsByUser
+  CreateWorkflowsOld:
+    properties:
+      workflowInfos:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
+        uniqueItems: false
+    type: object
+    format: CreateWorkflowsOld
+  Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      comment:
+        type: string
+        uniqueItems: false
+      fields:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Udfs.Property'
+        uniqueItems: false
+      transition:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.Transition'
+      taskCompletion:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo
+  CreateWorkflows:
+    properties:
+      workflowInfos:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowWithStepInfo'
+        uniqueItems: false
+    type: object
+    format: CreateWorkflows
+  Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions:
+    properties:
+      version:
+        type: integer
+        format: int32
+        uniqueItems: false
+      objects:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      username:
+        type: string
+        uniqueItems: false
+      groupname:
+        type: string
+        uniqueItems: false
+      stepIdOrName:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions
+  Enviance.RestServices.Ver2.Workflows.WorkflowStepPermissionsInfo:
+    properties:
+      readWriteFields:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.SimpleIdName'
+        uniqueItems: false
+      readOnlyFields:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.SimpleIdName'
+        uniqueItems: false
+      stepActions:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      stepInitiators:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.SimpleIdName'
+        uniqueItems: false
+      workflowActions:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      assignedRole:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowRoleInfo'
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowStepPermissionsInfo
+  Enviance.RestServices.Ver2.Workflows.WorkflowRoleInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      groups:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.UserGroup'
+        uniqueItems: false
+      PermissionMask:
+        type: integer
+        format: int32
+        uniqueItems: false
+      VersionRoleID:
+        type: string
+        format: guid
+        uniqueItems: false
+      users:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.SimpleUserDto'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.WorkflowRoleInfo
+  Enviance.Workflow.Business.Engine.ExecutionContext.WorkflowExecutionResult:
+    type: object
+    format: Enviance.Workflow.Business.Engine.ExecutionContext.WorkflowExecutionResult
+  Enviance.RestServices.Udfs.Property:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      urlItems:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.Business.Udf.Rest.UrlItem'
+        uniqueItems: false
+      values:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      caption:
+        type: string
+        uniqueItems: false
+      captionLocalized:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Udfs.Property
+  Enviance.Workflow.Business.Engine.UploadExcel2Result:
+    properties:
+      containsError:
+        type: boolean
+        uniqueItems: false
+      fileInfo:
+        $ref: '#/definitions/Enviance.Workflow.Business.Engine.ExcelFileInfo'
+    type: object
+    format: Enviance.Workflow.Business.Engine.UploadExcel2Result
+  CreateWorkflow:
+    properties:
+      workflowInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
+      initStepInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+    type: object
+    format: CreateWorkflow
+  Enviance.RestServices.Common.SimpleUserDto:
+    properties:
+      firstName:
+        type: string
+        uniqueItems: false
+      lastName:
+        type: string
+        uniqueItems: false
+      isDeleted:
+        type: boolean
+        uniqueItems: false
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.SimpleUserDto
+  GetWorkflowCurrentStepBulk:
+    properties:
+      workflowIdsOrUniqueIds:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: GetWorkflowCurrentStepBulk
+  Enviance.RestServices.Ver2.Workflows.UserGroup:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      users:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.SimpleUserDto'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Workflows.UserGroup
+  GetWorkflowStepBulk:
+    properties:
+      workflowStepMaps:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Workflows.WorkflowStepMap'
+        uniqueItems: false
+    type: object
+    format: GetWorkflowStepBulk
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

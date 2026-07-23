@@ -1,0 +1,346 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Activity
+paths:
+  /ver2/ActivityService.svc/activities:
+    post:
+      tags:
+      - Activity
+      summary: Create Activity
+      description: "Create an Activity\n\n\nenvianceSdk.activities.createActivity\r\n```\r\n[\r\n  {\r\n    \"name\": \"Activity Name\",\r\n    \"description\": \"Activity Description\",\r\n    \"templateIdOrName\": \"Template Name\",\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      }\r\n    ],\r\n    \"properties\": [\r\n      {\r\n        \"propertyIdOrName\": \"suv property name\"\r\n      },\r\n      {\r\n        \"propertyIdOrName\": \"avbp propertie name\",\r\n        \"valueHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"endDate\": \"2012-02-19T20:00:00\",\r\n            \"value\": \"1\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2012-02-19T20:00:00\",\r\n            \"endDate\": \"2012-03-19T20:00:00\",\r\n            \"value\": \"2\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.CreateActivity
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateActivityWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateActivity'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/ActivityService.svc/activities/{activityIdOrName}:
+    get:
+      tags:
+      - Activity
+      description: "\n\n\nenvianceSdk.activities.getActivity\r\n```\r\n[\r\n  \"Activity Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.GetActivity
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: activityIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo'
+    put:
+      tags:
+      - Activity
+      description: "\n\n\nenvianceSdk.activities.updateActivity\r\n```\r\n[\r\n  \"Activity Name\",\r\n  {\r\n    \"name\": \"Activity Name\",\r\n    \"description\": \"Activity Description\",\r\n    \"templateIdOrName\": \"Template Name\",\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      }\r\n    ],\r\n    \"properties\": [\r\n      {\r\n        \"propertyIdOrName\": \"suv property name\"\r\n      },\r\n      {\r\n        \"propertyIdOrName\": \"avbp propertie name\",\r\n        \"valueHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"endDate\": \"2012-02-19T20:00:00\",\r\n            \"value\": \"1\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2012-02-19T20:00:00\",\r\n            \"endDate\": \"2012-03-19T20:00:00\",\r\n            \"value\": \"2\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.UpdateActivity
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: activityIdOrName
+        in: path
+        required: true
+        type: string
+      - name: UpdateActivityWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateActivity'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+    delete:
+      tags:
+      - Activity
+      description: "\n\n\nenvianceSdk.activities.deleteActivity\r\n```\r\n[\r\n  \"Activity Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.DeleteActivity
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: activityIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+definitions:
+  Enviance.Business.Udf.Rest.UrlItem:
+    properties:
+      label:
+        type: string
+        uniqueItems: false
+      url:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.Udf.Rest.UrlItem
+  Enviance.RestServices.Udfs.Property:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      urlItems:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.Business.Udf.Rest.UrlItem'
+        uniqueItems: false
+      values:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      caption:
+        type: string
+        uniqueItems: false
+      captionLocalized:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Udfs.Property
+  Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      templateIdOrName:
+        type: string
+        uniqueItems: false
+      fields:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Udfs.Property'
+        uniqueItems: false
+      properties:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityPropertyMapInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo
+  CreateActivity:
+    properties:
+      activityInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo'
+      copyFrom:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CreateActivity
+  Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityPropertyMapInfo:
+    properties:
+      propertyIdOrName:
+        type: string
+        uniqueItems: false
+      valueHistory:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Activities.MaterialValueHistoryInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityPropertyMapInfo
+  UpdateActivity:
+    properties:
+      activityInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo'
+    type: object
+    format: UpdateActivity
+  Enviance.RestServices.Ver2.MaterialActivity.Activities.MaterialValueHistoryInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      value:
+        type: number
+        format: double
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Activities.MaterialValueHistoryInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

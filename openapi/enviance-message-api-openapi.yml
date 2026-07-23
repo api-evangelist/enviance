@@ -1,0 +1,213 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Message API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Message
+paths:
+  /ver2/MessageService.svc/messages:
+    post:
+      tags:
+      - Message
+      description: "\n\nQueues a message for delivery to the Enviance Inbox for a specified recipient, as well as optionally to the recipient e-mail address.\r\n\r\n**Security:** All users\r\n\r\n**SDK API:**  `envianceSdk.messages.createMessage(messageInfo, onsuccess, onerror) `\r\n\r\n```\r\nPOST /ver2/MessageService.svc/messages/ HTTP/1.1\r\n \r\n{\r\n  \"messageInfo\": {\r\n    \"id\": \"d8ac14f5-c4b1-4db2-b0fc-15452f71737d\",\r\n    \"recipientId\": \"d2148a6f-4989-4a61-9c27-855a110f8c68\",\r\n    \"sentById\": \"21e1f9b6-fc7c-4257-85f1-01d097762d09\",\r\n    \"sentOn\": \"2013-06-14T14:07:52\",\r\n    \"subject\": \"Report Completion Notification: \\\"Emergency Checklist Report\\\"\",\r\n    \"body\": \"This is to notify you that the \\\"Emergency Checklist Report\\\" is complete.\",\r\n    \"type\": \"EmailNotification\",\r\n    \"archived\": false,\r\n    \"read\": false,\r\n    \"sendByEmail\": true\r\n  }\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.messages.createMessage\r\n```\r\n[\r\n  {\r\n    \"recipientIdOrUserName\": \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n    \"subject\": \"subject text\",\r\n    \"body\": \"body text\",\r\n    \"sendByEmail\": true\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Messages.Impl.MessageService.CreateMessage
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateMessageWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateMessage'
+      responses:
+        default:
+          description: not available
+  /ver2/MessageService.svc/messages/{messageId}:
+    get:
+      tags:
+      - Message
+      description: "\n\nGets a message from the Enviance User Inbox. A User may only retrieve messages from his own Inbox. Getting a message through this API does NOT mark the message as *read*.\r\n\r\n**SDK API:**  `envianceSdk.messages.getMessage(messageId, onsuccess, onerror)`\r\n\r\n```\r\nGET /ver2/MessageService.svc/messages/d8ac14f5-c4b1-4db2-b0fc-15452f71737d HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n  \"id\": \"d8ac14f5-c4b1-4db2-b0fc-15452f71737d\",\r\n  \"recipientId\": \"d2148a6f-4989-4a61-9c27-855a110f8c68\",\r\n  \"sentById\": \"21e1f9b6-fc7c-4257-85f1-01d097762d09\",\r\n  \"sentOn\": \"2013-06-14T14:07:52\",\r\n  \"subject\": \"Report Completion Notification: \\\"Emergency Checklist Report\\\"\",\r\n  \"body\": \"This is to notify you that the \\\"Emergency Checklist Report\\\" is complete.\",\r\n  \"type\": \"EmailNotification\",\r\n  \"archived\": false,\r\n  \"read\": false\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.messages.getMessage\r\n```\r\n[\r\n  \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Messages.Impl.MessageService.GetMessage
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: messageId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Messages.MessageInfo'
+    delete:
+      tags:
+      - Message
+      description: "\n\n\nenvianceSdk.messages.deleteMessage\r\n```\r\n[\r\n  \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Messages.Impl.MessageService.DeleteMessage
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: messageId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+definitions:
+  CreateMessage:
+    properties:
+      messageInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Messages.MessageInfo'
+    type: object
+    format: CreateMessage
+  Enviance.RestServices.Ver2.Messages.MessageInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      recipientIdOrUserName:
+        type: string
+        uniqueItems: false
+      sentByIdOrUserName:
+        type: string
+        uniqueItems: false
+      sentOn:
+        type: string
+        format: date-time
+        uniqueItems: false
+      subject:
+        type: string
+        uniqueItems: false
+      body:
+        type: string
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+      archived:
+        type: boolean
+        uniqueItems: false
+      read:
+        type: boolean
+        uniqueItems: false
+      sendByEmail:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Messages.MessageInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

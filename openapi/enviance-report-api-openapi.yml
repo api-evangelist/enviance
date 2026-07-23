@@ -1,0 +1,113 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Report API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Report
+paths:
+  /ver2/ReportService.svc/reports/executereportcommands:
+    post:
+      tags:
+      - Report
+      description: "\n\n\nenvianceSdk.reports.execute\r\n```\r\n[\r\n    {\r\n        \"format\": \"Html\",\r\n        \"from\": \"2012-02-01T00:00:00\",\r\n        \"parameters\": {\r\n            \"objects\": [\r\n                \"/Division X/Facility 1\",\r\n                \"52fbb610-0fa5-4873-9f2b-53cdb0bb00f2\"\r\n            ]\r\n        },\r\n        \"reportIdOrPath\": \"715C32AE-F2C7-45B9-B8A6-5D8D1A65D001\",\r\n        \"to\": \"2012-02-10T00:00:00\"\r\n    },\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Reports.Impl.ReportService.ExecuteReportCommand
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: ExecuteReportCommandWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/ExecuteReportCommand'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+definitions:
+  Enviance.RestServices.Ver2.Reports.ReportExecutionInfo:
+    properties:
+      reportIdOrPath:
+        type: string
+        uniqueItems: false
+      from:
+        type: string
+        format: date-time
+        uniqueItems: false
+      to:
+        type: string
+        format: date-time
+        uniqueItems: false
+      format:
+        type: string
+        uniqueItems: false
+      parameters:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Reports.ReportParameter'
+    type: object
+    format: Enviance.RestServices.Ver2.Reports.ReportExecutionInfo
+  ExecuteReportCommand:
+    properties:
+      reportExecutionInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Reports.ReportExecutionInfo'
+    type: object
+    format: ExecuteReportCommand
+  Enviance.RestServices.Ver2.Reports.ReportParameter:
+    properties:
+      objects:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      filterBy:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Reports.ReportParameter
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

@@ -1,0 +1,875 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Bulk API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Bulk
+paths:
+  /ver2/BulkService.svc/batches:
+    post:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.queryBatches\r\n```\r\n[\r\n  {\r\n    \"page\": 0,\r\n    \"pageSize\": 10,\r\n    \"withCount\": true,\r\n    \"onlyCurrentUser\": true\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.BatchesQuery
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: BatchesQueryWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/BatchesQuery'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.BatchesResultInfo'
+  /ver2/BulkService.svc/batchFileInfo/{id}:
+    get:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.batchFileInfo\r\n```\r\n[\r\n  \"1aa2f749-2084-4bcd-8df7-a7358d4500ba\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.BatchFileInfo
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.FileInfo'
+  /ver2/BulkService.svc/createBatch:
+    post:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.createBatch\r\n```\r\n[\r\n  {\r\n    \"fileId\": \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n    \"worksheets\": [\r\n      \"Edit Tag Associations\",\r\n      \"Edit Calcs\"\r\n    ],\r\n    \"sendEmailNotification\": false,\r\n    \"supressEmailService\": true\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.CreateBatch
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateBatchWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateBatch'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              type: string
+              format: guid
+  /ver2/BulkService.svc/events:
+    post:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.queryEvents\r\n```\r\n[\r\n    {\r\n        \"batchId\": \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n        \"page\": 0,\r\n        \"pageSize\": 10,\r\n        \"withCount\": true\r\n    },\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.EventsQuery
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: EventsQueryWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/EventsQuery'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.EventsResultInfo'
+  /ver2/BulkService.svc/fileInfo/{id}:
+    get:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.fileInfo\r\n```\r\n[\r\n  \"1aa2f749-2084-4bcd-8df7-a7358d4500ba\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.bulk.batchFileInfo\r\n```\r\n[\r\n  \"1aa2f749-2084-4bcd-8df7-a7358d4500ba\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.FileInfo
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.FileInfo'
+  /ver2/BulkService.svc/setCanceled:
+    post:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.setCanceled\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n    \"eccd2310-9b5f-440b-bf0d-91f9803d036b\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetCanceled
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: SetCanceledWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SetCanceled'
+      responses:
+        default:
+          description: not available
+  /ver2/BulkService.svc/setPaused:
+    post:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.setPaused\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n    \"eccd2310-9b5f-440b-bf0d-91f9803d036b\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetPaused
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: SetPausedWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SetPaused'
+      responses:
+        default:
+          description: not available
+  /ver2/BulkService.svc/setResumed:
+    post:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.setResumed\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetResumed
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: SetResumedWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SetResumed'
+      responses:
+        default:
+          description: not available
+  /ver2/BulkService.svc/statusInfo:
+    get:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.statusInfo\r\n```\r\n[\"onsuccess\",\"onerror\"]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.LoadStatusInfo
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.StatusInfo'
+  /ver2/BulkService.svc/upload:
+    post:
+      tags:
+      - Bulk
+      description: "\n\n\nenvianceSdk.bulk.uploadFileBinary\r\n```\r\n[\r\n  \"fileinput1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.UploadFile
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: UploadFileWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UploadFile'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.UploadResultInfo'
+definitions:
+  Enviance.RestServices.Ver2.Bulk.WorkSheetValidationError:
+    properties:
+      message:
+        type: string
+        uniqueItems: false
+      position:
+        type: string
+        uniqueItems: false
+      type:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - ColumnErrorMessage
+        - RowLimitErrorMessage
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.WorkSheetValidationError
+  Enviance.RestServices.Ver2.Bulk.WorksheetValidationInfo:
+    properties:
+      worksheetName:
+        type: string
+        uniqueItems: false
+      validationErrors:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.WorkSheetValidationError'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.WorksheetValidationInfo
+  Enviance.RestServices.Ver2.Bulk.BatchesQueryOptionInfo:
+    properties:
+      page:
+        type: integer
+        format: int32
+        uniqueItems: false
+      pageSize:
+        type: integer
+        format: int32
+        uniqueItems: false
+      onlyCurrentUser:
+        type: boolean
+        uniqueItems: false
+      withCount:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.BatchesQueryOptionInfo
+  Enviance.RestServices.Ver2.Bulk.CellInfo:
+    properties:
+      address:
+        type: string
+        uniqueItems: false
+      preview:
+        type: object
+      value:
+        type: object
+      error:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.CellInfo
+  SetCanceled:
+    properties:
+      batchToCancelIds:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: SetCanceled
+  Enviance.RestServices.Ver2.Bulk.EventsQueryOptionInfo:
+    properties:
+      page:
+        type: integer
+        format: int32
+        uniqueItems: false
+      pageSize:
+        type: integer
+        format: int32
+        uniqueItems: false
+      batchId:
+        type: string
+        format: guid
+        uniqueItems: false
+      withCount:
+        type: boolean
+        uniqueItems: false
+      extended:
+        type: boolean
+        uniqueItems: false
+      startFrom:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.EventsQueryOptionInfo
+  Enviance.RestServices.Ver2.Bulk.SheetInfo:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      cells:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.CellInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.SheetInfo
+  BatchesQuery:
+    properties:
+      batchesQueryOptionInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.BatchesQueryOptionInfo'
+    type: object
+    format: BatchesQuery
+  Enviance.RestServices.Ver2.Bulk.ExcelInfo:
+    properties:
+      sheets:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.SheetInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.ExcelInfo
+  Enviance.RestServices.Ver2.Bulk.ExecutedInfo:
+    properties:
+      executedOwner:
+        type: string
+        uniqueItems: false
+      executedDuration:
+        type: string
+        uniqueItems: false
+      executedRowsTotal:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.ExecutedInfo
+  Enviance.RestServices.Ver2.Bulk.UploadResultInfo:
+    properties:
+      fileId:
+        type: string
+        format: guid
+        uniqueItems: false
+      worksheets:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      sendEmailNotification:
+        type: boolean
+        uniqueItems: false
+      supressEmailService:
+        type: boolean
+        uniqueItems: false
+      worksheetValidation:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.WorksheetValidationInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.UploadResultInfo
+  Enviance.RestServices.Ver2.Bulk.EventsResultInfo:
+    properties:
+      eventsCount:
+        type: integer
+        format: int32
+        uniqueItems: false
+      events:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.EventInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.EventsResultInfo
+  EventsQuery:
+    properties:
+      eventsQueryOptionInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.EventsQueryOptionInfo'
+    type: object
+    format: EventsQuery
+  Enviance.RestServices.Ver2.Bulk.CreateBatchInfo:
+    properties:
+      fileId:
+        type: string
+        format: guid
+        uniqueItems: false
+      worksheets:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      sendEmailNotification:
+        type: boolean
+        uniqueItems: false
+      supressEmailService:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.CreateBatchInfo
+  SetPaused:
+    properties:
+      batchToPauseIds:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: SetPaused
+  SetResumed:
+    properties:
+      batchToResumeIds:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: SetResumed
+  CreateBatch:
+    properties:
+      createBatchInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.CreateBatchInfo'
+    type: object
+    format: CreateBatch
+  Enviance.RestServices.Ver2.Bulk.EventInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      line:
+        type: integer
+        format: int32
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+      message:
+        type: string
+        uniqueItems: false
+      occurred:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.EventInfo
+  Enviance.RestServices.Ver2.Bulk.BatchesResultInfo:
+    properties:
+      batchesCount:
+        type: integer
+        format: int32
+        uniqueItems: false
+      batches:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.BatchInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.BatchesResultInfo
+  Enviance.RestServices.Ver2.Bulk.StatusInfo:
+    properties:
+      queueOrder:
+        type: integer
+        format: int32
+        uniqueItems: false
+      queueLength:
+        type: string
+        uniqueItems: false
+      queueCurrentHours:
+        type: string
+        uniqueItems: false
+      executed:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.ExecutedInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.StatusInfo
+  Enviance.RestServices.Ver2.Bulk.FileInfo:
+    properties:
+      excelData:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Bulk.ExcelInfo'
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.FileInfo
+  Enviance.RestServices.Ver2.Bulk.BatchInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      systemName:
+        type: string
+        uniqueItems: false
+      userId:
+        type: string
+        format: guid
+        uniqueItems: false
+      userName:
+        type: string
+        uniqueItems: false
+      fileName:
+        type: string
+        uniqueItems: false
+      operation:
+        type: string
+        uniqueItems: false
+      status:
+        type: string
+        uniqueItems: false
+      statTotal:
+        type: integer
+        format: int32
+        uniqueItems: false
+      statExecuted:
+        type: integer
+        format: int32
+        uniqueItems: false
+      statWarnings:
+        type: integer
+        format: int32
+        uniqueItems: false
+      statFailed:
+        type: integer
+        format: int32
+        uniqueItems: false
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+      started:
+        type: string
+        format: date-time
+        uniqueItems: false
+      finished:
+        type: string
+        format: date-time
+        uniqueItems: false
+      duration:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Bulk.BatchInfo
+  UploadFile:
+    type: object
+    format: UploadFile
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

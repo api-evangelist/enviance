@@ -1,0 +1,677 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Security API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Security
+paths:
+  /ver2/SecurityService.svc/groups:
+    post:
+      tags:
+      - Security
+      description: "\n\nCreates a new user group. \r\n\r\n**Security:** Requires Manage Users and Groups system right.\r\n\r\n**SDK API:**  `envianceSdk.groups.createGroup(groupInfo, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.groups.createGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Group Name 0001\",\r\n    \"rights\": [],\r\n    \"members\": [\r\n      \"eoleg1\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.createGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"displayName\": \"Enviance 2111 SCIM Demo Group\",\r\n    \"externalid\": \"apple\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.CreateGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateGroupWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateGroup'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/SecurityService.svc/groups/{groupIdOrName}:
+    get:
+      tags:
+      - Security
+      description: "\n\n\nenvianceSdk.groups.getGroup\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.groups.getGroupMembers\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.getGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.GetGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Security.GroupInfo'
+    patch:
+      tags:
+      - Security
+      description: "\n\nUpdates a Group in the System. You cannot update the Administrators group.\r\n\r\n**Security:** Requires Manage Users and Groups system right.\r\n\r\n**SDK API:**  `envianceSdk.groups.updateGroup(groupIdOrName, groupInfo, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.groups.updateGroup\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  {\r\n    \"name\": \"Group Name 0001 - changed\",\r\n    \"rights\": [],\r\n    \"members\": []\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.fullUpdateGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"displayName\": \"Scim Grptrtrtr\",\r\n    \"members\": [\r\n      {\r\n        \"value\": \"scimupdatetest998990444\"\r\n      }\r\n    ],\r\n    \"externalid\": \"sweet apple\"\r\n  },\r\n  \"8fea1bf7-8afd-44ef-a9cd-c047af7653c2\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.partialUpdateGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:group\"\r\n    ],\r\n    \"urn:scim:schemas:enviance:group\": {\r\n      \"rights\": [\r\n        \"Manage Users\",\r\n        \"Manage Groups\"\r\n      ]\r\n    },\r\n    \"externalId\": \"banana\",\r\n    \"meta\": {\r\n      \"attributes\": [\r\n        \"urn:scim:schemas:enviance:group:rights\",\r\n        \"members\"\r\n      ]\r\n    }\r\n  },\r\n  \"8fea1bf7-8afd-44ef-a9cd-c047af7653c2\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.UpdateGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      - name: UpdateGroupWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateGroup'
+      responses:
+        default:
+          description: not available
+    delete:
+      tags:
+      - Security
+      description: "\n\n\nenvianceSdk.groups.deleteGroup\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.deleteGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.DeleteGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/SecurityService.svc/groups/{groupIdOrName}/members:
+    get:
+      tags:
+      - Security
+      description: "\n\n\nenvianceSdk.groups.getGroupMembers\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.GetGroupMembers
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              type: string
+    put:
+      tags:
+      - Security
+      description: "\n\nSets the members of a Group, replacing the current members, if any. You cannot set the members of the Administrators Group.\r\n\r\n**Security:** Requires Manage Users and Groups system right.\r\n\r\n**SDK API:**  `envianceSdk.groups.setGroupMembers(groupIdOrName, members, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.groups.setGroupMembers\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  [\r\n    \"eoleg1\",\r\n    \"eoleg2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.groups.setGroupMembersAsync\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  [\r\n    \"eoleg1\",\r\n    \"eoleg2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.SetGroupMembers
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      - name: SetGroupMembersWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SetGroupMembers'
+      responses:
+        default:
+          description: not available
+    patch:
+      tags:
+      - Security
+      description: "\n\n\nenvianceSdk.groups.addGroupMembers\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  [\r\n    \"eoleg1\",\r\n    \"eoleg2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.groups.addGroupMembersAsync\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  [\r\n    \"eoleg1\",\r\n    \"eoleg2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.AddGroupMembers
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      - name: AddGroupMembersWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/AddGroupMembers'
+      responses:
+        default:
+          description: not available
+  /ver2/SecurityService.svc/groups/{groupIdOrName}/members/{userIdOrName}:
+    delete:
+      tags:
+      - Security
+      description: "\n\nRemoves a User from a Group.\r\n\r\n** Security:** Requires Manage Users and Groups system right.\r\n\r\n** SDK API:** `envianceSdk.groups.removeGroupMember(groupIdOrName, userIdOrName, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.groups.removeGroupMember\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"eoleg1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.groups.removeGroupMemberAsync\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"eoleg1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.RemoveGroupMember
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      - name: userIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/SecurityService.svc/groups/{groupIdOrName}/members/{userIdOrName}/Async:
+    delete:
+      tags:
+      - Security
+      description: "\n\nRemoves a User from a Group asynchronously.\r\n\r\n**Security:** Requires Manage Users and Groups system right.\r\n\r\n** SDK API:** `envianceSdk.groups.removeGroupMemberAsync(groupIdOrName, userIdOrName, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.groups.removeGroupMemberAsync\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"eoleg1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.RemoveGroupMemberAsync
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      - name: userIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/SecurityService.svc/groups/{groupIdOrName}/members/Async:
+    put:
+      tags:
+      - Security
+      description: "\n\nAsynchronously sets the members of a Group, replacing the current members, if any. You cannot set the members of the Administrators Group.\r\n\r\n** Security:** Requires Manage Users and Groups system right.\r\n\r\n** SDK API:**  `envianceSdk.groups.setGroupMembersAsync(groupIdOrName, members, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.groups.setGroupMembersAsync\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  [\r\n    \"eoleg1\",\r\n    \"eoleg2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.SetGroupMembersAsync
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      - name: SetGroupMembersAsyncWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/SetGroupMembersAsync'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+    patch:
+      tags:
+      - Security
+      description: "\n\n\nenvianceSdk.groups.addGroupMembersAsync\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  [\r\n    \"eoleg1\",\r\n    \"eoleg2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.AddGroupMembersAsync
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: groupIdOrName
+        in: path
+        required: true
+        type: string
+      - name: AddGroupMembersAsyncWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/AddGroupMembersAsync'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+definitions:
+  AddGroupMembers:
+    properties:
+      members:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: AddGroupMembers
+  UpdateGroup:
+    properties:
+      groupInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Security.GroupInfo'
+    type: object
+    format: UpdateGroup
+  SetGroupMembers:
+    properties:
+      members:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: SetGroupMembers
+  CreateGroup:
+    properties:
+      groupInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Security.GroupInfo'
+    type: object
+    format: CreateGroup
+  AddGroupMembersAsync:
+    properties:
+      members:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: AddGroupMembersAsync
+  SetGroupMembersAsync:
+    properties:
+      members:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: SetGroupMembersAsync
+  Enviance.RestServices.Ver2.Security.GroupInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      rights:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      members:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Security.GroupInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

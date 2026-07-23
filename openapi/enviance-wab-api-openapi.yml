@@ -1,0 +1,125 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Wab API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Wab
+paths:
+  /ver2/WabService.svc/wab/lastFormConfigChanges:
+    post:
+      tags:
+      - Wab
+      operationId: Enviance.RestServices.Ver2.Wab.WabService.LastFormConfigChanges
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: LastFormConfigChangesWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/LastFormConfigChanges'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Common.ModuleChangeTime'
+definitions:
+  LastFormConfigChanges:
+    properties:
+      packageIdOrName:
+        type: string
+        uniqueItems: false
+      typeName:
+        type: string
+        uniqueItems: false
+      stepName:
+        type: string
+        uniqueItems: false
+      typeVersion:
+        type: integer
+        format: int32
+        uniqueItems: false
+      objectIDs:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: LastFormConfigChanges
+  Enviance.RestServices.Common.IdTimestamp:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      timestampUtc:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.IdTimestamp
+  Enviance.RestServices.Common.ModuleChangeTime:
+    properties:
+      module:
+        type: string
+        uniqueItems: false
+      timestampUtc:
+        type: string
+        format: date-time
+        uniqueItems: false
+      timestampUtcList:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.IdTimestamp'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.ModuleChangeTime
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

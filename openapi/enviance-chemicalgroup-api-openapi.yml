@@ -1,0 +1,262 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity ChemicalGroup API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: ChemicalGroup
+paths:
+  /ver2/ChemicalGroupService.svc/chemicalGroups:
+    post:
+      tags:
+      - ChemicalGroup
+      description: "\n\n\nenvianceSdk.chemicalgroups.createChemicalGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\",\r\n    \"chemicals\": [\r\n      \"896197B8-E007-4169-8C03-D9D0E8411150\",\r\n      \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.CreateChemicalGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateChemicalGroupWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateChemicalGroup'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/ChemicalGroupService.svc/chemicalGroups/{chemicalGroupIdOrName}:
+    get:
+      tags:
+      - ChemicalGroup
+      description: "\n\n\nenvianceSdk.chemicalgroups.getChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.GetChemicalGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: chemicalGroupIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalGroupInfo'
+  /ver2/ChemicalGroupService.svc/chemicalGroups/{ChemicalGroupIdOrName}:
+    patch:
+      tags:
+      - ChemicalGroup
+      description: "\n\n\nenvianceSdk.chemicalgroups.updateChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  {\r\n    \"name\": \"Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\",\r\n    \"chemicals\": [\r\n      \"896197B8-E007-4169-8C03-D9D0E8411150\",\r\n      \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.UpdateChemicalGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: UpdateChemicalGroupWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateChemicalGroup'
+      responses:
+        default:
+          description: not available
+    delete:
+      tags:
+      - ChemicalGroup
+      description: "\n\n\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.DeleteChemicalGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: chemicalGroupIdOrName
+        in: body
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+definitions:
+  Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalGroupInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      chemicals:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalGroupInfo
+  UpdateChemicalGroup:
+    properties:
+      chemicalGroupIdOrName:
+        type: string
+        uniqueItems: false
+      chemicalGroupInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalGroupInfo'
+    type: object
+    format: UpdateChemicalGroup
+  CreateChemicalGroup:
+    properties:
+      chemicalGroupInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalGroupInfo'
+      copyFrom:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CreateChemicalGroup
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

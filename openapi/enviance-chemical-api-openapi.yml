@@ -1,0 +1,386 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Chemical API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Chemical
+paths:
+  /ver2/ChemicalService.svc/chemicals:
+    post:
+      tags:
+      - Chemical
+      description: "\n\n\nenvianceSdk.chemicals.createChemical\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical Name\",\r\n    \"casnum\": \"0\",\r\n    \"alias\": \"chemicalAlias\",\r\n    \"description\": \"chemical description\",\r\n    \"historyItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Mw\": \"1\",\r\n        \"antA\": \"1\",\r\n        \"antB\": \"1\",\r\n        \"antC\": \"1\",\r\n        \"antAk\": \"1\",\r\n        \"antBk\": \"1\",\r\n        \"vp60\": \"1\",\r\n        \"density\": \"1\",\r\n        \"dipprA\": \"1\",\r\n        \"dipprB\": \"1\",\r\n        \"dipprC\": \"1\",\r\n        \"dipprD\": \"1\",\r\n        \"dipprE\": \"1\",\r\n        \"dipprF\": \"1\",\r\n        \"dipprG\": \"1\",\r\n        \"rcraHaz\": \"false\",\r\n        \"hap\": \"false\",\r\n        \"tri\": \"false\",\r\n        \"ehs\": \"false\",\r\n        \"pbt\": \"false\",\r\n        \"dioxin\": \"false\",\r\n        \"caa112R\": \"false\",\r\n        \"pac\": \"false\",\r\n        \"diisocyan\": \"false\",\r\n        \"cerclaHaz\": \"false\",\r\n        \"airToxicEmissionInventory\": \"false\",\r\n        \"solid\": \"false\",\r\n        \"nonEvaporative\": \"false\",\r\n        \"rcraVoc\": \"false\",\r\n        \"rcraSvoc\": \"false\",\r\n        \"caaVoc\": \"false\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-02-01T20:00:00\",\r\n        \"Mw\": \"2\",\r\n        \"antA\": \"3\",\r\n        \"antB\": \"4\",\r\n        \"antC\": \"5\",\r\n        \"antAk\": \"6\",\r\n        \"antBk\": \"7\",\r\n        \"vp60\": \"8\",\r\n        \"density\": \"9\",\r\n        \"dipprA\": \"10\",\r\n        \"dipprB\": \"11\",\r\n        \"dipprC\": \"12\",\r\n        \"dipprD\": \"13\",\r\n        \"dipprE\": \"14\",\r\n        \"dipprF\": \"15\",\r\n        \"dipprG\": \"16\",\r\n        \"rcraHaz\": \"false\",\r\n        \"hap\": \"true\",\r\n        \"tri\": \"false\",\r\n        \"ehs\": \"true\",\r\n        \"pbt\": \"false\",\r\n        \"dioxin\": \"false\",\r\n        \"caa112R\": \"false\",\r\n        \"pac\": \"false\",\r\n        \"diisocyan\": \"false\",\r\n        \"cerclaHaz\": \"false\",\r\n        \"airToxicEmissionInventory\": \"false\",\r\n        \"solid\": \"false\",\r\n        \"nonEvaporative\": \"false\",\r\n        \"rcraVoc\": \"true\",\r\n        \"rcraSvoc\": \"false\",\r\n        \"caaVoc\": \"false\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.createChemicalGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\",\r\n    \"chemicals\": [\r\n      \"896197B8-E007-4169-8C03-D9D0E8411150\",\r\n      \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicallists.createChemicalList\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical List Name\",\r\n    \"description\": \"Chemical List Description\",\r\n    \"chemicalListHistoryItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"1\"\r\n          },\r\n          {\r\n            \"chemicalIdOrAlias\": \"5376DF01-45B5-4153-ACCF-8E208DB69979\",\r\n            \"limit\": \"1\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"3\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.CreateChemical
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateChemicalWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateChemical'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/ChemicalService.svc/chemicals/{chemicalIdOrAlias}:
+    get:
+      tags:
+      - Chemical
+      description: "\n\n\nenvianceSdk.chemicals.getChemical\r\n```\r\n[\r\n  \"Chemical alias\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.getChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicallists.getChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.GetChemical
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: chemicalIdOrAlias
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo'
+    patch:
+      tags:
+      - Chemical
+      description: "\n\n\nenvianceSdk.chemicals.updateChemical\r\n```\r\n[\r\n  \"Chemical Alias\",\r\n  {\r\n    \"name\": \"Chemical Name\",\r\n    \"casnum\": \"0\",\r\n    \"alias\": \"chemicalAlias\",\r\n    \"description\": \"chemical description\",\r\n    \"historyItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Mw\": \"1\",\r\n        \"antA\": \"1\",\r\n        \"antB\": \"1\",\r\n        \"antC\": \"1\",\r\n        \"antAk\": \"1\",\r\n        \"antBk\": \"1\",\r\n        \"vp60\": \"1\",\r\n        \"density\": \"1\",\r\n        \"dipprA\": \"1\",\r\n        \"dipprB\": \"1\",\r\n        \"dipprC\": \"1\",\r\n        \"dipprD\": \"1\",\r\n        \"dipprE\": \"1\",\r\n        \"dipprF\": \"1\",\r\n        \"dipprG\": \"1\",\r\n        \"rcraHaz\": \"false\",\r\n        \"hap\": \"false\",\r\n        \"tri\": \"false\",\r\n        \"ehs\": \"false\",\r\n        \"pbt\": \"false\",\r\n        \"dioxin\": \"false\",\r\n        \"caa112R\": \"false\",\r\n        \"pac\": \"false\",\r\n        \"diisocyan\": \"false\",\r\n        \"cerclaHaz\": \"false\",\r\n        \"airToxicEmissionInventory\": \"false\",\r\n        \"solid\": \"false\",\r\n        \"nonEvaporative\": \"false\",\r\n        \"rcraVoc\": \"false\",\r\n        \"rcraSvoc\": \"false\",\r\n        \"caaVoc\": \"false\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"Mw\": \"2\",\r\n        \"antA\": \"3\",\r\n        \"antB\": \"4\",\r\n        \"antC\": \"5\",\r\n        \"antAk\": \"6\",\r\n        \"antBk\": \"7\",\r\n        \"vp60\": \"8\",\r\n        \"density\": \"9\",\r\n        \"dipprA\": \"10\",\r\n        \"dipprB\": \"11\",\r\n        \"dipprC\": \"12\",\r\n        \"dipprD\": \"13\",\r\n        \"dipprE\": \"14\",\r\n        \"dipprF\": \"15\",\r\n        \"dipprG\": \"16\",\r\n        \"rcraHaz\": \"false\",\r\n        \"hap\": \"true\",\r\n        \"tri\": \"false\",\r\n        \"ehs\": \"true\",\r\n        \"pbt\": \"false\",\r\n        \"dioxin\": \"false\",\r\n        \"caa112R\": \"false\",\r\n        \"pac\": \"false\",\r\n        \"diisocyan\": \"false\",\r\n        \"cerclaHaz\": \"false\",\r\n        \"airToxicEmissionInventory\": \"false\",\r\n        \"solid\": \"false\",\r\n        \"nonEvaporative\": \"false\",\r\n        \"rcraVoc\": \"true\",\r\n        \"rcraSvoc\": \"false\",\r\n        \"caaVoc\": \"false\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.updateChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  {\r\n    \"name\": \"Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\",\r\n    \"chemicals\": [\r\n      \"896197B8-E007-4169-8C03-D9D0E8411150\",\r\n      \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicallists.updateChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  {\r\n    \"name\": \"Chemical List Name\",\r\n    \"description\": \"Chemical List Description\",\r\n    \"chemicalListHistoryItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"1\"\r\n          },\r\n          {\r\n            \"chemicalIdOrAlias\": \"5376DF01-45B5-4153-ACCF-8E208DB69979\",\r\n            \"limit\": \"1\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"3\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.UpdateChemical
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: chemicalIdOrAlias
+        in: path
+        required: true
+        type: string
+      - name: UpdateChemicalWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateChemical'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+    delete:
+      tags:
+      - Chemical
+      description: "\n\n\nenvianceSdk.chemicals.deleteChemical\r\n```\r\n[\r\n  \"Chemical Alias\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicallists.deleteChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.DeleteChemical
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: chemicalIdOrAlias
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+definitions:
+  Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalHistoryItemInfo:
+    properties:
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      mw:
+        type: number
+        format: double
+        uniqueItems: false
+      antA:
+        type: number
+        format: double
+        uniqueItems: false
+      antB:
+        type: number
+        format: double
+        uniqueItems: false
+      antC:
+        type: number
+        format: double
+        uniqueItems: false
+      antAk:
+        type: number
+        format: double
+        uniqueItems: false
+      antBk:
+        type: number
+        format: double
+        uniqueItems: false
+      vp60:
+        type: number
+        format: double
+        uniqueItems: false
+      density:
+        type: number
+        format: double
+        uniqueItems: false
+      dipprA:
+        type: number
+        format: double
+        uniqueItems: false
+      dipprB:
+        type: number
+        format: double
+        uniqueItems: false
+      dipprC:
+        type: number
+        format: double
+        uniqueItems: false
+      dipprD:
+        type: number
+        format: double
+        uniqueItems: false
+      dipprE:
+        type: number
+        format: double
+        uniqueItems: false
+      dipprF:
+        type: number
+        format: double
+        uniqueItems: false
+      dipprG:
+        type: number
+        format: double
+        uniqueItems: false
+      rcraHaz:
+        type: boolean
+        uniqueItems: false
+      hap:
+        type: boolean
+        uniqueItems: false
+      tri:
+        type: boolean
+        uniqueItems: false
+      ehs:
+        type: boolean
+        uniqueItems: false
+      pbt:
+        type: boolean
+        uniqueItems: false
+      dioxin:
+        type: boolean
+        uniqueItems: false
+      caa112R:
+        type: boolean
+        uniqueItems: false
+      pac:
+        type: boolean
+        uniqueItems: false
+      diisocyan:
+        type: boolean
+        uniqueItems: false
+      cerclaHaz:
+        type: boolean
+        uniqueItems: false
+      airToxicEmissionInventory:
+        type: boolean
+        uniqueItems: false
+      solid:
+        type: boolean
+        uniqueItems: false
+      nonEvaporative:
+        type: boolean
+        uniqueItems: false
+      rcraVoc:
+        type: boolean
+        uniqueItems: false
+      rcraSvoc:
+        type: boolean
+        uniqueItems: false
+      caaVoc:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalHistoryItemInfo
+  CreateChemical:
+    properties:
+      chemicalInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo'
+      copyFrom:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CreateChemical
+  UpdateChemical:
+    properties:
+      chemicalInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo'
+    type: object
+    format: UpdateChemical
+  Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      casNum:
+        type: string
+        uniqueItems: false
+      alias:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      historyItems:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalHistoryItemInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

@@ -1,0 +1,891 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Eql API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Eql
+paths:
+  /ver2/EqlService.svc/dataview:
+    post:
+      tags:
+      - Eql
+      description: "\n\nSave EQL query as a data view.\r\n\r\n**SDK API:** `envianceSdk.eql.createDataView(info, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.eql.createDataView\r\n```\r\n[\r\n  {\r\n    \"eqlname\": \"Test1\",\r\n    \"title\": \"Test1\",\r\n    \"eql\": \"Select f.name From Facility f\",\r\n    \"description\": \"some description\",\r\n    \"metadata\": \"some metadata\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.CreateDataView
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateDataViewWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateDataView'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/EqlService.svc/dataview/{idOrName}:
+    patch:
+      tags:
+      - Eql
+      description: "\n\nUpdate a data view info\r\n\r\n**SDK API:** `envianceSdk.eql.updateDataView(idOrName, info, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.eql.updateDataView\r\n```\r\n[\r\n  \"Test1\",\r\n  {\r\n    \"eqlname\": \"Test1\",\r\n    \"title\": \"Test1\",\r\n    \"eql\": \"Select f.name From Facility f\",\r\n    \"description\": \"some description\",\r\n    \"metadata\": \"some metadata\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.UpdateDataView
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: idOrName
+        in: path
+        required: true
+        type: string
+      - name: UpdateDataViewWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateDataView'
+      responses:
+        default:
+          description: not available
+    get:
+      tags:
+      - Eql
+      description: "\n\n\nenvianceSdk.eql.getDataView\r\n```\r\n[\r\n  \"Test1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataView
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: idOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo'
+    delete:
+      tags:
+      - Eql
+      description: "\n\n\nenvianceSdk.eql.deleteDataView\r\n```\r\n[\r\n  \"Test1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.DeleteDataView
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: idOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/EqlService.svc/dataview/{idOrName}/publishconfigs:
+    get:
+      tags:
+      - Eql
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataViewPublishConfigs
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: idOrName
+        in: path
+        required: true
+        type: string
+      - name: GetDataViewPublishConfigsWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/GetDataViewPublishConfigs'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo'
+    patch:
+      tags:
+      - Eql
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.UpdateDataViewPublishConfigs
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: idOrName
+        in: path
+        required: true
+        type: string
+      - name: UpdateDataViewPublishConfigsWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateDataViewPublishConfigs'
+      responses:
+        default:
+          description: not available
+  /ver2/EqlService.svc/dataview/publishconnections:
+    get:
+      tags:
+      - Eql
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataPublishConnections
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConnectionInfo'
+  /ver2/EqlService.svc/executeAsync:
+    post:
+      tags:
+      - Eql
+      description: "\n\n\nenvianceSdk.eql.executeExtAsync\r\n```\r\n[\r\n    {\r\n        \"eql\": \"select TOP 1 wi.name, wi.id from WorkflowType wi\",\r\n        \"excelHeaderCells\": [\r\n            {\r\n                \"column\": 1,\r\n                \"row\": 1,\r\n                \"style\": {\r\n                    \"font\": {\r\n                        \"bold\": true,\r\n                        \"sz\": 11\r\n                    }\r\n                },\r\n                \"type\": \"s\",\r\n                \"value\": \"test\"\r\n            }\r\n        ],\r\n        \"excelSheetNames\": [\r\n            \"Raw Data\"\r\n        ],\r\n        \"excelTemplateIdOrPath\": \"/shvets/Colusa Template.xlsm\",\r\n        \"format\": \"xlsx\"\r\n    },\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsync
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: request
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlExecuteInformation'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/EqlService.svc/query:
+    post:
+      tags:
+      - Eql
+      description: "\n\n\nenvianceSdk.eql.execute\r\n```\r\n[\r\n    \"select wi.name, wi.id from WorkflowType wi  where wi.name like '%lgm%'\",\r\n    1,\r\n    100,\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\nenvianceSdk.eql.executeExt\r\n```\r\n[\r\n  {\r\n    \"eql\": \"select TOP 1 wi.name, wi.id from WorkflowType wi\",\r\n    \"format\": \"xls\",\r\n    \"pageByColumn\": \"1,2\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.eql.executeExtAsync\r\n```\r\n[\r\n  {\r\n    \"eql\": \"select TOP 1 wi.name, wi.id from WorkflowType wi\",\r\n    \"format\": \"xlsx\",\r\n    \"excelTemplateIdOrPath\": \"/shvets/Colusa Template.xlsm\",\r\n    \"excelSheetNames\": [\r\n      \"Raw Data\"\r\n    ],\r\n    \"excelHeaderCells\": [\r\n      {\r\n        \"row\": 1,\r\n        \"column\": 1,\r\n        \"value\": \"test\",\r\n        \"type\": \"s\",\r\n        \"style\": {\r\n          \"font\": {\r\n            \"bold\": true,\r\n            \"sz\": 11\r\n          }\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.packages.eql.ExecuteParametersInfo\r\n```\r\n[\r\n  \"path\",\r\n  \"json\",\r\n  1,\r\n  10\r\n]\r\n```\r\nenvianceSdk.packages.eql.executeEqlItem\r\n```\r\n[\r\n  {\r\n    \"path\": \"test.eql\",\r\n    \"format\": \"json\",\r\n    \"page\": 2,\r\n    \"pageSize\": 20\r\n  },\r\n  {\r\n    \"TimeZone\": 5,\r\n    \"Name\": \"X%\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.packages.eql.executeEqlItemAsync\r\n```\r\n[\r\n  {\r\n    \"path\": \"test.eql\",\r\n    \"format\": \"xls\",\r\n    \"page\": 2,\r\n    \"pageSize\": 20,\r\n    \"filename\": \"my.xls\",\r\n    \"cachecontrol\": null,\r\n    \"excelTemplateIdOrPath\": \"/shvets/Colusa Template.xlsm\",\r\n    \"excelSheetNames\": [\r\n      \"Raw Data\"\r\n    ]\r\n  },\r\n  {\r\n    \"TimeZone\": 5,\r\n    \"Name\": \"X%\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.packages.eql.executeEqlItemBinary\r\n```\r\n[\r\n  {\r\n    \"path\": \"test.eql\",\r\n    \"format\": \"json\",\r\n    \"page\": 2,\r\n    \"pageSize\": 20,\r\n    \"filename\": \"my.json\",\r\n    \"cachecontrol\": null\r\n  },\r\n  {\r\n    \"TimeZone\": 5,\r\n    \"Name\": \"X%\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.Execute
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: request
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlExecuteInformation'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: stream
+    get:
+      tags:
+      - Eql
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsGet
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: eql
+        in: query
+        required: true
+        type: string
+      - name: name
+        in: query
+        required: true
+        type: string
+      - name: page
+        in: query
+        required: true
+        type: string
+      - name: pageSize
+        in: query
+        required: true
+        type: string
+      - name: format
+        in: query
+        required: true
+        type: string
+      - name: fileName
+        in: query
+        required: true
+        type: string
+      - name: cacheControl
+        in: query
+        required: true
+        type: string
+      - name: pageByColumn
+        in: query
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: stream
+  /ver2/EqlService.svc/query/:
+    get:
+      tags:
+      - Eql
+      operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsGetWithPathSegment
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: eql
+        in: query
+        required: true
+        type: string
+      - name: name
+        in: query
+        required: true
+        type: string
+      - name: page
+        in: query
+        required: true
+        type: string
+      - name: pageSize
+        in: query
+        required: true
+        type: string
+      - name: format
+        in: query
+        required: true
+        type: string
+      - name: fileName
+        in: query
+        required: true
+        type: string
+      - name: cacheControl
+        in: query
+        required: true
+        type: string
+      - name: pageByColumn
+        in: query
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: stream
+definitions:
+  Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo:
+    properties:
+      id:
+        type: string
+        uniqueItems: false
+      title:
+        type: string
+        uniqueItems: false
+      eqlname:
+        type: string
+        uniqueItems: false
+      eql:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      metadata:
+        type: string
+        uniqueItems: false
+      columns:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnInfo'
+        uniqueItems: false
+      defaultsorting:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnSortingInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo
+  Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnInfo:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      size:
+        type: integer
+        format: int32
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnInfo
+  Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConnectionInfo:
+    properties:
+      id:
+        type: string
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      connectionType:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConnectionInfo
+  Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyle:
+    properties:
+      font:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleFont'
+      numFmt:
+        type: string
+        uniqueItems: false
+      alignment:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleAlignment'
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyle
+  CreateDataView:
+    properties:
+      info:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo'
+    type: object
+    format: CreateDataView
+  Enviance.RestServices.Ver2.Eql.Dto.EqlExecuteInformation:
+    properties:
+      eql:
+        type: string
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      page:
+        type: integer
+        format: int32
+        uniqueItems: false
+      pageSize:
+        type: integer
+        format: int32
+        uniqueItems: false
+      pageByColumn:
+        type: string
+        uniqueItems: false
+      format:
+        type: string
+        uniqueItems: false
+      filename:
+        type: string
+        uniqueItems: false
+      cachecontrol:
+        type: string
+        uniqueItems: false
+      excelTemplateIdOrPath:
+        type: string
+        uniqueItems: false
+      excelSheetNames:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      excelHeaderCells:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCell'
+        uniqueItems: false
+      additionalSheets:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlReportSheet'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlExecuteInformation
+  Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo:
+    properties:
+      id:
+        type: string
+        uniqueItems: false
+      connectionIdOrName:
+        type: string
+        uniqueItems: false
+      path:
+        type: string
+        uniqueItems: false
+      cron:
+        type: string
+        uniqueItems: false
+      fileFormat:
+        type: string
+        uniqueItems: false
+      incrementDateColumnName:
+        type: string
+        uniqueItems: false
+      configMode:
+        type: string
+        uniqueItems: false
+      resumeMode:
+        type: string
+        uniqueItems: false
+      startDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      disabled:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo
+  GetDataViewPublishConfigs:
+    type: object
+    format: GetDataViewPublishConfigs
+  Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleAlignment:
+    properties:
+      horizontal:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleAlignment
+  Enviance.RestServices.Ver2.Eql.Dto.EqlReportCell:
+    properties:
+      row:
+        type: integer
+        format: int32
+        uniqueItems: false
+      column:
+        type: integer
+        format: int32
+        uniqueItems: false
+      value:
+        type: string
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+      style:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyle'
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCell
+  UpdateDataViewPublishConfigs:
+    properties:
+      publishConfigInfos:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo'
+        uniqueItems: false
+    type: object
+    format: UpdateDataViewPublishConfigs
+  Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnSortingInfo:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      order:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnSortingInfo
+  Enviance.RestServices.Ver2.Eql.Dto.EqlReportSheet:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      cells:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCell'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportSheet
+  Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleFont:
+    properties:
+      bold:
+        type: boolean
+        uniqueItems: false
+      sz:
+        type: integer
+        format: int32
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleFont
+  UpdateDataView:
+    properties:
+      info:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo'
+    type: object
+    format: UpdateDataView
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

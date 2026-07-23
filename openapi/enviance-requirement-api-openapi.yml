@@ -1,0 +1,695 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Requirement API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Requirement
+paths:
+  /ver2/RequirementService.svc/requirements:
+    post:
+      tags:
+      - Requirement
+      description: "\n\n\nenvianceSdk.requirements.createRequirement\r\n```\r\n[\r\n  {\r\n    \"name\": \"Requirement Name\",\r\n    \"requirementType\": \"RequirementType\",\r\n    \"activeDate\": \"2010-02-22T00:00:00\",\r\n    \"requirementTemplateIdOrName\": \"Requirement Template 1\",\r\n    \"responsibleUserIdOrName\": \"BTaylor\",\r\n    \"parentIdOrPath\": \"Division For Mac TestFacility For Mac Test\",\r\n    \"frequencies\": [\r\n      {\r\n        \"beginDate\": \"2011-02-22T00:00:00\",\r\n        \"endDate\": \"2012-03-22T00:00:00\",\r\n        \"occurences\": 1\r\n      },\r\n      {\r\n        \"beginDate\": \"2014-02-22T00:00:00\",\r\n        \"endDate\": \"2014-03-22T00:00:00\",\r\n        \"occurences\": 2\r\n      }\r\n    ],\r\n    \"limitHistory\": [\r\n      {\r\n        \"beginDate\": \"2011-02-22T00:00:00\",\r\n        \"endDate\": \"2012-03-22T00:00:00\",\r\n        \"comparisonOperation\": \"\\u003E LOW\",\r\n        \"regLowLimit\": 1,\r\n        \"regHighLimit\": 4\r\n      }\r\n    ],\r\n    \"regulatoryLimit\": {\r\n      \"templateIdOrName\": \"task-template-m-1\",\r\n      \"assignor\": \"jstestsAccessUser\",\r\n      \"assignees\": [\r\n        {\r\n          \"userIdOrName\": \"JSmith\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        }\r\n      ]\r\n    },\r\n    \"notifyRecipients\": {\r\n      \"recipients\": [\r\n        {\r\n          \"userIdOrName\": \"JSmith\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        }\r\n      ],\r\n      \"inbox\": true\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.CreateRequirement
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateRequirementWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateRequirement'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/RequirementService.svc/requirements/{requirementIdOrPath}:
+    get:
+      tags:
+      - Requirement
+      description: "\n\n\nenvianceSdk.requirements.getRequirement\r\n```\r\n[\r\n  \"Requirement Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.GetRequirement
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: requirementIdOrPath
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Requirements.RequirementInfo'
+    patch:
+      tags:
+      - Requirement
+      description: "\n\n\nenvianceSdk.requirements.updateRequirement\r\n```\r\n[\r\n  \"Requirement Name\",\r\n  {\r\n    \"name\": \"Requirement Name\",\r\n    \"requirementType\": \"RequirementType\",\r\n    \"activeDate\": \"2010-02-22T00:00:00\",\r\n    \"requirementTemplateIdOrName\": \"Requirement Template 1\",\r\n    \"responsibleUserIdOrName\": \"BTaylor\",\r\n    \"parentIdOrPath\": \"Division For Mac TestFacility For Mac Test\",\r\n    \"frequencies\": [\r\n      {\r\n        \"beginDate\": \"2011-02-22T00:00:00\",\r\n        \"endDate\": \"2012-03-22T00:00:00\",\r\n        \"occurences\": 1\r\n      },\r\n      {\r\n        \"beginDate\": \"2014-02-22T00:00:00\",\r\n        \"endDate\": \"2014-03-22T00:00:00\",\r\n        \"occurences\": 2\r\n      }\r\n    ],\r\n    \"limitHistory\": [\r\n      {\r\n        \"beginDate\": \"2011-02-22T00:00:00\",\r\n        \"endDate\": \"2012-03-22T00:00:00\",\r\n        \"comparisonOperation\": \"\\u003E LOW\",\r\n        \"regLowLimit\": 1,\r\n        \"regHighLimit\": 4\r\n      }\r\n    ],\r\n    \"regulatoryLimit\": {\r\n      \"templateIdOrName\": \"task-template-m-1\",\r\n      \"assignor\": \"jstestsAccessUser\",\r\n      \"assignees\": [\r\n        {\r\n          \"userIdOrName\": \"JSmith\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        }\r\n      ]\r\n    },\r\n    \"notifyRecipients\": {\r\n      \"recipients\": [\r\n        {\r\n          \"userIdOrName\": \"JSmith\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        }\r\n      ],\r\n      \"inbox\": true\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.UpdateRequirement
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: requirementIdOrPath
+        in: path
+        required: true
+        type: string
+      - name: UpdateRequirementWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateRequirement'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+    delete:
+      tags:
+      - Requirement
+      description: "\n\n\nenvianceSdk.requirements.deleteRequirement\r\n```\r\n[\r\n  \"Requirement Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.DeleteRequirement
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: requirementIdOrPath
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/RequirementService.svc/requirements/{requirementOrMaterialId}/calcgraph:
+    get:
+      tags:
+      - Requirement
+      operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.CalcGraphForRequirement
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: requirementOrMaterialId
+        in: path
+        required: true
+        type: string
+      - name: mode
+        in: query
+        required: true
+        type: string
+      - name: limit
+        in: query
+        required: true
+        type: string
+      - name: materials
+        in: query
+        required: true
+        type: string
+      - name: beginDateRange
+        in: query
+        required: true
+        type: string
+      - name: endDateRange
+        in: query
+        required: true
+        type: string
+      - name: onCompleteDate
+        in: query
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Requirements.Calcs.CalcGraph'
+  /ver2/RequirementService.svc/requirements/recalc:
+    post:
+      tags:
+      - Requirement
+      operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.DoRecalculation
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: dateStart
+        in: query
+        required: true
+        type: string
+      - name: dateEnd
+        in: query
+        required: true
+        type: string
+      - name: DoRecalculationWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DoRecalculation'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+definitions:
+  Enviance.Business.Udf.Rest.UrlItem:
+    properties:
+      label:
+        type: string
+        uniqueItems: false
+      url:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.Udf.Rest.UrlItem
+  Enviance.RestServices.Ver2.Requirements.Calcs.RequirementShortInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      path:
+        type: string
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+      uom:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Requirements.Calcs.RequirementShortInfo
+  Enviance.RestServices.Common.AssigneeV2:
+    properties:
+      userIdOrName:
+        type: string
+        uniqueItems: false
+      groupIdOrName:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.AssigneeV2
+  Enviance.RestServices.Udfs.Property:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      urlItems:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.Business.Udf.Rest.UrlItem'
+        uniqueItems: false
+      values:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      caption:
+        type: string
+        uniqueItems: false
+      captionLocalized:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Udfs.Property
+  Enviance.RestServices.Ver2.Requirements.Calcs.RequirementRelation:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      parId:
+        type: string
+        format: guid
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Requirements.Calcs.RequirementRelation
+  Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper:
+    properties:
+      reqInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Requirements.RequirementInfo'
+    type: object
+    format: Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper
+  Enviance.RestServices.Common.TagAssociationInfo:
+    properties:
+      tagScheme:
+        type: string
+        uniqueItems: false
+      tag:
+        type: string
+        uniqueItems: false
+      tagHistory:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.Business.TaggingObjects.Tags.Entities.TagHistory'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.TagAssociationInfo
+  DoRecalculation:
+    properties:
+      requirementIds:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      completeDates:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      dateRanges:
+        type: array
+        items:
+          $ref: '#/definitions/System.String[]'
+        uniqueItems: false
+    type: object
+    format: DoRecalculation
+  CreateRequirement:
+    properties:
+      reqInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper'
+      copyFrom:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CreateRequirement
+  Enviance.RestServices.Ver2.Requirements.Numeric.NotifyRecipientInfo:
+    properties:
+      recipients:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.AssigneeV2'
+        uniqueItems: false
+      inbox:
+        type: boolean
+        uniqueItems: false
+      email:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Requirements.Numeric.NotifyRecipientInfo
+  Enviance.Business.TaggingObjects.Tags.Entities.TagHistory:
+    properties:
+      BeginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      EndDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.Business.TaggingObjects.Tags.Entities.TagHistory
+  UpdateRequirement:
+    properties:
+      reqInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper'
+    type: object
+    format: UpdateRequirement
+  Enviance.RestServices.Ver2.Requirements.Calcs.CalcGraph:
+    properties:
+      relations:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Requirements.Calcs.RequirementRelation'
+        uniqueItems: false
+      infos:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Requirements.Calcs.RequirementShortInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Requirements.Calcs.CalcGraph
+  Enviance.RestServices.Common.CitationObjectInfo:
+    properties:
+      idOrPath:
+        type: string
+        uniqueItems: false
+      version:
+        type: integer
+        format: int32
+        uniqueItems: false
+      versionId:
+        type: string
+        format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.CitationObjectInfo
+  Enviance.RestServices.Ver2.Requirements.Numeric.RequirementSourceInfo:
+    properties:
+      templateIdOrName:
+        type: string
+        uniqueItems: false
+      abstractCreateDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      driver:
+        type: string
+        uniqueItems: false
+      agency:
+        type: string
+        uniqueItems: false
+      effectiveDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      expirationDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      media:
+        type: string
+        uniqueItems: false
+      header1:
+        type: string
+        uniqueItems: false
+      title1:
+        type: string
+        uniqueItems: false
+      header2:
+        type: string
+        uniqueItems: false
+      title2:
+        type: string
+        uniqueItems: false
+      header3:
+        type: string
+        uniqueItems: false
+      title3:
+        type: string
+        uniqueItems: false
+      periodFrequency:
+        type: integer
+        format: int32
+        uniqueItems: false
+      periodTime:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Requirements.Numeric.RequirementSourceInfo
+  Enviance.RestServices.Ver2.Requirements.RequirementInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      requirementType:
+        type: string
+        uniqueItems: false
+      parentIdOrPath:
+        type: string
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      createDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      activeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      inactiveDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      responsibleUserIdOrName:
+        type: string
+        uniqueItems: false
+      requirementTemplateIdOrName:
+        type: string
+        uniqueItems: false
+      fieldTemplateIdOrName:
+        type: string
+        uniqueItems: false
+      fieldValues:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Udfs.Property'
+        uniqueItems: false
+      specificCitation:
+        type: string
+        uniqueItems: false
+      periodFrequency:
+        type: integer
+        format: int32
+        uniqueItems: false
+      periodTime:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      documents:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      notifyRecipients:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Requirements.Numeric.NotifyRecipientInfo'
+      security:
+      - EnvianceAuth: []
+      - Basic: []
+      tags:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.TagAssociationInfo'
+        uniqueItems: false
+      citations:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.CitationObjectInfo'
+        uniqueItems: false
+      requirementSource:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Requirements.Numeric.RequirementSourceInfo'
+    type: object
+    format: Enviance.RestServices.Ver2.Requirements.RequirementInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

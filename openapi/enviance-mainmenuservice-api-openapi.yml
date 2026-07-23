@@ -1,0 +1,109 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity MainMenuService API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: MainMenuService
+paths:
+  /ver2/MainMenuService.svc/mainMenu:
+    get:
+      tags:
+      - MainMenuService
+      operationId: Enviance.RestServices.Ver2.MainMenu.Impl.MainMenuService.GetMainMenu
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.MainMenu.MainMenuInfo'
+definitions:
+  Enviance.RestServices.Ver2.MainMenu.MainMenuInfo:
+    properties:
+      key:
+        type: string
+        uniqueItems: false
+      title:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      path:
+        type: string
+        uniqueItems: false
+      urlIframe:
+        type: string
+        uniqueItems: false
+      url:
+        type: string
+        uniqueItems: false
+      urlInternal:
+        type: string
+        uniqueItems: false
+      urlFull:
+        type: string
+        uniqueItems: false
+      iconUrl:
+        type: string
+        uniqueItems: false
+      isStatic:
+        type: boolean
+        uniqueItems: false
+      children:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.MainMenu.MainMenuInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MainMenu.MainMenuInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

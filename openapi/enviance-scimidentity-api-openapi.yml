@@ -1,0 +1,1184 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity ScimIdentity API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: ScimIdentity
+paths:
+  /ver2/ScimIdentityService.svc/scim/v1/Groups:
+    post:
+      tags:
+      - ScimIdentity
+      description: "\n\nCreate a new group in Enviance system. \r\n\r\n** Example:**\r\nPOST /ScimIdentityService.svc/scim/v1/Groups HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n** SDK API:**  envianceSdk.scim.createGroup(group, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.scim.createGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"displayName\": \"Enviance 2111 SCIM Demo Group\",\r\n    \"externalid\": \"apple\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.CreateGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: group
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup'
+  /ver2/ScimIdentityService.svc/scim/v1/Groups/:
+    get:
+      tags:
+      - ScimIdentity
+      description: "\n\n\nenvianceSdk.scim.getGroup\r\n```\r\n[\r\n    \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.ListGroups
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: attributes
+        in: query
+        required: true
+        type: string
+      - name: filter
+        in: query
+        required: true
+        type: string
+      - name: startIndex
+        in: query
+        required: true
+        type: integer
+        format: int32
+      - name: count
+        in: query
+        required: true
+        type: integer
+        format: int32
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.ScimListResponse'
+  /ver2/ScimIdentityService.svc/scim/v1/Groups/{id}:
+    get:
+      tags:
+      - ScimIdentity
+      description: "\n\nGets information about group.\r\n\r\n** Example:** \r\nGET /ScimIdentityService.svc/scim/v1/Groups/809d56ad-77ef-47a6-9f3c-f8853b118744 HTTP/1.1\r\n\r\n** SDK API:**  envianceSdk.scim.getGroup(id, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.scim.getGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup'
+    patch:
+      tags:
+      - ScimIdentity
+      description: "\n\n\nenvianceSdk.scim.partialUpdateGroup\r\n```\r\n[\r\n    {\r\n        \"externalId\": \"banana\",\r\n        \"meta\": {\r\n            \"attributes\": [\r\n                \"urn:scim:schemas:enviance:group:rights\",\r\n                \"members\"\r\n            ]\r\n        },\r\n        \"schemas\": [\r\n            \"urn:scim:schemas:core:1.0\",\r\n            \"urn:scim:schemas:enviance:group\"\r\n        ],\r\n        \"urn:scim:schemas:enviance:group\": {\r\n            \"rights\": [\r\n                \"Manage Users\",\r\n                \"Manage Groups\"\r\n            ]\r\n        }\r\n    },\r\n    \"8fea1bf7-8afd-44ef-a9cd-c047af7653c2\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdatePartialGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: scimGroup
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup'
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup'
+    put:
+      tags:
+      - ScimIdentity
+      description: "\n\n\nenvianceSdk.scim.fullUpdateGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"displayName\": \"Scim Grptrtrtr\",\r\n    \"members\": [\r\n      {\r\n        \"value\": \"scimupdatetest998990444\"\r\n      }\r\n    ],\r\n    \"externalid\": \"sweet apple\"\r\n  },\r\n  \"8fea1bf7-8afd-44ef-a9cd-c047af7653c2\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.partialUpdateGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:group\"\r\n    ],\r\n    \"urn:scim:schemas:enviance:group\": {\r\n      \"rights\": [\r\n        \"Manage Users\",\r\n        \"Manage Groups\"\r\n      ]\r\n    },\r\n    \"externalId\": \"banana\",\r\n    \"meta\": {\r\n      \"attributes\": [\r\n        \"urn:scim:schemas:enviance:group:rights\",\r\n        \"members\"\r\n      ]\r\n    }\r\n  },\r\n  \"8fea1bf7-8afd-44ef-a9cd-c047af7653c2\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: scimGroup
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup'
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup'
+    delete:
+      tags:
+      - ScimIdentity
+      description: "\n\n\nenvianceSdk.scim.deleteGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.DeleteGroup
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/ScimIdentityService.svc/scim/v1/schemas/:
+    get:
+      tags:
+      - ScimIdentity
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetSchemas
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.SchemaDefination.IScimSchema'
+  /ver2/ScimIdentityService.svc/scim/v1/schemas/{type}:
+    get:
+      tags:
+      - ScimIdentity
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetSchema
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: type
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.SchemaDefination.IScimSchema'
+  /ver2/ScimIdentityService.svc/scim/v1/Users:
+    post:
+      tags:
+      - ScimIdentity
+      description: "\n\nCreate a new user in Enviance system.\r\n\r\n** SDK API:**  envianceSdk.scim.createUser(user, onsuccess, onerror)\r\n\r\n** Example:**\r\nPOST /ScimIdentityService.svc/scim/v1/Users HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\nnull\n\n\nenvianceSdk.scim.createUser\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:user\"\r\n    ],\r\n    \"userName\": \"scimupdatetest998990444\",\r\n    \"password\": \"1111\",\r\n    \"name\": {\r\n      \"givenName\": \"Updated\",\r\n      \"familyName\": \"Scim\"\r\n    },\r\n    \"emails\": [\r\n      {\r\n        \"type\": \"work\",\r\n        \"primary\": \"true\",\r\n        \"value\": \"scimuser1@enviance.com\"\r\n      }\r\n    ],\r\n    \"timezone\": \"America/New_York\",\r\n    \"preferredLanguage\": \"en_US\",\r\n    \"active\": true,\r\n    \"urn:scim:schemas:enviance:user\": {\r\n      \"properties\": [\r\n        {\r\n          \"propertyName\": \"supervisorusername\",\r\n          \"type\": \"supervisorusername\",\r\n          \"propertyValue\": \"someUsername\"\r\n        },\r\n        {\r\n          \"propertyName\": \"name2\",\r\n          \"propertyValue\": \"val2\",\r\n          \"type\": \"name2\",\r\n          \"isSensitiveData\": true\r\n        }\r\n      ],\r\n      \"emailDelivery\": \"HTML Email\",\r\n      \"receiveInformation\": true,\r\n      \"commandFailureNotification\": \"Inbox\",\r\n      \"companyName\": \"Enviance, Inc\",\r\n      \"mustChangePasswordAtNextLogin\": \"false\",\r\n      \"canNotChangePassword\": \"true\",\r\n      \"NotExpirePassword\": \"false\",\r\n      \"userRights\": [\r\n        {\r\n          \"name\": \"Manage Groups\",\r\n          \"granted\": true\r\n        }\r\n      ],\r\n      \"expires\": \"9999-12-31T00:00:00\",\r\n      \"comments\": \"This is a full Scim User\"\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.CreateUser
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: user
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
+  /ver2/ScimIdentityService.svc/scim/v1/Users/:
+    get:
+      tags:
+      - ScimIdentity
+      description: "\n\n\nenvianceSdk.scim.listUsers\r\n```\r\n[\r\n    {\r\n        \"attributes\": [\r\n            \"name.givenName\",\r\n            \"name.familyName\"\r\n        ],\r\n        \"count\": \"10\",\r\n        \"filter\": \"name.familyname co \",\r\n        \"scim\": \"\",\r\n        \"sortBy\": \"name.givenName\",\r\n        \"sortOrder\": \"ascending|descending\",\r\n        \"startIndex\": \"1\"\r\n    },\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.ListUsers
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: attributes
+        in: query
+        required: true
+        type: string
+      - name: filter
+        in: query
+        required: true
+        type: string
+      - name: startIndex
+        in: query
+        required: true
+        type: integer
+        format: int32
+      - name: count
+        in: query
+        required: true
+        type: integer
+        format: int32
+      - name: sortBy
+        in: query
+        required: true
+        type: string
+      - name: sortOrder
+        in: query
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.ScimListResponse'
+  /ver2/ScimIdentityService.svc/scim/v1/Users/{id}:
+    get:
+      tags:
+      - ScimIdentity
+      description: "\n\nGets information about user.\r\n\r\n** Example:** \r\nGET /ScimIdentityService.svc/scim/v1/Users/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n** SDK API:**  envianceSdk.scim.getUser(id, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.scim.getUser\r\n```\r\n[\r\n  \"40E351F5-E4E9-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetUser
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
+    delete:
+      tags:
+      - ScimIdentity
+      description: "\n\n\nenvianceSdk.scim.deleteUser\r\n```\r\n[\r\n  \"40E351F5-E4E9-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.DeleteUser
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+    put:
+      tags:
+      - ScimIdentity
+      description: "\n\n\nenvianceSdk.scim.fullUpdateUser\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:user\"\r\n    ],\r\n    \"userName\": \"scimupdatetest998990444\",\r\n    \"name\": {\r\n      \"givenName\": \"Updated\",\r\n      \"familyName\": \"Scim\"\r\n    },\r\n    \"emails\": [\r\n      {\r\n        \"type\": \"work\",\r\n        \"primary\": \"true\",\r\n        \"value\": \"scimuser1@enviance.com\"\r\n      }\r\n    ],\r\n    \"timezone\": \"America/New_York\",\r\n    \"preferredLanguage\": \"en_US\",\r\n    \"active\": true,\r\n    \"urn:scim:schemas:enviance:user\": {\r\n      \"properties\": [\r\n        {\r\n          \"propertyName\": \"supervisorusername\",\r\n          \"type\": \"supervisorusername\",\r\n          \"propertyValue\": \"someUsername\"\r\n        },\r\n        {\r\n          \"propertyName\": \"name2\",\r\n          \"propertyValue\": \"val2\",\r\n          \"type\": \"name2\",\r\n          \"isSensitiveData\": true\r\n        }\r\n      ],\r\n      \"emailDelivery\": \"HTML Email\",\r\n      \"receiveInformation\": true,\r\n      \"commandFailureNotification\": \"Inbox\",\r\n      \"companyName\": \"Enviance, Inc\",\r\n      \"mustChangePasswordAtNextLogin\": \"false\",\r\n      \"canNotChangePassword\": \"true\",\r\n      \"NotExpirePassword\": \"false\",\r\n      \"userRights\": [\r\n        {\r\n          \"name\": \"Manage Groups\",\r\n          \"granted\": true\r\n        }\r\n      ],\r\n      \"expires\": \"12/21/2017\",\r\n      \"comments\": \"This is a full Scim User\"\r\n    }\r\n  },\r\n  \"e67d0934-0246-4b13-b431-7680778c9873\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.partialUpdateUser\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"timezone\": \"America/Los_Angeles\",\r\n    \"externalId\": \"apple\"\r\n  },\r\n  \"e67d0934-0246-4b13-b431-7680778c9873\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateUser
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: user
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
+    patch:
+      tags:
+      - ScimIdentity
+      description: "\n\n\nenvianceSdk.scim.partialUpdateUser\r\n```\r\n[\r\n    {\r\n        \"externalId\": \"apple\",\r\n        \"schemas\": [\r\n            \"urn:scim:schemas:core:1.0\"\r\n        ],\r\n        \"timezone\": \"America/Los_Angeles\"\r\n    },\r\n    \"e67d0934-0246-4b13-b431-7680778c9873\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdatePartialUser
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: user
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
+      - name: id
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
+  /ver2/ScimIdentityService.svc/scim/v1/Users/bulk:
+    patch:
+      tags:
+      - ScimIdentity
+      description: "\n\n\nenvianceSdk.scim.UpdateHomeUserWithPasswordBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"id\": \"C591F8A4-D783-4FF8-928F-3DA512DBB1E6\",\r\n      \"password\": \"1111\"\r\n    },\r\n    {\r\n      \"id\": \"DD4358D4-1665-4848-BA16-1EA7E0CDEA0D\",\r\n      \"password\": \"1111\"\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateHomeUserWithPasswordBulk
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: UpdateHomeUserWithPasswordBulkWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateHomeUserWithPasswordBulk'
+      responses:
+        default:
+          description: not available
+definitions:
+  Enviance.RestServices.Ver2.Scim.ScimResources.Users.EnvianceScimUserExtention:
+    properties:
+      userRights:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.NameGrantedDto'
+        uniqueItems: false
+      expires:
+        type: string
+        format: date-time
+        uniqueItems: false
+      emailDelivery:
+        type: string
+        uniqueItems: false
+      receiveInformation:
+        type: boolean
+        uniqueItems: false
+      commandFailureNotification:
+        type: string
+        uniqueItems: false
+      reportCompletionNotification:
+        type: string
+        uniqueItems: false
+      companyName:
+        type: string
+        uniqueItems: false
+      mustChangePasswordAtNextLogin:
+        type: boolean
+        uniqueItems: false
+      canNotChangePassword:
+        type: boolean
+        uniqueItems: false
+      notExpirePassword:
+        type: boolean
+        uniqueItems: false
+      comments:
+        type: string
+        uniqueItems: false
+      properties:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.Property'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.EnvianceScimUserExtention
+  Enviance.RestServices.Ver2.Scim.ScimResources.Users.Name:
+    properties:
+      formatted:
+        type: string
+        uniqueItems: false
+      familyName:
+        type: string
+        uniqueItems: false
+      givenName:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.Name
+  Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup:
+    properties:
+      displayName:
+        type: string
+        uniqueItems: false
+      members:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.Member'
+        uniqueItems: false
+      urn:scim:schemas:enviance:group:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.EnvianceScimGroupExtention'
+      id:
+        type: string
+        uniqueItems: false
+      externalId:
+        type: string
+        uniqueItems: false
+      meta:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.MetaData'
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup
+  Enviance.RestServices.Ver2.Scim.ScimResources.Users.Address:
+    properties:
+      country:
+        type: string
+        uniqueItems: false
+      formatted:
+        type: string
+        uniqueItems: false
+      locality:
+        type: string
+        uniqueItems: false
+      postalCode:
+        type: string
+        uniqueItems: false
+      primary:
+        type: boolean
+        uniqueItems: false
+      region:
+        type: string
+        uniqueItems: false
+      streetAddress:
+        type: string
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+      Home:
+        type: string
+        uniqueItems: false
+      Other:
+        type: string
+        uniqueItems: false
+      Work:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.Address
+  Enviance.RestServices.Ver2.Scim.ScimResources.Users.ReadOnlyGroup:
+    properties:
+      value:
+        type: string
+        format: guid
+        uniqueItems: false
+      display:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.ReadOnlyGroup
+  Enviance.RestServices.Ver2.Scim.ScimResources.Resource:
+    properties:
+      id:
+        type: string
+        uniqueItems: false
+      externalId:
+        type: string
+        uniqueItems: false
+      meta:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.MetaData'
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Resource
+  Enviance.RestServices.Ver2.Scim.ScimResources.Users.PhoneNumber:
+    properties:
+      value:
+        type: string
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+      Fax:
+        type: string
+        uniqueItems: false
+      Home:
+        type: string
+        uniqueItems: false
+      Mobile:
+        type: string
+        uniqueItems: false
+      Other:
+        type: string
+        uniqueItems: false
+      Pager:
+        type: string
+        uniqueItems: false
+      Work:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.PhoneNumber
+  Enviance.RestServices.Ver2.Scim.ScimResources.Groups.Member:
+    properties:
+      value:
+        type: string
+        uniqueItems: false
+      operation:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Groups.Member
+  Enviance.RestServices.Ver2.Scim.ScimResources.MetaData:
+    properties:
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+      lastModified:
+        type: string
+        uniqueItems: false
+      location:
+        type: string
+        uniqueItems: false
+      version:
+        type: string
+        uniqueItems: false
+      attributes:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.MetaData
+  Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser:
+    properties:
+      userName:
+        type: string
+        uniqueItems: false
+      timezone:
+        type: string
+        uniqueItems: false
+      groups:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ReadOnlyGroup'
+        uniqueItems: false
+      password:
+        type: string
+        uniqueItems: false
+      userType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - HomeUser
+        - AccessUser
+      active:
+        type: boolean
+        uniqueItems: false
+      addresses:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.Address'
+        uniqueItems: false
+      displayName:
+        type: string
+        uniqueItems: false
+      emails:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ElectronicMailAddress'
+        uniqueItems: false
+      name:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.Name'
+      phoneNumbers:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.PhoneNumber'
+        uniqueItems: false
+      preferredLanguage:
+        type: string
+        uniqueItems: false
+      title:
+        type: string
+        uniqueItems: false
+      urn:scim:schemas:enviance:user:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.EnvianceScimUserExtention'
+      id:
+        type: string
+        uniqueItems: false
+      externalId:
+        type: string
+        uniqueItems: false
+      meta:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.MetaData'
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser
+  UpdateHomeUserWithPasswordBulk:
+    properties:
+      userList:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
+        uniqueItems: false
+    type: object
+    format: UpdateHomeUserWithPasswordBulk
+  Enviance.RestServices.Ver2.Scim.ScimResources.NameGrantedDto:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      granted:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.NameGrantedDto
+  Enviance.RestServices.Ver2.Scim.ScimResources.Users.ElectronicMailAddress:
+    properties:
+      primary:
+        type: boolean
+        uniqueItems: false
+      value:
+        type: string
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+      Home:
+        type: string
+        uniqueItems: false
+      Other:
+        type: string
+        uniqueItems: false
+      Work:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.ElectronicMailAddress
+  Enviance.RestServices.Ver2.Scim.ScimResources.Groups.EnvianceScimGroupExtention:
+    properties:
+      rights:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Groups.EnvianceScimGroupExtention
+  Enviance.RestServices.Ver2.Scim.ScimResources.SchemaDefination.IScimSchema:
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.SchemaDefination.IScimSchema
+  Enviance.RestServices.Ver2.Scim.ScimResources.ScimListResponse:
+    properties:
+      totalResults:
+        type: integer
+        format: int32
+        uniqueItems: false
+      Resources:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Scim.ScimResources.Resource'
+        uniqueItems: false
+      startIndex:
+        type: integer
+        format: int32
+        uniqueItems: false
+      itemsPerPage:
+        type: integer
+        format: int32
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.ScimListResponse
+  Enviance.RestServices.Ver2.Scim.ScimResources.Users.Property:
+    properties:
+      propertyName:
+        type: string
+        uniqueItems: false
+      propertyValue:
+        type: string
+        uniqueItems: false
+      isSensitiveData:
+        type: boolean
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.Property
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

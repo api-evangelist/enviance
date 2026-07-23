@@ -1,0 +1,542 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity UOMService API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: UOMService
+paths:
+  /ver2/UOMService.svc/uom:
+    post:
+      tags:
+      - UOMService
+      description: "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.createUOMCategory\r\n```\r\n[\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.UOM.createUOM\r\n```\r\n[\r\n  {\r\n    \"name\": \"name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"categoryIDorName\": \"BF1D8655-B7D6-4674-90F4-3677B2DB55CA\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"uomHistory\": [\r\n      {\r\n        \"beginDate\": \"2024-10-01T00:00:00\",\r\n        \"endDate\": \"2024-10-31T00:00:00\",\r\n        \"uomFactor\": 1.2\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.CreateUOM
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateUOMWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateUOM'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/UOMService.svc/uom/{uomIdOrName}:
+    get:
+      tags:
+      - UOMService
+      description: "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.getUOMCategory\r\n```\r\n[\r\n  \"UOM Category Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.UOM.getUOM\r\n```\r\n[\r\n  \"UOM Category:UOM Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.GetUOM
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: uomIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.UOM.UOMInfo'
+    patch:
+      tags:
+      - UOMService
+      description: "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.updateUOMCategory\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.UOM.updateUOM\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"categoryIDorName\": \"BF1D8655-B7D6-4674-90F4-3677B2DB55CA\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.UpdateUOM
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: uomIdOrName
+        in: path
+        required: true
+        type: string
+      - name: UpdateUOMWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateUOM'
+      responses:
+        default:
+          description: not available
+    delete:
+      tags:
+      - UOMService
+      description: "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.deleteUOMCategory\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.UOM.deleteUOM\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.DeleteUOM
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: uomIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/UOMService.svc/uomCategory:
+    post:
+      tags:
+      - UOMService
+      description: "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.createUOMCategory\r\n```\r\n[\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.CreateUOMCategory
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateUOMCategoryWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateUOMCategory'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/UOMService.svc/uomCategory/{uomCategoryIdOrName}:
+    get:
+      tags:
+      - UOMService
+      description: "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.getUOMCategory\r\n```\r\n[\r\n  \"UOM Category Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.GetUOMCategory
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: uomCategoryIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.UOM.UOMCategoryInfo'
+    patch:
+      tags:
+      - UOMService
+      description: "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.updateUOMCategory\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.UpdateUOMCategory
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: uomCategoryIdOrName
+        in: path
+        required: true
+        type: string
+      - name: UpdateUOMCategoryWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateUOMCategory'
+      responses:
+        default:
+          description: not available
+    delete:
+      tags:
+      - UOMService
+      description: "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.deleteUOMCategory\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.DeleteUOMCategory
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: uomCategoryIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+definitions:
+  CreateUOMCategory:
+    properties:
+      uomCategoryInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.UOM.UOMCategoryInfo'
+    type: object
+    format: CreateUOMCategory
+  CreateUOM:
+    properties:
+      uomInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.UOM.UOMInfo'
+    type: object
+    format: CreateUOM
+  Enviance.RestServices.Ver2.UOM.UOMInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      categoryID:
+        type: string
+        format: guid
+        uniqueItems: false
+      categoryIDorName:
+        type: string
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      alternateName:
+        type: string
+        uniqueItems: false
+      namelocalized:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.LocalizationInfo'
+        uniqueItems: false
+      alternateNamelocalized:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.LocalizationInfo'
+        uniqueItems: false
+      uomHistory:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.UOM.UOMHistoryInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.UOM.UOMInfo
+  UpdateUOM:
+    properties:
+      uomInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.UOM.UOMInfo'
+    type: object
+    format: UpdateUOM
+  UpdateUOMCategory:
+    properties:
+      uomCategoryInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.UOM.UOMCategoryInfo'
+    type: object
+    format: UpdateUOMCategory
+  Enviance.RestServices.Ver2.UOM.UOMHistoryInfo:
+    properties:
+      uomFactor:
+        type: number
+        format: double
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.UOM.UOMHistoryInfo
+  Enviance.RestServices.Common.LocalizationInfo:
+    properties:
+      culture:
+        type: string
+        uniqueItems: false
+      value:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.LocalizationInfo
+  Enviance.RestServices.Ver2.UOM.UOMCategoryInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      alternateName:
+        type: string
+        uniqueItems: false
+      namelocalized:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.LocalizationInfo'
+        uniqueItems: false
+      alternateNamelocalized:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.LocalizationInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.UOM.UOMCategoryInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

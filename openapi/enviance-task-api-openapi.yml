@@ -1,0 +1,887 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Task API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Task
+paths:
+  /ver2/TaskService.svc/tasks:
+    post:
+      tags:
+      - Task
+      description: "\n\n\nenvianceSdk.tasks.createTask\r\n```\r\n[\r\n  {\r\n    \"name\": \"Task1\",\r\n    \"description\": \"Perform a spot check every month on the steam valves.\",\r\n    \"dueDate\": \"2012-12-08T09:00:00\",\r\n    \"timeZone\": {\r\n      \"name\": \"Pacific Time (US \\u0026 Canada) (UTC-08:00) (With DST)\"\r\n    },\r\n    \"assignor\": \"dnk\",\r\n    \"assignees\": [\r\n      {\r\n        \"userIdOrName\": \"dnk\"\r\n      },\r\n      {\r\n        \"groupIdOrName\": \"Administrators\"\r\n      }\r\n    ],\r\n    \"calendars\": [\r\n      \"System\",\r\n      \"My\"\r\n    ],\r\n    \"objects\": [\r\n      \"/1\"\r\n    ],\r\n    \"documents\": [\r\n      \"/asdf/qktop.ini\"\r\n    ],\r\n    \"schedules\": [\r\n      {\r\n        \"startDate\": \"2014-02-22T00:00:00\",\r\n        \"recurrenceType\": \"Monthly\",\r\n        \"startTime\": \"00:00:00\",\r\n        \"recurrenceInterval\": 1,\r\n        \"dayOfMonth\": 31\r\n      }\r\n    ],\r\n    \"notifications\": [\r\n      {\r\n        \"conditions\": {\r\n          \"immediately\": true,\r\n          \"whenDismissed\": true,\r\n          \"byDueDate\": {\r\n            \"conditionType\": \"IntervalBefore\",\r\n            \"intervalValue\": 5,\r\n            \"intervalType\": \"Hour\"\r\n          },\r\n          \"byCompletionStatus\": {\r\n            \"comparisonLogic\": \"\\u003E=\",\r\n            \"completionPercent\": 30\r\n          }\r\n        },\r\n        \"recipients\": {\r\n          \"toAssignees\": true,\r\n          \"toAssignor\": true,\r\n          \"users\": [\r\n            \"067A42E1-8FD4-4ADA-A7F5-0007473469AA\"\r\n          ],\r\n          \"groups\": [\r\n            \"503DFFD2-FB1F-412E-B9C5-034796E4653D\"\r\n          ]\r\n        },\r\n        \"deliveryMethod\": \"InboxAndEmail\",\r\n        \"comments\": \"Notification comment 1\"\r\n      }\r\n    ],\r\n    \"workflowtrigger\": {\r\n      \"isautoclosetask\": false,\r\n      \"taskcompletionfields\": [\r\n        \"CostToComplete\",\r\n        \"PercentComplete\",\r\n        \"Comments\",\r\n        \"ComplyStatus\",\r\n        \"Dismissed\",\r\n        \"CompletionDate\"\r\n      ],\r\n      \"workflows\": [\r\n        {\r\n          \"workflowtypeidorname\": \"b4290540-14e0-4351-aaef-867014c7ed6e\",\r\n          \"workflowname\": \"Igor WF Name\",\r\n          \"calendars\": [\r\n            \"My\",\r\n            \"System\"\r\n          ],\r\n          \"duedateflags\": [\r\n            \"Workflow\"\r\n          ],\r\n          \"duedateamount\": {\r\n            \"value\": 2,\r\n            \"hours\": \"Hour\",\r\n            \"period\": \"Before\"\r\n          },\r\n          \"timetocreateoptions\": [\r\n            {\r\n              \"category\": \"ByDueDate\",\r\n              \"value\": {\r\n                \"past\": false,\r\n                \"value\": 1,\r\n                \"hours\": \"Week\",\r\n                \"period\": \"After\"\r\n              }\r\n            },\r\n            {\r\n              \"category\": \"ByCompleteStatus\",\r\n              \"value\": {\r\n                \"operation\": \"OR\",\r\n                \"percent\": 10,\r\n                \"compare\": \"=\"\r\n              }\r\n            },\r\n            {\r\n              \"category\": \"OnDismissActivate\"\r\n            }\r\n          ],\r\n          \"assignee\": [\r\n            {\r\n              \"userIdOrName\": \"8f17d324-4d92-450e-aaa1-cbbfbc1826f3\"\r\n            },\r\n            {\r\n              \"groupIdOrName\": \"fcca10ce-09be-4a6f-a0c7-defb0f124a29\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.CreateTask
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateTaskWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateTask'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/TaskService.svc/tasks/{taskId}:
+    get:
+      tags:
+      - Task
+      description: "\n\n\nenvianceSdk.tasks.getTask\r\n```\r\n[\r\n  \"c1960122-16dd-4d43-91e4-ea0d9393ab78\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.tasks.getTaskOccurrence\r\n```\r\n[\r\n  \"ad7b8413-812a-4e59-95f4-03205ca685f0\",\r\n  \"2013-12-08T09:00:00\",\r\n  \"/Bug 1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTask
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: taskId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.TaskInfo'
+    patch:
+      tags:
+      - Task
+      description: "\n\nUpdates the properties of a simple (single occurrence) Task definition, potentially moving it to a new Location. Updating the object Location(s) of a Task effectively moves that Task to the new Location(s).\r\n\r\n**Security:** Requires Manage Tasks right. \r\n\r\n**SDK API:**  `envianceSdk.tasks.updateTask(taskId, taskInfo, onsuccess, onerror)`\r\n\r\n```\r\nPATCH /ver2/TaskService.svc/tasks/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n \r\n{\r\n  \"taskInfo\": {\r\n    \"name\": \"Check Valves Monthly\",\r\n    \"description\": \"Perform a spot check every month on the steam valves.\",\r\n    \"dueDate\": \"2012-12-08T09:00:00\",\r\n    \"timeZone\": \"USA Pacific\",\r\n    \"objects\": [\r\n      \"/A Facility/A Unit/A POI/Check Valves\",\r\n      \"/A Facility/A Unit/B POI/Check Valves\",\r\n      \"/A Facility/A Unit/C POI/Check Valves\"\r\n    ]\r\n  }\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.tasks.updateTask\r\n```\r\n[\r\n  \"F04DD9CA-35CA-4579-A266-5050660D7012\",\r\n  {\r\n    \"name\": \"Task 1 updated\",\r\n    \"description\": \"updated.\",\r\n    \"timeZone\": {\r\n      \"name\": \"Pacific Time (US \\u0026 Canada) (UTC-08:00) (With DST)\"\r\n    },\r\n    \"assignor\": \"eoleg2\",\r\n    \"assignees\": [\r\n      {\r\n        \"userIdOrName\": \"eoleg1\"\r\n      }\r\n    ],\r\n    \"calendars\": [\r\n      \"System\",\r\n      \"My\"\r\n    ],\r\n    \"objects\": [\r\n      \"/Area 1\"\r\n    ],\r\n    \"schedules\": [\r\n      {\r\n        \"startDate\": \"2014-02-22T00:00:00\",\r\n        \"recurrenceType\": \"Monthly\",\r\n        \"startTime\": \"00:00:00\",\r\n        \"recurrenceInterval\": 1,\r\n        \"dayOfMonth\": 31\r\n      }\r\n    ],\r\n    \"notifications\": [\r\n      {\r\n        \"conditions\": {\r\n          \"immediately\": true,\r\n          \"whenDismissed\": true,\r\n          \"byDueDate\": {\r\n            \"conditionType\": \"IntervalBefore\",\r\n            \"intervalValue\": 5,\r\n            \"intervalType\": \"Hour\"\r\n          },\r\n          \"byCompletionStatus\": {\r\n            \"comparisonLogic\": \"\\u003E=\",\r\n            \"completionPercent\": 30\r\n          }\r\n        },\r\n        \"recipients\": {\r\n          \"toAssignees\": true,\r\n          \"toAssignor\": true,\r\n          \"users\": [\r\n            \"067A42E1-8FD4-4ADA-A7F5-0007473469AA\"\r\n          ],\r\n          \"groups\": [\r\n            \"503DFFD2-FB1F-412E-B9C5-034796E4653D\"\r\n          ]\r\n        },\r\n        \"deliveryMethod\": \"InboxAndEmail\",\r\n        \"comments\": \"Notification comment 1\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.UpdateTask
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: taskId
+        in: path
+        required: true
+        type: string
+      - name: UpdateTaskWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateTask'
+      responses:
+        default:
+          description: not available
+    delete:
+      tags:
+      - Task
+      description: "\n\n\nenvianceSdk.tasks.deleteTask\r\n```\r\n[\r\n  \"c1960122-16dd-4d43-91e4-ea0d9393ab78\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.DeleteTask
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: taskId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/TaskService.svc/tasks/{taskId}/ical:
+    get:
+      tags:
+      - Task
+      operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.ExportTaskAsICal
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: taskId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/TaskService.svc/tasks/{taskId}/occurrences/{dueDate}:
+    get:
+      tags:
+      - Task
+      description: "\n\nGets information about a Task occurrence.\r\n\r\n**Security:** Requires Manage Tasks right. \r\n\r\n**SDK API:**  `envianceSdk.tasks.getTaskOccurrence(taskId, dueDate, objectIdOrPath, onsuccess, onerror)`\r\n\r\n```\r\nGET /ver2/TaskService.svc/tasks/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n  \"name\": \"Check Valves Monthly\",\r\n  \"description\": \"Perform a spot check every month on the steam valves.\",\r\n  \"dueDate\": \"2012-12-08T09:00:00\",\r\n  \"timeZone\": \"USA Pacific\",\r\n  \"assignor\": \"CGauss\",\r\n  \"assignees\": [{\"userName\": \"LEuler\"}, {\"groupName\": \"Group A\"}],\r\n  \"calendars\": [\"System\", \"My\"],\r\n  \"objects\": [\r\n    \"/A Facility/A Unit/A POI/Check Valves\",\r\n    \"/A Facility/A Unit/B POI/Check Valves\"\r\n  ],\r\n  \"documents\": [\"/A folder/A subfolder/A document.doc\"]\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.tasks.getTaskOccurrence\r\n```\r\n[\r\n  \"ad7b8413-812a-4e59-95f4-03205ca685f0\",\r\n  \"2013-12-08T09:00:00\",\r\n  \"/Bug 1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTaskOccurrence
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: taskId
+        in: path
+        required: true
+        type: string
+      - name: dueDate
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo'
+  /ver2/TaskService.svc/tasks/{taskId}/occurrences/{dueDate}/{objectIdOrPath}:
+    get:
+      tags:
+      - Task
+      description: "\n\n\nenvianceSdk.tasks.getTaskOccurrence\r\n```\r\n[\r\n    \"ad7b8413-812a-4e59-95f4-03205ca685f0\",\r\n    \"2013-12-08T09:00:00\",\r\n    \"/Bug 1\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTaskOccurrenceByObject
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: taskId
+        in: path
+        required: true
+        type: string
+      - name: dueDate
+        in: path
+        required: true
+        type: string
+      - name: objectIdOrPath
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo'
+    patch:
+      tags:
+      - Task
+      description: '
+
+
+
+        ["ad7b8413-812a-4e59-95f4-03205ca685f0", new Date(),null, [{   "objectIdOrPath": "/A Facility/A Unit/A POI/Check Valves",    "dismissed": "False",    "percentComplete": 100,    "statusChangeDate": "2012-12-10T08:00:00",    "hoursToComplete": 5.5,    "costToComplete": 0.0,    "comment": "Done!"} ], "onsuccess", "onerror"]
+
+        '
+      operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.CompleteTaskOccurrence
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: taskId
+        in: path
+        required: true
+        type: string
+      - name: dueDate
+        in: path
+        required: true
+        type: string
+      - name: objectIdOrPath
+        in: path
+        required: true
+        type: string
+      - name: CompleteTaskOccurrenceWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CompleteTaskOccurrence'
+      responses:
+        default:
+          description: not available
+definitions:
+  Enviance.RestServices.Common.TimeZoneInfo:
+    properties:
+      id:
+        type: integer
+        format: int32
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      stdOffset:
+        type: integer
+        format: int32
+        uniqueItems: false
+      dstOffset:
+        type: integer
+        format: int32
+        uniqueItems: false
+      currentOffset:
+        type: integer
+        format: int32
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.TimeZoneInfo
+  Enviance.RestServices.Ver2.Tasks.Triggering.DueDateInfo:
+    required:
+    - value
+    - hours
+    - period
+    properties:
+      value:
+        type: integer
+        format: int32
+        uniqueItems: false
+      hours:
+        type: string
+        uniqueItems: false
+      period:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Triggering.DueDateInfo
+  Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateInfo:
+    required:
+    - category
+    properties:
+      category:
+        type: string
+        uniqueItems: false
+      value:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateValue'
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateInfo
+  Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo:
+    properties:
+      statusChangeDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      objectIdOrPath:
+        type: string
+        uniqueItems: false
+      dismissed:
+        type: boolean
+        uniqueItems: false
+      percentComplete:
+        type: string
+        format: byte
+        uniqueItems: false
+      hoursToComplete:
+        type: number
+        format: double
+        uniqueItems: false
+      costToComplete:
+        type: number
+        format: decimal
+        uniqueItems: false
+      comment:
+        type: string
+        uniqueItems: false
+      eventInstanceId:
+        type: string
+        format: guid
+        uniqueItems: false
+      compliancePeriodStartDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      compliancePeriodEndDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      comply:
+        type: string
+        uniqueItems: false
+      ObjectId:
+        type: string
+        format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo
+  Enviance.RestServices.Ver2.Tasks.Notifications.NotificationConditions:
+    properties:
+      immediately:
+        type: boolean
+        uniqueItems: false
+      whenDismissed:
+        type: boolean
+        uniqueItems: false
+      byDueDate:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Notifications.DueDateCondition'
+      byCompletionStatus:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Notifications.CompletionStatusCondition'
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Notifications.NotificationConditions
+  Enviance.RestServices.Ver2.Tasks.Notifications.CompletionStatusCondition:
+    properties:
+      completionPercent:
+        type: integer
+        format: int32
+        uniqueItems: false
+      comparisonLogic:
+        type: string
+        uniqueItems: false
+      onlyWhenPastDue:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Notifications.CompletionStatusCondition
+  Enviance.RestServices.Ver2.Tasks.Notifications.TaskNotificationInfo:
+    properties:
+      conditions:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Notifications.NotificationConditions'
+      templateIdOrName:
+        type: string
+        uniqueItems: false
+      recipients:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Notifications.NotificationRecipients'
+      deliveryMethod:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Inbox
+        - Email
+        - InboxAndEmail
+      comments:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Notifications.TaskNotificationInfo
+  CompleteTaskOccurrence:
+    properties:
+      taskOccurrenceInfos:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo'
+        uniqueItems: false
+    type: object
+    format: CompleteTaskOccurrence
+  Enviance.RestServices.Ver2.Tasks.Triggering.TaskWorkflowInfo:
+    properties:
+      isautoclosetask:
+        type: boolean
+        uniqueItems: false
+      workflows:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Triggering.WorkflowTriggerInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Triggering.TaskWorkflowInfo
+  Enviance.RestServices.Ver2.Tasks.Notifications.DueDateCondition:
+    properties:
+      conditionType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - IntervalBefore
+        - IntervalAfter
+        - PastDue
+      intervalType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - QuarterHour
+        - Hour
+        - Day
+        - Week
+        - Month
+        - Year
+      intervalValue:
+        type: integer
+        format: int32
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Notifications.DueDateCondition
+  Enviance.RestServices.Ver2.Tasks.Schedules.RecurrenceIntervalInfoExt:
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Schedules.RecurrenceIntervalInfoExt
+  Enviance.RestServices.Common.AssigneeV2:
+    properties:
+      userIdOrName:
+        type: string
+        uniqueItems: false
+      groupIdOrName:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Common.AssigneeV2
+  Enviance.RestServices.Ver2.Tasks.Triggering.WorkflowTriggerInfo:
+    required:
+    - workflowtypeidorname
+    - duedateflags
+    - timetocreateoptions
+    properties:
+      workflowtypeidorname:
+        type: string
+        uniqueItems: false
+      workflowname:
+        type: string
+        uniqueItems: false
+      isusetaskname:
+        type: boolean
+        uniqueItems: false
+      calendars:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      duedateflags:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      duedateamount:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Triggering.DueDateInfo'
+      timetocreateoptions:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateInfo'
+        uniqueItems: false
+      assignee:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.AssigneeV2'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Triggering.WorkflowTriggerInfo
+  Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateValue:
+    properties:
+      past:
+        type: boolean
+        uniqueItems: false
+      operation:
+        type: string
+        uniqueItems: false
+      value:
+        type: integer
+        format: int32
+        uniqueItems: false
+      hours:
+        type: string
+        uniqueItems: false
+      period:
+        type: string
+        uniqueItems: false
+      percent:
+        type: integer
+        format: int32
+        uniqueItems: false
+      compare:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateValue
+  Enviance.RestServices.Ver2.Tasks.Schedules.DayOfMonthInfoExt:
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Schedules.DayOfMonthInfoExt
+  UpdateTask:
+    properties:
+      taskInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.TaskInfo'
+    type: object
+    format: UpdateTask
+  CreateTask:
+    properties:
+      taskInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.TaskInfo'
+      copyFrom:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CreateTask
+  Enviance.RestServices.Ver2.Tasks.Notifications.NotificationRecipients:
+    properties:
+      toAssignees:
+        type: boolean
+        uniqueItems: false
+      toAssignor:
+        type: boolean
+        uniqueItems: false
+      users:
+        type: array
+        items:
+          type: string
+          format: guid
+        uniqueItems: false
+      groups:
+        type: array
+        items:
+          type: string
+          format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Notifications.NotificationRecipients
+  Enviance.RestServices.Ver2.Tasks.TaskInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      createdBy:
+        type: string
+        uniqueItems: false
+      createdOn:
+        type: string
+        format: date-time
+        uniqueItems: false
+      dueDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      timeZone:
+        $ref: '#/definitions/Enviance.RestServices.Common.TimeZoneInfo'
+      templateIdOrName:
+        type: string
+        uniqueItems: false
+      assignor:
+        type: string
+        uniqueItems: false
+      assignees:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Common.AssigneeV2'
+        uniqueItems: false
+      calendars:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      objects:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      documents:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      schedules:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Schedules.TaskScheduleInfo'
+        uniqueItems: false
+      notifications:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Notifications.TaskNotificationInfo'
+        uniqueItems: false
+      workflowtrigger:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Triggering.TaskWorkflowInfo'
+      suppressNotificationsBefore:
+        type: string
+        format: date-time
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.TaskInfo
+  Enviance.RestServices.Ver2.Tasks.Schedules.TaskScheduleInfo:
+    properties:
+      recurrenceType:
+        type: string
+        format: enum
+        uniqueItems: false
+        enum:
+        - Hourly
+        - Daily
+        - Weekly
+        - Monthly
+        - Yearly
+        - AfterLastCompletion
+      startDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      startTime:
+        type: string
+        uniqueItems: false
+      endTime:
+        type: string
+        uniqueItems: false
+      recurrenceInterval:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Schedules.RecurrenceIntervalInfoExt'
+      dayOfMonth:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Tasks.Schedules.DayOfMonthInfoExt'
+      monthOfYear:
+        type: integer
+        format: int32
+        uniqueItems: false
+      TalLogicVersion:
+        type: integer
+        format: int16
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.Tasks.Schedules.TaskScheduleInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

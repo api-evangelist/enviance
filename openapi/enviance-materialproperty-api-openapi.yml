@@ -1,0 +1,288 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity MaterialProperty API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: MaterialProperty
+paths:
+  /ver2/MaterialPropertyService.svc/materialProperties:
+    post:
+      tags:
+      - MaterialProperty
+      description: "\n\n\nenvianceSdk.materialProperties.createMaterialProperty\r\n```\r\n[\r\n  {\r\n    \"name\": \"PFBP Property Name\",\r\n    \"description\": \"VBP Description\",\r\n    \"propertyType\": \"Formula Based Primary\",\r\n    \"dataType\": \"Numeric\",\r\n    \"formulaHistory\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B SUM([Chem_MW])\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B [Prop_PFBP1]\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.CreateMaterialProperty
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateMaterialPropertyWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateMaterialProperty'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/MaterialPropertyService.svc/materialProperties/{materialPropertyIdOrName}:
+    get:
+      tags:
+      - MaterialProperty
+      description: "\n\n\nenvianceSdk.materialProperties.getMaterialProperty\r\n```\r\n[\r\n  \"Material Property Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.GetMaterialProperty
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: materialPropertyIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.MaterialPropertyInfo'
+    patch:
+      tags:
+      - MaterialProperty
+      description: "\n\n\nenvianceSdk.materialProperties.updateMaterialProperty\r\n```\r\n[\r\n  \"Material Property Name\",\r\n  {\r\n    \"name\": \"PFBP Property Name\",\r\n    \"description\": \"VBP Description\",\r\n    \"dataType\": \"Numeric\",\r\n    \"formulaHistory\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B SUM([Chem_MW])\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B [Prop_PFBP1]\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.UpdateMaterialProperty
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: materialPropertyIdOrName
+        in: path
+        required: true
+        type: string
+      - name: UpdateMaterialPropertyWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateMaterialProperty'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+    delete:
+      tags:
+      - MaterialProperty
+      description: "\n\n\nenvianceSdk.materialProperties.deleteMaterialProperty\r\n```\r\n[\r\n  \"Material Property Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.DeleteMaterialProperty
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: materialPropertyIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+definitions:
+  CreateMaterialProperty:
+    properties:
+      materialPropertyInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.MaterialPropertyInfo'
+      copyFrom:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CreateMaterialProperty
+  Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.MaterialPropertyInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      propertyType:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      dataType:
+        type: string
+        uniqueItems: false
+      uniqueTag:
+        type: string
+        uniqueItems: false
+      formulaHistory:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.FormulaHistoryInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.MaterialPropertyInfo
+  Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.FormulaHistoryInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      script:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.FormulaHistoryInfo
+  UpdateMaterialProperty:
+    properties:
+      materialPropertyInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.MaterialPropertyInfo'
+    type: object
+    format: UpdateMaterialProperty
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

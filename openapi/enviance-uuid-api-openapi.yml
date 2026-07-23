@@ -1,0 +1,171 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity UUID API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: UUID
+paths:
+  /ver2/UUIDService.svc/currentsession:
+    get:
+      tags:
+      - UUID
+      description: "\n\n\nenvianceSdk.uuid.getCurrentSession\r\n```\r\n[\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\n"
+      operationId: Enviance.RestServices.Ver2.UUID.Impl.UUIDService.GetCurrentSessionInfo
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.UUID.SessionInfo'
+  /ver2/UUIDService.svc/userattributes/{userIdOrName}:
+    get:
+      tags:
+      - UUID
+      description: "\n\n\nenvianceSdk.uuid.getUserAttributes\r\n```\r\n[\r\n  \"loginOrID\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.UUID.Impl.UUIDService.GetUserAttributes
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: userIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.UUID.UserInfo'
+definitions:
+  Enviance.RestServices.Ver2.UUID.UserInfo:
+    properties:
+      userId:
+        type: string
+        format: guid
+        uniqueItems: false
+      userName:
+        type: string
+        uniqueItems: false
+      firstName:
+        type: string
+        uniqueItems: false
+      lastName:
+        type: string
+        uniqueItems: false
+      email:
+        type: string
+        uniqueItems: false
+      systems:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.UUID.Impl.Models.SystemModel'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.UUID.UserInfo
+  Enviance.RestServices.Ver2.UUID.Impl.Models.SystemModel:
+    type: object
+    format: Enviance.RestServices.Ver2.UUID.Impl.Models.SystemModel
+  Enviance.RestServices.Ver2.UUID.SessionInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      systemId:
+        type: string
+        format: guid
+        uniqueItems: false
+      userId:
+        type: string
+        format: guid
+        uniqueItems: false
+      sessionTimeout:
+        type: integer
+        format: int32
+        uniqueItems: false
+      isAdmin:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.UUID.SessionInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

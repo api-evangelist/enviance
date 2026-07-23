@@ -1,0 +1,781 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity FormTemplate API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: FormTemplate
+paths:
+  /ver2/FormTemplateService.svc/formtemplates:
+    post:
+      tags:
+      - FormTemplate
+      description: "\n\nCreate form template in enviance system\r\n\r\n** SDK API:**  'envianceSdk.formtemplates.createFormTemplate (formTemplateInfo, onsuccess, onerror)'\r\n\r\n** SDK API:**  'envianceSdk.formtemplates.createFormTemplateAsync (formTemplateInfo, onsuccess, onerror)'\r\n\r\n```\r\nPOST /formtemplates HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\r\n  \"formTemplateInfo\" : {\r\n    \"name\": \"Form Template REST API Demo - t222\",\r\n    \"description\": \"Desc\",\r\n    \"version\": 10,\r\n    \r\n    \"udfs\": [\r\n        {\r\n            \"idOrName\": \"de137d17-dec2-45da-aef5-f48f2a6a522a\",\r\n            \"order\": 1,\r\n            \"scripts\": [],\r\n            \"validation\": [\r\n                {\r\n                    \"length\" : 11,\r\n                    \"regEx\": \"rer\",\r\n                    \"requiredValidationScope\": \"SaveStepData\",\r\n                    \"lengthValidationScope\": \"Transition\",\r\n                    \"regExValidationScope\": \"SaveStepData\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"idOrName\": \"MyField1\",\r\n            \"order\": 2,\r\n            \"scripts\": [],\r\n            \"validation\": [\r\n                {\r\n                    \"length\" : 20,\r\n                    \"regEx\": \"rer\",\r\n                    \"requiredValidationScope\": \"SaveStepData\",\r\n                    \"lengthValidationScope\": \"Transition\",\r\n                    \"regExValidationScope\": \"SaveStepData\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n  }\r\n}\r\n\r\n```\r\n\n\n\n[{r    \"name\": \"Form Template\",r    \"description\": \"Desc\",r    \"version\": 1,r    \"versionComment\": \"Version API Created\",r    \"udfs\": [r        {r            \"id\": \"de137d17-dec2-45da-aef5-f48f2a6a522a\",r            \"order\": 0,r            \"scripts\": [],r            \"validation\": [r                {r                    \"length\" : 10,r                    \"regEx\": \"rer\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"lengthValidationScope\": \"Transition\",r                    \"regExValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"7c5f4f2a-10e3-4a14-a283-89ae089d9644\",r            \"order\": 1,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": 1.0,r                    \"max\": 10.0,r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"f51e88e5-8a0f-4154-aae7-83ff6b2296a9\",r            \"order\": 2,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"qwerty\",r                    \"requiredValidationScope\": \"Transition\",r                    \"regExValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"68533da2-d24c-4b28-9092-5c15cb7be03a\",r            \"order\": 3,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"a8524a17-8409-4294-bb30-856888d78b49\",r            \"order\": 4,r            \"scripts\": [],r            \"validation\": [r                {r                    \"length\": 21,r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"lengthValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"e90279e8-6d07-4f8c-b0b5-5220cb92fc24\",r            \"order\": 5,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"ef9a9136-5d49-41c6-a21b-d9eb4b159a1c\",r            \"order\": 6,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"920b21b0-d7f2-4f8f-9d21-0a0de4003177\",r            \"order\": 7,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": 1.0,r                    \"max\": 10.0,r                    \"requiredValidationScope\": \"Transition\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"242b7f85-1d68-4800-932c-338aa26ef8bd\",r            \"order\": 8,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": \"2017-08-01T14:00:00\",r                    \"max\": \"2017-08-31T16:00:00\",r                    \"requiredValidationScope\": \"Transition\",r                    \"rangeValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"955c0faf-2143-4d74-8c12-39bd62c9940a\",r            \"order\": 9,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": \"2017-08-14T07:30:00\",r                    \"max\": \"2017-08-14T23:30:00\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"26ae383c-948a-4671-8d20-d16680910efa\",r            \"order\": 10,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"0ac17301-31d8-4435-8949-2a85b1f075db\",r            \"order\": 11,r            \"scripts\": [r                {r                    r                    \"beginDate\": \"2017-08-14T07:00:00\",r                    \"endDate\": \"9999-12-31T00:00:00\",r                    \"script\": \"[MayurField2]\",r                    \"exceptions\": [r                        {r                            \"exceptionType\": \"DivideByZero\",r                            \"value\": 0r                        }r                    ],r                    \"udfDependencies\": [r                        {r                            \"udfID\": \"7c5f4f2a-10e3-4a14-a283-89ae089d9644\"r                        }r                    ]r                }r            ],r            \"validation\": []r        },r        {r            \"id\": \"06e1db0b-13fb-41cb-8717-eac71b4c677c\",r            \"order\": 12,r            \"scripts\": [r                {r                    r                    \"beginDate\": \"2017-08-14T07:00:00\",r                    \"endDate\": \"9999-12-31T00:00:00\",r                    \"script\": \"[ of batches]\",r                    \"exceptions\": [],r                    \"udfDependencies\": [r                        {r                            \"udfID\": \"ef9a9136-5d49-41c6-a21b-d9eb4b159a1c\"r                        }r                    ]r                }r            ],r            \"validation\": []r        },r        {r            \"id\": \"394272a6-7fe4-4f78-9a25-9672a805e3dc\",r            \"order\": 13,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"3c799f73-c42b-4e04-84c6-d2d11afe07ad\",r            \"order\": 14,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepDataAndTransition\"r                }r            ]r        },r        {r            \"id\": \"fbb6771c-70f8-47ff-9862-ad784dd91078\",r            \"order\": 15,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"efc53d35-6084-4c3c-b0c0-97fb34b233b6\",r            \"order\": 16,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"693fc6a6-6ffb-4218-8640-6155e56e43b1\",r            \"order\": 17,r            \"scripts\": [],r            \"validation\": []r        }r    ]r}r, \"onsuccess\", \"onerror\"][{r    \"name\": \"Form Template\",r    \"description\": \"Desc\",r    \"version\": 1,r    \"versionComment\": \"Version API Created\",r    \"udfs\": [r        {r            \"id\": \"de137d17-dec2-45da-aef5-f48f2a6a522a\",r            \"order\": 0,r            \"scripts\": [],r            \"validation\": [r                {r                    \"length\" : 10,r                    \"regEx\": \"rer\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"lengthValidationScope\": \"Transition\",r                    \"regExValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"7c5f4f2a-10e3-4a14-a283-89ae089d9644\",r            \"order\": 1,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": 1.0,r                    \"max\": 10.0,r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"f51e88e5-8a0f-4154-aae7-83ff6b2296a9\",r            \"order\": 2,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"qwerty\",r                    \"requiredValidationScope\": \"Transition\",r                    \"regExValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"68533da2-d24c-4b28-9092-5c15cb7be03a\",r            \"order\": 3,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"a8524a17-8409-4294-bb30-856888d78b49\",r            \"order\": 4,r            \"scripts\": [],r            \"validation\": [r                {r                    \"length\": 21,r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"lengthValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"e90279e8-6d07-4f8c-b0b5-5220cb92fc24\",r            \"order\": 5,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"ef9a9136-5d49-41c6-a21b-d9eb4b159a1c\",r            \"order\": 6,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"920b21b0-d7f2-4f8f-9d21-0a0de4003177\",r            \"order\": 7,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": 1.0,r                    \"max\": 10.0,r                    \"requiredValidationScope\": \"Transition\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"242b7f85-1d68-4800-932c-338aa26ef8bd\",r            \"order\": 8,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": \"2017-08-01T14:00:00\",r                    \"max\": \"2017-08-31T16:00:00\",r                    \"requiredValidationScope\": \"Transition\",r                    \"rangeValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"955c0faf-2143-4d74-8c12-39bd62c9940a\",r            \"order\": 9,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": \"2017-08-14T07:30:00\",r                    \"max\": \"2017-08-14T23:30:00\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"26ae383c-948a-4671-8d20-d16680910efa\",r            \"order\": 10,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"0ac17301-31d8-4435-8949-2a85b1f075db\",r            \"order\": 11,r            \"scripts\": [r                {r                    r                    \"beginDate\": \"2017-08-14T07:00:00\",r                    \"endDate\": \"9999-12-31T00:00:00\",r                    \"script\": \"[MayurField2]\",r                    \"exceptions\": [r                        {r                            \"exceptionType\": \"DivideByZero\",r                            \"value\": 0r                        }r                    ],r                    \"udfDependencies\": [r                        {r                            \"udfID\": \"7c5f4f2a-10e3-4a14-a283-89ae089d9644\"r                        }r                    ]r                }r            ],r            \"validation\": []r        },r        {r            \"id\": \"06e1db0b-13fb-41cb-8717-eac71b4c677c\",r            \"order\": 12,r            \"scripts\": [r                {r                    r                    \"beginDate\": \"2017-08-14T07:00:00\",r                    \"endDate\": \"9999-12-31T00:00:00\",r                    \"script\": \"[ of batches]\",r                    \"exceptions\": [],r                    \"udfDependencies\": [r                        {r                            \"udfID\": \"ef9a9136-5d49-41c6-a21b-d9eb4b159a1c\"r                        }r                    ]r                }r            ],r            \"validation\": []r        },r        {r            \"id\": \"394272a6-7fe4-4f78-9a25-9672a805e3dc\",r            \"order\": 13,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"3c799f73-c42b-4e04-84c6-d2d11afe07ad\",r            \"order\": 14,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepDataAndTransition\"r                }r            ]r        },r        {r            \"id\": \"fbb6771c-70f8-47ff-9862-ad784dd91078\",r            \"order\": 15,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"efc53d35-6084-4c3c-b0c0-97fb34b233b6\",r            \"order\": 16,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"693fc6a6-6ffb-4218-8640-6155e56e43b1\",r            \"order\": 17,r            \"scripts\": [],r            \"validation\": []r        }r    ]r}r, \"onsuccess\", \"onerror\"]\n"
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.CreateFormTemplate
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CreateFormTemplateWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateFormTemplate'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/FormTemplateService.svc/formtemplates/{formtemplateIdOrName}:
+    get:
+      tags:
+      - FormTemplate
+      description: "\n\nGet information about form template from enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.getFormTemplate (formtemplateIdOrName, onsuccess, onerror)\r\n\r\n```\r\nGET /formtemplates/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n    \"id\": \"ecdb1461-3e4d-488b-ae9f-94de6a8fd1c3\",\r\n    \"name\": \"Form Template TEST1\",\r\n    \"description\": \"Desc\",\r\n    \"versionId\": \"784bc71e-a396-456c-b808-01985d0d7f68\",\r\n    \"version\": 1,\r\n    \"versionComment\": \"\",\r\n    \"udfs\": [\r\n        {\r\n            \"id\": \"de137d17-dec2-45da-aef5-f48f2a6a522a\",\r\n            \"name\": \"MyField1\",\r\n            \"type\": \"Text\",\r\n            \"valueEntryMethod\": \"Text\",\r\n            \"order\": 0,\r\n            \"scripts\": [],\r\n            \"validation\": [\r\n                {\r\n                    \"length\": 11,\r\n                    \"regEx\": \"rer\",\r\n                    \"requiredValidationScope\": \"SaveStepData\",\r\n                    \"lengthValidationScope\": \"Transition\",\r\n                    \"rangeValidationScope\": \"None\",\r\n                    \"regExValidationScope\": \"SaveStepData\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.formtemplates.getFormTemplate\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\nenvianceSdk.formtemplates.getFormTemplateVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"102fe594-20eb-4938-96cc-cac8eebd282d\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\nenvianceSdk.formtemplates.getFormTemplateVersions\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplate
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: formTemplateIdOrName
+        in: query
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.FormTemplateInfo'
+    put:
+      tags:
+      - FormTemplate
+      description: '
+
+
+
+        ["960e9887-ca75-4fa8-afd0-fc79aa952ff6", {r    "name": "Mayur Template 7",r    "description": "Update Desc",r    "version": 20,r    "versionComment": "Version 9 Created from REST API",r    "udfs": [r        {r            "id": "de137d17-dec2-45da-aef5-f48f2a6a522a",r            "order": 0,r            "scripts": [],r            "validation": [r                {r                    "length": 20,r                    "regEx": "rer",r                    "requiredValidationScope": "SaveStepData",r                    "lengthValidationScope": "Transition",r                    "regExValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "7c5f4f2a-10e3-4a14-a283-89ae089d9644",r            "order": 1,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": 1,r                    "max": 10,r                    "requiredValidationScope": "SaveStepData",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "f51e88e5-8a0f-4154-aae7-83ff6b2296a9",r            "order": 2,r            "scripts": [],r            "validation": [r                {r                    "regEx": "qwerty",r                    "requiredValidationScope": "Transition",r                    "regExValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "68533da2-d24c-4b28-9092-5c15cb7be03a",r            "order": 3,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "a8524a17-8409-4294-bb30-856888d78b49",r            "order": 4,r            "scripts": [],r            "validation": [r                {r                    "length": 21,r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData",r                    "lengthValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "e90279e8-6d07-4f8c-b0b5-5220cb92fc24",r            "order": 5,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "ef9a9136-5d49-41c6-a21b-d9eb4b159a1c",r            "order": 6,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "920b21b0-d7f2-4f8f-9d21-0a0de4003177",r            "order": 7,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": 1,r                    "max": 10,r                    "requiredValidationScope": "Transition",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "242b7f85-1d68-4800-932c-338aa26ef8bd",r            "order": 8,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": "2017-08-01T14:00:00",r                    "max": "2017-08-31T16:00:00",r                    "requiredValidationScope": "Transition",r                    "rangeValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "955c0faf-2143-4d74-8c12-39bd62c9940a",r            "order": 9,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": "2017-08-14T07:30:00",r                    "max": "2017-08-14T23:30:00",r                    "requiredValidationScope": "SaveStepData",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "26ae383c-948a-4671-8d20-d16680910efa",r            "order": 10,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "0ac17301-31d8-4435-8949-2a85b1f075db",r            "order": 11,r            "scripts": [r                {r                    r                    "beginDate": "2017-08-14T07:00:00",r                    "endDate": "9999-12-31T00:00:00",r                    "script": "[MayurField2]",r                    "exceptions": [r                        {r                            "exceptionType": "Overflow",r                            "value": 0r                        },r                        {r                            "exceptionType": "DivideByZero",r                            "value": 1r                        }r                    ],r                    "udfDependencies": [r                        {r                            "udfID": "7c5f4f2a-10e3-4a14-a283-89ae089d9644"r                        }r                    ]r                }r            ],r            "validation": []r        },r        {r            "id": "06e1db0b-13fb-41cb-8717-eac71b4c677c",r            "order": 12,r            "scripts": [r                {r                    r                    "beginDate": "2017-08-14T07:00:00",r                    "endDate": "9999-12-31T00:00:00",r                    "script": "[ of batches]",r                    "exceptions": [],r                    "udfDependencies": [r                        {r                            "udfID": "ef9a9136-5d49-41c6-a21b-d9eb4b159a1c"r                        }r                    ]r                }r            ],r            "validation": []r        },r        {r            "id": "394272a6-7fe4-4f78-9a25-9672a805e3dc",r            "order": 13,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "3c799f73-c42b-4e04-84c6-d2d11afe07ad",r            "order": 14,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepDataAndTransition"r                }r            ]r        },r        {r            "id": "fbb6771c-70f8-47ff-9862-ad784dd91078",r            "order": 15,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "efc53d35-6084-4c3c-b0c0-97fb34b233b6",r            "order": 16,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "693fc6a6-6ffb-4218-8640-6155e56e43b1",r            "name": "Arc Flash Protection-01-Training-01",r            "type": "Label",r            "valueEntryMethod": "Text",r            "order": 17,r            "scripts": [],r            "validation": []r        }r    ]r}, "onsuccess", "onerror"]["960e9887-ca75-4fa8-afd0-fc79aa952ff6", {r    "name": "Mayur Template 7",r    "description": "Update Desc",r    "version": 20,r    "versionComment": "Version 9 Created from REST API",r    "udfs": [r        {r            "id": "de137d17-dec2-45da-aef5-f48f2a6a522a",r            "order": 0,r            "scripts": [],r            "validation": [r                {r                    "length": 20,r                    "regEx": "rer",r                    "requiredValidationScope": "SaveStepData",r                    "lengthValidationScope": "Transition",r                    "regExValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "7c5f4f2a-10e3-4a14-a283-89ae089d9644",r            "order": 1,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": 1,r                    "max": 10,r                    "requiredValidationScope": "SaveStepData",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "f51e88e5-8a0f-4154-aae7-83ff6b2296a9",r            "order": 2,r            "scripts": [],r            "validation": [r                {r                    "regEx": "qwerty",r                    "requiredValidationScope": "Transition",r                    "regExValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "68533da2-d24c-4b28-9092-5c15cb7be03a",r            "order": 3,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "a8524a17-8409-4294-bb30-856888d78b49",r            "order": 4,r            "scripts": [],r            "validation": [r                {r                    "length": 21,r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData",r                    "lengthValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "e90279e8-6d07-4f8c-b0b5-5220cb92fc24",r            "order": 5,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "ef9a9136-5d49-41c6-a21b-d9eb4b159a1c",r            "order": 6,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "920b21b0-d7f2-4f8f-9d21-0a0de4003177",r            "order": 7,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": 1,r                    "max": 10,r                    "requiredValidationScope": "Transition",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "242b7f85-1d68-4800-932c-338aa26ef8bd",r            "order": 8,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": "2017-08-01T14:00:00",r                    "max": "2017-08-31T16:00:00",r                    "requiredValidationScope": "Transition",r                    "rangeValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "955c0faf-2143-4d74-8c12-39bd62c9940a",r            "order": 9,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": "2017-08-14T07:30:00",r                    "max": "2017-08-14T23:30:00",r                    "requiredValidationScope": "SaveStepData",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "26ae383c-948a-4671-8d20-d16680910efa",r            "order": 10,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "0ac17301-31d8-4435-8949-2a85b1f075db",r            "order": 11,r            "scripts": [r                {r                    r                    "beginDate": "2017-08-14T07:00:00",r                    "endDate": "9999-12-31T00:00:00",r                    "script": "[MayurField2]",r                    "exceptions": [r                        {r                            "exceptionType": "Overflow",r                            "value": 0r                        },r                        {r                            "exceptionType": "DivideByZero",r                            "value": 1r                        }r                    ],r                    "udfDependencies": [r                        {r                            "udfID": "7c5f4f2a-10e3-4a14-a283-89ae089d9644"r                        }r                    ]r                }r            ],r            "validation": []r        },r        {r            "id": "06e1db0b-13fb-41cb-8717-eac71b4c677c",r            "order": 12,r            "scripts": [r                {r                    r                    "beginDate": "2017-08-14T07:00:00",r                    "endDate": "9999-12-31T00:00:00",r                    "script": "[ of batches]",r                    "exceptions": [],r                    "udfDependencies": [r                        {r                            "udfID": "ef9a9136-5d49-41c6-a21b-d9eb4b159a1c"r                        }r                    ]r                }r            ],r            "validation": []r        },r        {r            "id": "394272a6-7fe4-4f78-9a25-9672a805e3dc",r            "order": 13,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "3c799f73-c42b-4e04-84c6-d2d11afe07ad",r            "order": 14,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepDataAndTransition"r                }r            ]r        },r        {r            "id": "fbb6771c-70f8-47ff-9862-ad784dd91078",r            "order": 15,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "efc53d35-6084-4c3c-b0c0-97fb34b233b6",r            "order": 16,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "693fc6a6-6ffb-4218-8640-6155e56e43b1",r            "name": "Arc Flash Protection-01-Training-01",r            "type": "Label",r            "valueEntryMethod": "Text",r            "order": 17,r            "scripts": [],r            "validation": []r        }r    ]r}, "onsuccess", "onerror"]["960e9887-ca75-4fa8-afd0-fc79aa952ff6", {r    "version": 2,r    "versionComment": "Version 2 Created from REST API",r    "udfs": [r        {r            "id": "de137d17-dec2-45da-aef5-f48f2a6a522a",r            "order": 0,r            "scripts": [],r            "validation": [r                {r                    "length" : 10,r                    "regEx": "rer",r                    "requiredValidationScope": "SaveStepData",r                    "lengthValidationScope": "Transition",r                    "regExValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "7c5f4f2a-10e3-4a14-a283-89ae089d9644",r            "order": 1,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": 1.0,r                    "max": 10.0,r                    "requiredValidationScope": "SaveStepData",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "f51e88e5-8a0f-4154-aae7-83ff6b2296a9",r            "order": 2,r            "scripts": [],r            "validation": [r                {r                    "regEx": "qwerty",r                    "requiredValidationScope": "Transition",r                    "regExValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "68533da2-d24c-4b28-9092-5c15cb7be03a",r            "order": 3,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "a8524a17-8409-4294-bb30-856888d78b49",r            "order": 4,r            "scripts": [],r            "validation": [r                {r                    "length": 21,r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData",r                    "lengthValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "e90279e8-6d07-4f8c-b0b5-5220cb92fc24",r            "order": 5,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "ef9a9136-5d49-41c6-a21b-d9eb4b159a1c",r            "order": 6,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "920b21b0-d7f2-4f8f-9d21-0a0de4003177",r            "order": 7,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": 1.0,r                    "max": 10.0,r                    "requiredValidationScope": "Transition",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "242b7f85-1d68-4800-932c-338aa26ef8bd",r            "order": 8,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": "2017-08-01T14:00:00",r                    "max": "2017-08-31T16:00:00",r                    "requiredValidationScope": "Transition",r                    "rangeValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "955c0faf-2143-4d74-8c12-39bd62c9940a",r            "order": 9,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": "2017-08-14T07:30:00",r                    "max": "2017-08-14T23:30:00",r                    "requiredValidationScope": "SaveStepData",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "26ae383c-948a-4671-8d20-d16680910efa",r            "order": 10,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "0ac17301-31d8-4435-8949-2a85b1f075db",r            "order": 11,r            "scripts": [r                {r                    r                    "beginDate": "2017-08-14T07:00:00",r                    "endDate": "9999-12-31T00:00:00",r                    "script": "[MayurField2]",r                    "exceptions": [r                        {r                            "exceptionType": "DivideByZero",r                            "value": 0r                        }r                    ],r                    "udfDependencies": [r                        {r                            "udfID": "7c5f4f2a-10e3-4a14-a283-89ae089d9644"r                        }r                    ]r                }r            ],r            "validation": []r        },r        {r            "id": "06e1db0b-13fb-41cb-8717-eac71b4c677c",r            "order": 12,r            "scripts": [r                {r                    r                    "beginDate": "2017-08-14T07:00:00",r                    "endDate": "9999-12-31T00:00:00",r                    "script": "[ of batches]",r                    "exceptions": [],r                    "udfDependencies": [r                        {r                            "udfID": "ef9a9136-5d49-41c6-a21b-d9eb4b159a1c"r                        }r                    ]r                }r            ],r            "validation": []r        },r        {r            "id": "394272a6-7fe4-4f78-9a25-9672a805e3dc",r            "order": 13,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "3c799f73-c42b-4e04-84c6-d2d11afe07ad",r            "order": 14,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepDataAndTransition"r                }r            ]r        },r        {r            "id": "fbb6771c-70f8-47ff-9862-ad784dd91078",r            "order": 15,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "efc53d35-6084-4c3c-b0c0-97fb34b233b6",r            "order": 16,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "693fc6a6-6ffb-4218-8640-6155e56e43b1",r            "order": 17,r            "scripts": [],r            "validation": []r        }r    ]r}, "onsuccess", "onerror"]["960e9887-ca75-4fa8-afd0-fc79aa952ff6", {r    "version": 2,r    "versionComment": "Version 2 Created from REST API",r    "udfs": [r        {r            "id": "de137d17-dec2-45da-aef5-f48f2a6a522a",r            "order": 0,r            "scripts": [],r            "validation": [r                {r                    "length" : 10,r                    "regEx": "rer",r                    "requiredValidationScope": "SaveStepData",r                    "lengthValidationScope": "Transition",r                    "regExValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "7c5f4f2a-10e3-4a14-a283-89ae089d9644",r            "order": 1,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": 1.0,r                    "max": 10.0,r                    "requiredValidationScope": "SaveStepData",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "f51e88e5-8a0f-4154-aae7-83ff6b2296a9",r            "order": 2,r            "scripts": [],r            "validation": [r                {r                    "regEx": "qwerty",r                    "requiredValidationScope": "Transition",r                    "regExValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "68533da2-d24c-4b28-9092-5c15cb7be03a",r            "order": 3,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "a8524a17-8409-4294-bb30-856888d78b49",r            "order": 4,r            "scripts": [],r            "validation": [r                {r                    "length": 21,r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData",r                    "lengthValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "e90279e8-6d07-4f8c-b0b5-5220cb92fc24",r            "order": 5,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "ef9a9136-5d49-41c6-a21b-d9eb4b159a1c",r            "order": 6,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "920b21b0-d7f2-4f8f-9d21-0a0de4003177",r            "order": 7,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": 1.0,r                    "max": 10.0,r                    "requiredValidationScope": "Transition",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "242b7f85-1d68-4800-932c-338aa26ef8bd",r            "order": 8,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": "2017-08-01T14:00:00",r                    "max": "2017-08-31T16:00:00",r                    "requiredValidationScope": "Transition",r                    "rangeValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "955c0faf-2143-4d74-8c12-39bd62c9940a",r            "order": 9,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "min": "2017-08-14T07:30:00",r                    "max": "2017-08-14T23:30:00",r                    "requiredValidationScope": "SaveStepData",r                    "rangeValidationScope": "Transition"r                }r            ]r        },r        {r            "id": "26ae383c-948a-4671-8d20-d16680910efa",r            "order": 10,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "0ac17301-31d8-4435-8949-2a85b1f075db",r            "order": 11,r            "scripts": [r                {r                    r                    "beginDate": "2017-08-14T07:00:00",r                    "endDate": "9999-12-31T00:00:00",r                    "script": "[MayurField2]",r                    "exceptions": [r                        {r                            "exceptionType": "DivideByZero",r                            "value": 0r                        }r                    ],r                    "udfDependencies": [r                        {r                            "udfID": "7c5f4f2a-10e3-4a14-a283-89ae089d9644"r                        }r                    ]r                }r            ],r            "validation": []r        },r        {r            "id": "06e1db0b-13fb-41cb-8717-eac71b4c677c",r            "order": 12,r            "scripts": [r                {r                    r                    "beginDate": "2017-08-14T07:00:00",r                    "endDate": "9999-12-31T00:00:00",r                    "script": "[ of batches]",r                    "exceptions": [],r                    "udfDependencies": [r                        {r                            "udfID": "ef9a9136-5d49-41c6-a21b-d9eb4b159a1c"r                        }r                    ]r                }r            ],r            "validation": []r        },r        {r            "id": "394272a6-7fe4-4f78-9a25-9672a805e3dc",r            "order": 13,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "3c799f73-c42b-4e04-84c6-d2d11afe07ad",r            "order": 14,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepDataAndTransition"r                }r            ]r        },r        {r            "id": "fbb6771c-70f8-47ff-9862-ad784dd91078",r            "order": 15,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "efc53d35-6084-4c3c-b0c0-97fb34b233b6",r            "order": 16,r            "scripts": [],r            "validation": [r                {r                    "regEx": "",r                    "requiredValidationScope": "SaveStepData"r                }r            ]r        },r        {r            "id": "693fc6a6-6ffb-4218-8640-6155e56e43b1",r            "order": 17,r            "scripts": [],r            "validation": []r        }r    ]r}, "onsuccess", "onerror"]
+
+        '
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.UpdateFormTemplate
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: UpdateFormTemplateWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateFormTemplate'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+    delete:
+      tags:
+      - FormTemplate
+      description: "\n\n\nenvianceSdk.formtemplates.deleteFormTemplateVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"102fe594-20eb-4938-96cc-cac8eebd282d\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\nenvianceSdk.formtemplates.deleteFormTemplate\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.DeleteFormTemplate
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: formTemplateIdOrName
+        in: body
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+  /ver2/FormTemplateService.svc/formtemplates/{formtemplateIdOrName}/newversion:
+    patch:
+      tags:
+      - FormTemplate
+      description: "\n\nUpdate form template by creating new versions within enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.updateFormTemplateCreateNewVersion (formTemplateIdOrName, formTemplateInfo, onsuccess, onerror)\r\nnull\n\n\n[\"960e9887-ca75-4fa8-afd0-fc79aa952ff6\", {r    \"version\": 2,r    \"versionComment\": \"Version 2 Created from REST API\",r    \"udfs\": [r        {r            \"id\": \"de137d17-dec2-45da-aef5-f48f2a6a522a\",r            \"order\": 0,r            \"scripts\": [],r            \"validation\": [r                {r                    \"length\" : 10,r                    \"regEx\": \"rer\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"lengthValidationScope\": \"Transition\",r                    \"regExValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"7c5f4f2a-10e3-4a14-a283-89ae089d9644\",r            \"order\": 1,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": 1.0,r                    \"max\": 10.0,r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"f51e88e5-8a0f-4154-aae7-83ff6b2296a9\",r            \"order\": 2,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"qwerty\",r                    \"requiredValidationScope\": \"Transition\",r                    \"regExValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"68533da2-d24c-4b28-9092-5c15cb7be03a\",r            \"order\": 3,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"a8524a17-8409-4294-bb30-856888d78b49\",r            \"order\": 4,r            \"scripts\": [],r            \"validation\": [r                {r                    \"length\": 21,r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"lengthValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"e90279e8-6d07-4f8c-b0b5-5220cb92fc24\",r            \"order\": 5,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"ef9a9136-5d49-41c6-a21b-d9eb4b159a1c\",r            \"order\": 6,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"920b21b0-d7f2-4f8f-9d21-0a0de4003177\",r            \"order\": 7,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": 1.0,r                    \"max\": 10.0,r                    \"requiredValidationScope\": \"Transition\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"242b7f85-1d68-4800-932c-338aa26ef8bd\",r            \"order\": 8,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": \"2017-08-01T14:00:00\",r                    \"max\": \"2017-08-31T16:00:00\",r                    \"requiredValidationScope\": \"Transition\",r                    \"rangeValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"955c0faf-2143-4d74-8c12-39bd62c9940a\",r            \"order\": 9,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": \"2017-08-14T07:30:00\",r                    \"max\": \"2017-08-14T23:30:00\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"26ae383c-948a-4671-8d20-d16680910efa\",r            \"order\": 10,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"0ac17301-31d8-4435-8949-2a85b1f075db\",r            \"order\": 11,r            \"scripts\": [r                {r                    r                    \"beginDate\": \"2017-08-14T07:00:00\",r                    \"endDate\": \"9999-12-31T00:00:00\",r                    \"script\": \"[MayurField2]\",r                    \"exceptions\": [r                        {r                            \"exceptionType\": \"DivideByZero\",r                            \"value\": 0r                        }r                    ],r                    \"udfDependencies\": [r                        {r                            \"udfID\": \"7c5f4f2a-10e3-4a14-a283-89ae089d9644\"r                        }r                    ]r                }r            ],r            \"validation\": []r        },r        {r            \"id\": \"06e1db0b-13fb-41cb-8717-eac71b4c677c\",r            \"order\": 12,r            \"scripts\": [r                {r                    r                    \"beginDate\": \"2017-08-14T07:00:00\",r                    \"endDate\": \"9999-12-31T00:00:00\",r                    \"script\": \"[ of batches]\",r                    \"exceptions\": [],r                    \"udfDependencies\": [r                        {r                            \"udfID\": \"ef9a9136-5d49-41c6-a21b-d9eb4b159a1c\"r                        }r                    ]r                }r            ],r            \"validation\": []r        },r        {r            \"id\": \"394272a6-7fe4-4f78-9a25-9672a805e3dc\",r            \"order\": 13,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"3c799f73-c42b-4e04-84c6-d2d11afe07ad\",r            \"order\": 14,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepDataAndTransition\"r                }r            ]r        },r        {r            \"id\": \"fbb6771c-70f8-47ff-9862-ad784dd91078\",r            \"order\": 15,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"efc53d35-6084-4c3c-b0c0-97fb34b233b6\",r            \"order\": 16,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"693fc6a6-6ffb-4218-8640-6155e56e43b1\",r            \"order\": 17,r            \"scripts\": [],r            \"validation\": []r        }r    ]r}, \"onsuccess\", \"onerror\"][\"960e9887-ca75-4fa8-afd0-fc79aa952ff6\", {r    \"version\": 2,r    \"versionComment\": \"Version 2 Created from REST API\",r    \"udfs\": [r        {r            \"id\": \"de137d17-dec2-45da-aef5-f48f2a6a522a\",r            \"order\": 0,r            \"scripts\": [],r            \"validation\": [r                {r                    \"length\" : 10,r                    \"regEx\": \"rer\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"lengthValidationScope\": \"Transition\",r                    \"regExValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"7c5f4f2a-10e3-4a14-a283-89ae089d9644\",r            \"order\": 1,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": 1.0,r                    \"max\": 10.0,r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"f51e88e5-8a0f-4154-aae7-83ff6b2296a9\",r            \"order\": 2,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"qwerty\",r                    \"requiredValidationScope\": \"Transition\",r                    \"regExValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"68533da2-d24c-4b28-9092-5c15cb7be03a\",r            \"order\": 3,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"a8524a17-8409-4294-bb30-856888d78b49\",r            \"order\": 4,r            \"scripts\": [],r            \"validation\": [r                {r                    \"length\": 21,r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"lengthValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"e90279e8-6d07-4f8c-b0b5-5220cb92fc24\",r            \"order\": 5,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"ef9a9136-5d49-41c6-a21b-d9eb4b159a1c\",r            \"order\": 6,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"920b21b0-d7f2-4f8f-9d21-0a0de4003177\",r            \"order\": 7,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": 1.0,r                    \"max\": 10.0,r                    \"requiredValidationScope\": \"Transition\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"242b7f85-1d68-4800-932c-338aa26ef8bd\",r            \"order\": 8,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": \"2017-08-01T14:00:00\",r                    \"max\": \"2017-08-31T16:00:00\",r                    \"requiredValidationScope\": \"Transition\",r                    \"rangeValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"955c0faf-2143-4d74-8c12-39bd62c9940a\",r            \"order\": 9,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"min\": \"2017-08-14T07:30:00\",r                    \"max\": \"2017-08-14T23:30:00\",r                    \"requiredValidationScope\": \"SaveStepData\",r                    \"rangeValidationScope\": \"Transition\"r                }r            ]r        },r        {r            \"id\": \"26ae383c-948a-4671-8d20-d16680910efa\",r            \"order\": 10,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"0ac17301-31d8-4435-8949-2a85b1f075db\",r            \"order\": 11,r            \"scripts\": [r                {r                    r                    \"beginDate\": \"2017-08-14T07:00:00\",r                    \"endDate\": \"9999-12-31T00:00:00\",r                    \"script\": \"[MayurField2]\",r                    \"exceptions\": [r                        {r                            \"exceptionType\": \"DivideByZero\",r                            \"value\": 0r                        }r                    ],r                    \"udfDependencies\": [r                        {r                            \"udfID\": \"7c5f4f2a-10e3-4a14-a283-89ae089d9644\"r                        }r                    ]r                }r            ],r            \"validation\": []r        },r        {r            \"id\": \"06e1db0b-13fb-41cb-8717-eac71b4c677c\",r            \"order\": 12,r            \"scripts\": [r                {r                    r                    \"beginDate\": \"2017-08-14T07:00:00\",r                    \"endDate\": \"9999-12-31T00:00:00\",r                    \"script\": \"[ of batches]\",r                    \"exceptions\": [],r                    \"udfDependencies\": [r                        {r                            \"udfID\": \"ef9a9136-5d49-41c6-a21b-d9eb4b159a1c\"r                        }r                    ]r                }r            ],r            \"validation\": []r        },r        {r            \"id\": \"394272a6-7fe4-4f78-9a25-9672a805e3dc\",r            \"order\": 13,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"3c799f73-c42b-4e04-84c6-d2d11afe07ad\",r            \"order\": 14,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepDataAndTransition\"r                }r            ]r        },r        {r            \"id\": \"fbb6771c-70f8-47ff-9862-ad784dd91078\",r            \"order\": 15,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"efc53d35-6084-4c3c-b0c0-97fb34b233b6\",r            \"order\": 16,r            \"scripts\": [],r            \"validation\": [r                {r                    \"regEx\": \"\",r                    \"requiredValidationScope\": \"SaveStepData\"r                }r            ]r        },r        {r            \"id\": \"693fc6a6-6ffb-4218-8640-6155e56e43b1\",r            \"order\": 17,r            \"scripts\": [],r            \"validation\": []r        }r    ]r}, \"onsuccess\", \"onerror\"]\n"
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.UpdateFormTemplateCreateNewVersion
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: UpdateFormTemplateCreateNewVersionWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateFormTemplateCreateNewVersion'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/FormTemplateService.svc/formtemplates/{formTemplateIdOrName}/revert/{versionIdOrNumber}:
+    patch:
+      tags:
+      - FormTemplate
+      description: "\n\nRevert the current form template version to specified version within enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.updateFormTemplateCreateNewVersion (formTemplateIdOrName, formTemplateInfo, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.formtemplates.revertToVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"5bd631e0-bc70-4e94-9bcf-891543ba5ff4 \",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\nenvianceSdk.formtemplates.revertToVersionAsync\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"5bd631e0-bc70-4e94-9bcf-891543ba5ff4 \",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.RevertToVersion
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: formTemplateIdOrName
+        in: path
+        required: true
+        type: string
+      - name: versionIdOrNumber
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            type: string
+            format: guid
+  /ver2/FormTemplateService.svc/formtemplates/{formTemplateIdOrName}/version/{versionIdOrNumber}:
+    get:
+      tags:
+      - FormTemplate
+      description: "\n\nGet information about form template version from enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.getFormTemplateVersion (formTemplateIdOrName, versionIdOrNumber, onsuccess, onerror)\r\n\r\n```\r\nGET /formtemplates/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n    \"id\": \"ecdb1461-3e4d-488b-ae9f-94de6a8fd1c3\",\r\n    \"name\": \"Form Template TEST1\",\r\n    \"description\": \"Desc\",\r\n    \"versionId\": \"784bc71e-a396-456c-b808-01985d0d7f68\",\r\n    \"version\": 1,\r\n    \"versionComment\": \"\",\r\n    \"udfs\": [\r\n        {\r\n            \"id\": \"de137d17-dec2-45da-aef5-f48f2a6a522a\",\r\n            \"name\": \"MyField1\",\r\n            \"type\": \"Text\",\r\n            \"valueEntryMethod\": \"Text\",\r\n            \"order\": 0,\r\n            \"scripts\": [],\r\n            \"validation\": [\r\n                {\r\n                    \"length\": 11,\r\n                    \"regEx\": \"rer\",\r\n                    \"requiredValidationScope\": \"SaveStepData\",\r\n                    \"lengthValidationScope\": \"Transition\",\r\n                    \"rangeValidationScope\": \"None\",\r\n                    \"regExValidationScope\": \"SaveStepData\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.formtemplates.getFormTemplateVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"102fe594-20eb-4938-96cc-cac8eebd282d\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\nenvianceSdk.formtemplates.getFormTemplateVersions\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplateVersion
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: formTemplateIdOrName
+        in: path
+        required: true
+        type: string
+      - name: versionIdOrNumber
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.FormTemplateInfo'
+    delete:
+      tags:
+      - FormTemplate
+      description: "\n\n\nenvianceSdk.formtemplates.deleteFormTemplateVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"102fe594-20eb-4938-96cc-cac8eebd282d\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.DeleteFormTemplateVersion
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: formTemplateIdOrName
+        in: path
+        required: true
+        type: string
+      - name: versionIdOrNumber
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+  /ver2/FormTemplateService.svc/formtemplates/{formTemplateIdOrName}/versions:
+    get:
+      tags:
+      - FormTemplate
+      description: "\n\nGet information about form template versions from enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.getFormTemplateVersions (formTemplateIdOrName, onsuccess, onerror)\r\n\r\n```\r\nGET /formtemplates/9ca22677-2670-41a9-bafd-3b2825592863/versions HTTP/1.1\r\n\r\n```\r\n\n\n\nenvianceSdk.formtemplates.getFormTemplateVersions\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplateVersions
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: formTemplateIdOrName
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.FormTemplateVersionExtInfo'
+  /ver2/FormTemplateService.svc/formtemplates/copy:
+    post:
+      tags:
+      - FormTemplate
+      description: "\n\nCreate form template in enviance system\r\n\r\n** SDK API:**  'envianceSdk.formtemplates.copyFormTemplate (sourceTemplateIdOrName, newTemplateName, onsuccess, onerror)'\r\n\r\n```\r\nPOST /formtemplates/copy HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\r\n  \"sourceTemplateIdOrName\" :\"Form Template REST API Demo - t222\",\r\n  \"newTemplateName\" : \"Form Template REST API Demo - t222 - COPY\"\r\n}\r\n\r\n```\r\n\n\n"
+      operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.CopyFormTemplate
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: CopyFormTemplateWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CopyFormTemplate'
+      responses:
+        default:
+          description: not available
+definitions:
+  Enviance.RestServices.Ver2.FormTemplates.TemplateToUdfMapValidationInfo:
+    properties:
+      length:
+        type: integer
+        format: int32
+        uniqueItems: false
+      regEx:
+        type: string
+        uniqueItems: false
+      min:
+        type: object
+      max:
+        type: object
+      requiredValidationScope:
+        type: string
+        uniqueItems: false
+      lengthValidationScope:
+        type: string
+        uniqueItems: false
+      rangeValidationScope:
+        type: string
+        uniqueItems: false
+      regExValidationScope:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.FormTemplates.TemplateToUdfMapValidationInfo
+  Enviance.RestServices.Ver2.FormTemplates.FormTemplateVersionExtInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      templateVersions:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.FormTemplateVersionInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.FormTemplates.FormTemplateVersionExtInfo
+  CreateFormTemplate:
+    properties:
+      formTemplateInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.FormTemplateInfo'
+    type: object
+    format: CreateFormTemplate
+  Enviance.RestServices.Ver2.FormTemplates.TemplateScriptInfo:
+    properties:
+      beginDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      endDate:
+        type: string
+        format: date-time
+        uniqueItems: false
+      script:
+        type: string
+        uniqueItems: false
+      exceptions:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.ScriptExceptionInfo'
+        uniqueItems: false
+      udfDependencies:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.ScriptUdfDependencyInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.FormTemplates.TemplateScriptInfo
+  Enviance.RestServices.Ver2.FormTemplates.ScriptExceptionInfo:
+    properties:
+      scriptID:
+        type: string
+        format: guid
+        uniqueItems: false
+      exceptionType:
+        type: string
+        uniqueItems: false
+      value:
+        type: number
+        format: double
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.FormTemplates.ScriptExceptionInfo
+  Enviance.RestServices.Ver2.FormTemplates.FormTemplateVersionInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      templateID:
+        type: string
+        format: guid
+        uniqueItems: false
+      version:
+        type: integer
+        format: int32
+        uniqueItems: false
+      comment:
+        type: string
+        uniqueItems: false
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+      isCurrent:
+        type: boolean
+        uniqueItems: false
+      refCount:
+        type: integer
+        format: int32
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.FormTemplates.FormTemplateVersionInfo
+  Enviance.RestServices.Ver2.FormTemplates.FormTemplateInfo:
+    required:
+    - udfs
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      versionId:
+        type: string
+        format: guid
+        uniqueItems: false
+      version:
+        type: integer
+        format: int32
+        uniqueItems: false
+      versionComment:
+        type: string
+        uniqueItems: false
+      created:
+        type: string
+        format: date-time
+        uniqueItems: false
+      udfs:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.TemplateToUdfMapInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.FormTemplates.FormTemplateInfo
+  Enviance.RestServices.Ver2.FormTemplates.ScriptUdfDependencyInfo:
+    properties:
+      udfID:
+        type: string
+        format: guid
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.FormTemplates.ScriptUdfDependencyInfo
+  UpdateFormTemplateCreateNewVersion:
+    properties:
+      formTemplateInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.FormTemplateInfo'
+      formTemplateIdOrName:
+        type: string
+        uniqueItems: false
+    type: object
+    format: UpdateFormTemplateCreateNewVersion
+  UpdateFormTemplate:
+    properties:
+      formTemplateInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.FormTemplateInfo'
+      formTemplateIdOrName:
+        type: string
+        uniqueItems: false
+    type: object
+    format: UpdateFormTemplate
+  Enviance.RestServices.Ver2.FormTemplates.TemplateToUdfMapInfo:
+    properties:
+      idOrName:
+        type: string
+        uniqueItems: false
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      name:
+        type: string
+        uniqueItems: false
+      type:
+        type: string
+        uniqueItems: false
+      valueEntryMethod:
+        type: string
+        uniqueItems: false
+      order:
+        type: integer
+        format: int32
+        uniqueItems: false
+      isSensitiveData:
+        type: boolean
+        uniqueItems: false
+      scripts:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.TemplateScriptInfo'
+        uniqueItems: false
+      validation:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.FormTemplates.TemplateToUdfMapValidationInfo'
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.FormTemplates.TemplateToUdfMapInfo
+  CopyFormTemplate:
+    properties:
+      sourceTemplateIdOrName:
+        type: string
+        uniqueItems: false
+      newTemplateName:
+        type: string
+        uniqueItems: false
+    type: object
+    format: CopyFormTemplate
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

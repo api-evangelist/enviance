@@ -1,0 +1,134 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity BatchRequest API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: BatchRequest
+paths:
+  /ver2/BatchRequestService.svc/batchRequest/execute:
+    post:
+      tags:
+      - BatchRequest
+      operationId: Enviance.RestServices.Ver2.BatchRequest.Impl.BatchRequestService.Execute
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: ExecuteWrapper
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Execute'
+      responses:
+        default:
+          description: not available
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Enviance.RestServices.Ver2.BatchRequest.OperationResponse'
+definitions:
+  Enviance.RestServices.Ver2.BatchRequest.OperationResponse:
+    properties:
+      code:
+        type: integer
+        format: int32
+        uniqueItems: false
+      headers:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.BatchRequest.StringPair'
+        uniqueItems: false
+      body:
+        type: string
+        uniqueItems: false
+      status:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.BatchRequest.OperationResponse
+  Enviance.RestServices.Ver2.BatchRequest.StringPair:
+    properties:
+      name:
+        type: string
+        uniqueItems: false
+      value:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.BatchRequest.StringPair
+  Execute:
+    properties:
+      batch:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.BatchRequest.OperationParams'
+        uniqueItems: false
+      continueOnError:
+        type: boolean
+        uniqueItems: false
+    type: object
+    format: Execute
+  Enviance.RestServices.Ver2.BatchRequest.OperationParams:
+    properties:
+      headers:
+        type: array
+        items:
+          $ref: '#/definitions/Enviance.RestServices.Ver2.BatchRequest.StringPair'
+        uniqueItems: false
+      method:
+        type: string
+        uniqueItems: false
+      url:
+        type: string
+        uniqueItems: false
+      body:
+        type: string
+        uniqueItems: false
+    type: object
+    format: Enviance.RestServices.Ver2.BatchRequest.OperationParams
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header

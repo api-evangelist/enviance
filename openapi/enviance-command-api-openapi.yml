@@ -1,0 +1,174 @@
+swagger: '2.0'
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Activity Command API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Command
+paths:
+  /ver2/CommandService.svc/commands/{commandId}:
+    get:
+      tags:
+      - Command
+      description: "\n\nReturns information about a previously submitted command (any API which is asynchronous).\r\n\r\n**Security:** All users.\r\n\r\n**SDK API (create):**  `envianceSdk.commands.getCommand (commandId, onsuccess, onerror)`\r\n\r\n```\r\nGET /ver2/CommandService.svc/commands/08fc5438-a0d8-4bf9-9141-12dd98e7ce80/ HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n  \"id\": \"08fc5438-a0d8-4bf9-9141-12dd98e7ce80\",\r\n  \"description\": \"Data batch processed.\",\r\n  \"issued\": \"2012-12-01T08:00:00\",\r\n  \"startedProcessing\": \"2012-12-01T08:01:00\",\r\n  \"finishedProcessing\": \"2012-12-01T08:02:00\",\r\n  \"status\": \"Succeeded\",\r\n  \"objects\": [\"/Facility A/Unit X/Parameter Z\"],\r\n  \"user\": \"JSmith\",\r\n  \"errorInfo\": {\r\n    \"error\": \"Requirement with Tag 'GZB_AVG_SORTED' could not be found in the system.\",\r\n    \"details\": [\r\n      { \"key\": \"Tag\", \"value\": \"GZB_AVG_SORTED\" },\r\n      { \"key\": \"Complete Date\", \"value\": \"2012-02-08T09:50:00\" },\r\n      { \"key\": \"Value\", \"value\": \"18.00803565979\" }\r\n    ]\r\n  }\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.commands.getCommand\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Async.Impl.CommandService.GetCommand
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: commandId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+          schema:
+            $ref: '#/definitions/Enviance.RestServices.Ver2.Async.CommandInfo'
+    delete:
+      tags:
+      - Command
+      description: "\n\n\nenvianceSdk.commands.deleteCommand\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      operationId: Enviance.RestServices.Ver2.Async.Impl.CommandService.DeleteCommand
+      consumes:
+      - application/json
+      - application/xml
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        type: string
+        default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        type: string
+      - name: commandId
+        in: path
+        required: true
+        type: string
+      responses:
+        default:
+          description: not available
+definitions:
+  Enviance.RestServices.Ver2.Async.ErrorInfo:
+    properties:
+      error:
+        type: string
+        uniqueItems: false
+      details:
+        type: object
+    type: object
+    format: Enviance.RestServices.Ver2.Async.ErrorInfo
+  Enviance.RestServices.Ver2.Async.CommandInfo:
+    properties:
+      id:
+        type: string
+        format: guid
+        uniqueItems: false
+      description:
+        type: string
+        uniqueItems: false
+      issued:
+        type: string
+        format: date-time
+        uniqueItems: false
+      startedProcessing:
+        type: string
+        format: date-time
+        uniqueItems: false
+      finishedProcessing:
+        type: string
+        format: date-time
+        uniqueItems: false
+      status:
+        type: string
+        uniqueItems: false
+      objects:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      reports:
+        type: array
+        items:
+          type: string
+        uniqueItems: false
+      result:
+        type: string
+        uniqueItems: false
+      user:
+        type: string
+        uniqueItems: false
+      errorInfo:
+        $ref: '#/definitions/Enviance.RestServices.Ver2.Async.ErrorInfo'
+    type: object
+    format: Enviance.RestServices.Ver2.Async.CommandInfo
+securityDefinitions:
+  Basic:
+    type: basic
+    description: Forces authentication with credentials via an api gateway
+  EnvianceAuth:
+    type: apiKey
+    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+    name: Authorization
+    in: header
