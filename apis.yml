@@ -1,22 +1,714 @@
 aid: enviance
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/enviance.png
 name: Enviance
-description: Enviance is a company surfaced as a portfolio company of battery-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Enviance (now Cority Enviance) is an environmental, health, and safety (EHS)
+  compliance-management SaaS platform. Originally an independent cloud
+  environmental-compliance vendor, Enviance was acquired by Cority and its
+  product now ships as "Cority Enviance." The platform manages regulatory
+  requirements, compliance tasks, emissions and environmental events, chemicals
+  and materials inventories, documents, workflows, and reporting for enterprises
+  in regulated industries. Its EMS REST API (the "Cority Enviance App API")
+  exposes 250+ operations across 39 service areas — Activity, Chemical, Material,
+  Compliance, Requirement, Event, Task, Workflow, Document, Report, Portal, Bulk
+  data, SCIM identity, and more — for building custom interfaces and integrating
+  Enviance with corporate and third-party systems.
 url: https://raw.githubusercontent.com/api-evangelist/enviance/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - battery-ventures
+x-acquired-by: cority
 x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Environmental
+- Compliance
+- EHS
+- Sustainability
+- Chemical Management
+- Regulatory
+- SaaS
+apis:
+- aid: enviance:enviance-activity-api
+  name: Enviance Activity API
+  description: The Activity API from Enviance — 2 operation(s) for activity.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Activity
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-activity-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-authentication-api
+  name: Enviance Authentication API
+  description: The Authentication API from Enviance — 6 operation(s) for authentication.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-authentication-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-batchrequest-api
+  name: Enviance BatchRequest API
+  description: The BatchRequest API from Enviance — 1 operation(s) for batchrequest.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - BatchRequest
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-batchrequest-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-bulk-api
+  name: Enviance Bulk API
+  description: The Bulk API from Enviance — 10 operation(s) for bulk.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Bulk
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-bulk-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-chemical-api
+  name: Enviance Chemical API
+  description: The Chemical API from Enviance — 2 operation(s) for chemical.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Chemical
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-chemical-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-chemicalgroup-api
+  name: Enviance ChemicalGroup API
+  description: The ChemicalGroup API from Enviance — 3 operation(s) for chemicalgroup.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - ChemicalGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-chemicalgroup-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-chemicallist-api
+  name: Enviance ChemicalList API
+  description: The ChemicalList API from Enviance — 3 operation(s) for chemicallist.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - ChemicalList
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-chemicallist-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-command-api
+  name: Enviance Command API
+  description: The Command API from Enviance — 1 operation(s) for command.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Command
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-command-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-compliance-api
+  name: Enviance Compliance API
+  description: The Compliance API from Enviance — 3 operation(s) for compliance.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Compliance
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-compliance-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-compliancepermissions-api
+  name: Enviance CompliancePermissions API
+  description: The CompliancePermissions API from Enviance — 1 operation(s) for compliancepermissions.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - CompliancePermissions
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-compliancepermissions-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-customfield-api
+  name: Enviance CustomField API
+  description: The CustomField API from Enviance — 3 operation(s) for customfield.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - CustomField
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-customfield-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-data-api
+  name: Enviance Data API
+  description: The Data API from Enviance — 10 operation(s) for data.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Data
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-data-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-document-api
+  name: Enviance Document API
+  description: The Document API from Enviance — 5 operation(s) for document.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Document
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-document-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-domainwhitelistservice-api
+  name: Enviance DomainWhitelistService API
+  description: >-
+    The DomainWhitelistService API from Enviance — 1 operation(s) for domainwhitelistservice.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - DomainWhitelistService
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-domainwhitelistservice-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-eql-api
+  name: Enviance Eql API
+  description: The Eql API from Enviance — 7 operation(s) for eql.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Eql
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-eql-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-event-api
+  name: Enviance Event API
+  description: The Event API from Enviance — 2 operation(s) for event.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Event
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-event-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-formtemplate-api
+  name: Enviance FormTemplate API
+  description: The FormTemplate API from Enviance — 7 operation(s) for formtemplate.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - FormTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-formtemplate-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-mainmenuservice-api
+  name: Enviance MainMenuService API
+  description: The MainMenuService API from Enviance — 1 operation(s) for mainmenuservice.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MainMenuService
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-mainmenuservice-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-material-api
+  name: Enviance Material API
+  description: The Material API from Enviance — 2 operation(s) for material.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Material
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-material-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-materialdata-api
+  name: Enviance MaterialData API
+  description: The MaterialData API from Enviance — 5 operation(s) for materialdata.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MaterialData
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-materialdata-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-materialgroup-api
+  name: Enviance MaterialGroup API
+  description: The MaterialGroup API from Enviance — 3 operation(s) for materialgroup.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MaterialGroup
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-materialgroup-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-materialproperty-api
+  name: Enviance MaterialProperty API
+  description: The MaterialProperty API from Enviance — 2 operation(s) for materialproperty.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MaterialProperty
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-materialproperty-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-materialtemplate-api
+  name: Enviance MaterialTemplate API
+  description: The MaterialTemplate API from Enviance — 2 operation(s) for materialtemplate.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - MaterialTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-materialtemplate-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-message-api
+  name: Enviance Message API
+  description: The Message API from Enviance — 2 operation(s) for message.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Message
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-message-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-package-api
+  name: Enviance Package API
+  description: The Package API from Enviance — 5 operation(s) for package.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Package
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-package-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-portal-api
+  name: Enviance Portal API
+  description: The Portal API from Enviance — 13 operation(s) for portal.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Portal
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-portal-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-report-api
+  name: Enviance Report API
+  description: The Report API from Enviance — 1 operation(s) for report.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Report
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-report-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-requirement-api
+  name: Enviance Requirement API
+  description: The Requirement API from Enviance — 4 operation(s) for requirement.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Requirement
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-requirement-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-scimidentity-api
+  name: Enviance ScimIdentity API
+  description: The ScimIdentity API from Enviance — 9 operation(s) for scimidentity.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - ScimIdentity
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-scimidentity-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-security-api
+  name: Enviance Security API
+  description: The Security API from Enviance — 6 operation(s) for security.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Security
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-security-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-sync-api
+  name: Enviance Sync API
+  description: The Sync API from Enviance — 1 operation(s) for sync.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Sync
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-sync-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-tag-api
+  name: Enviance Tag API
+  description: The Tag API from Enviance — 2 operation(s) for tag.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Tag
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-tag-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-tagscheme-api
+  name: Enviance TagScheme API
+  description: The TagScheme API from Enviance — 2 operation(s) for tagscheme.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - TagScheme
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-tagscheme-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-task-api
+  name: Enviance Task API
+  description: The Task API from Enviance — 5 operation(s) for task.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Task
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-task-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-uomservice-api
+  name: Enviance UOMService API
+  description: The UOMService API from Enviance — 4 operation(s) for uomservice.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - UOMService
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-uomservice-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-uuid-api
+  name: Enviance UUID API
+  description: The UUID API from Enviance — 2 operation(s) for uuid.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - UUID
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-uuid-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-wab-api
+  name: Enviance Wab API
+  description: The Wab API from Enviance — 1 operation(s) for wab.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Wab
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-wab-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-workflow-api
+  name: Enviance Workflow API
+  description: The Workflow API from Enviance — 18 operation(s) for workflow.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Workflow
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-workflow-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-workflowrole-api
+  name: Enviance WorkflowRole API
+  description: The WorkflowRole API from Enviance — 3 operation(s) for workflowrole.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - WorkflowRole
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-workflowrole-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/enviance-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/enviance-agentic-access.yml
+- type: Authentication
+  url: authentication/enviance-authentication.yml
+- type: DeveloperPortal
+  url: https://api.enviance.com/
+- type: Documentation
+  url: https://api.enviance.com/
+- type: APIReference
+  url: https://api.enviance.com/swagger
+- type: Conventions
+  url: conventions/enviance-conventions.yml
+- type: Conformance
+  url: conformance/enviance-conformance.yml
+- type: DataModel
+  url: data-model/enviance-data-model.yml
+- type: MCPServer
+  url: mcp/enviance-mcp.yml
+- type: Lifecycle
+  url: lifecycle/enviance-lifecycle.yml
+- type: Overlay
+  url: overlays/enviance-restapi-overlay.yaml
+- type: LLMsTxt
+  url: llms/enviance-llms.txt
+- type: AgentSkill
+  url: skills/enviance-authenticate-session.md
+- type: AgentSkill
+  url: skills/enviance-compliance-task.md
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

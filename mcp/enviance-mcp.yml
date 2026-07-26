@@ -1,0 +1,1080 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+server:
+  name: enviance
+  transport: http
+  note: Candidate tool list derived from OpenAPI operations; no official hosted MCP server was found.
+source: openapi/enviance-restapi-openapi-original.json
+tool_count: 252
+tools:
+- name: CreateActivity
+  description: "Create an Activity\n\n\nenvianceSdk.activities.createActivity\r\n```\r\n[\r\n  {\r\n \
+    \   \"name\": \"Activity Name\",\r\n    \"description\": \"Activity Description\",\r\n    \"templateIdOrName\"\
+    : \"Template"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.CreateActivity
+- name: GetActivity
+  description: "envianceSdk.activities.getActivity\r\n```\r\n[\r\n  \"Activity Name\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.GetActivity
+- name: UpdateActivity
+  description: "envianceSdk.activities.updateActivity\r\n```\r\n[\r\n  \"Activity Name\",\r\n  {\r\n \
+    \   \"name\": \"Activity Name\",\r\n    \"description\": \"Activity Description\",\r\n    \"templateIdOrName\"\
+    : \"Template "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.UpdateActivity
+- name: DeleteActivity
+  description: "envianceSdk.activities.deleteActivity\r\n```\r\n[\r\n  \"Activity Name\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.DeleteActivity
+- name: GetCurrentSessionInfo
+  description: GET /ver2/AuthenticationService.svc/currentsession
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.GetCurrentSessionInfo
+- name: EndCurrentSession
+  description: DELETE /ver2/AuthenticationService.svc/currentsession
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.EndCurrentSession
+- name: AuthenticateByOAuthToken
+  description: Get Access Token
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.AuthenticateByOAuthToken
+- name: Authenticate
+  description: POST /ver2/AuthenticationService.svc/sessions
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.Authenticate
+- name: AuthenticateByCert
+  description: "Authenticate By Certificate\n\nCreates a new session by authenticating via encrypted username\
+    \ and certification id.\r\n\r\n**Security:** All users.\r\n\r\n**SDK API:**  `envianceSdk.authenti"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.AuthenticateByCert
+- name: CreateLongLivingSession
+  description: "Creates long-living session from current (source session). It does not close source session,\
+    \ so user still in source session (getCurrentSession() should return same value).\r\nSecond"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.CreateLongLivingSession
+- name: CreateQlikJWTToken
+  description: POST /ver2/AuthenticationService.svc/sessions/qlik
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.CreateQlikJWTToken
+- name: Execute
+  description: POST /ver2/BatchRequestService.svc/batchRequest/execute
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.BatchRequest.Impl.BatchRequestService.Execute
+- name: BatchesQuery
+  description: "envianceSdk.bulk.queryBatches\r\n```\r\n[\r\n  {\r\n    \"page\": 0,\r\n    \"pageSize\"\
+    : 10,\r\n    \"withCount\": true,\r\n    \"onlyCurrentUser\": true\r\n  },\r\n  \"onsuccess\",\r\n\
+    \  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.BatchesQuery
+- name: BatchFileInfo
+  description: "envianceSdk.bulk.batchFileInfo\r\n```\r\n[\r\n  \"1aa2f749-2084-4bcd-8df7-a7358d4500ba\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.BatchFileInfo
+- name: CreateBatch
+  description: "envianceSdk.bulk.createBatch\r\n```\r\n[\r\n  {\r\n    \"fileId\": \"eccd2310-9b5f-440b-bf0d-91f9803d036b\"\
+    ,\r\n    \"worksheets\": [\r\n      \"Edit Tag Associations\",\r\n      \"Edit Calcs\"\r\n    ],\r\
+    \n "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.CreateBatch
+- name: EventsQuery
+  description: "envianceSdk.bulk.queryEvents\r\n```\r\n[\r\n    {\r\n        \"batchId\": \"eccd2310-9b5f-440b-bf0d-91f9803d036b\"\
+    ,\r\n        \"page\": 0,\r\n        \"pageSize\": 10,\r\n        \"withCount\": true\r\n   "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.EventsQuery
+- name: FileInfo
+  description: "envianceSdk.bulk.fileInfo\r\n```\r\n[\r\n  \"1aa2f749-2084-4bcd-8df7-a7358d4500ba\",\r\
+    \n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.bulk.batchFileInfo\r\n```\r\n[\r\n\
+    \  \"1aa2f749-2084-4bcd-8df"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.FileInfo
+- name: SetCanceled
+  description: "envianceSdk.bulk.setCanceled\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\"\
+    ,\r\n    \"eccd2310-9b5f-440b-bf0d-91f9803d036b\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n\
+    ]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetCanceled
+- name: SetPaused
+  description: "envianceSdk.bulk.setPaused\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\"\
+    ,\r\n    \"eccd2310-9b5f-440b-bf0d-91f9803d036b\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n\
+    ]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetPaused
+- name: SetResumed
+  description: "envianceSdk.bulk.setResumed\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\"\
+    \r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetResumed
+- name: LoadStatusInfo
+  description: "envianceSdk.bulk.statusInfo\r\n```\r\n[\"onsuccess\",\"onerror\"]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.LoadStatusInfo
+- name: UploadFile
+  description: "envianceSdk.bulk.uploadFileBinary\r\n```\r\n[\r\n  \"fileinput1\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Bulk.Impl.BulkService.UploadFile
+- name: CreateChemicalGroup
+  description: "envianceSdk.chemicalgroups.createChemicalGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"\
+    Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\",\r\n    \"chemicals\"\
+    : [\r\n      \"896197"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.CreateChemicalGroup
+- name: GetChemicalGroup
+  description: "envianceSdk.chemicalgroups.getChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\
+    \n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.GetChemicalGroup
+- name: UpdateChemicalGroup
+  description: "envianceSdk.chemicalgroups.updateChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\"\
+    ,\r\n  {\r\n    \"name\": \"Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\"\
+    ,\r\n    \"ch"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.UpdateChemicalGroup
+- name: DeleteChemicalGroup
+  description: "envianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\
+    \n```\r\n[\r\n  \"Ch"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.DeleteChemicalGroup
+- name: CreateChemicalList
+  description: "envianceSdk.chemicallists.createChemicalList\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical\
+    \ List Name\",\r\n    \"description\": \"Chemical List Description\",\r\n    \"chemicalListHistoryItems\"\
+    : [\r\n  "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.CreateChemicalList
+- name: UpdateChemicalList
+  description: "envianceSdk.chemicallists.updateChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\
+    \n  {\r\n    \"name\": \"Chemical List Name\",\r\n    \"description\": \"Chemical List Description\"\
+    ,\r\n    \"chemica"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.UpdateChemicalList
+- name: DeleteChemicalList
+  description: "envianceSdk.chemicallists.deleteChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\
+    \n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.DeleteChemicalList
+- name: GetChemicalList
+  description: "envianceSdk.chemicallists.getChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n\
+    \  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.GetChemicalList
+- name: CreateChemical
+  description: "envianceSdk.chemicals.createChemical\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical Name\"\
+    ,\r\n    \"casnum\": \"0\",\r\n    \"alias\": \"chemicalAlias\",\r\n    \"description\": \"chemical\
+    \ description\",\r\n    "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.CreateChemical
+- name: GetChemical
+  description: "envianceSdk.chemicals.getChemical\r\n```\r\n[\r\n  \"Chemical alias\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.getChemicalGroup\r\n```\r\n[\r\n  \"\
+    Chemical Group Name\",\r\n"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.GetChemical
+- name: UpdateChemical
+  description: "envianceSdk.chemicals.updateChemical\r\n```\r\n[\r\n  \"Chemical Alias\",\r\n  {\r\n \
+    \   \"name\": \"Chemical Name\",\r\n    \"casnum\": \"0\",\r\n    \"alias\": \"chemicalAlias\",\r\n\
+    \    \"description\": \"chemica"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.UpdateChemical
+- name: DeleteChemical
+  description: "envianceSdk.chemicals.deleteChemical\r\n```\r\n[\r\n  \"Chemical Alias\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n \
+    \ \"Chemical Group Na"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.DeleteChemical
+- name: GetCommand
+  description: "Returns information about a previously submitted command (any API which is asynchronous).\r\
+    \n\r\n**Security:** All users.\r\n\r\n**SDK API (create):**  `envianceSdk.commands.getCommand (co"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Async.Impl.CommandService.GetCommand
+- name: DeleteCommand
+  description: "envianceSdk.commands.deleteCommand\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Async.Impl.CommandService.DeleteCommand
+- name: GetLocationPermissions
+  description: "Get Permissions per location\n\n\nenvianceSdk.compliancePermission.getLocationPermission\r\
+    \n```\r\n[\r\n    \"324a63d8-35df-473f-b8d8-514872c7f70e\",\r\n    \"onsuccess\",\r\n    \"onerror\"\
+    \r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.ComplianceModel.Impl.CompliancePermissionService.GetLocationPermissions
+- name: CreateLocation
+  description: 'Creates a new Location object in the Compliance Model, optionally by copying the structure
+    from another Location to the new Location. Supported object types are Division, Facility '
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.CreateLocation
+- name: GetLocation
+  description: "envianceSdk.compliance.getLocation\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.compliancePermission.getLocationPermission\r\
+    \n"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.GetLocation
+- name: UpdateLocation
+  description: Updates (and potentially moves) an existing Location object in the Compliance Model. Specifying
+    a new parent path moves the Location underneath another parent Location. Updating th
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.UpdateLocation
+- name: DeleteLocation
+  description: "envianceSdk.compliance.deleteLocation\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\"\
+    ,\r\n  true,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.DeleteLocation
+- name: GetOverrides
+  description: "envianceSdk.compliance.getOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.GetOverrides
+- name: UpdateOverrides
+  description: "envianceSdk.compliance.updateOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\"\
+    ,\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"name\": \"Role\
+    \ 1\"\r\n    "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.UpdateOverrides
+- name: DeleteOverrides
+  description: "envianceSdk.compliance.deleteOverrides\r\n```\r\n[\r\n  \"e2076afc-b3a1-4b87-ace7-fec821987789\"\
+    ,\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"name\": \"Role\
+    \ 1\"\r\n    "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.DeleteOverrides
+- name: CreateCustomField
+  description: POST /ver2/CostomFieldService.svc/customFields
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.CreateCustomField
+- name: GetCustomField
+  description: "envianceSdk.customFields.getCustomField\r\n```\r\n[\r\n  \"nameOrID\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.GetCustomField
+- name: PartialUpdateCustomField
+  description: "envianceSdk.customFields.updateCustomField\r\n```\r\n[\r\n    \"customfieldIDorName\"\
+    ,\r\n    {\r\n        \"caption\": \"Custom Field Caption\",\r\n        \"captionLocalizations\":\
+    \ [\r\n            {\r"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.PartialUpdateCustomField
+- name: DeleteCustomField
+  description: DELETE /ver2/CostomFieldService.svc/customFields/{customFieldIdOrName}
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.DeleteCustomField
+- name: GetCustomFieldList
+  description: POST /ver2/CostomFieldService.svc/customFields/bulk
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.GetCustomFieldList
+- name: UpdateCustomFieldBulkPartial
+  description: "envianceSdk.customFields.updateCustomFieldBulk\r\n```\r\n[\r\n    [\r\n        {\r\n \
+    \           \"label\": \"Custom Field Label\",\r\n            \"labelLocalizations\": [\r\n      \
+    \          {\r\n      "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.UpdateCustomFieldBulkPartial
+- name: GetCalculationPeriods
+  description: "envianceSdk.data.getCalculationPeriods\r\n```\r\n[\r\n  {\r\n    \"start\": {\r\n    \
+    \  \"relativity\": \"Current\",\r\n      \"periodType\": \"CalendarDay\"\r\n    },\r\n    \"end\"\
+    : {\r\n      \"relativity\": \"C"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationPeriods
+- name: GetCalculationRanges
+  description: "envianceSdk.data.getCalculationRanges\r\n```\r\n[\r\n  [\r\n    {\r\n      \"parameterIdOrTag\"\
+    : \"Pay F0415 Fee\",\r\n      \"beginDate\": \"2012-12-01T23:00:00\",\r\n      \"endDate\": \"2012-12-02T23:00"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationRanges
+- name: GetCalculationByDateRange
+  description: GET /ver2/DataService.svc/calculations/getbydaterange
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationByDateRange
+- name: DeleteNonNumericData
+  description: 'Deletes Non-Numeric Data Points for one Non-Numeric Requirement. Deleting Non-Numeric
+    Data Points is an synchronous process. Deletions  of non-numeric datapoints in the Management '
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNonNumericData
+- name: EnterNonNumericData
+  description: "envianceSdk.data.enterNonNumericData\r\n```\r\n[\r\n  [\r\n    {\r\n      \"requirementIdOrPath\"\
+    : \"Kuhar Division/Kuhar-Facility-NNR/Kuhar-NNR1\",\r\n      \"completeDate\": \"2017-04-03T08:00:00\"\
+    ,"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNonNumericData
+- name: DeleteNumericData
+  description: Deletes all Data Points for a set of one or more Parameters, within a specified date range.
+    Deleting Data Points is an asynchronous process. Upon successfully receiving and queuein
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNumericData
+- name: EnterNumericData
+  description: Processes a set of one or more numeric Data Points. Entering Data Points is an asynchronous
+    process. Upon successfully receiving and queueing the data, a command id is returned. Wi
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNumericData
+- name: DownloadExcelData
+  description: "Download Excel template.\r\n\r\n**SDK API:** `envianceSdk.data.downloadExcelData (options,\
+    \ onsuccess, onerror)`\r\nnull\n\n\n1. Start date and Time Period:[{  \"start\": {    \"relativity\"\
+    : \"C"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.DownloadExcelData
+- name: UploadExcel2Data
+  description: 'Upload excel file (base64)
+
+
+
+    Portal import. Upload excel template with async Multipart/FormData POST request. Use anyone (just
+    one) input control on Rest API Test Tool to specify .'
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.UploadExcel2Data
+- name: UploadExcelData
+  description: Upload excel template with async Multipart/FormData POST request. Use anyone (just one)
+    input control on Rest API Test Tool to specify .xls-file to upload file and specify itUpload
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Data.Impl.DataService.UploadExcelData
+- name: CreateDocument
+  description: "envianceSdk.documents.createDocument\r\n```\r\n[\r\n  {\r\n    \"name\": \"test-name\"\
+    ,\r\n    \"description\": \"test-description\",\r\n    \"folder\": \"/\",\r\n    \"content\": \"77u/IkxvcmVtIGlwc3VtIGRvbG9"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Documents.Impl.DocumentService.CreateDocument
+- name: GetDocumentInfo
+  description: "envianceSdk.documents.getDocument\r\n```\r\n[\r\n    \"/test-name\",\r\n    \"onsuccess\"\
+    ,\r\n    \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Documents.Impl.DocumentService.GetDocumentInfo
+- name: UpdateDocument
+  description: "envianceSdk.documents.updateDocument\r\n```\r\n[\r\n  \"/test-name\",\r\n  {\r\n    \"\
+    name\": \"test-name-update\",\r\n    \"description\": \"test-description-update\",\r\n    \"folder\"\
+    : \"/\",\r\n    \"content"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Documents.Impl.DocumentService.UpdateDocument
+- name: DeleteDocument
+  description: "envianceSdk.documents.deleteDocument\r\n```\r\n[\r\n  \"/test-name\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.deleteDocumentExt\r\n```\r\n[\r\n  {\r\n \
+    \   \"documentIdOrPath\": \"e"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Documents.Impl.DocumentService.DeleteDocument
+- name: GetDocumentsBulk
+  description: POST /ver2/DocumentService.svc/documents/zip
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Documents.Impl.DocumentService.GetDocumentsBulk
+- name: CreateDocumentFolder
+  description: "envianceSdk.documents.createDocumentFolder\r\n```\r\n[\r\n  {\r\n    \"name\": \"test-folder\"\
+    ,\r\n    \"description\": \"test-folder-description\",\r\n    \"parentFolder\": \"/\"\r\n  },\r\n\
+    \  \"onsuccess\",\r\n "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Documents.Impl.DocumentService.CreateDocumentFolder
+- name: GetDocumentFolder
+  description: "envianceSdk.documents.getDocumentFolder\r\n```\r\n[\r\n  \"/test-folder\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Documents.Impl.DocumentService.GetDocumentFolder
+- name: UpdateDocumentFolder
+  description: "envianceSdk.documents.updateDocumentFolder\r\n```\r\n[\r\n  \"/test-folder\",\r\n  {\r\
+    \n    \"name\": \"test-folder-update\",\r\n    \"description\": \"test-folder-description-update\"\
+    ,\r\n    \"parentFold"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Documents.Impl.DocumentService.UpdateDocumentFolder
+- name: DeleteDocumentFolder
+  description: "envianceSdk.documents.deleteDocumentFolder\r\n```\r\n[\r\n  \"/test-folder\",\r\n  \"\
+    onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Documents.Impl.DocumentService.DeleteDocumentFolder
+- name: GetDomainWhitelist
+  description: GET /ver2/DomainWhitelistService.svc/domainWhitelist
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.DomainWhitelist.Impl.DomainWhitelistService.GetDomainWhitelist
+- name: CreateDataView
+  description: "Save EQL query as a data view.\r\n\r\n**SDK API:** `envianceSdk.eql.createDataView(info,\
+    \ onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.eql.createDataView\r\n```\r\n[\r\n  {\r\n    \"eqlname\"\
+    : \"Test1"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.CreateDataView
+- name: UpdateDataView
+  description: "Update a data view info\r\n\r\n**SDK API:** `envianceSdk.eql.updateDataView(idOrName,\
+    \ info, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.eql.updateDataView\r\n```\r\n[\r\n  \"Test1\"\
+    ,\r\n  {\r\n    \"e"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.UpdateDataView
+- name: GetDataView
+  description: "envianceSdk.eql.getDataView\r\n```\r\n[\r\n  \"Test1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\
+    \r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataView
+- name: DeleteDataView
+  description: "envianceSdk.eql.deleteDataView\r\n```\r\n[\r\n  \"Test1\",\r\n  \"onsuccess\",\r\n  \"\
+    onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.DeleteDataView
+- name: GetDataViewPublishConfigs
+  description: GET /ver2/EqlService.svc/dataview/{idOrName}/publishconfigs
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataViewPublishConfigs
+- name: UpdateDataViewPublishConfigs
+  description: PATCH /ver2/EqlService.svc/dataview/{idOrName}/publishconfigs
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.UpdateDataViewPublishConfigs
+- name: GetDataPublishConnections
+  description: GET /ver2/EqlService.svc/dataview/publishconnections
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataPublishConnections
+- name: ExecuteAsync
+  description: "envianceSdk.eql.executeExtAsync\r\n```\r\n[\r\n    {\r\n        \"eql\": \"select TOP\
+    \ 1 wi.name, wi.id from WorkflowType wi\",\r\n        \"excelHeaderCells\": [\r\n            {\r\n\
+    \                \"c"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsync
+- name: Execute
+  description: "envianceSdk.eql.execute\r\n```\r\n[\r\n    \"select wi.name, wi.id from WorkflowType wi\
+    \  where wi.name like '%lgm%'\",\r\n    1,\r\n    100,\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n\
+    ]\r\n```\r\nenvianceS"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.Execute
+- name: ExecuteAsGet
+  description: GET /ver2/EqlService.svc/query
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsGet
+- name: ExecuteAsGetWithPathSegment
+  description: GET /ver2/EqlService.svc/query/
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsGetWithPathSegment
+- name: CreateEvent
+  description: "Creates a new Event in the specified Event Log. Events can only be created for manual\
+    \ Event Logs. Attempting to create an Event on an  automatic Event Log will result in an error.\r"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Events.Impl.EventService.CreateEvent
+- name: GetEvent
+  description: "envianceSdk.events.getEvent\r\n```\r\n[\r\n  \"eventlog_id_or_tag\",\r\n  \"event_id_or_tag\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Events.Impl.EventService.GetEvent
+- name: UpdateEvent
+  description: "Updates an existing Event.\r\n\r\n**Security:** All users.\r\n\r\n**SDK API:**  `envianceSdk.events.updateEvent(eventLogIdOrTag,\
+    \ eventIdOrTag, eventInfo, onsuccess, onerror)`\r\nnull\n\n\nenvia"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Events.Impl.EventService.UpdateEvent
+- name: DeleteEvent
+  description: "envianceSdk.events.deleteEvent\r\n```\r\n[\r\n  \"eventlog_id_or_tag \",\r\n  \"event_id_or_tag\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Events.Impl.EventService.DeleteEvent
+- name: CreateFormTemplate
+  description: "Create form template in enviance system\r\n\r\n** SDK API:**  'envianceSdk.formtemplates.createFormTemplate\
+    \ (formTemplateInfo, onsuccess, onerror)'\r\n\r\n** SDK API:**  'envianceSdk.formt"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.CreateFormTemplate
+- name: GetFormTemplate
+  description: "Get information about form template from enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.getFormTemplate\
+    \ (formtemplateIdOrName, onsuccess, onerror)\r\n\r\n```\r\nGET /formte"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplate
+- name: UpdateFormTemplate
+  description: '["960e9887-ca75-4fa8-afd0-fc79aa952ff6", {r    "name": "Mayur Template 7",r    "description":
+    "Update Desc",r    "version": 20,r    "versionComment": "Version 9 Created from REST A'
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.UpdateFormTemplate
+- name: DeleteFormTemplate
+  description: "envianceSdk.formtemplates.deleteFormTemplateVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\"\
+    ,\r\n  \"102fe594-20eb-4938-96cc-cac8eebd282d\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.DeleteFormTemplate
+- name: UpdateFormTemplateCreateNewVersion
+  description: "Update form template by creating new versions within enviance system.\r\n\r\n** SDK API:**\
+    \  envianceSdk.formtemplates.updateFormTemplateCreateNewVersion (formTemplateIdOrName, formTemp"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.UpdateFormTemplateCreateNewVersion
+- name: RevertToVersion
+  description: "Revert the current form template version to specified version within enviance system.\r\
+    \n\r\n** SDK API:**  envianceSdk.formtemplates.updateFormTemplateCreateNewVersion (formTemplateId"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.RevertToVersion
+- name: GetFormTemplateVersion
+  description: "Get information about form template version from enviance system.\r\n\r\n** SDK API:**\
+    \  envianceSdk.formtemplates.getFormTemplateVersion (formTemplateIdOrName, versionIdOrNumber, onsuc"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplateVersion
+- name: DeleteFormTemplateVersion
+  description: "envianceSdk.formtemplates.deleteFormTemplateVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\"\
+    ,\r\n  \"102fe594-20eb-4938-96cc-cac8eebd282d\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.DeleteFormTemplateVersion
+- name: GetFormTemplateVersions
+  description: "Get information about form template versions from enviance system.\r\n\r\n** SDK API:**\
+    \  envianceSdk.formtemplates.getFormTemplateVersions (formTemplateIdOrName, onsuccess, onerror)\r\n\
+    \r"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplateVersions
+- name: CopyFormTemplate
+  description: "Create form template in enviance system\r\n\r\n** SDK API:**  'envianceSdk.formtemplates.copyFormTemplate\
+    \ (sourceTemplateIdOrName, newTemplateName, onsuccess, onerror)'\r\n\r\n```\r\nPOST /f"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.CopyFormTemplate
+- name: GetMainMenu
+  description: GET /ver2/MainMenuService.svc/mainMenu
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MainMenu.Impl.MainMenuService.GetMainMenu
+- name: GetMaterialData
+  description: GET /ver2/MaterialDataService.svc/materialdata/{activityIdOrNameOrUniqueTag}/begin/{completeBegin}/end/{completeEnd}/{locationIdOrPathOrUniqueTag}
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.GetMaterialData
+- name: DeleteMaterialData
+  description: "envianceSdk.materialData.deleteMaterialData\r\n```\r\n[\r\n  \"/Division for MDLG/FAC\
+    \ for MDLG\",\r\n  [\r\n    \"6B6BB16B-C207-416C-B818-1DB075AA453C\",\r\n    \"004D8F0D-C03A-4A65-BFD1-3CFFDDF995"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.DeleteMaterialData
+- name: DownloadMaterialData
+  description: "envianceSdk.materialData.downloadMaterialData\r\n```\r\n[\r\n  {\r\n    \"activityIdOrNameOrUniqueTag\"\
+    : \"Activity for MDLG\",\r\n    \"completeBegin\": \"2015-05-29T00:00:00\",\r\n    \"completeEnd\"\
+    :"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.DownloadMaterialData
+- name: EnterMaterialData
+  description: "envianceSdk.materialData.enterMaterialData\r\n```\r\n[\r\n  [\r\n    {\r\n      \"parentIdOrPathOrUniqueTag\"\
+    : \"/Division for MDLG/FAC for MDLG\",\r\n      \"activityIdOrNameOrUniqueTag\": \"Activit"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.EnterMaterialData
+- name: UploadMaterialData
+  description: Upload excel template with Ajax and Base64 Encoding. First parameter pass HttpFileInput
+    html control or filecontent as Base64 encoded string. Use anyone (just one) input control on
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.UploadMaterialData
+- name: CreateMaterialGroup
+  description: "envianceSdk.materialGroups.createMaterialGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"\
+    Material Group Name\",\r\n    \"description\": \"Material Group Description\",\r\n    \"materialIdOrNames\"\
+    : [\r\n     "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.CreateMaterialGroup
+- name: GetMaterialGroup
+  description: "envianceSdk.materialGroups.getMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\
+    \n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.GetMaterialGroup
+- name: UpdateMaterialGroup
+  description: "envianceSdk.materialGroups.updateMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\"\
+    ,\r\n  {\r\n    \"name\": \"Material Group Name\",\r\n    \"description\": \"Material Group Description\"\
+    ,\r\n    \"ma"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.UpdateMaterialGroup
+- name: DeleteMaterialGroup
+  description: "envianceSdk.materialGroups.deleteMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.DeleteMaterialGroup
+- name: GetDependentMacs
+  description: "envianceSdk.materialGroups.getDependentMacs\r\n```\r\n[\r\n  \"Material Group Name\",\r\
+    \n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.GetDependentMacs
+- name: UpdateDependentMac
+  description: "envianceSdk.materialGroups.updateDependentMacs\r\n```\r\n[\r\n  \"Material Group 2\",\r\
+    \n  [\r\n    \"70EEE1F5-E4E9-4AEC-9ABD-46F7D5CECAFF\",\r\n    \"0128E876-42C3-4820-8219-000A3F2409BB\"\
+    \r\n  ],\r\n "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.UpdateDependentMac
+- name: CreateMaterialProperty
+  description: "envianceSdk.materialProperties.createMaterialProperty\r\n```\r\n[\r\n  {\r\n    \"name\"\
+    : \"PFBP Property Name\",\r\n    \"description\": \"VBP Description\",\r\n    \"propertyType\": \"\
+    Formula Based Pri"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.CreateMaterialProperty
+- name: GetMaterialProperty
+  description: "envianceSdk.materialProperties.getMaterialProperty\r\n```\r\n[\r\n  \"Material Property\
+    \ Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.GetMaterialProperty
+- name: UpdateMaterialProperty
+  description: "envianceSdk.materialProperties.updateMaterialProperty\r\n```\r\n[\r\n  \"Material Property\
+    \ Name\",\r\n  {\r\n    \"name\": \"PFBP Property Name\",\r\n    \"description\": \"VBP Description\"\
+    ,\r\n    \"data"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.UpdateMaterialProperty
+- name: DeleteMaterialProperty
+  description: "envianceSdk.materialProperties.deleteMaterialProperty\r\n```\r\n[\r\n  \"Material Property\
+    \ Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.DeleteMaterialProperty
+- name: CreateMaterial
+  description: "envianceSdk.materials.createMaterial\r\n```\r\n[\r\n  {\r\n    \"name\": \"Material Name\"\
+    ,\r\n    \"description\": \"Material Description\",\r\n    \"templateIdOrName\": \"Template Name\"\
+    ,\r\n    \"material"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.CreateMaterial
+- name: GetMaterial
+  description: "envianceSdk.materials.getMaterial\r\n```\r\n[\r\n  \"Material Name\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.getMaterialGroup\r\n```\r\n[\r\n  \"\
+    Material Group Name\",\r\n "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.GetMaterial
+- name: UpdateMaterial
+  description: "envianceSdk.materials.updateMaterial\r\n```\r\n[\r\n  \"Material Name\",\r\n  {\r\n  \
+    \  \"name\": \"Material Name\",\r\n    \"description\": \"Material Description\",\r\n    \"templateIdOrName\"\
+    : \"Template N"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.UpdateMaterial
+- name: DeleteMaterial
+  description: "envianceSdk.materials.deleteMaterial\r\n```\r\n[\r\n  \"Material Name\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.deleteMaterialGroup\r\n```\r\n[\r\n \
+    \ \"Material Group Nam"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.DeleteMaterial
+- name: CreateMaterialTemplate
+  description: "envianceSdk.materialTemplates.createMaterialTemplate\r\n```\r\n[\r\n  {\r\n    \"name\"\
+    : \"Material Template Name\",\r\n    \"description\": \"Material Template Description\",\r\n    \"\
+    fields\": [\r\n    "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.CreateMaterialTemplate
+- name: GetMaterialTemplate
+  description: "envianceSdk.materialTemplates.getMaterialTemplate\r\n```\r\n[\r\n  \"Material Template\
+    \ Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.GetMaterialTemplate
+- name: UpdateMaterialTemplate
+  description: "envianceSdk.materialTemplates.updateMaterialTemplate\r\n```\r\n[\r\n  \"Material Template\
+    \ Name\",\r\n  {\r\n    \"name\": \"Material Template Name\",\r\n    \"description\": \"Material Template\
+    \ Descrip"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.UpdateMaterialTemplate
+- name: DeleteMaterialTemplate
+  description: "envianceSdk.materialTemplates.deleteMaterialTemplate\r\n```\r\n[\r\n  \"Material Template\
+    \ Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.DeleteMaterialTemplate
+- name: CreateMessage
+  description: "Queues a message for delivery to the Enviance Inbox for a specified recipient, as well\
+    \ as optionally to the recipient e-mail address.\r\n\r\n**Security:** All users\r\n\r\n**SDK API:**\
+    \  `e"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Messages.Impl.MessageService.CreateMessage
+- name: GetMessage
+  description: "Gets a message from the Enviance User Inbox. A User may only retrieve messages from his\
+    \ own Inbox. Getting a message through this API does NOT mark the message as *read*.\r\n\r\n**SDK "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Messages.Impl.MessageService.GetMessage
+- name: DeleteMessage
+  description: "envianceSdk.messages.deleteMessage\r\n```\r\n[\r\n  \"5bfdbd05-225f-40ee-bff1-2efe18a75375\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Messages.Impl.MessageService.DeleteMessage
+- name: CreatePackage
+  description: "envianceSdk.packages.createPackage\r\n```\r\n[\r\n  {\r\n    \"name\": \"Tracker 001\"\
+    ,\r\n    \"description\": \"Incident tracking and management.\",\r\n    \"displayPage\": \"/index.html\"\
+    ,\r\n    \"iconSr"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.CreatePackage
+- name: GetPackage
+  description: "envianceSdk.packages.getPackage\r\n```\r\n[\r\n  \"Tracker 001\",\r\n  \"onsuccess\",\r\
+    \n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.packages.getPackageItem\r\n```\r\n[\r\n  \"Tracker 001\"\
+    ,\r\n  \"p1.htm\",\r\n  \"onsuc"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.GetPackage
+- name: UpdatePackage
+  description: "Updates an existing Enviance App (package).\r\n\r\n**Security:** Requires Manage Enviance\
+    \ Apps system right.\r\n\r\n**SDK API:**  `envianceSdk.packages.updatePackage(packageIdOrName, packa"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.UpdatePackage
+- name: DeletePackage
+  description: "envianceSdk.packages.deletePackage\r\n```\r\n[\r\n  \"Tracker 001\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.packages.deletePackageItem\r\n```\r\n[\r\n  \"Tracker\
+    \ 001\",\r\n  \"p1.htm\",\r\n  "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.DeletePackage
+- name: GetPackageAppData
+  description: Retrieves an existing Enviance App (Package) data key-value pair, using the specified unique
+    key. If user does not have permissions to retrieve data it returns empty string. No Err
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.GetPackageAppData
+- name: SavePackageAppData
+  description: "envianceSdk.packages.savePackageAppData\r\n```\r\n[\r\n  \"Tracker 001\",\r\n  \"key1\"\
+    ,\r\n  \"value-101010\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.packages.savePackageAppDataJson\r\
+    \n`"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.SavePackageAppData
+- name: DeletePackageAppData
+  description: "envianceSdk.packages.deletePackageAppData\r\n```\r\n[\r\n  \"Tracker 001\",\r\n  \"key1\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.DeletePackageAppData
+- name: CreatePackageItem
+  description: "envianceSdk.packages.createPackageItem\r\n```\r\n[\r\n  \"Tracker 001\",\r\n  {\r\n  \
+    \  \"package\": \"p1\",\r\n    \"path\": \"p1.htm\",\r\n    \"content\": \"77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25z"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.CreatePackageItem
+- name: GetPackageItem
+  description: "envianceSdk.packages.getPackageItem\r\n```\r\n[\r\n  \"Tracker 001\",\r\n  \"p1.htm\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.GetPackageItem
+- name: UpdatePackageItem
+  description: "envianceSdk.packages.updatePackageItem\r\n```\r\n[\r\n  \"Tracker 001\",\r\n  \"p1.htm\"\
+    ,\r\n  {\r\n    \"package\": \"p1\",\r\n    \"path\": \"p1.htm\",\r\n    \"content\": \"77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCB"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.UpdatePackageItem
+- name: DeletePackageItem
+  description: "envianceSdk.packages.deletePackageItem\r\n```\r\n[\r\n  \"Tracker 001\",\r\n  \"p1.htm\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Packages.Impl.PackageService.DeletePackageItem
+- name: GetPageGroupAllNestedByCurrentUser
+  description: "envianceSdk.portal.getDashboard\r\n```\r\n[\r\n    \"onsuccess\",\r\n    \"onerror\"\r\
+    \n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageGroupAllNestedByCurrentUser
+- name: GetPageGroups
+  description: "envianceSdk.portal.getPageGroups\r\n```\r\n[\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n\
+    ]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageGroups
+- name: CreatePageGroup
+  description: "envianceSdk.portal.createPageGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Page Group1\"\
+    ,\r\n    \"properties\": {\r\n      \"key1\": \"value 1\",\r\n      \"key 2\": \"value 2\"\r\n   \
+    \ }\r\n  },\r\n  \"onsuccess\",\r\n "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePageGroup
+- name: GetPageGroup
+  description: "envianceSdk.portal.getPageGroups\r\n```\r\n[\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n\
+    ]\r\n```\r\nenvianceSdk.portal.getPageGroup\r\n```\r\n[\r\n  \"Page Group Name or ID\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageGroup
+- name: UpdatePageGroup
+  description: "envianceSdk.portal.updatePageGroup\r\n```\r\n[\r\n  \"Page Group1\",\r\n  {\r\n    \"\
+    name\": \"Page Group1 modified\",\r\n    \"properties\": {\r\n      \"key1\": \"value 1\",\r\n   \
+    \   \"key 2\": \"value 2\"\r\n   "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePageGroup
+- name: DeletePageGroup
+  description: "envianceSdk.portal.deletePageGroup\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePageGroup
+- name: GetPages
+  description: "envianceSdk.portal.getPages\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"onsuccess\",\r\n\
+    \  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.portal.getPageSettings\r\n```\r\n[\r\n  \"Page Group1\"\
+    ,\r\n  \"Page Name\",\r\n  \"onsucce"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPages
+- name: CreatePage
+  description: "envianceSdk.portal.createPageGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Page Group1\"\
+    ,\r\n    \"properties\": {\r\n      \"key1\": \"value 1\",\r\n      \"key 2\": \"value 2\"\r\n   \
+    \ }\r\n  },\r\n  \"onsuccess\",\r\n "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePage
+- name: GetPage
+  description: "envianceSdk.portal.getPageGroups\r\n```\r\n[\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n\
+    ]\r\n```\r\nenvianceSdk.portal.getPageGroup\r\n```\r\n[\r\n  \"Page Group Name or ID\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPage
+- name: UpdatePage
+  description: "envianceSdk.portal.updatePageGroup\r\n```\r\n[\r\n  \"Page Group1\",\r\n  {\r\n    \"\
+    name\": \"Page Group1 modified\",\r\n    \"properties\": {\r\n      \"key1\": \"value 1\",\r\n   \
+    \   \"key 2\": \"value 2\"\r\n   "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePage
+- name: DeletePage
+  description: "envianceSdk.portal.deletePageGroup\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.portal.deletePage\r\n```\r\n[\r\n  \"Parent Page Group\"\
+    ,\r\n  \"Page A\",\r\n  \"on"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePage
+- name: GetPanels
+  description: "envianceSdk.portal.getPanels\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"Page Name\",\r\n\
+    \  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.portal.getPanelSettings\r\n```\r\n[\r\
+    \n  \"Page Group1\",\r\n  \"Page "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanels
+- name: CreatePanel
+  description: "envianceSdk.portal.createPanel\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"Page Name\",\r\
+    \n  {\r\n    \"name\": \"Panel Name\",\r\n    \"properties\": {\r\n      \"color\": \"green\",\r\n\
+    \      \"Position\": \"top\"\r\n   "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePanel
+- name: GetPanel
+  description: "envianceSdk.portal.getPanels\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"Page Name\",\r\n\
+    \  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.portal.getPanel\r\n```\r\n[\r\n  \"\
+    Page Group1\",\r\n  \"Page Name\",\r\n"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanel
+- name: UpdatePanel
+  description: "envianceSdk.portal.updatePanel\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"Page Name\",\r\
+    \n  \"Panel Name\",\r\n  {\r\n    \"name\": \"Panel Name\",\r\n    \"properties\": {\r\n      \"color\"\
+    : \"green\",\r\n      \"Posi"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePanel
+- name: DeletePanel
+  description: "envianceSdk.portal.deletePanel\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"Page Name\",\r\
+    \n  \"Panel Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.portal.deletePanelTemplate\r\
+    \n```\r\n[\r\n  \"P"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePanel
+- name: SavePanelSettings
+  description: "envianceSdk.portal.savePanelSettings\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"Page Name\"\
+    ,\r\n  \"Panel Name\",\r\n  \"some user settngs for page\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\
+    \n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.SavePanelSettings
+- name: GetPanelSettings
+  description: "envianceSdk.portal.getPanelSettings\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"Page Name\"\
+    ,\r\n  \"Panel Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanelSettings
+- name: SavePageSettings
+  description: "envianceSdk.portal.savePageSettings\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"Page Name\"\
+    ,\r\n  \"some user settngs for page\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.SavePageSettings
+- name: GetPageSettings
+  description: "envianceSdk.portal.getPageSettings\r\n```\r\n[\r\n  \"Page Group1\",\r\n  \"Page Name\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageSettings
+- name: GetPanelTemplates
+  description: "envianceSdk.portal.getPanelTemplates\r\n```\r\n[\r\n  \"onsuccess\",\r\n  \"onerror\"\r\
+    \n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanelTemplates
+- name: CreatePanelTemplate
+  description: "envianceSdk.portal.createPanelTemplate\r\n```\r\n[\r\n  {\r\n    \"name\": \"Panel Template\
+    \ Name\",\r\n    \"properties\": {\r\n      \"Position\": \"absolute\"\r\n    }\r\n  },\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\""
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePanelTemplate
+- name: GetPanelTemplate
+  description: "envianceSdk.portal.getPanelTemplates\r\n```\r\n[\r\n  \"onsuccess\",\r\n  \"onerror\"\r\
+    \n]\r\n```\r\nenvianceSdk.portal.getPanelTemplate\r\n```\r\n[\r\n  \"Panel Template Name\",\r\n  \"\
+    onsuccess\",\r\n  \"onerror"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanelTemplate
+- name: UpdatePanelTemplate
+  description: "envianceSdk.portal.updatePanelTemplate\r\n```\r\n[\r\n  \"Panel Template Name\",\r\n \
+    \ {\r\n    \"name\": \"Panel Template Name\",\r\n    \"properties\": {\r\n      \"Position\": \"top\"\
+    \r\n    }\r\n  },\r\n  \"ons"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePanelTemplate
+- name: DeletePanelTemplate
+  description: "envianceSdk.portal.deletePanelTemplate\r\n```\r\n[\r\n  \"Panel Template Name\",\r\n \
+    \ \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePanelTemplate
+- name: GetReports
+  description: GET /ver2/PortalService.svc/portal/powerBiReports
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetReports
+- name: GetReport
+  description: GET /ver2/PortalService.svc/portal/powerBiReports/{reportIdOrName}
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetReport
+- name: ExecuteReportCommand
+  description: "envianceSdk.reports.execute\r\n```\r\n[\r\n    {\r\n        \"format\": \"Html\",\r\n\
+    \        \"from\": \"2012-02-01T00:00:00\",\r\n        \"parameters\": {\r\n            \"objects\"\
+    : [\r\n                \"/"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Reports.Impl.ReportService.ExecuteReportCommand
+- name: CreateRequirement
+  description: "envianceSdk.requirements.createRequirement\r\n```\r\n[\r\n  {\r\n    \"name\": \"Requirement\
+    \ Name\",\r\n    \"requirementType\": \"RequirementType\",\r\n    \"activeDate\": \"2010-02-22T00:00:00\"\
+    ,\r\n    \""
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.CreateRequirement
+- name: GetRequirement
+  description: "envianceSdk.requirements.getRequirement\r\n```\r\n[\r\n  \"Requirement Name\",\r\n  \"\
+    onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.GetRequirement
+- name: UpdateRequirement
+  description: "envianceSdk.requirements.updateRequirement\r\n```\r\n[\r\n  \"Requirement Name\",\r\n\
+    \  {\r\n    \"name\": \"Requirement Name\",\r\n    \"requirementType\": \"RequirementType\",\r\n \
+    \   \"activeDate\": \"2010-"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.UpdateRequirement
+- name: DeleteRequirement
+  description: "envianceSdk.requirements.deleteRequirement\r\n```\r\n[\r\n  \"Requirement Name\",\r\n\
+    \  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.DeleteRequirement
+- name: CalcGraphForRequirement
+  description: GET /ver2/RequirementService.svc/requirements/{requirementOrMaterialId}/calcgraph
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.CalcGraphForRequirement
+- name: DoRecalculation
+  description: POST /ver2/RequirementService.svc/requirements/recalc
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.DoRecalculation
+- name: CreateGroup
+  description: "Create a new group in Enviance system. \r\n\r\n** Example:**\r\nPOST /ScimIdentityService.svc/scim/v1/Groups\
+    \ HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n** SDK API:**  env"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.CreateGroup
+- name: ListGroups
+  description: "envianceSdk.scim.getGroup\r\n```\r\n[\r\n    \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\"\
+    ,\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.ListGroups
+- name: GetGroup
+  description: "Gets information about group.\r\n\r\n** Example:** \r\nGET /ScimIdentityService.svc/scim/v1/Groups/809d56ad-77ef-47a6-9f3c-f8853b118744\
+    \ HTTP/1.1\r\n\r\n** SDK API:**  envianceSdk.scim.getGro"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetGroup
+- name: UpdatePartialGroup
+  description: "envianceSdk.scim.partialUpdateGroup\r\n```\r\n[\r\n    {\r\n        \"externalId\": \"\
+    banana\",\r\n        \"meta\": {\r\n            \"attributes\": [\r\n                \"urn:scim:schemas:enviance:grou"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdatePartialGroup
+- name: UpdateGroup
+  description: "envianceSdk.scim.fullUpdateGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"\
+    urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"displayName\": \"Scim Grptrtrtr\",\r\n    \"members\"\
+    : [\r\n      {\r\n       "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateGroup
+- name: DeleteGroup
+  description: "envianceSdk.scim.deleteGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.DeleteGroup
+- name: GetSchemas
+  description: GET /ver2/ScimIdentityService.svc/scim/v1/schemas/
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetSchemas
+- name: GetSchema
+  description: GET /ver2/ScimIdentityService.svc/scim/v1/schemas/{type}
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetSchema
+- name: CreateUser
+  description: "Create a new user in Enviance system.\r\n\r\n** SDK API:**  envianceSdk.scim.createUser(user,\
+    \ onsuccess, onerror)\r\n\r\n** Example:**\r\nPOST /ScimIdentityService.svc/scim/v1/Users HTTP/1.1"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.CreateUser
+- name: ListUsers
+  description: "envianceSdk.scim.listUsers\r\n```\r\n[\r\n    {\r\n        \"attributes\": [\r\n     \
+    \       \"name.givenName\",\r\n            \"name.familyName\"\r\n        ],\r\n        \"count\"\
+    : \"10\",\r\n        \"filte"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.ListUsers
+- name: GetUser
+  description: "Gets information about user.\r\n\r\n** Example:** \r\nGET /ScimIdentityService.svc/scim/v1/Users/9ca22677-2670-41a9-bafd-3b2825592863\
+    \ HTTP/1.1\r\n\r\n** SDK API:**  envianceSdk.scim.getUser("
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetUser
+- name: DeleteUser
+  description: "envianceSdk.scim.deleteUser\r\n```\r\n[\r\n  \"40E351F5-E4E9-4AEC-9ABD-46F7D5CECAFF\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.DeleteUser
+- name: UpdateUser
+  description: "envianceSdk.scim.fullUpdateUser\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\
+    ,\r\n      \"urn:scim:schemas:enviance:user\"\r\n    ],\r\n    \"userName\": \"scimupdatetest9"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateUser
+- name: UpdatePartialUser
+  description: "envianceSdk.scim.partialUpdateUser\r\n```\r\n[\r\n    {\r\n        \"externalId\": \"\
+    apple\",\r\n        \"schemas\": [\r\n            \"urn:scim:schemas:core:1.0\"\r\n        ],\r\n\
+    \        \"timezone\": \"A"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdatePartialUser
+- name: UpdateHomeUserWithPasswordBulk
+  description: "envianceSdk.scim.UpdateHomeUserWithPasswordBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"\
+    id\": \"C591F8A4-D783-4FF8-928F-3DA512DBB1E6\",\r\n      \"password\": \"1111\"\r\n    },\r\n    {\r\
+    \n      \"id\": \"DD43"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateHomeUserWithPasswordBulk
+- name: CreateGroup
+  description: "Creates a new user group. \r\n\r\n**Security:** Requires Manage Users and Groups system\
+    \ right.\r\n\r\n**SDK API:**  `envianceSdk.groups.createGroup(groupInfo, onsuccess, onerror)`\r\n\
+    null\n\n\n"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.CreateGroup
+- name: GetGroup
+  description: "envianceSdk.groups.getGroup\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"onsuccess\",\r\
+    \n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.groups.getGroupMembers\r\n```\r\n[\r\n  \"Group Name 0001\"\
+    ,\r\n  \"onsuccess\",\r\n  "
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.GetGroup
+- name: UpdateGroup
+  description: "Updates a Group in the System. You cannot update the Administrators group.\r\n\r\n**Security:**\
+    \ Requires Manage Users and Groups system right.\r\n\r\n**SDK API:**  `envianceSdk.groups.upda"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.UpdateGroup
+- name: DeleteGroup
+  description: "envianceSdk.groups.deleteGroup\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.deleteGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\"\
+    ,\r\n"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.DeleteGroup
+- name: GetGroupMembers
+  description: "envianceSdk.groups.getGroupMembers\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.GetGroupMembers
+- name: SetGroupMembers
+  description: "Sets the members of a Group, replacing the current members, if any. You cannot set the\
+    \ members of the Administrators Group.\r\n\r\n**Security:** Requires Manage Users and Groups system"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.SetGroupMembers
+- name: AddGroupMembers
+  description: "envianceSdk.groups.addGroupMembers\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  [\r\n  \
+    \  \"eoleg1\",\r\n    \"eoleg2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.groups.addGroupMembersAsy"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.AddGroupMembers
+- name: RemoveGroupMember
+  description: "Removes a User from a Group.\r\n\r\n** Security:** Requires Manage Users and Groups system\
+    \ right.\r\n\r\n** SDK API:** `envianceSdk.groups.removeGroupMember(groupIdOrName, userIdOrName, on"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.RemoveGroupMember
+- name: RemoveGroupMemberAsync
+  description: "Removes a User from a Group asynchronously.\r\n\r\n**Security:** Requires Manage Users\
+    \ and Groups system right.\r\n\r\n** SDK API:** `envianceSdk.groups.removeGroupMemberAsync(groupIdOrNam"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.RemoveGroupMemberAsync
+- name: SetGroupMembersAsync
+  description: "Asynchronously sets the members of a Group, replacing the current members, if any. You\
+    \ cannot set the members of the Administrators Group.\r\n\r\n** Security:** Requires Manage Users\
+    \ a"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.SetGroupMembersAsync
+- name: AddGroupMembersAsync
+  description: "envianceSdk.groups.addGroupMembersAsync\r\n```\r\n[\r\n  \"Group Name 0001\",\r\n  [\r\
+    \n    \"eoleg1\",\r\n    \"eoleg2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Security.Impl.SecurityService.AddGroupMembersAsync
+- name: GetLastChanges
+  description: "envianceSdk.sync.getLastChanges\r\n```\r\n[\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\
+    \n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Sync.SyncService.GetLastChanges
+- name: CreateTagScheme
+  description: "envianceSdk.tagSchemes.createTagScheme\r\n```\r\n[\r\n  {\r\n    \"name\": \"Tag Scheme\
+    \ Name\",\r\n    \"description\": \"Tag Scheme 1 description\",\r\n    \"enforceUniqueness\": \"1\"\
+    \r\n  },\r\n  \"onsucces"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.TaggingObjects.TagScheme.Impl.TagSchemeService.CreateTagScheme
+- name: GetTagScheme
+  description: "envianceSdk.tagSchemes.getTagScheme\r\n```\r\n[\r\n  \"Tag Scheme Name\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.TaggingObjects.TagScheme.Impl.TagSchemeService.GetTagScheme
+- name: UpdateTagScheme
+  description: "Updates an existing Tag Scheme.\r\n\r\n**Security:**  Requires Manage Tag Schemes system\
+    \ right.\r\n\r\n**SDK API:**  `envianceSdk.tagSchemes.updateTagScheme (tagSchemeIdOrName, tagSchemeIn"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.TaggingObjects.TagScheme.Impl.TagSchemeService.UpdateTagScheme
+- name: DeleteTagScheme
+  description: "envianceSdk.tagSchemes.deleteTagScheme\r\n```\r\n[\r\n  \"Tag Scheme Name\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.TaggingObjects.TagScheme.Impl.TagSchemeService.DeleteTagScheme
+- name: CreateTag
+  description: "Creates a new Tag.\r\n\r\n**Security:** Requires Manage Tag Schemes system right.\r\n\r\
+    \n**SDK API:** `envianceSdk.tags.createTag (tagInfo, onsuccess, onerror)`\r\n\r\n```\r\nPOST/TagService.svc"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.CreateTag
+- name: GetTag
+  description: "envianceSdk.tags.getTag\r\n```\r\n[\r\n  \"Tag Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\
+    \r\n]\r\n```\r\nenvianceSdk.tagSchemes.getTagScheme\r\n```\r\n[\r\n  \"Tag Scheme Name\",\r\n  \"\
+    onsuccess\",\r\n  \"onerror\"\r"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.GetTag
+- name: UpdateTag
+  description: "Updates an existing Tag.\r\n\r\n**Security:** Requires Manage Tag Schemes system right.\r\
+    \n\r\n**SDK API:** `envianceSdk.tags.updateTag (tagIdOrSchemeIdAndTagName, tagInfo, onsuccess, oner"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.UpdateTag
+- name: DeleteTag
+  description: "envianceSdk.tags.deleteTag\r\n```\r\n[\r\n  \"Tag Name\",\r\n  \"onsuccess\",\r\n  \"\
+    onerror\"\r\n]\r\n```\r\nenvianceSdk.tagSchemes.deleteTagScheme\r\n```\r\n[\r\n  \"Tag Scheme Name\"\
+    ,\r\n  \"onsuccess\",\r\n  \"one"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.DeleteTag
+- name: CreateTask
+  description: "envianceSdk.tasks.createTask\r\n```\r\n[\r\n  {\r\n    \"name\": \"Task1\",\r\n    \"\
+    description\": \"Perform a spot check every month on the steam valves.\",\r\n    \"dueDate\": \"2012-12-08T09:00:00\"\
+    ,\r"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Tasks.Impl.TaskService.CreateTask
+- name: GetTask
+  description: "envianceSdk.tasks.getTask\r\n```\r\n[\r\n  \"c1960122-16dd-4d43-91e4-ea0d9393ab78\",\r\
+    \n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.tasks.getTaskOccurrence\r\n```\r\n\
+    [\r\n  \"ad7b8413-812a-4e5"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTask
+- name: UpdateTask
+  description: Updates the properties of a simple (single occurrence) Task definition, potentially moving
+    it to a new Location. Updating the object Location(s) of a Task effectively moves that Ta
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Tasks.Impl.TaskService.UpdateTask
+- name: DeleteTask
+  description: "envianceSdk.tasks.deleteTask\r\n```\r\n[\r\n  \"c1960122-16dd-4d43-91e4-ea0d9393ab78\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Tasks.Impl.TaskService.DeleteTask
+- name: ExportTaskAsICal
+  description: GET /ver2/TaskService.svc/tasks/{taskId}/ical
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Tasks.Impl.TaskService.ExportTaskAsICal
+- name: GetTaskOccurrence
+  description: "Gets information about a Task occurrence.\r\n\r\n**Security:** Requires Manage Tasks right.\
+    \ \r\n\r\n**SDK API:**  `envianceSdk.tasks.getTaskOccurrence(taskId, dueDate, objectIdOrPath, onsu"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTaskOccurrence
+- name: GetTaskOccurrenceByObject
+  description: "envianceSdk.tasks.getTaskOccurrence\r\n```\r\n[\r\n    \"ad7b8413-812a-4e59-95f4-03205ca685f0\"\
+    ,\r\n    \"2013-12-08T09:00:00\",\r\n    \"/Bug 1\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n\
+    ]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTaskOccurrenceByObject
+- name: CompleteTaskOccurrence
+  description: '["ad7b8413-812a-4e59-95f4-03205ca685f0", new Date(),null, [{   "objectIdOrPath": "/A Facility/A
+    Unit/A POI/Check Valves",    "dismissed": "False",    "percentComplete": 100,    "st'
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Tasks.Impl.TaskService.CompleteTaskOccurrence
+- name: CreateUOM
+  description: "<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates\
+    \ a new Location object in the Compliance Model, optionally by copying the structure from anothe"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UOM.Impl.UOMService.CreateUOM
+- name: GetUOM
+  description: "<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates\
+    \ a new Location object in the Compliance Model, optionally by copying the structure from anothe"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UOM.Impl.UOMService.GetUOM
+- name: UpdateUOM
+  description: "<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates\
+    \ a new Location object in the Compliance Model, optionally by copying the structure from anothe"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UOM.Impl.UOMService.UpdateUOM
+- name: DeleteUOM
+  description: "<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates\
+    \ a new Location object in the Compliance Model, optionally by copying the structure from anothe"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UOM.Impl.UOMService.DeleteUOM
+- name: CreateUOMCategory
+  description: "<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates\
+    \ a new Location object in the Compliance Model, optionally by copying the structure from anothe"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UOM.Impl.UOMService.CreateUOMCategory
+- name: GetUOMCategory
+  description: "<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates\
+    \ a new Location object in the Compliance Model, optionally by copying the structure from anothe"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UOM.Impl.UOMService.GetUOMCategory
+- name: UpdateUOMCategory
+  description: "<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates\
+    \ a new Location object in the Compliance Model, optionally by copying the structure from anothe"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UOM.Impl.UOMService.UpdateUOMCategory
+- name: DeleteUOMCategory
+  description: "<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates\
+    \ a new Location object in the Compliance Model, optionally by copying the structure from anothe"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UOM.Impl.UOMService.DeleteUOMCategory
+- name: GetCurrentSessionInfo
+  description: "envianceSdk.uuid.getCurrentSession\r\n```\r\n[\r\n    \"onsuccess\",\r\n    \"onerror\"\
+    \r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UUID.Impl.UUIDService.GetCurrentSessionInfo
+- name: GetUserAttributes
+  description: "envianceSdk.uuid.getUserAttributes\r\n```\r\n[\r\n  \"loginOrID\",\r\n  \"onsuccess\"\
+    ,\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.UUID.Impl.UUIDService.GetUserAttributes
+- name: LastFormConfigChanges
+  description: POST /ver2/WabService.svc/wab/lastFormConfigChanges
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Wab.WabService.LastFormConfigChanges
+- name: CreateWorkflowRole
+  description: "envianceSdk.workflows.createWorkflowRole\r\n```\r\n[\r\n  {\r\n    \"name\": \"WorkflowRole1\"\
+    ,\r\n    \"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\"\
+    ,\r"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.CreateWorkflowRole
+- name: GetWorkflowRole
+  description: "envianceSdk.workflows.getWorkflowRole\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.GetWorkflowRole
+- name: UpdateWorkflowRole
+  description: '["7bd06df1-041b-4d1e-8091-1e74f7dd7219",{"name":"WorkflowRole1update""description": "Lorem
+    ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo","defaultMembers": {"u'
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.UpdateWorkflowRole
+- name: DeleteWorkflowRole
+  description: "envianceSdk.workflows.deleteWorkflowRole\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowRoleAsync\r\
+    \n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.DeleteWorkflowRole
+- name: CopyWorkflowRole
+  description: "envianceSdk.workflows.copyWorkflowRole\r\n```\r\n[\r\n  \"5cd5138d-c792-4dec-ae92-8a6fc70ae4c4\"\
+    ,\r\n  \"WorkflowRole1copied\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.copy"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.CopyWorkflowRole
+- name: CreateWorkflow
+  description: "envianceSdk.workflows.createWorkflows\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowTypeName\"\
+    : \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId\
+    \ - 0000-1-1"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflow
+- name: GetWorkflow
+  description: "envianceSdk.workflows.getWorkflow\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflow21\r\n```\r\
+    \n[\r\n  \"B5E7E7A4-"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflow
+- name: UpdateWorkflow
+  description: "envianceSdk.workflows.updateWorkflowStep\r\n```\r\n[\r\n  \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\"\
+    ,\r\n  \"Oleg FT Step1\",\r\n  {\r\n    \"comment\": \"my comment\",\r\n    \"transition\": {\r\n\
+    \      \"dueD"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflow
+- name: DeleteWorkflow
+  description: "envianceSdk.workflows.deleteWorkflow\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowExt\r\n\
+    ```\r\n[\r\n  {\r\n"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflow
+- name: GetWorkflowAttachments
+  description: GET /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowAttachments
+- name: GenerateWorkflowAttachmentUploadUrl
+  description: POST /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateWorkflowAttachmentUploadUrl
+- name: GetWorkflowAttachment
+  description: GET /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments/{attachmentId}
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowAttachment
+- name: DeleteWorkflowAttachment
+  description: DELETE /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments/{attachmentId}
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflowAttachment
+- name: GenerateWorkflowAttachmentDownloadUrl
+  description: GET /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments/{attachmentId}/downloadUrl
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateWorkflowAttachmentDownloadUrl
+- name: InitiateChildWorkflow
+  description: Executes a Workflow Initiator action on the active Step of an existing Workflow, thereby
+    creating a new child Workflow, and places the child on its Init Step. Information about For
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.InitiateChildWorkflow
+- name: GetWorkflowStep
+  description: "envianceSdk.workflows.getWorkflowStep\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\"\
+    ,\r\n  \"Step1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowStepBulk"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowStep
+- name: UpdateWorkflowStep
+  description: Updates one or more values in the Form Fields of an existing Workflow Step. Any Form Fields
+    *not* specified are left un-modified. A Step Action to invoke may also be specified, whi
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflowStep
+- name: ResolvePermissions
+  description: "envianceSdk.workflows.resolvePermissions\r\n```\r\n[\r\n  \"\\u003CworkflowIdOrUniqueId\\\
+    u003E\",\r\n  \"\\u003CstepIdOrName\\u003E\",\r\n  \"\\u003CuserId\\u003E\",\r\n  \"onsuccess\",\r\
+    \n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.ResolvePermissions
+- name: GetWorkflowCurrentStep
+  description: "envianceSdk.workflows.getWorkflowCurrentStep\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\"\
+    ,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowCurrentStepBu"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowCurrentStep
+- name: UpdateWorkflowCurrentStep
+  description: Updates one or more values in the Form Fields of current Workflow Step. Any Form Fields
+    *not* specified are left un-modified. A Step Action to invoke may also be specified, which w
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflowCurrentStep
+- name: CreateWorkflows
+  description: "envianceSdk.workflows.createWorkflows\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowTypeName\"\
+    : \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId\
+    \ - 0000-1-1"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflows
+- name: UpdateWorkflows
+  description: "envianceSdk.workflows.updateWorkflowStep\r\n```\r\n[\r\n  \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\"\
+    ,\r\n  \"Oleg FT Step1\",\r\n  {\r\n    \"comment\": \"my comment\",\r\n    \"transition\": {\r\n\
+    \      \"dueD"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflows
+- name: DeleteWorkflows
+  description: "envianceSdk.workflows.deleteWorkflows\r\n```\r\n[\r\n  [\r\n    \"wfid1\",\r\n    \"wfid2\"\
+    \r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflows
+- name: CreateWorkflowsOld
+  description: POST /ver2/WorkflowService.svc/workflows/bulkold
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflowsOld
+- name: GetUploadExcelWorkflowResult
+  description: Get excel file (base64)
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetUploadExcelWorkflowResult
+- name: GetWorkflowStepBulk
+  description: "Gets information about specified Steps of the specified Workflow Steps.\r\n\r\n**Security:**\
+    \ Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or Us"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowStepBulk
+- name: GetWorkflowCurrentStepBulk
+  description: "Gets information about Current Steps of the specified Workflow Steps.\r\n\r\n**Security:**\
+    \ Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowCurrentStepBulk
+- name: UploadExcel2Workflow
+  description: Upload excel file (base64)
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UploadExcel2Workflow
+- name: GuessPermissions
+  description: For a given Workflow Type and optional set of compliance objects, this method returns the
+    permissions for all Roles and their  resolved members (users and groups), taking into acco
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GuessPermissions
+- name: GenerateUniqueIDs
+  description: "Generate UniqueIDs for specific workflow type.\r\n\r\n**SDK API:**  `envianceSdk.workflows.generateUniqueIds(workflowTypeIdOrName,\
+    \ count, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.workf"
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateUniqueIDs
+- name: GuessPermissionsByUser
+  description: For a given Workflow Type and user and optional set of compliance objects, this method
+    returns the permissions for the specified user(s), taking into account all Roles with which t
+  source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GuessPermissionsByUser

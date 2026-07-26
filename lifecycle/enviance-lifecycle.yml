@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/enviance-restapi-openapi-original.json
+versioning:
+  scheme: uri-path
+  current: ver2
+  platform_version: Platform.v2026.2.0.0.20260708
+  docs: https://api.enviance.com/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No deprecation policy or Sunset/Deprecation header support found.
+status_page: null
+sla:
+  url: null
+  note: No public SLA or status page located (the enviance.com brand site is a broken/parked WordPress
+    install under Cority).
+deprecated_operations: []

@@ -1,0 +1,21 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Cority Enviance EMS REST API
+  version: 1.0.0
+extends: openapi/enviance-restapi-openapi-original.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-19'
+      x-apievangelist-provider: enviance
+      x-apievangelist-notes: >-
+        Swagger 2.0 harvested verbatim from https://api.enviance.com/Swagger.svc/swagger.json.
+        Host/basePath were null in the source; the production base URL is https://api.enviance.com
+        and every path is namespaced under /ver2/<Service>.svc/. Authentication is session-token
+        (apiKey Authorization header) or HTTP Basic via gateway; an OAuth access-token endpoint is
+        also exposed. Cross-cutting conventions captured in conventions/enviance-conventions.yml.
+  - target: $
+    update:
+      x-apievangelist-servers:
+        - url: https://api.enviance.com
+          description: Cority Enviance production EMS REST API

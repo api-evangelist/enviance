@@ -1,0 +1,36 @@
+# Cority Enviance
+
+> Enviance (now Cority Enviance) is an environmental, health, and safety (EHS) compliance-management SaaS platform. Its EMS REST API exposes 252 operations across 160 paths and 39 service areas — compliance requirements and tasks, environmental events, chemicals and materials, documents, workflows, portals, bulk data, and SCIM identity — for building custom interfaces and integrations. Use requires a Cority Enviance Connectors license.
+
+## APIs
+
+- [Cority Enviance EMS REST API](https://api.enviance.com/): Swagger 2.0, version Platform.v2026.2. Base URL https://api.enviance.com, all paths under /ver2/<Service>.svc/.
+
+## Specs
+
+- [OpenAPI (Swagger 2.0, verbatim)](openapi/enviance-restapi-openapi-original.json)
+- [OpenAPI Overlay (API Evangelist enhancements)](overlays/enviance-restapi-overlay.yaml)
+
+## Authentication
+
+- Session token: POST /ver2/AuthenticationService.svc/sessions to get a SessionId, then send `Authorization: Enviance <SessionId>`.
+- HTTP Basic via API gateway.
+- OAuth access token: POST /ver2/AuthenticationService.svc/oauthtoken.
+- [Authentication profile](authentication/enviance-authentication.yml)
+
+## Conventions
+
+- [API conventions](conventions/enviance-conventions.yml): pagination (page/pageSize/limit; SCIM startIndex/count), request tracing (x-client-request-id), EnvApi-* system/package/localization headers, error envelope {error, details}, uri-path versioning (/ver2).
+- [Conformance](conformance/enviance-conformance.yml): SCIM v1, HTTP Basic, API key, iCalendar; no RFC 9457, no idempotency.
+- [Data model](data-model/enviance-data-model.yml): entities and relationships across 320 schema definitions.
+
+## Agent
+
+- [MCP candidate tools](mcp/enviance-mcp.yml)
+- [Agent skills](skills/_index.yml)
+- [Agentic access contracts](agentic-access/enviance-agentic-access.yml)
+
+## Docs
+
+- [API help / developer portal](https://api.enviance.com/)
+- [Swagger UI](https://api.enviance.com/swagger)

@@ -1,0 +1,3563 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/enviance-restapi-openapi-original.json
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 252
+  by_action_class:
+    acting: 171
+    connected: 81
+  by_consequence:
+    write: 169
+    read: 81
+    safety-critical: 2
+  human_in_the_loop_required: 2
+operations:
+- path: /ver2/ActivityService.svc/activities
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.CreateActivity
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ActivityService.svc/activities/{activityIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.GetActivity
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ActivityService.svc/activities/{activityIdOrName}
+  method: put
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.UpdateActivity
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ActivityService.svc/activities/{activityIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Activities.Impl.ActivityService.DeleteActivity
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/AuthenticationService.svc/currentsession
+  method: get
+  operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.GetCurrentSessionInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/AuthenticationService.svc/currentsession
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.EndCurrentSession
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/AuthenticationService.svc/oauthtoken
+  method: post
+  operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.AuthenticateByOAuthToken
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/AuthenticationService.svc/sessions
+  method: post
+  operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.Authenticate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/AuthenticationService.svc/sessions/cert
+  method: post
+  operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.AuthenticateByCert
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/AuthenticationService.svc/sessions/long
+  method: post
+  operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.CreateLongLivingSession
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/AuthenticationService.svc/sessions/qlik
+  method: post
+  operationId: Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.CreateQlikJWTToken
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/BatchRequestService.svc/batchRequest/execute
+  method: post
+  operationId: Enviance.RestServices.Ver2.BatchRequest.Impl.BatchRequestService.Execute
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/BulkService.svc/batches
+  method: post
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.BatchesQuery
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/BulkService.svc/batchFileInfo/{id}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.BatchFileInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/BulkService.svc/createBatch
+  method: post
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.CreateBatch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/BulkService.svc/events
+  method: post
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.EventsQuery
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/BulkService.svc/fileInfo/{id}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.FileInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/BulkService.svc/setCanceled
+  method: post
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetCanceled
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/BulkService.svc/setPaused
+  method: post
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetPaused
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/BulkService.svc/setResumed
+  method: post
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.SetResumed
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/BulkService.svc/statusInfo
+  method: get
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.LoadStatusInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/BulkService.svc/upload
+  method: post
+  operationId: Enviance.RestServices.Ver2.Bulk.Impl.BulkService.UploadFile
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ChemicalGroupService.svc/chemicalGroups
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.CreateChemicalGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ChemicalGroupService.svc/chemicalGroups/{chemicalGroupIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.GetChemicalGroup
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ChemicalGroupService.svc/chemicalGroups/{ChemicalGroupIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.UpdateChemicalGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ChemicalGroupService.svc/chemicalGroups/{ChemicalGroupIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalGroupService.DeleteChemicalGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ChemicalListService.svc/chemicalLists
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.CreateChemicalList
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ChemicalListService.svc/chemicalLists/{chemicalListIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.UpdateChemicalList
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ChemicalListService.svc/chemicalLists/{chemicalListIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.DeleteChemicalList
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ChemicalListService.svc/ChemicalLists/{chemicalListIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.GetChemicalList
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ChemicalService.svc/chemicals
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.CreateChemical
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ChemicalService.svc/chemicals/{chemicalIdOrAlias}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.GetChemical
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ChemicalService.svc/chemicals/{chemicalIdOrAlias}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.UpdateChemical
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ChemicalService.svc/chemicals/{chemicalIdOrAlias}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalService.DeleteChemical
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/CommandService.svc/commands/{commandId}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Async.Impl.CommandService.GetCommand
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/CommandService.svc/commands/{commandId}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Async.Impl.CommandService.DeleteCommand
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/CompliancePermissionService.svc/locations/permissions/{locationId}
+  method: get
+  operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.CompliancePermissionService.GetLocationPermissions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ComplianceService.svc/locations
+  method: post
+  operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.CreateLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ComplianceService.svc/locations/{locationIdOrPath}
+  method: get
+  operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.GetLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ComplianceService.svc/locations/{locationIdOrPath}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.UpdateLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ComplianceService.svc/locations/{locationIdOrPath}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.DeleteLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ComplianceService.svc/locations/overrides/{locationIdOrPath}
+  method: get
+  operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.GetOverrides
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ComplianceService.svc/locations/overrides/{locationIdOrPath}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.UpdateOverrides
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /ver2/ComplianceService.svc/locations/overrides/{locationIdOrPath}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.DeleteOverrides
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /ver2/CostomFieldService.svc/customFields
+  method: post
+  operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.CreateCustomField
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/CostomFieldService.svc/customFields/{customFieldIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.GetCustomField
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/CostomFieldService.svc/customFields/{customFieldIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.PartialUpdateCustomField
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/CostomFieldService.svc/customFields/{customFieldIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.DeleteCustomField
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/CostomFieldService.svc/customFields/bulk
+  method: post
+  operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.GetCustomFieldList
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/CostomFieldService.svc/customFields/bulk
+  method: patch
+  operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.UpdateCustomFieldBulkPartial
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DataService.svc/calculations/calculationperiods
+  method: post
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationPeriods
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DataService.svc/calculations/calculationranges
+  method: post
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationRanges
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DataService.svc/calculations/getbydaterange
+  method: get
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationByDateRange
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/DataService.svc/nonnumericdata/deletedatacommands
+  method: post
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNonNumericData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DataService.svc/nonnumericdata/enterdatacommands
+  method: post
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNonNumericData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DataService.svc/numericdata/deletedatacommands
+  method: post
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNumericData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DataService.svc/numericdata/enterdatacommands
+  method: post
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNumericData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DataService.svc/numericdata/exceldata
+  method: post
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.DownloadExcelData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DataService.svc/numericdata/uploadexcel2commands
+  method: post
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.UploadExcel2Data
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DataService.svc/numericdata/uploadexcelcommands
+  method: post
+  operationId: Enviance.RestServices.Ver2.Data.Impl.DataService.UploadExcelData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DocumentService.svc/documents
+  method: post
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.CreateDocument
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DocumentService.svc/documents/{documentIdOrPath}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.GetDocumentInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/DocumentService.svc/documents/{documentIdOrPath}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.UpdateDocument
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DocumentService.svc/documents/{documentIdOrPath}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.DeleteDocument
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DocumentService.svc/documents/zip
+  method: post
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.GetDocumentsBulk
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DocumentService.svc/folders
+  method: post
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.CreateDocumentFolder
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DocumentService.svc/folders/{documentFolderIdOrPath}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.GetDocumentFolder
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/DocumentService.svc/folders/{documentFolderIdOrPath}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.UpdateDocumentFolder
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DocumentService.svc/folders/{documentFolderIdOrPath}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Documents.Impl.DocumentService.DeleteDocumentFolder
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/DomainWhitelistService.svc/domainWhitelist
+  method: get
+  operationId: Enviance.RestServices.Ver2.DomainWhitelist.Impl.DomainWhitelistService.GetDomainWhitelist
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/EqlService.svc/dataview
+  method: post
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.CreateDataView
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/EqlService.svc/dataview/{idOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.UpdateDataView
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/EqlService.svc/dataview/{idOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataView
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/EqlService.svc/dataview/{idOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.DeleteDataView
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/EqlService.svc/dataview/{idOrName}/publishconfigs
+  method: get
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataViewPublishConfigs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/EqlService.svc/dataview/{idOrName}/publishconfigs
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.UpdateDataViewPublishConfigs
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/EqlService.svc/dataview/publishconnections
+  method: get
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataPublishConnections
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/EqlService.svc/executeAsync
+  method: post
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsync
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/EqlService.svc/query
+  method: post
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.Execute
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/EqlService.svc/query
+  method: get
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsGet
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/EqlService.svc/query/
+  method: get
+  operationId: Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsGetWithPathSegment
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events
+  method: post
+  operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.CreateEvent
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events/{eventIdOrTag}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.GetEvent
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events/{eventIdOrTag}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.UpdateEvent
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/EventService.svc/eventlogs/{eventLogIdOrTag}/events/{eventIdOrTag}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Events.Impl.EventService.DeleteEvent
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/FormTemplateService.svc/formtemplates
+  method: post
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.CreateFormTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/FormTemplateService.svc/formtemplates/{formtemplateIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/FormTemplateService.svc/formtemplates/{formtemplateIdOrName}
+  method: put
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.UpdateFormTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/FormTemplateService.svc/formtemplates/{formtemplateIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.DeleteFormTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/FormTemplateService.svc/formtemplates/{formtemplateIdOrName}/newversion
+  method: patch
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.UpdateFormTemplateCreateNewVersion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/FormTemplateService.svc/formtemplates/{formTemplateIdOrName}/revert/{versionIdOrNumber}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.RevertToVersion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/FormTemplateService.svc/formtemplates/{formTemplateIdOrName}/version/{versionIdOrNumber}
+  method: get
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplateVersion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/FormTemplateService.svc/formtemplates/{formTemplateIdOrName}/version/{versionIdOrNumber}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.DeleteFormTemplateVersion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/FormTemplateService.svc/formtemplates/{formTemplateIdOrName}/versions
+  method: get
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplateVersions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/FormTemplateService.svc/formtemplates/copy
+  method: post
+  operationId: Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.CopyFormTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MainMenuService.svc/mainMenu
+  method: get
+  operationId: Enviance.RestServices.Ver2.MainMenu.Impl.MainMenuService.GetMainMenu
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/MaterialDataService.svc/materialdata/{activityIdOrNameOrUniqueTag}/begin/{completeBegin}/end/{completeEnd}/{locationIdOrPathOrUniqueTag}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.GetMaterialData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/MaterialDataService.svc/materialdata/deletedatacommands/{locationIdOrPathOrUniqueTag}
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.DeleteMaterialData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialDataService.svc/materialdata/download
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.DownloadMaterialData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialDataService.svc/materialdata/enterdatacommands/
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.EnterMaterialData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialDataService.svc/materialdata/upload
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.UploadMaterialData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialGroupService.svc/materialGroups
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.CreateMaterialGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialGroupService.svc/materialGroups/{materialGroupIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.GetMaterialGroup
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/MaterialGroupService.svc/materialGroups/{materialGroupIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.UpdateMaterialGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialGroupService.svc/materialGroups/{materialGroupIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.DeleteMaterialGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialGroupService.svc/materialGroups/trackingMac/{materialGroupIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.GetDependentMacs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/MaterialGroupService.svc/materialGroups/trackingMac/{materialGroupIdOrName}
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.UpdateDependentMac
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialPropertyService.svc/materialProperties
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.CreateMaterialProperty
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialPropertyService.svc/materialProperties/{materialPropertyIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.GetMaterialProperty
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/MaterialPropertyService.svc/materialProperties/{materialPropertyIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.UpdateMaterialProperty
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialPropertyService.svc/materialProperties/{materialPropertyIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialProperties.Impl.MaterialPropertyService.DeleteMaterialProperty
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialService.svc/materials
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.CreateMaterial
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialService.svc/materials/{materialIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.GetMaterial
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/MaterialService.svc/materials/{materialIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.UpdateMaterial
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialService.svc/materials/{materialIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.Materials.Impl.MaterialService.DeleteMaterial
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialTemplateService.svc/materialTemplates
+  method: post
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.CreateMaterialTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialTemplateService.svc/materialTemplates/{materialTemplateIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.GetMaterialTemplate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/MaterialTemplateService.svc/materialTemplates/{materialTemplateIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.UpdateMaterialTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MaterialTemplateService.svc/materialTemplates/{materialTemplateIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.Impl.MaterialTemplateService.DeleteMaterialTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MessageService.svc/messages
+  method: post
+  operationId: Enviance.RestServices.Ver2.Messages.Impl.MessageService.CreateMessage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/MessageService.svc/messages/{messageId}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Messages.Impl.MessageService.GetMessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/MessageService.svc/messages/{messageId}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Messages.Impl.MessageService.DeleteMessage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PackageService.svc/packages
+  method: post
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.CreatePackage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.GetPackage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.UpdatePackage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.DeletePackage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}/data/{key}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.GetPackageAppData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}/data/{key}
+  method: put
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.SavePackageAppData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}/data/{key}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.DeletePackageAppData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}/items
+  method: post
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.CreatePackageItem
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}/items/{itemIdOrPath}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.GetPackageItem
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}/items/{itemIdOrPath}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.UpdatePackageItem
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PackageService.svc/packages/{packageIdOrName}/items/{itemIdOrPath}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Packages.Impl.PackageService.DeletePackageItem
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageGroupAllNestedByCurrentUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageGroups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups
+  method: post
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePageGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageGroup
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePageGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePageGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPages
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages
+  method: post
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePage
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanels
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels
+  method: post
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePanel
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels/{panelIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanel
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels/{panelIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePanel
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels/{panelIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePanel
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels/{panelIdOrName}/settings
+  method: put
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.SavePanelSettings
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/panels/{panelIdOrName}/settings
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanelSettings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/settings
+  method: put
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.SavePageSettings
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/pagegroups/{pageGroupIdOrName}/pages/{pageIdOrName}/settings
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPageSettings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/paneltemplates
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanelTemplates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/paneltemplates
+  method: post
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.CreatePanelTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/paneltemplates/{panelTemplateIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetPanelTemplate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/dashboard/paneltemplates/{panelTemplateIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.UpdatePanelTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/dashboard/paneltemplates/{panelTemplateIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.DeletePanelTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/PortalService.svc/portal/powerBiReports
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetReports
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/PortalService.svc/portal/powerBiReports/{reportIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Portal.Impl.PortalService.GetReport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ReportService.svc/reports/executereportcommands
+  method: post
+  operationId: Enviance.RestServices.Ver2.Reports.Impl.ReportService.ExecuteReportCommand
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/RequirementService.svc/requirements
+  method: post
+  operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.CreateRequirement
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/RequirementService.svc/requirements/{requirementIdOrPath}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.GetRequirement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/RequirementService.svc/requirements/{requirementIdOrPath}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.UpdateRequirement
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/RequirementService.svc/requirements/{requirementIdOrPath}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.DeleteRequirement
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/RequirementService.svc/requirements/{requirementOrMaterialId}/calcgraph
+  method: get
+  operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.CalcGraphForRequirement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/RequirementService.svc/requirements/recalc
+  method: post
+  operationId: Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.DoRecalculation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ScimIdentityService.svc/scim/v1/Groups
+  method: post
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.CreateGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ScimIdentityService.svc/scim/v1/Groups/
+  method: get
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.ListGroups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ScimIdentityService.svc/scim/v1/Groups/{id}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetGroup
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ScimIdentityService.svc/scim/v1/Groups/{id}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdatePartialGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ScimIdentityService.svc/scim/v1/Groups/{id}
+  method: put
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ScimIdentityService.svc/scim/v1/Groups/{id}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.DeleteGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ScimIdentityService.svc/scim/v1/schemas/
+  method: get
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetSchemas
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ScimIdentityService.svc/scim/v1/schemas/{type}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetSchema
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ScimIdentityService.svc/scim/v1/Users
+  method: post
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.CreateUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ScimIdentityService.svc/scim/v1/Users/
+  method: get
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.ListUsers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ScimIdentityService.svc/scim/v1/Users/{id}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/ScimIdentityService.svc/scim/v1/Users/{id}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.DeleteUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ScimIdentityService.svc/scim/v1/Users/{id}
+  method: put
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ScimIdentityService.svc/scim/v1/Users/{id}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdatePartialUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/ScimIdentityService.svc/scim/v1/Users/bulk
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateHomeUserWithPasswordBulk
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SecurityService.svc/groups
+  method: post
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.CreateGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.GetGroup
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.UpdateGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.DeleteGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}/members
+  method: get
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.GetGroupMembers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}/members
+  method: put
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.SetGroupMembers
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}/members
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.AddGroupMembers
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}/members/{userIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.RemoveGroupMember
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}/members/{userIdOrName}/Async
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.RemoveGroupMemberAsync
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}/members/Async
+  method: put
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.SetGroupMembersAsync
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SecurityService.svc/groups/{groupIdOrName}/members/Async
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Security.Impl.SecurityService.AddGroupMembersAsync
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/SyncService.svc/lastchanges
+  method: get
+  operationId: Enviance.RestServices.Ver2.Sync.SyncService.GetLastChanges
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/TagSchemeService.svc/tagSchemes
+  method: post
+  operationId: Enviance.RestServices.Ver2.TaggingObjects.TagScheme.Impl.TagSchemeService.CreateTagScheme
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/TagSchemeService.svc/tagSchemes/{tagSchemeIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.TaggingObjects.TagScheme.Impl.TagSchemeService.GetTagScheme
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/TagSchemeService.svc/tagSchemes/{tagSchemeIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.TaggingObjects.TagScheme.Impl.TagSchemeService.UpdateTagScheme
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/TagSchemeService.svc/tagSchemes/{tagSchemeIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.TaggingObjects.TagScheme.Impl.TagSchemeService.DeleteTagScheme
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/TagService.svc/tags
+  method: post
+  operationId: Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.CreateTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/TagService.svc/tags/{tagIdOrSchemeIdAndTagName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.GetTag
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/TagService.svc/tags/{tagIdOrSchemeIdAndTagName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.UpdateTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/TagService.svc/tags/{tagIdOrSchemeIdAndTagName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.DeleteTag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/TaskService.svc/tasks
+  method: post
+  operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.CreateTask
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/TaskService.svc/tasks/{taskId}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTask
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/TaskService.svc/tasks/{taskId}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.UpdateTask
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/TaskService.svc/tasks/{taskId}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.DeleteTask
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/TaskService.svc/tasks/{taskId}/ical
+  method: get
+  operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.ExportTaskAsICal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/TaskService.svc/tasks/{taskId}/occurrences/{dueDate}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTaskOccurrence
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/TaskService.svc/tasks/{taskId}/occurrences/{dueDate}/{objectIdOrPath}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTaskOccurrenceByObject
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/TaskService.svc/tasks/{taskId}/occurrences/{dueDate}/{objectIdOrPath}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Tasks.Impl.TaskService.CompleteTaskOccurrence
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/UOMService.svc/uom
+  method: post
+  operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.CreateUOM
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/UOMService.svc/uom/{uomIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.GetUOM
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/UOMService.svc/uom/{uomIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.UpdateUOM
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/UOMService.svc/uom/{uomIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.DeleteUOM
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/UOMService.svc/uomCategory
+  method: post
+  operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.CreateUOMCategory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/UOMService.svc/uomCategory/{uomCategoryIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.GetUOMCategory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/UOMService.svc/uomCategory/{uomCategoryIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.UpdateUOMCategory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/UOMService.svc/uomCategory/{uomCategoryIdOrName}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.UOM.Impl.UOMService.DeleteUOMCategory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/UUIDService.svc/currentsession
+  method: get
+  operationId: Enviance.RestServices.Ver2.UUID.Impl.UUIDService.GetCurrentSessionInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/UUIDService.svc/userattributes/{userIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.UUID.Impl.UUIDService.GetUserAttributes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WabService.svc/wab/lastFormConfigChanges
+  method: post
+  operationId: Enviance.RestServices.Ver2.Wab.WabService.LastFormConfigChanges
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowRoleService.svc/workflowrole
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.CreateWorkflowRole
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowRoleService.svc/workflowrole/{roleId}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.GetWorkflowRole
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowRoleService.svc/workflowrole/{roleId}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.UpdateWorkflowRole
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowRoleService.svc/workflowrole/{roleId}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.DeleteWorkflowRole
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowRoleService.svc/workflowrole/copy
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.CopyWorkflowRole
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflow
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflow
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflow
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflow
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowAttachments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateWorkflowAttachmentUploadUrl
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments/{attachmentId}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowAttachment
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments/{attachmentId}
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflowAttachment
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/attachments/{attachmentId}/downloadUrl
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateWorkflowAttachmentDownloadUrl
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/children
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.InitiateChildWorkflow
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/steps/{stepIdOrName}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowStep
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/steps/{stepIdOrName}
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflowStep
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/steps/{stepIdOrName}/users/{userId}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.ResolvePermissions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/steps/currentstep
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowCurrentStep
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowService.svc/workflows/{workflowIdOrUniqueId}/steps/currentstep
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflowCurrentStep
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/bulk
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflows
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/bulk
+  method: patch
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflows
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/bulk
+  method: delete
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflows
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/bulkold
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflowsOld
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/getuploadexcelresult/{commandLogId}
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetUploadExcelWorkflowResult
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowService.svc/workflows/steps
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowStepBulk
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/steps/currentsteps
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowCurrentStepBulk
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflows/uploadexcel2commands
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UploadExcel2Workflow
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflowtypes/{workflowTypeIdOrName}/guessPermissions
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GuessPermissions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ver2/WorkflowService.svc/workflowtypes/{workflowTypeIdOrName}/uniqueIds
+  method: get
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateUniqueIDs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ver2/WorkflowService.svc/workflowtypes/{workflowTypeIdOrName}/users/{userId}/guessPermissions
+  method: post
+  operationId: Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GuessPermissionsByUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required

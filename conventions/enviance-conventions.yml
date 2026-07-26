@@ -1,0 +1,59 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/enviance-restapi-openapi-original.json
+api: Cority Enviance EMS REST API
+base_url: https://api.enviance.com
+authentication:
+  style: session-token (apiKey header) or HTTP Basic via API gateway
+  detail: 'Obtain a SessionId via POST /ver2/AuthenticationService.svc/sessions, then send it as `Authorization:
+    Enviance <SessionId>`. HTTP Basic is also accepted through an API gateway. An OAuth access-token endpoint
+    (POST /ver2/AuthenticationService.svc/oauthtoken) is exposed.'
+  schemes:
+  - 'EnvianceAuth (apiKey, header: Authorization)'
+  - Basic
+  see: authentication/enviance-authentication.yml
+idempotency:
+  supported: false
+  note: No idempotency-key header or parameter is declared in the OpenAPI or documented.
+pagination:
+  style: page-number and SCIM 1-based-index (varies by service)
+  params:
+  - page
+  - pageSize
+  - limit
+  - startIndex
+  - count
+  note: List endpoints use page/pageSize/limit; SCIM endpoints use startIndex/count (SCIM v1).
+request_tracing:
+  header: x-client-request-id
+  note: Accepted on every one of the 252 operations for client-side correlation.
+custom_headers:
+- name: EnvApi-Systemid
+  note: Target Enviance system id
+- name: EnvApi-Packageid
+  note: Target package id
+- name: EnvApi-Localization-All
+  note: Return all localizations
+- name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+  note: ISO datetimes in UDF custom fields
+- name: EnvApi-Udf-DateTime-ReadInUserTz
+  note: Read UDF datetimes in the user timezone
+- name: EnvApi-Udf-Value-Invariant
+  note: Invariant-culture UDF values
+versioning:
+  scheme: uri-path
+  current: ver2
+  platform_version: Platform.v2026.2.0.0.20260708
+  note: All 160 paths are namespaced under /ver2/<Service>.svc/...
+error_envelope:
+  shape: '{ error: string, details: object }'
+  model: Enviance.RestServices.Ver2.Async.ErrorInfo
+  note: Generic error envelope; the .NET-generated spec declares only `default` responses, so per-status
+    problem types are not enumerated in the contract.
+bulk:
+  note: Bulk/batch data loads via BulkService.svc and BatchRequestService.svc (worksheet upload, batch
+    execute, status polling).
+cross_links:
+  authentication: authentication/enviance-authentication.yml
+  conformance: conformance/enviance-conformance.yml
+  data_model: data-model/enviance-data-model.yml

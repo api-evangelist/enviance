@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/enviance-restapi-openapi-original.json
+standards:
+- id: oauth2
+  conforms: false
+  evidence: An OAuth access-token endpoint (oauthtoken) exists, but no oauth2 securityScheme/flows or
+    scopes are declared in the contract.
+- id: scim
+  conforms: true
+  version: '1.0'
+  evidence: ScimIdentityService.svc exposes /scim/v1/Users, /scim/v1/Groups, /scim/v1/schemas and a bulk
+    endpoint (SCIM v1).
+- id: http-basic-auth
+  conforms: true
+  evidence: securityDefinitions declares a Basic scheme for gateway authentication.
+- id: api-key-auth
+  conforms: true
+  evidence: securityDefinitions declares EnvianceAuth apiKey in the Authorization header.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a proprietary {error, details} envelope, not application/problem+json.
+- id: pagination
+  conforms: true
+  evidence: List endpoints expose page/pageSize/limit; SCIM uses startIndex/count.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism declared.
+- id: ical-rfc5545
+  conforms: true
+  evidence: TaskService exposes /tasks/{taskId}/ical (iCalendar export).

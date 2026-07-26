@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: generated
+api: openapi/enviance-restapi-openapi-original.json
+skills:
+- file: enviance-authenticate-session.md
+  name: Authenticate and open an Enviance session
+  api: openapi/enviance-restapi-openapi-original.json
+  operations:
+  - Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.Authenticate
+  - Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.GetCurrentSessionInfo
+  - Enviance.RestServices.Ver2.Security.Impl.AuthenticationService.EndCurrentSession
+- file: enviance-compliance-task.md
+  name: Create a compliance requirement and track its task
+  api: openapi/enviance-restapi-openapi-original.json
+  operations:
+  - Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.CreateRequirement
+  - Enviance.RestServices.Ver2.Tasks.Impl.TaskService.CreateTask
+  - Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTask

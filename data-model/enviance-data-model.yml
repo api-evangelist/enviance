@@ -1,0 +1,194 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/enviance-restapi-openapi-original.json
+note: Entity graph derived from service/collection path structure and id-reference params; 320 schema
+  definitions back these entities.
+entity_count: 39
+definition_count: 320
+entities:
+- service: ActivityService
+  collections:
+  - activities
+- service: AuthenticationService
+  collections:
+  - currentsession
+  - oauthtoken
+  - sessions
+- service: BatchRequestService
+  collections:
+  - batchRequest
+- service: BulkService
+  collections:
+  - batchFileInfo
+  - batches
+  - createBatch
+  - events
+  - fileInfo
+  - setCanceled
+  - setPaused
+  - setResumed
+  - statusInfo
+  - upload
+- service: ChemicalGroupService
+  collections:
+  - chemicalGroups
+- service: ChemicalListService
+  collections:
+  - ChemicalLists
+  - chemicalLists
+- service: ChemicalService
+  collections:
+  - chemicals
+- service: CommandService
+  collections:
+  - commands
+- service: CompliancePermissionService
+  collections:
+  - locations
+- service: ComplianceService
+  collections:
+  - locations
+- service: CostomFieldService
+  collections:
+  - customFields
+- service: DataService
+  collections:
+  - calculations
+  - nonnumericdata
+  - numericdata
+- service: DocumentService
+  collections:
+  - documents
+  - folders
+- service: DomainWhitelistService
+  collections:
+  - domainWhitelist
+- service: EqlService
+  collections:
+  - dataview
+  - executeAsync
+  - query
+- service: EventService
+  collections:
+  - eventlogs
+- service: FormTemplateService
+  collections:
+  - formtemplates
+- service: MainMenuService
+  collections:
+  - mainMenu
+- service: MaterialDataService
+  collections:
+  - materialdata
+- service: MaterialGroupService
+  collections:
+  - materialGroups
+- service: MaterialPropertyService
+  collections:
+  - materialProperties
+- service: MaterialService
+  collections:
+  - materials
+- service: MaterialTemplateService
+  collections:
+  - materialTemplates
+- service: MessageService
+  collections:
+  - messages
+- service: PackageService
+  collections:
+  - packages
+- service: PortalService
+  collections:
+  - portal
+- service: ReportService
+  collections:
+  - reports
+- service: RequirementService
+  collections:
+  - requirements
+- service: ScimIdentityService
+  collections:
+  - scim
+- service: SecurityService
+  collections:
+  - groups
+- service: SyncService
+  collections:
+  - lastchanges
+- service: TagSchemeService
+  collections:
+  - tagSchemes
+- service: TagService
+  collections:
+  - tags
+- service: TaskService
+  collections:
+  - tasks
+- service: UOMService
+  collections:
+  - uom
+  - uomCategory
+- service: UUIDService
+  collections:
+  - currentsession
+  - userattributes
+- service: WabService
+  collections:
+  - wab
+- service: WorkflowRoleService
+  collections:
+  - workflowrole
+- service: WorkflowService
+  collections:
+  - workflows
+  - workflowtypes
+relationships:
+- from: ChemicalList
+  to: Chemical
+  type: has_many
+  via: chemicalLists/{id} groups chemicals
+- from: ChemicalGroup
+  to: Chemical
+  type: has_many
+  via: chemicalGroups membership
+- from: MaterialGroup
+  to: Material
+  type: has_many
+  via: materialGroups membership
+- from: MaterialTemplate
+  to: Material
+  type: has_many
+  via: template instantiation
+- from: Compliance.Location
+  to: Requirement
+  type: has_many
+  via: location requirements
+- from: Requirement
+  to: Task
+  type: has_many
+  via: requirement compliance tasks
+- from: Task
+  to: TaskOccurrence
+  type: has_many
+  via: tasks/{taskId}/occurrences
+- from: EventLog
+  to: Event
+  type: has_many
+  via: eventlogs/{id}/events
+- from: Workflow
+  to: WorkflowRole
+  type: has_many
+  via: workflow roles
+- from: Portal.Page
+  to: Portal.Panel
+  type: has_many
+  via: page panels
+- from: TagScheme
+  to: Tag
+  type: has_many
+  via: scheme tags
+- from: FormTemplate
+  to: CustomField
+  type: has_many
+  via: form custom fields
