@@ -1,0 +1,213 @@
+{
+  "item": [
+    {
+      "id": "fdab8dd8-331f-4300-93e7-2c91d00c85e9",
+      "name": "Report",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5ff5e95d-fa73-49cc-ae5d-61b11d91dbbd",
+          "name": "Enviance.Rest Services.Ver2.Reports.Impl.Report Service.Execute Report Command",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Reports.Impl.Report Service.Execute Report Command",
+            "description": {
+              "content": "\n\n\nenvianceSdk.reports.execute\r\n```\r\n[\r\n    {\r\n        \"format\": \"Html\",\r\n        \"from\": \"2012-02-01T00:00:00\",\r\n        \"parameters\": {\r\n            \"objects\": [\r\n                \"/Division X/Facility 1\",\r\n                \"52fbb610-0fa5-4873-9f2b-53cdb0bb00f2\"\r\n            ]\r\n        },\r\n        \"reportIdOrPath\": \"715C32AE-F2C7-45B9-B8A6-5D8D1A65D001\",\r\n        \"to\": \"2012-02-10T00:00:00\"\r\n    },\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ReportService.svc",
+                "reports",
+                "executereportcommands"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reportExecutionInfo\": {\n    \"reportIdOrPath\": \"<string>\",\n    \"from\": \"<dateTime>\",\n    \"to\": \"<dateTime>\",\n    \"format\": \"<string>\",\n    \"parameters\": {\n      \"objects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"filterBy\": \"<string>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f26cff4d-7e23-43e3-bddc-624ea73934fd",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ReportService.svc",
+                    "reports",
+                    "executereportcommands"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportExecutionInfo\": {\n    \"reportIdOrPath\": \"<string>\",\n    \"from\": \"<dateTime>\",\n    \"to\": \"<dateTime>\",\n    \"format\": \"<string>\",\n    \"parameters\": {\n      \"objects\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"filterBy\": \"<string>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "5835ed2f-ca95-49c6-823c-6c4ad4299d9d",
+    "name": "Rest Activity Report API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

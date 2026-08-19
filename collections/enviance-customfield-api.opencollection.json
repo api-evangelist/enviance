@@ -1,0 +1,282 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity CustomField API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CustomField",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.CreateCustomField",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/CostomFieldService.svc/customFields",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.GetCustomField",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/CostomFieldService.svc/customFields/:customFieldIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "customFieldIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.customFields.getCustomField\r\n```\r\n[\r\n  \"nameOrID\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.PartialUpdateCustomField",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/CostomFieldService.svc/customFields/:customFieldIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "customFieldIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.customFields.updateCustomField\r\n```\r\n[\r\n    \"customfieldIDorName\",\r\n    {\r\n        \"caption\": \"Custom Field Caption\",\r\n        \"captionLocalizations\": [\r\n            {\r\n                \"culture\": \"en-US\",\r\n                \"value\": \"Caption US\"\r\n            },\r\n            {\r\n                \"culture\": \"ru-RU\",\r\n                \"value\": \"Caption RU\"\r\n            },\r\n            {\r\n                \"culture\": \"zh-CN\",\r\n                \"value\": \"Caption Chinese\"\r\n            },\r\n     "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.DeleteCustomField",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/CostomFieldService.svc/customFields/:customFieldIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "customFieldIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.GetCustomFieldList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/CostomFieldService.svc/customFields/bulk",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.UpdateCustomFieldBulkPartial",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/CostomFieldService.svc/customFields/bulk",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.customFields.updateCustomFieldBulk\r\n```\r\n[\r\n    [\r\n        {\r\n            \"label\": \"Custom Field Label\",\r\n            \"labelLocalizations\": [\r\n                {\r\n                    \"culture\": \"en-US\",\r\n                    \"value\": null\r\n                },\r\n                {\r\n                    \"culture\": \"zh-CN\",\r\n                    \"value\": \"CN Label\"\r\n                }\r\n            ],\r\n            \"name\": \"Some Udf 1\"\r\n        },\r\n        {\r\n            \"caption\": \"Custom Fie"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,733 @@
+{
+  "item": [
+    {
+      "id": "7e0df1cb-729e-4122-b13a-e4b0f38fd5db",
+      "name": "ChemicalGroup",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "74611712-4683-4c74-990f-16bbeb99153f",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Group Service.Create Chemical Group",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Group Service.Create Chemical Group",
+            "description": {
+              "content": "\n\n\nenvianceSdk.chemicalgroups.createChemicalGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\",\r\n    \"chemicals\": [\r\n      \"896197B8-E007-4169-8C03-D9D0E8411150\",\r\n      \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ChemicalGroupService.svc",
+                "chemicalGroups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"chemicalGroupInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"chemicals\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"copyFrom\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1ce1d5b3-8973-4566-89a6-58eeb50e5ae1",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ChemicalGroupService.svc",
+                    "chemicalGroups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"chemicalGroupInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"chemicals\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"copyFrom\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4dd27136-e520-4cd4-b9fb-80821a2d3d44",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Group Service.Get Chemical Group",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Group Service.Get Chemical Group",
+            "description": {
+              "content": "\n\n\nenvianceSdk.chemicalgroups.getChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ChemicalGroupService.svc",
+                "chemicalGroups",
+                ":chemicalGroupIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chemicalGroupIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "898e6f5a-85eb-478f-8656-d74434b45062",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ChemicalGroupService.svc",
+                    "chemicalGroups",
+                    ":chemicalGroupIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chemicalGroupIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"chemicals\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33d53ed5-943d-40cb-9b99-f5127f5e0091",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Group Service.Update Chemical Group",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Group Service.Update Chemical Group",
+            "description": {
+              "content": "\n\n\nenvianceSdk.chemicalgroups.updateChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  {\r\n    \"name\": \"Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\",\r\n    \"chemicals\": [\r\n      \"896197B8-E007-4169-8C03-D9D0E8411150\",\r\n      \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ChemicalGroupService.svc",
+                "chemicalGroups",
+                ":ChemicalGroupIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"chemicalGroupIdOrName\": \"<string>\",\n  \"chemicalGroupInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"chemicals\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "35fbf76a-b482-4cde-b2c1-4a91d286d633",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ChemicalGroupService.svc",
+                    "chemicalGroups",
+                    ":ChemicalGroupIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"chemicalGroupIdOrName\": \"<string>\",\n  \"chemicalGroupInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"chemicals\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "447bf688-6361-455f-b40f-359b05900a6b",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Group Service.Delete Chemical Group",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Group Service.Delete Chemical Group",
+            "description": {
+              "content": "\n\n\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ChemicalGroupService.svc",
+                "chemicalGroups",
+                ":ChemicalGroupIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e18ae79e-80ce-43c7-b3bc-9b2140d15ed3",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ChemicalGroupService.svc",
+                    "chemicalGroups",
+                    ":ChemicalGroupIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e36d1621-dacc-4ee3-869a-9cf3a0eb81a8",
+    "name": "Rest Activity ChemicalGroup API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Requirement API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Requirement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.CreateRequirement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/RequirementService.svc/requirements",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.requirements.createRequirement\r\n```\r\n[\r\n  {\r\n    \"name\": \"Requirement Name\",\r\n    \"requirementType\": \"RequirementType\",\r\n    \"activeDate\": \"2010-02-22T00:00:00\",\r\n    \"requirementTemplateIdOrName\": \"Requirement Template 1\",\r\n    \"responsibleUserIdOrName\": \"BTaylor\",\r\n    \"parentIdOrPath\": \"Division For Mac TestFacility For Mac Test\",\r\n    \"frequencies\": [\r\n      {\r\n        \"beginDate\": \"2011-02-22T00:00:00\",\r\n        \"endDate\": \"2012-03-22T00:00:00\",\r\n        \"occurences\": 1\r\n    "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.GetRequirement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/RequirementService.svc/requirements/:requirementIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "requirementIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.requirements.getRequirement\r\n```\r\n[\r\n  \"Requirement Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.UpdateRequirement",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/RequirementService.svc/requirements/:requirementIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "requirementIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.requirements.updateRequirement\r\n```\r\n[\r\n  \"Requirement Name\",\r\n  {\r\n    \"name\": \"Requirement Name\",\r\n    \"requirementType\": \"RequirementType\",\r\n    \"activeDate\": \"2010-02-22T00:00:00\",\r\n    \"requirementTemplateIdOrName\": \"Requirement Template 1\",\r\n    \"responsibleUserIdOrName\": \"BTaylor\",\r\n    \"parentIdOrPath\": \"Division For Mac TestFacility For Mac Test\",\r\n    \"frequencies\": [\r\n      {\r\n        \"beginDate\": \"2011-02-22T00:00:00\",\r\n        \"endDate\": \"2012-03-22T00:00:00\",\r\n      "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.DeleteRequirement",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/RequirementService.svc/requirements/:requirementIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "requirementIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.requirements.deleteRequirement\r\n```\r\n[\r\n  \"Requirement Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.CalcGraphForRequirement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/RequirementService.svc/requirements/:requirementOrMaterialId/calcgraph",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "requirementOrMaterialId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "materials",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "beginDateRange",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDateRange",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "onCompleteDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Requirements.Impl.RequirementService.DoRecalculation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/RequirementService.svc/requirements/recalc",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateEnd",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Sync API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sync",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Sync.SyncService.GetLastChanges",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/SyncService.svc/lastchanges",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.sync.getLastChanges\r\n```\r\n[\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

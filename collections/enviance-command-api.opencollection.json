@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Command API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Command",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Async.Impl.CommandService.GetCommand",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/CommandService.svc/commands/:commandId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "commandId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nReturns information about a previously submitted command (any API which is asynchronous).\r\n\r\n**Security:** All users.\r\n\r\n**SDK API (create):**  `envianceSdk.commands.getCommand (commandId, onsuccess, onerror)`\r\n\r\n```\r\nGET /ver2/CommandService.svc/commands/08fc5438-a0d8-4bf9-9141-12dd98e7ce80/ HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n  \"id\": \"08fc5438-a0d8-4bf9-9141-12dd98e7ce80\",\r\n  \"description\": \"Data batch processed.\",\r\n  \"issued\": \"2012-12-01T08:00:00\",\r\n  \"startedProcessing\": \"2012-12-01T08:01:00\",\r\n  "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Async.Impl.CommandService.DeleteCommand",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/CommandService.svc/commands/:commandId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "commandId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.commands.deleteCommand\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

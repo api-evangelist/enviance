@@ -1,0 +1,1646 @@
+{
+  "item": [
+    {
+      "id": "840474ea-2da2-4589-8796-3a08a26e79e7",
+      "name": "Document",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d812f99e-7cf0-4914-8819-aef7db84ddf5",
+          "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Create Document",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Create Document",
+            "description": {
+              "content": "\n\n\nenvianceSdk.documents.createDocument\r\n```\r\n[\r\n  {\r\n    \"name\": \"test-name\",\r\n    \"description\": \"test-description\",\r\n    \"folder\": \"/\",\r\n    \"content\": \"77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg==\",\r\n    \"fileName\": \"test-file-name\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.createDocumentBinary\r\n```\r\n[\r\n  \"fileinput1\",\r\n  {\r\n    \"name\": \"test-name\",\r\n    \"description\": \"test-description\",\r\n    \"folder\": \"/\",\r\n    \"fileName\": \"test-file-name\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.createDocument21\r\n```\r\n[\r\n  {\r\n    \"name\": \"test-name\",\r\n    \"description\": \"test-description\",\r\n    \"folder\": \"/\",\r\n    \"content\": \"77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg==\",\r\n    \"fileName\": \"test-file-name\",\r\n    \"workflows\": [\r\n      {\r\n        \"workflowIdOrUniqueId\": \"workflowInst1\",\r\n        \"customFieldIdOrName\": \"udf1\"\r\n      },\r\n      {\r\n        \"workflowIdOrUniqueId\": \"workflowInst2\",\r\n        \"customFieldIdOrName\": \"udf2\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.createDocumentBinary21\r\n```\r\n[\r\n  \"fileinput1\",\r\n  {\r\n    \"name\": \"test-name\",\r\n    \"description\": \"test-description\",\r\n    \"folder\": \"/\",\r\n    \"fileName\": \"test-file-name\",\r\n    \"workflows\": [\r\n      {\r\n        \"workflowIdOrUniqueId\": \"workflowInst1\",\r\n        \"customFieldIdOrName\": \"udf1\"\r\n      },\r\n      {\r\n        \"workflowIdOrUniqueId\": \"workflowInst2\",\r\n        \"customFieldIdOrName\": \"udf2\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.createDocumentBinary21Ext\r\n```\r\n[\r\n  {\r\n    \"fileInput\": \"fileinput1\",\r\n    \"documentInfo\": {\r\n      \"name\": \"test-name\",\r\n      \"description\": \"test-description\",\r\n      \"folder\": \"/\",\r\n      \"fileName\": \"test-file-name\",\r\n      \"workflows\": [\r\n        {\r\n          \"workflowIdOrUniqueId\": \"workflowInst1\",\r\n          \"customFieldIdOrName\": \"udf1\"\r\n        },\r\n        {\r\n          \"workflowIdOrUniqueId\": \"workflowInst2\",\r\n          \"customFieldIdOrName\": \"udf2\"\r\n        }\r\n      ]\r\n    },\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59E\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.createDocumentFolder\r\n```\r\n[\r\n  {\r\n    \"name\": \"test-folder\",\r\n    \"description\": \"test-folder-description\",\r\n    \"parentFolder\": \"/\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "DocumentService.svc",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"mimeType\": \"<string>\",\n    \"fileName\": \"<string>\",\n    \"description\": \"<string>\",\n    \"folder\": \"<string>\",\n    \"content\": \"<string>\",\n    \"contentUrl\": \"<string>\",\n    \"version\": \"<integer>\",\n    \"objects\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tasks\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"workflows\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"NameSuffixOnDuplication\": \"<enum>\",\n    \"comments\": \"<string>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a16a3ae5-a91f-4f3d-b6fc-7a0d7a30f977",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "DocumentService.svc",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documentInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"mimeType\": \"<string>\",\n    \"fileName\": \"<string>\",\n    \"description\": \"<string>\",\n    \"folder\": \"<string>\",\n    \"content\": \"<string>\",\n    \"contentUrl\": \"<string>\",\n    \"version\": \"<integer>\",\n    \"objects\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tasks\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"workflows\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"NameSuffixOnDuplication\": \"<enum>\",\n    \"comments\": \"<string>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46abb31c-d89d-4f1e-bce9-3f7133366649",
+          "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Get Document Info",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Get Document Info",
+            "description": {
+              "content": "\n\n\nenvianceSdk.documents.getDocument\r\n```\r\n[\r\n    \"/test-name\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "DocumentService.svc",
+                "documents",
+                ":documentIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "729fb21e-709d-4b80-9165-2ada9addbc46",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "DocumentService.svc",
+                    "documents",
+                    ":documentIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\",\n  \"mimeType\": \"<string>\",\n  \"fileName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"folder\": \"<string>\",\n  \"content\": \"<string>\",\n  \"contentUrl\": \"<string>\",\n  \"version\": \"<integer>\",\n  \"objects\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tasks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"workflows\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"NameSuffixOnDuplication\": \"<enum>\",\n  \"comments\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "521595eb-e2b9-4475-b501-b4693a9a95f6",
+          "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Update Document",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Update Document",
+            "description": {
+              "content": "\n\n\nenvianceSdk.documents.updateDocument\r\n```\r\n[\r\n  \"/test-name\",\r\n  {\r\n    \"name\": \"test-name-update\",\r\n    \"description\": \"test-description-update\",\r\n    \"folder\": \"/\",\r\n    \"content\": \"77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg==\",\r\n    \"fileName\": \"test-file-name\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.updateDocumentBinary\r\n```\r\n[\r\n  \"fileinput1\",\r\n  \"/test-name\",\r\n  {\r\n    \"name\": \"test-name-update\",\r\n    \"description\": \"test-description-update\",\r\n    \"folder\": \"/\",\r\n    \"fileName\": \"test-file-name\"\r\n  },\r\n  \"false\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.updateDocument21\r\n```\r\n[\r\n  \"/test-name\",\r\n  {\r\n    \"name\": \"test-name-update\",\r\n    \"description\": \"test-description-update\",\r\n    \"folder\": \"/\",\r\n    \"content\": \"77u/IkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4gVXQgZW5pbSBhZCBtaW5pbSB2ZW5pYW0sIHF1aXMgbm9zdHJ1ZCBleGVyY2l0YXRpb24gdWxsYW1jbyBsYWJvcmlzIG5pc2kgdXQgYWxpcXVpcCBleCBlYSBjb21tb2RvIGNvbnNlcXVhdC4gRHVpcyBhdXRlIGlydXJlIGRvbG9yIGluIHJlcHJlaGVuZGVyaXQgaW4gdm9sdXB0YXRlIHZlbGl0IGVzc2UgY2lsbHVtIGRvbG9yZSBldSBmdWdpYXQgbnVsbGEgcGFyaWF0dXIuIEV4Y2VwdGV1ciBzaW50IG9jY2FlY2F0IGN1cGlkYXRhdCBub24gcHJvaWRlbnQsIHN1bnQgaW4gY3VscGEgcXVpIG9mZmljaWEgZGVzZXJ1bnQgbW9sbGl0IGFuaW0gaWQgZXN0IGxhYm9ydW0uIg==\",\r\n    \"fileName\": \"test-file-name\",\r\n    \"workflows\": [\r\n      {\r\n        \"workflowIdOrUniqueId\": \"workflowInst1\",\r\n        \"customFieldIdOrName\": \"udf1\"\r\n      },\r\n      {\r\n        \"workflowIdOrUniqueId\": \"workflowInst2\",\r\n        \"customFieldIdOrName\": \"udf2\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.updateDocumentBinary21\r\n```\r\n[\r\n  \"fileinput1\",\r\n  \"/test-name\",\r\n  {\r\n    \"name\": \"test-name-update\",\r\n    \"description\": \"test-description-update\",\r\n    \"folder\": \"/\",\r\n    \"fileName\": \"test-file-name\",\r\n    \"workflows\": [\r\n      {\r\n        \"workflowIdOrUniqueId\": \"workflowInst1\",\r\n        \"customFieldIdOrName\": \"udf1\"\r\n      },\r\n      {\r\n        \"workflowIdOrUniqueId\": \"workflowInst2\",\r\n        \"customFieldIdOrName\": \"udf2\"\r\n      }\r\n    ]\r\n  },\r\n  \"false\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.updateDocumentBinary21Ext\r\n```\r\n[\r\n  {\r\n    \"fileInput\": \"fileinput1\",\r\n    \"documentIdOrPath\": \"/test-name\",\r\n    \"documentInfo\": {\r\n      \"name\": \"test-name-update\",\r\n      \"description\": \"test-description-update\",\r\n      \"folder\": \"/\",\r\n      \"fileName\": \"test-file-name\",\r\n      \"workflows\": [\r\n        {\r\n          \"workflowIdOrUniqueId\": \"workflowInst1\",\r\n          \"customFieldIdOrName\": \"udf1\"\r\n        },\r\n        {\r\n          \"workflowIdOrUniqueId\": \"workflowInst2\",\r\n          \"customFieldIdOrName\": \"udf2\"\r\n        }\r\n      ]\r\n    },\r\n    \"updateExistingVersion\": \"false\",\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE47F\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.updateDocumentFolder\r\n```\r\n[\r\n  \"/test-folder\",\r\n  {\r\n    \"name\": \"test-folder-update\",\r\n    \"description\": \"test-folder-description-update\",\r\n    \"parentFolderIdOrPath\": \"/\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "DocumentService.svc",
+                "documents",
+                ":documentIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "UpdateExistingVersion",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"mimeType\": \"<string>\",\n    \"fileName\": \"<string>\",\n    \"description\": \"<string>\",\n    \"folder\": \"<string>\",\n    \"content\": \"<string>\",\n    \"contentUrl\": \"<string>\",\n    \"version\": \"<integer>\",\n    \"objects\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tasks\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"workflows\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"NameSuffixOnDuplication\": \"<enum>\",\n    \"comments\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "965d6ce1-cee7-4de1-8af7-767dedcdee9d",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "DocumentService.svc",
+                    "documents",
+                    ":documentIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "UpdateExistingVersion",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documentInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"mimeType\": \"<string>\",\n    \"fileName\": \"<string>\",\n    \"description\": \"<string>\",\n    \"folder\": \"<string>\",\n    \"content\": \"<string>\",\n    \"contentUrl\": \"<string>\",\n    \"version\": \"<integer>\",\n    \"objects\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"tasks\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"workflows\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"NameSuffixOnDuplication\": \"<enum>\",\n    \"comments\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44a10f89-3ef4-465c-ad05-419b861f40f7",
+          "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Delete Document",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Delete Document",
+            "description": {
+              "content": "\n\n\nenvianceSdk.documents.deleteDocument\r\n```\r\n[\r\n  \"/test-name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.deleteDocumentExt\r\n```\r\n[\r\n  {\r\n    \"documentIdOrPath\": \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59E\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.documents.deleteDocumentFolder\r\n```\r\n[\r\n  \"/test-folder\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "DocumentService.svc",
+                "documents",
+                ":documentIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b2a48aa-b145-47e6-9c37-a660528b1675",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "DocumentService.svc",
+                    "documents",
+                    ":documentIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4483a9d7-4d8f-465a-b13f-9eb9a70ed32d",
+          "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Get Documents Bulk",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Get Documents Bulk",
+            "description": {},
+            "url": {
+              "path": [
+                "ver2",
+                "DocumentService.svc",
+                "documents",
+                "zip"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documents\": [\n    {\n      \"documentIdOrPath\": \"<string>\",\n      \"resultDocumentPathName\": \"<string>\"\n    },\n    {\n      \"documentIdOrPath\": \"<string>\",\n      \"resultDocumentPathName\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f0bbd696-1627-4cec-8f08-5676402d0428",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "DocumentService.svc",
+                    "documents",
+                    "zip"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documents\": [\n    {\n      \"documentIdOrPath\": \"<string>\",\n      \"resultDocumentPathName\": \"<string>\"\n    },\n    {\n      \"documentIdOrPath\": \"<string>\",\n      \"resultDocumentPathName\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf581ede-7f8f-40e2-b0e7-a9ae2037ba1d",
+          "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Create Document Folder",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Create Document Folder",
+            "description": {
+              "content": "\n\n\nenvianceSdk.documents.createDocumentFolder\r\n```\r\n[\r\n  {\r\n    \"name\": \"test-folder\",\r\n    \"description\": \"test-folder-description\",\r\n    \"parentFolder\": \"/\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "DocumentService.svc",
+                "folders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentFolderInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"parentFolderIdOrPath\": \"<string>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5494ec5b-888c-4c40-af30-7df4d3498b56",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "DocumentService.svc",
+                    "folders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documentFolderInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"parentFolderIdOrPath\": \"<string>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b428f4cf-af24-42a1-b1c7-1f34f050b846",
+          "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Get Document Folder",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Get Document Folder",
+            "description": {
+              "content": "\n\n\nenvianceSdk.documents.getDocumentFolder\r\n```\r\n[\r\n  \"/test-folder\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "DocumentService.svc",
+                "folders",
+                ":documentFolderIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentFolderIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c9b2e439-ccd7-4267-b313-4659ed806d7e",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "DocumentService.svc",
+                    "folders",
+                    ":documentFolderIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentFolderIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"parentFolderIdOrPath\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a241cb36-e0f0-4023-9e80-7e0dd329a55d",
+          "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Update Document Folder",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Update Document Folder",
+            "description": {
+              "content": "\n\n\nenvianceSdk.documents.updateDocumentFolder\r\n```\r\n[\r\n  \"/test-folder\",\r\n  {\r\n    \"name\": \"test-folder-update\",\r\n    \"description\": \"test-folder-description-update\",\r\n    \"parentFolderIdOrPath\": \"/\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "DocumentService.svc",
+                "folders",
+                ":documentFolderIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentFolderIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"documentFolderInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"parentFolderIdOrPath\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "76c52389-a0e7-4302-98ff-4fdba2aa49ed",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "DocumentService.svc",
+                    "folders",
+                    ":documentFolderIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentFolderIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"documentFolderInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"parentFolderIdOrPath\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "47586754-21bc-411b-8ed1-3f1701ac6d1c",
+          "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Delete Document Folder",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Documents.Impl.Document Service.Delete Document Folder",
+            "description": {
+              "content": "\n\n\nenvianceSdk.documents.deleteDocumentFolder\r\n```\r\n[\r\n  \"/test-folder\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "DocumentService.svc",
+                "folders",
+                ":documentFolderIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentFolderIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "59a87a90-7884-4b6b-90b3-c2a4d43fe944",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "DocumentService.svc",
+                    "folders",
+                    ":documentFolderIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentFolderIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a02a43d3-f73b-4992-994b-423177ba04d6",
+    "name": "Rest Activity Document API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

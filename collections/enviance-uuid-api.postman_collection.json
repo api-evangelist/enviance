@@ -1,0 +1,366 @@
+{
+  "item": [
+    {
+      "id": "dea09ab9-89ff-4807-a6c3-d585a05739ab",
+      "name": "UUID",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2bb3dcfc-6323-43bf-b847-3fc6f4a9dd9b",
+          "name": "Enviance.Rest Services.Ver2.UUID.Impl.UUID Service.Get Current Session Info",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UUID.Impl.UUID Service.Get Current Session Info",
+            "description": {
+              "content": "\n\n\nenvianceSdk.uuid.getCurrentSession\r\n```\r\n[\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UUIDService.svc",
+                "currentsession"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "20fe186a-c62a-40e7-bc08-811c98844951",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UUIDService.svc",
+                    "currentsession"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"systemId\": \"string\",\n  \"userId\": \"string\",\n  \"sessionTimeout\": 7098,\n  \"isAdmin\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72dedc0f-de1a-43b3-a47c-679ad192548c",
+          "name": "Enviance.Rest Services.Ver2.UUID.Impl.UUID Service.Get User Attributes",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UUID.Impl.UUID Service.Get User Attributes",
+            "description": {
+              "content": "\n\n\nenvianceSdk.uuid.getUserAttributes\r\n```\r\n[\r\n  \"loginOrID\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UUIDService.svc",
+                "userattributes",
+                ":userIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df1cc81b-a343-4922-85fe-3fb4de23efdf",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UUIDService.svc",
+                    "userattributes",
+                    ":userIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userId\": \"string\",\n  \"userName\": \"string\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"email\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9ada211b-e1df-4ff7-979c-d49fb2cdf21d",
+    "name": "Rest Activity UUID API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Compliance API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Compliance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.CreateLocation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/ComplianceService.svc/locations",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\r\n**Security:** User with permission to Compliance Objects.\r\n\r\n**SDK API (create):**  `envianceSdk.compliance.createLocation (locationInfo, onsuccess, onerror)`\r\n\r\n**SDK API "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.GetLocation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/ComplianceService.svc/locations/:locationIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "locationIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.compliance.getLocation\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.compliancePermission.getLocationPermission\r\n```\r\n[\r\n  \"324a63d8-35df-473f-b8d8-514872c7f70e\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.UpdateLocation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/ComplianceService.svc/locations/:locationIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "locationIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nUpdates (and potentially moves) an existing Location object in the Compliance Model. Specifying a new parent path moves the Location underneath another parent Location. Updating the Custom Field Template of a Location object, if that object currently has no Template, adds the Template to the object. When switching from one Template to another Template, those values that belong to fields common to both Templates are kept, any values for fields not in the new Template are removed permanently. Se"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.DeleteLocation",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/ComplianceService.svc/locations/:locationIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "locationIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.compliance.deleteLocation\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n  true,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.GetOverrides",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/ComplianceService.svc/locations/overrides/:locationIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "locationIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.compliance.getOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.UpdateOverrides",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/ComplianceService.svc/locations/overrides/:locationIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "locationIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.compliance.updateOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\",\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"name\": \"Role 1\"\r\n        },\r\n        \"users\": [\r\n          {\r\n            \"name\": \"478e9887-ca75-4fa8-afd0-fc79aa952345\"\r\n          }\r\n        ],\r\n        \"groups\": [\r\n          {\r\n            \"name\": \"Group1\"\r\n          },\r\n          {\r\n            \"name\": \"Group2\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"policiesOverride\": [\r\n  "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.ComplianceModel.Impl.ComplianceService.DeleteOverrides",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/ComplianceService.svc/locations/overrides/:locationIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "locationIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.compliance.deleteOverrides\r\n```\r\n[\r\n  \"e2076afc-b3a1-4b87-ace7-fec821987789\",\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"name\": \"Role 1\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.compliance.deleteOverrides\r\n```\r\n[\r\n  \"e2076afc-b3a1-4b87-ace7-fec821987789\",\r\n  {\r\n    \"policiesOverride\": [\r\n      {\r\n        \"workflowType\": {\r\n          \"id\": \"433bc93f-ddc4-4938-9a6a-a1749864ea7d\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \""
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

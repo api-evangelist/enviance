@@ -1,0 +1,583 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Eql API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Eql",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.CreateDataView",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/dataview",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nSave EQL query as a data view.\r\n\r\n**SDK API:** `envianceSdk.eql.createDataView(info, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.eql.createDataView\r\n```\r\n[\r\n  {\r\n    \"eqlname\": \"Test1\",\r\n    \"title\": \"Test1\",\r\n    \"eql\": \"Select f.name From Facility f\",\r\n    \"description\": \"some description\",\r\n    \"metadata\": \"some metadata\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataView",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/dataview/:idOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "idOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.eql.getDataView\r\n```\r\n[\r\n  \"Test1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.UpdateDataView",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/dataview/:idOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "idOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nUpdate a data view info\r\n\r\n**SDK API:** `envianceSdk.eql.updateDataView(idOrName, info, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.eql.updateDataView\r\n```\r\n[\r\n  \"Test1\",\r\n  {\r\n    \"eqlname\": \"Test1\",\r\n    \"title\": \"Test1\",\r\n    \"eql\": \"Select f.name From Facility f\",\r\n    \"description\": \"some description\",\r\n    \"metadata\": \"some metadata\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.DeleteDataView",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/dataview/:idOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "idOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.eql.deleteDataView\r\n```\r\n[\r\n  \"Test1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataViewPublishConfigs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/dataview/:idOrName/publishconfigs",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "idOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.UpdateDataViewPublishConfigs",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/dataview/:idOrName/publishconfigs",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "idOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.GetDataPublishConnections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/dataview/publishconnections",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsync",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/executeAsync",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.eql.executeExtAsync\r\n```\r\n[\r\n    {\r\n        \"eql\": \"select TOP 1 wi.name, wi.id from WorkflowType wi\",\r\n        \"excelHeaderCells\": [\r\n            {\r\n                \"column\": 1,\r\n                \"row\": 1,\r\n                \"style\": {\r\n                    \"font\": {\r\n                        \"bold\": true,\r\n                        \"sz\": 11\r\n                    }\r\n                },\r\n                \"type\": \"s\",\r\n                \"value\": \"test\"\r\n            }\r\n        ],\r\n        \"exce"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsGet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/query",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "eql",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cacheControl",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageByColumn",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.Execute",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/query",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.eql.execute\r\n```\r\n[\r\n    \"select wi.name, wi.id from WorkflowType wi  where wi.name like '%lgm%'\",\r\n    1,\r\n    100,\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\nenvianceSdk.eql.executeExt\r\n```\r\n[\r\n  {\r\n    \"eql\": \"select TOP 1 wi.name, wi.id from WorkflowType wi\",\r\n    \"format\": \"xls\",\r\n    \"pageByColumn\": \"1,2\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.eql.executeExtAsync\r\n```\r\n[\r\n  {\r\n    \"eql\": \"select TOP 1 wi.name, wi.id from WorkflowType wi\",\r\n    \"format\": \"xlsx"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Eql.Impl.EqlService.ExecuteAsGetWithPathSegment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/EqlService.svc/query/",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "eql",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "format",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cacheControl",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageByColumn",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

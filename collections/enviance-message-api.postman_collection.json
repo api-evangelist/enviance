@@ -1,0 +1,547 @@
+{
+  "item": [
+    {
+      "id": "2b0b5edc-7104-49a6-9cc5-cd4ebdddc7b9",
+      "name": "Message",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "42930eb7-e532-4153-ba05-44f4a782e023",
+          "name": "Enviance.Rest Services.Ver2.Messages.Impl.Message Service.Create Message",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Messages.Impl.Message Service.Create Message",
+            "description": {
+              "content": "\n\nQueues a message for delivery to the Enviance Inbox for a specified recipient, as well as optionally to the recipient e-mail address.\r\n\r\n**Security:** All users\r\n\r\n**SDK API:**  `envianceSdk.messages.createMessage(messageInfo, onsuccess, onerror) `\r\n\r\n```\r\nPOST /ver2/MessageService.svc/messages/ HTTP/1.1\r\n \r\n{\r\n  \"messageInfo\": {\r\n    \"id\": \"d8ac14f5-c4b1-4db2-b0fc-15452f71737d\",\r\n    \"recipientId\": \"d2148a6f-4989-4a61-9c27-855a110f8c68\",\r\n    \"sentById\": \"21e1f9b6-fc7c-4257-85f1-01d097762d09\",\r\n    \"sentOn\": \"2013-06-14T14:07:52\",\r\n    \"subject\": \"Report Completion Notification: \\\"Emergency Checklist Report\\\"\",\r\n    \"body\": \"This is to notify you that the \\\"Emergency Checklist Report\\\" is complete.\",\r\n    \"type\": \"EmailNotification\",\r\n    \"archived\": false,\r\n    \"read\": false,\r\n    \"sendByEmail\": true\r\n  }\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.messages.createMessage\r\n```\r\n[\r\n  {\r\n    \"recipientIdOrUserName\": \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n    \"subject\": \"subject text\",\r\n    \"body\": \"body text\",\r\n    \"sendByEmail\": true\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MessageService.svc",
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"messageInfo\": {\n    \"id\": \"<guid>\",\n    \"recipientIdOrUserName\": \"<string>\",\n    \"sentByIdOrUserName\": \"<string>\",\n    \"sentOn\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"body\": \"<string>\",\n    \"type\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"read\": \"<boolean>\",\n    \"sendByEmail\": \"<boolean>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e81ff5f-17a4-4d47-8408-c4e43014679c",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MessageService.svc",
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"messageInfo\": {\n    \"id\": \"<guid>\",\n    \"recipientIdOrUserName\": \"<string>\",\n    \"sentByIdOrUserName\": \"<string>\",\n    \"sentOn\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"body\": \"<string>\",\n    \"type\": \"<string>\",\n    \"archived\": \"<boolean>\",\n    \"read\": \"<boolean>\",\n    \"sendByEmail\": \"<boolean>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad1546d5-35f5-4675-a42a-76dc8eb7064b",
+          "name": "Enviance.Rest Services.Ver2.Messages.Impl.Message Service.Get Message",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Messages.Impl.Message Service.Get Message",
+            "description": {
+              "content": "\n\nGets a message from the Enviance User Inbox. A User may only retrieve messages from his own Inbox. Getting a message through this API does NOT mark the message as *read*.\r\n\r\n**SDK API:**  `envianceSdk.messages.getMessage(messageId, onsuccess, onerror)`\r\n\r\n```\r\nGET /ver2/MessageService.svc/messages/d8ac14f5-c4b1-4db2-b0fc-15452f71737d HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n  \"id\": \"d8ac14f5-c4b1-4db2-b0fc-15452f71737d\",\r\n  \"recipientId\": \"d2148a6f-4989-4a61-9c27-855a110f8c68\",\r\n  \"sentById\": \"21e1f9b6-fc7c-4257-85f1-01d097762d09\",\r\n  \"sentOn\": \"2013-06-14T14:07:52\",\r\n  \"subject\": \"Report Completion Notification: \\\"Emergency Checklist Report\\\"\",\r\n  \"body\": \"This is to notify you that the \\\"Emergency Checklist Report\\\" is complete.\",\r\n  \"type\": \"EmailNotification\",\r\n  \"archived\": false,\r\n  \"read\": false\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.messages.getMessage\r\n```\r\n[\r\n  \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MessageService.svc",
+                "messages",
+                ":messageId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "messageId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9c7d008-4967-4787-9810-5af57b8a0a82",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MessageService.svc",
+                    "messages",
+                    ":messageId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "messageId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"recipientIdOrUserName\": \"<string>\",\n  \"sentByIdOrUserName\": \"<string>\",\n  \"sentOn\": \"<dateTime>\",\n  \"subject\": \"<string>\",\n  \"body\": \"<string>\",\n  \"type\": \"<string>\",\n  \"archived\": \"<boolean>\",\n  \"read\": \"<boolean>\",\n  \"sendByEmail\": \"<boolean>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cfed283-73d7-4818-b839-f74856a44e20",
+          "name": "Enviance.Rest Services.Ver2.Messages.Impl.Message Service.Delete Message",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Messages.Impl.Message Service.Delete Message",
+            "description": {
+              "content": "\n\n\nenvianceSdk.messages.deleteMessage\r\n```\r\n[\r\n  \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MessageService.svc",
+                "messages",
+                ":messageId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "messageId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b9478d67-cea9-44a5-8b2f-ffd552c82343",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MessageService.svc",
+                    "messages",
+                    ":messageId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "messageId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c079bee0-f724-4c58-a47a-690f21be33ba",
+    "name": "Rest Activity Message API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

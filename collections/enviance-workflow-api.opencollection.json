@@ -1,0 +1,1249 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Workflow API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.createWorkflows\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.getWorkflow\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflow21\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowStep\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"Step1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowStepBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowIdOrUniqueId\": \"10ec54b9-a8b0-45"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.updateWorkflowStep\r\n```\r\n[\r\n  \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n  \"Oleg FT Step1\",\r\n  {\r\n    \"comment\": \"my comment\",\r\n    \"transition\": {\r\n      \"dueDate\": \"2013-02-15T00:00:00\",\r\n      \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n      \"assignTo\": [\r\n        {\r\n          \"userIdOrName\": \"oleg\"\r\n        },\r\n        {\r\n          \"userIdOrName\": \"vitek\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        },\r\n        {\r\n          \"groupIdOrNa"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.deleteWorkflow\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowExt\r\n```\r\n[\r\n  {\r\n    \"workflowIdOrUniqueId\": \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n    \"clientRequestId\": \"64AA5290-15F2-451B-9EF3-4494F66FE59E\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflows\r\n```\r\n[\r\n  [\r\n    \"wfid1\",\r\n    \"wfid2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflow"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowAttachments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/attachments",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateWorkflowAttachmentUploadUrl",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/attachments",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowAttachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/attachments/:attachmentId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "attachmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflowAttachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/attachments/:attachmentId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "attachmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateWorkflowAttachmentDownloadUrl",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/attachments/:attachmentId/downloadUrl",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "attachmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.InitiateChildWorkflow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/children",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nExecutes a Workflow Initiator action on the active Step of an existing Workflow, thereby creating a new child Workflow, and places the child on its Init Step. Information about Form Field values and Step Actions may optionally be specified in order to update or take action on the Init Step of the child Workflow.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User in \"Workflow Managers\" role of WF, or User with \"Manage Workflows\" on any"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowStep",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/steps/:stepIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "stepIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.getWorkflowStep\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"Step1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowStepBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowIdOrUniqueId\": \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n      \"stepIdsOrNames\": [\r\n        \"WFStep1\"\r\n      ]\r\n    },\r\n    {\r\n      \"workflowIdOrUniqueId\": \"2017.03.23.11.2F39C8EC9325\",\r\n      \"stepIdsOrNames\": [\r\n        \"337989bf-832e-4e1f-8034-3b4327d52542\"\r\n      ]\r\n    }\r\n  "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflowStep",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/steps/:stepIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "stepIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nUpdates one or more values in the Form Fields of an existing Workflow Step. Any Form Fields *not* specified are left un-modified. A Step Action to invoke may also be specified, which will move (transition) the Workflow from the current Step to the destination Step of the Step Action.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User in \"Workflow Managers\" role of WF, or User with \"Manage Workflows\" on any objects associated with the "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.ResolvePermissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/steps/:stepIdOrName/users/:userId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "stepIdOrName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.resolvePermissions\r\n```\r\n[\r\n  \"\\u003CworkflowIdOrUniqueId\\u003E\",\r\n  \"\\u003CstepIdOrName\\u003E\",\r\n  \"\\u003CuserId\\u003E\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowCurrentStep",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/steps/currentstep",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.getWorkflowCurrentStep\r\n```\r\n[\r\n  \"B5E7E7A4-D294-4D7C-ABC9-008EDBE97346\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.getWorkflowCurrentStepBulk\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a6-a9d7-7a0c0c962725\",\r\n    \"2017.03.23.11.2F39C8EC9325\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflowCurrentStep",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/:workflowIdOrUniqueId/steps/currentstep",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowIdOrUniqueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nUpdates one or more values in the Form Fields of current Workflow Step. Any Form Fields *not* specified are left un-modified. A Step Action to invoke may also be specified, which will move (transition) the Workflow from the current Step to the destination Step of the Step Action. Using step transitions workflow instance can be ended or reopened. See SDK shortcut methods endWorkflow and reopenWorkflow.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflows",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/bulk",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.createWorkflows\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowTypeName\": \"workflow Type Name\",\r\n      \"name\": \"workflow name 1\",\r\n      \"uniqueId\": \"uniqueId - 0000-1-1\",\r\n      \"parentWorkflowSourceCustomField\": {\r\n        \"id\": null,\r\n        \"name\": \"UDF name\"\r\n      },\r\n      \"dueDate\": \"2013-02-07T00:00:00\",\r\n      \"comment\": \"my comment\",\r\n      \"calendars\": [\r\n        \"My\",\r\n        \"Object\",\r\n        \"System\"\r\n      ],\r\n      \"objects\": [\r\n        \"/Generation - 1/NE TV\"\r\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.UpdateWorkflows",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/bulk",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.updateWorkflowStep\r\n```\r\n[\r\n  \"22cf40b5-b001-47ce-8853-020dc9e9aa8e\",\r\n  \"Oleg FT Step1\",\r\n  {\r\n    \"comment\": \"my comment\",\r\n    \"transition\": {\r\n      \"dueDate\": \"2013-02-15T00:00:00\",\r\n      \"stepActionName\": \"Oleg FT Step1 Action1\",\r\n      \"assignTo\": [\r\n        {\r\n          \"userIdOrName\": \"oleg\"\r\n        },\r\n        {\r\n          \"userIdOrName\": \"vitek\"\r\n        },\r\n        {\r\n          \"groupIdOrName\": \"Administrators\"\r\n        },\r\n        {\r\n          \"groupIdOrNa"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.DeleteWorkflows",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/bulk",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.deleteWorkflows\r\n```\r\n[\r\n  [\r\n    \"wfid1\",\r\n    \"wfid2\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.CreateWorkflowsOld",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/bulkold",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Get excel file (base64)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/getuploadexcelresult/:commandLogId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "commandLogId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get excel file (base64)\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowStepBulk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/steps",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nGets information about specified Steps of the specified Workflow Steps.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User in \"Workflow Managers\" role of WF, or User with \"Manage Workflows\" on any objects associated with the workflow.\r\n\r\n**SDK API:**  `envianceSdk.workflows.GetWorkflowStepBulk(workflowStepMaps, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.workflows.getWorkflowStepBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"workflowIdOrUniqueId\": \"10"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GetWorkflowCurrentStepBulk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/steps/currentsteps",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nGets information about Current Steps of the specified Workflow Steps.\r\n\r\n**Security:** Allowed for Users with Manage Workflows right or \"Report\" permission on the Workflow, or User in \"Workflow Managers\" role of WF, or User with \"Manage Workflows\" on any objects associated with the workflow.\r\n\r\n**SDK API:**  `envianceSdk.workflows.getWorkflowCurrentStepBulk(workflowIdsOrUniqueIds, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.workflows.getWorkflowCurrentStepBulk\r\n```\r\n[\r\n  [\r\n    \"10ec54b9-a8b0-45a"
+        },
+        {
+          "info": {
+            "name": "Upload excel file (base64)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflows/uploadexcel2commands",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Upload excel file (base64)\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GuessPermissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflowtypes/:workflowTypeIdOrName/guessPermissions",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowTypeIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nFor a given Workflow Type and optional set of compliance objects, this method returns the permissions for all Roles and their  resolved members (users and groups), taking into account Role Overrides. (\"What are the users and user groups and what are their permissions in a workflow of this type?\")\r\n\r\n**Security:** Requires Manage Enviance Apps system right.\r\n\r\n**SDK API:**  `envianceSdk.workflows.guessPermissions (workflowTypeIdOrName, options, onsuccess, onerror) `\r\nnull\n\n\n[\"<workflowTypeIdOrN"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GenerateUniqueIDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflowtypes/:workflowTypeIdOrName/uniqueIds",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowTypeIdOrName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "\n\nGenerate UniqueIDs for specific workflow type.\r\n\r\n**SDK API:**  `envianceSdk.workflows.generateUniqueIds(workflowTypeIdOrName, count, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.workflows.generateUniqueIds\r\n```\r\n[\r\n  \"Workflow Type Name\",\r\n  10,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GuessPermissionsByUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowService.svc/workflowtypes/:workflowTypeIdOrName/users/:userId/guessPermissions",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "workflowTypeIdOrName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nFor a given Workflow Type and user and optional set of compliance objects, this method returns the permissions for the specified user(s), taking into account all Roles with which the users would be associated.\r\n\r\n**Security:** Requires Manage Enviance Apps system right.\r\n\r\n**SDK API:**  `envianceSdk.workflows.guessPermissionsByUser(workflowTypeIdOrName, userId, options, onsuccess, onerror)`\r\nnull\n\n\n[\"<workflowTypeIdOrName>\",\"<userId>\", {     \"objects\": [\"<objectIdOrPath1>\", \"<objectIdOrPath2>\""
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

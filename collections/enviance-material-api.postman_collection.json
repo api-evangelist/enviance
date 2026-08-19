@@ -1,0 +1,752 @@
+{
+  "item": [
+    {
+      "id": "ba5020dd-e728-4a5f-af63-752cb81655a9",
+      "name": "Material",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fc7cb8ef-118e-484b-9a11-49fe9609fb47",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Materials.Impl.Material Service.Create Material",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Materials.Impl.Material Service.Create Material",
+            "description": {
+              "content": "\n\n\nenvianceSdk.materials.createMaterial\r\n```\r\n[\r\n  {\r\n    \"name\": \"Material Name\",\r\n    \"description\": \"Material Description\",\r\n    \"templateIdOrName\": \"Template Name\",\r\n    \"materialAvailabilityFlag\": \"true\",\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      }\r\n    ],\r\n    \"chemicals\": [\r\n      {\r\n        \"chemicalIdOrAlias\": \"Chemical Alias\",\r\n        \"chemicalConcentrationHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"present\": \"true\",\r\n            \"minConc\": \"0\",\r\n            \"avgConc\": \"1\",\r\n            \"maxConc\": \"2\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2013-01-19T20:00:00\",\r\n            \"present\": \"true\",\r\n            \"minConc\": \"2\",\r\n            \"avgConc\": \"4\",\r\n            \"maxConc\": \"6\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"properties\": [\r\n      {\r\n        \"propertyIdOrName\": \"property name\",\r\n        \"valueHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"value\": \"1\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2012-02-20T20:00:00\",\r\n            \"value\": \"2\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"propertyIdOrName\": \"PFBP name\"\r\n      },\r\n      {\r\n        \"propertyIdOrName\": \"SFBP name\"\r\n      },\r\n      {\r\n        \"propertyIdOrName\": \"TFBP name\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.createMaterialGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Material Group Name\",\r\n    \"description\": \"Material Group Description\",\r\n    \"materialIdOrNames\": [\r\n      \"Material Name 1\",\r\n      \"Material Name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialTemplates.createMaterialTemplate\r\n```\r\n[\r\n  {\r\n    \"name\": \"Material Template Name\",\r\n    \"description\": \"Material Template Description\",\r\n    \"fields\": [\r\n      \"field name 1\",\r\n      \"field name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialProperties.createMaterialProperty\r\n```\r\n[\r\n  {\r\n    \"name\": \"PFBP Property Name\",\r\n    \"description\": \"VBP Description\",\r\n    \"propertyType\": \"Formula Based Primary\",\r\n    \"dataType\": \"Numeric\",\r\n    \"formulaHistory\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B SUM([Chem_MW])\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B [Prop_PFBP1]\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MaterialService.svc",
+                "materials"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"materialInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"templateIdOrName\": \"<string>\",\n    \"materialAvailabilityFlag\": \"<boolean>\",\n    \"chemicals\": [\n      {\n        \"chemicalIdOrAlias\": \"<string>\",\n        \"chemicalConcentrationHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          }\n        ]\n      },\n      {\n        \"chemicalIdOrAlias\": \"<string>\",\n        \"chemicalConcentrationHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          }\n        ]\n      }\n    ],\n    \"fields\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"properties\": [\n      {\n        \"propertyIdOrName\": \"<string>\",\n        \"valueHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          }\n        ]\n      },\n      {\n        \"propertyIdOrName\": \"<string>\",\n        \"valueHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"copyFrom\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d963a4c7-56f2-47c5-a0c2-45d51d55ea73",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MaterialService.svc",
+                    "materials"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"materialInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"templateIdOrName\": \"<string>\",\n    \"materialAvailabilityFlag\": \"<boolean>\",\n    \"chemicals\": [\n      {\n        \"chemicalIdOrAlias\": \"<string>\",\n        \"chemicalConcentrationHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          }\n        ]\n      },\n      {\n        \"chemicalIdOrAlias\": \"<string>\",\n        \"chemicalConcentrationHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          }\n        ]\n      }\n    ],\n    \"fields\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"properties\": [\n      {\n        \"propertyIdOrName\": \"<string>\",\n        \"valueHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          }\n        ]\n      },\n      {\n        \"propertyIdOrName\": \"<string>\",\n        \"valueHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"copyFrom\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55f187e7-79e2-47ba-b6f0-ea12d09e0eb5",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Materials.Impl.Material Service.Get Material",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Materials.Impl.Material Service.Get Material",
+            "description": {
+              "content": "\n\n\nenvianceSdk.materials.getMaterial\r\n```\r\n[\r\n  \"Material Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.getMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialTemplates.getMaterialTemplate\r\n```\r\n[\r\n  \"Material Template Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialProperties.getMaterialProperty\r\n```\r\n[\r\n  \"Material Property Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MaterialService.svc",
+                "materials",
+                ":materialIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "materialIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "575114c4-3bcb-4fe4-8764-ee0f3f5db233",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MaterialService.svc",
+                    "materials",
+                    ":materialIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "materialIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"templateIdOrName\": \"<string>\",\n  \"materialAvailabilityFlag\": \"<boolean>\",\n  \"chemicals\": [\n    {\n      \"chemicalIdOrAlias\": \"<string>\",\n      \"chemicalConcentrationHistory\": [\n        {\n          \"id\": \"<guid>\",\n          \"beginDate\": \"<dateTime>\",\n          \"present\": \"<boolean>\",\n          \"minConc\": \"<double>\",\n          \"avgConc\": \"<double>\",\n          \"maxConc\": \"<double>\",\n          \"created\": \"<dateTime>\"\n        },\n        {\n          \"id\": \"<guid>\",\n          \"beginDate\": \"<dateTime>\",\n          \"present\": \"<boolean>\",\n          \"minConc\": \"<double>\",\n          \"avgConc\": \"<double>\",\n          \"maxConc\": \"<double>\",\n          \"created\": \"<dateTime>\"\n        }\n      ]\n    },\n    {\n      \"chemicalIdOrAlias\": \"<string>\",\n      \"chemicalConcentrationHistory\": [\n        {\n          \"id\": \"<guid>\",\n          \"beginDate\": \"<dateTime>\",\n          \"present\": \"<boolean>\",\n          \"minConc\": \"<double>\",\n          \"avgConc\": \"<double>\",\n          \"maxConc\": \"<double>\",\n          \"created\": \"<dateTime>\"\n        },\n        {\n          \"id\": \"<guid>\",\n          \"beginDate\": \"<dateTime>\",\n          \"present\": \"<boolean>\",\n          \"minConc\": \"<double>\",\n          \"avgConc\": \"<double>\",\n          \"maxConc\": \"<double>\",\n          \"created\": \"<dateTime>\"\n        }\n      ]\n    }\n  ],\n  \"fields\": [\n    {\n      \"name\": \"<string>\",\n      \"urlItems\": [\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        }\n      ],\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"caption\": \"<string>\",\n      \"captionLocalized\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"urlItems\": [\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        }\n      ],\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"caption\": \"<string>\",\n      \"captionLocalized\": \"<string>\"\n    }\n  ],\n  \"properties\": [\n    {\n      \"propertyIdOrName\": \"<string>\",\n      \"valueHistory\": [\n        {\n          \"id\": \"<guid>\",\n          \"beginDate\": \"<dateTime>\",\n          \"value\": \"<double>\"\n        },\n        {\n          \"id\": \"<guid>\",\n          \"beginDate\": \"<dateTime>\",\n          \"value\": \"<double>\"\n        }\n      ]\n    },\n    {\n      \"propertyIdOrName\": \"<string>\",\n      \"valueHistory\": [\n        {\n          \"id\": \"<guid>\",\n          \"beginDate\": \"<dateTime>\",\n          \"value\": \"<double>\"\n        },\n        {\n          \"id\": \"<guid>\",\n          \"beginDate\": \"<dateTime>\",\n          \"value\": \"<double>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44009a0c-7ddb-460f-bd6e-b5cfb58e8748",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Materials.Impl.Material Service.Update Material",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Materials.Impl.Material Service.Update Material",
+            "description": {
+              "content": "\n\n\nenvianceSdk.materials.updateMaterial\r\n```\r\n[\r\n  \"Material Name\",\r\n  {\r\n    \"name\": \"Material Name\",\r\n    \"description\": \"Material Description\",\r\n    \"templateIdOrName\": \"Template Name\",\r\n    \"materialAvailabilityFlag\": \"true\",\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      }\r\n    ],\r\n    \"chemicals\": [\r\n      {\r\n        \"chemicalIdOrAlias\": \"Chemical Alias\",\r\n        \"chemicalConcentrationHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"present\": \"true\",\r\n            \"minConc\": \"0\",\r\n            \"avgConc\": \"1\",\r\n            \"maxConc\": \"2\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2013-01-19T20:00:00\",\r\n            \"present\": \"true\",\r\n            \"minConc\": \"2\",\r\n            \"avgConc\": \"3\",\r\n            \"maxConc\": \"6\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"properties\": [\r\n      {\r\n        \"propertyIdOrName\": \"property name\",\r\n        \"valueHistory\": [\r\n          {\r\n            \"beginDate\": \"2012-01-19T20:00:00\",\r\n            \"value\": \"1\"\r\n          },\r\n          {\r\n            \"beginDate\": \"2012-02-20T20:00:00\",\r\n            \"value\": \"2\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.updateMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  {\r\n    \"name\": \"Material Group Name\",\r\n    \"description\": \"Material Group Description\",\r\n    \"materialIdOrNames\": [\r\n      \"Material Name 1\",\r\n      \"Material Name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialTemplates.updateMaterialTemplate\r\n```\r\n[\r\n  \"Material Template Name\",\r\n  {\r\n    \"name\": \"Material Template Name\",\r\n    \"description\": \"Material Template Description\",\r\n    \"fields\": [\r\n      \"field name 1\",\r\n      \"field name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialProperties.updateMaterialProperty\r\n```\r\n[\r\n  \"Material Property Name\",\r\n  {\r\n    \"name\": \"PFBP Property Name\",\r\n    \"description\": \"VBP Description\",\r\n    \"dataType\": \"Numeric\",\r\n    \"formulaHistory\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B SUM([Chem_MW])\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"Script\": \"1 \\u002B [Prop_PFBP1]\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MaterialService.svc",
+                "materials",
+                ":materialIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "materialIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"materialInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"templateIdOrName\": \"<string>\",\n    \"materialAvailabilityFlag\": \"<boolean>\",\n    \"chemicals\": [\n      {\n        \"chemicalIdOrAlias\": \"<string>\",\n        \"chemicalConcentrationHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          }\n        ]\n      },\n      {\n        \"chemicalIdOrAlias\": \"<string>\",\n        \"chemicalConcentrationHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          }\n        ]\n      }\n    ],\n    \"fields\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"properties\": [\n      {\n        \"propertyIdOrName\": \"<string>\",\n        \"valueHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          }\n        ]\n      },\n      {\n        \"propertyIdOrName\": \"<string>\",\n        \"valueHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "53bee375-23b9-4b30-8a73-2e14bc609bf2",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MaterialService.svc",
+                    "materials",
+                    ":materialIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "materialIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"materialInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"templateIdOrName\": \"<string>\",\n    \"materialAvailabilityFlag\": \"<boolean>\",\n    \"chemicals\": [\n      {\n        \"chemicalIdOrAlias\": \"<string>\",\n        \"chemicalConcentrationHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          }\n        ]\n      },\n      {\n        \"chemicalIdOrAlias\": \"<string>\",\n        \"chemicalConcentrationHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"present\": \"<boolean>\",\n            \"minConc\": \"<double>\",\n            \"avgConc\": \"<double>\",\n            \"maxConc\": \"<double>\",\n            \"created\": \"<dateTime>\"\n          }\n        ]\n      }\n    ],\n    \"fields\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"properties\": [\n      {\n        \"propertyIdOrName\": \"<string>\",\n        \"valueHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          }\n        ]\n      },\n      {\n        \"propertyIdOrName\": \"<string>\",\n        \"valueHistory\": [\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"beginDate\": \"<dateTime>\",\n            \"value\": \"<double>\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "134412c2-2e7d-4959-8c42-0758dbd31397",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Materials.Impl.Material Service.Delete Material",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Materials.Impl.Material Service.Delete Material",
+            "description": {
+              "content": "\n\n\nenvianceSdk.materials.deleteMaterial\r\n```\r\n[\r\n  \"Material Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialGroups.deleteMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialTemplates.deleteMaterialTemplate\r\n```\r\n[\r\n  \"Material Template Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialProperties.deleteMaterialProperty\r\n```\r\n[\r\n  \"Material Property Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.materialData.deleteMaterialData\r\n```\r\n[\r\n  \"/Division for MDLG/FAC for MDLG\",\r\n  [\r\n    \"6B6BB16B-C207-416C-B818-1DB075AA453C\",\r\n    \"004D8F0D-C03A-4A65-BFD1-3CFFDDF99569\"\r\n  ],\r\n  \"true\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MaterialService.svc",
+                "materials",
+                ":materialIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "materialIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4dce430c-4c43-4ffc-9ca2-923a727d3679",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MaterialService.svc",
+                    "materials",
+                    ":materialIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "materialIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d0c86bed-1cf5-4308-8164-39e7c6d7ff0e",
+    "name": "Rest Activity Material API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

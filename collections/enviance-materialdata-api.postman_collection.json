@@ -1,0 +1,1001 @@
+{
+  "item": [
+    {
+      "id": "ced270ca-c850-4cad-ada8-dbf229bd80f3",
+      "name": "MaterialData",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "86a7930c-e128-40e9-a9b5-3d88bb0355f9",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Get Material Data",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Get Material Data",
+            "description": {},
+            "url": {
+              "path": [
+                "ver2",
+                "MaterialDataService.svc",
+                "materialdata",
+                ":activityIdOrNameOrUniqueTag",
+                "begin",
+                ":completeBegin",
+                "end",
+                ":completeEnd",
+                ":locationIdOrPathOrUniqueTag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "activityIdOrNameOrUniqueTag",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "completeBegin",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "completeEnd",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationIdOrPathOrUniqueTag",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3107574a-ea2f-44f0-b098-2a7adca39124",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MaterialDataService.svc",
+                    "materialdata",
+                    ":activityIdOrNameOrUniqueTag",
+                    "begin",
+                    ":completeBegin",
+                    "end",
+                    ":completeEnd",
+                    ":locationIdOrPathOrUniqueTag"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "activityIdOrNameOrUniqueTag",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "completeBegin",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "completeEnd",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationIdOrPathOrUniqueTag",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"complete\": \"1999-03-14T23:37:27.521Z\",\n    \"id\": \"string\",\n    \"parentIdOrPathOrUniqueTag\": \"string\",\n    \"activityIdOrNameOrUniqueTag\": \"string\",\n    \"collector\": \"string\",\n    \"dataLines\": [\n      {\n        \"materialIdOrNameOrUniqueTag\": \"string\",\n        \"mdlGroupId\": \"string\",\n        \"startTime\": \"2025-03-20T16:50:58.868Z\",\n        \"endTime\": \"1962-03-31T03:16:34.534Z\",\n        \"data\": [\n          {\n            \"dataLineId\": \"string\",\n            \"propertyIdOrNameOrUniqueTag\": \"string\",\n            \"value\": 9772.893588795452\n          },\n          {\n            \"dataLineId\": \"string\",\n            \"propertyIdOrNameOrUniqueTag\": \"string\",\n            \"value\": 8324.006451446987\n          }\n        ]\n      },\n      {\n        \"materialIdOrNameOrUniqueTag\": \"string\",\n        \"mdlGroupId\": \"string\",\n        \"startTime\": \"2025-03-11T17:26:16.124Z\",\n        \"endTime\": \"1980-11-18T21:01:28.370Z\",\n        \"data\": [\n          {\n            \"dataLineId\": \"string\",\n            \"propertyIdOrNameOrUniqueTag\": \"string\",\n            \"value\": 7266.679846176928\n          },\n          {\n            \"dataLineId\": \"string\",\n            \"propertyIdOrNameOrUniqueTag\": \"string\",\n            \"value\": 1284.3063418699985\n          }\n        ]\n      }\n    ]\n  },\n  {\n    \"complete\": \"1979-09-24T15:39:44.486Z\",\n    \"id\": \"string\",\n    \"parentIdOrPathOrUniqueTag\": \"string\",\n    \"activityIdOrNameOrUniqueTag\": \"string\",\n    \"collector\": \"string\",\n    \"dataLines\": [\n      {\n        \"materialIdOrNameOrUniqueTag\": \"string\",\n        \"mdlGroupId\": \"string\",\n        \"startTime\": \"2025-01-13T09:32:10.330Z\",\n        \"endTime\": \"1984-07-28T10:46:12.270Z\",\n        \"data\": [\n          {\n            \"dataLineId\": \"string\",\n            \"propertyIdOrNameOrUniqueTag\": \"string\",\n            \"value\": 1930.5395236267054\n          },\n          {\n            \"dataLineId\": \"string\",\n            \"propertyIdOrNameOrUniqueTag\": \"string\",\n            \"value\": 8201.205273196965\n          }\n        ]\n      },\n      {\n        \"materialIdOrNameOrUniqueTag\": \"string\",\n        \"mdlGroupId\": \"string\",\n        \"startTime\": \"2008-10-17T15:01:50.040Z\",\n        \"endTime\": \"1964-01-26T10:30:29.364Z\",\n        \"data\": [\n          {\n            \"dataLineId\": \"string\",\n            \"propertyIdOrNameOrUniqueTag\": \"string\",\n            \"value\": 4855.102711616649\n          },\n          {\n            \"dataLineId\": \"string\",\n            \"propertyIdOrNameOrUniqueTag\": \"string\",\n            \"value\": 5571.397581852397\n          }\n        ]\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c9bedc08-ea7e-4ed4-947f-f14e3409e986",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Delete Material Data",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Delete Material Data",
+            "description": {
+              "content": "\n\n\nenvianceSdk.materialData.deleteMaterialData\r\n```\r\n[\r\n  \"/Division for MDLG/FAC for MDLG\",\r\n  [\r\n    \"6B6BB16B-C207-416C-B818-1DB075AA453C\",\r\n    \"004D8F0D-C03A-4A65-BFD1-3CFFDDF99569\"\r\n  ],\r\n  \"true\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MaterialDataService.svc",
+                "materialdata",
+                "deletedatacommands",
+                ":locationIdOrPathOrUniqueTag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationIdOrPathOrUniqueTag",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mdlGroupIds\": [\n    \"<guid>\",\n    \"<guid>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "31f6ad0b-7237-4478-a6f5-898e2b60a32f",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MaterialDataService.svc",
+                    "materialdata",
+                    "deletedatacommands",
+                    ":locationIdOrPathOrUniqueTag"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationIdOrPathOrUniqueTag",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mdlGroupIds\": [\n    \"<guid>\",\n    \"<guid>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f8bf633d-2a4d-4283-840d-7556fd264e1a",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Download Material Data",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Download Material Data",
+            "description": {
+              "content": "\n\n\nenvianceSdk.materialData.downloadMaterialData\r\n```\r\n[\r\n  {\r\n    \"activityIdOrNameOrUniqueTag\": \"Activity for MDLG\",\r\n    \"completeBegin\": \"2015-05-29T00:00:00\",\r\n    \"completeEnd\": \"2015-05-29T00:00:00\",\r\n    \"objectIdOrPathOrUniqueTag\": \"/Division for MDLG/FAC for MDLG\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MaterialDataService.svc",
+                "materialdata",
+                "download"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"activityIdOrNameOrUniqueTag\": \"<string>\",\n  \"completeBegin\": \"<string>\",\n  \"completeEnd\": \"<string>\",\n  \"objectIdOrPathOrUniqueTag\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3feaf8e1-fff1-4a1a-9071-bda8fae638f1",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MaterialDataService.svc",
+                    "materialdata",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"activityIdOrNameOrUniqueTag\": \"<string>\",\n  \"completeBegin\": \"<string>\",\n  \"completeEnd\": \"<string>\",\n  \"objectIdOrPathOrUniqueTag\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "887c358b-2a9c-40ef-b285-9c4c8719a5a4",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Enter Material Data",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Enter Material Data",
+            "description": {
+              "content": "\n\n\nenvianceSdk.materialData.enterMaterialData\r\n```\r\n[\r\n  [\r\n    {\r\n      \"parentIdOrPathOrUniqueTag\": \"/Division for MDLG/FAC for MDLG\",\r\n      \"activityIdOrNameOrUniqueTag\": \"Activity for MDLG\",\r\n      \"complete\": \"2015-05-29T00:00:00\",\r\n      \"collector\": \"Create MdlG-Happy path\",\r\n      \"dataLines\": [\r\n        {\r\n          \"materialIdOrNameOrUniqueTag\": \"Material 1 for MDLG\",\r\n          \"startTime\": \"2015-05-27T00:00:00\",\r\n          \"endTime\": \"2015-05-28T00:00:00\",\r\n          \"data\": [\r\n            {\r\n              \"propertyIdOrNameOrUniqueTag\": \"SUV10\",\r\n              \"value\": \"1\"\r\n            },\r\n            {\r\n              \"propertyIdOrNameOrUniqueTag\": \"SUV11\",\r\n              \"value\": \"2\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  true,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MaterialDataService.svc",
+                "materialdata",
+                "enterdatacommands",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mdlGroupsInfo\": [\n    {\n      \"complete\": \"<dateTime>\",\n      \"id\": \"<guid>\",\n      \"parentIdOrPathOrUniqueTag\": \"<string>\",\n      \"activityIdOrNameOrUniqueTag\": \"<string>\",\n      \"collector\": \"<string>\",\n      \"dataLines\": [\n        {\n          \"materialIdOrNameOrUniqueTag\": \"<string>\",\n          \"mdlGroupId\": \"<guid>\",\n          \"startTime\": \"<dateTime>\",\n          \"endTime\": \"<dateTime>\",\n          \"data\": [\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"materialIdOrNameOrUniqueTag\": \"<string>\",\n          \"mdlGroupId\": \"<guid>\",\n          \"startTime\": \"<dateTime>\",\n          \"endTime\": \"<dateTime>\",\n          \"data\": [\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"complete\": \"<dateTime>\",\n      \"id\": \"<guid>\",\n      \"parentIdOrPathOrUniqueTag\": \"<string>\",\n      \"activityIdOrNameOrUniqueTag\": \"<string>\",\n      \"collector\": \"<string>\",\n      \"dataLines\": [\n        {\n          \"materialIdOrNameOrUniqueTag\": \"<string>\",\n          \"mdlGroupId\": \"<guid>\",\n          \"startTime\": \"<dateTime>\",\n          \"endTime\": \"<dateTime>\",\n          \"data\": [\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"materialIdOrNameOrUniqueTag\": \"<string>\",\n          \"mdlGroupId\": \"<guid>\",\n          \"startTime\": \"<dateTime>\",\n          \"endTime\": \"<dateTime>\",\n          \"data\": [\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"partialProcess\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba09ff72-6e39-4b8d-8969-24c90aafca08",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MaterialDataService.svc",
+                    "materialdata",
+                    "enterdatacommands",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mdlGroupsInfo\": [\n    {\n      \"complete\": \"<dateTime>\",\n      \"id\": \"<guid>\",\n      \"parentIdOrPathOrUniqueTag\": \"<string>\",\n      \"activityIdOrNameOrUniqueTag\": \"<string>\",\n      \"collector\": \"<string>\",\n      \"dataLines\": [\n        {\n          \"materialIdOrNameOrUniqueTag\": \"<string>\",\n          \"mdlGroupId\": \"<guid>\",\n          \"startTime\": \"<dateTime>\",\n          \"endTime\": \"<dateTime>\",\n          \"data\": [\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"materialIdOrNameOrUniqueTag\": \"<string>\",\n          \"mdlGroupId\": \"<guid>\",\n          \"startTime\": \"<dateTime>\",\n          \"endTime\": \"<dateTime>\",\n          \"data\": [\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"complete\": \"<dateTime>\",\n      \"id\": \"<guid>\",\n      \"parentIdOrPathOrUniqueTag\": \"<string>\",\n      \"activityIdOrNameOrUniqueTag\": \"<string>\",\n      \"collector\": \"<string>\",\n      \"dataLines\": [\n        {\n          \"materialIdOrNameOrUniqueTag\": \"<string>\",\n          \"mdlGroupId\": \"<guid>\",\n          \"startTime\": \"<dateTime>\",\n          \"endTime\": \"<dateTime>\",\n          \"data\": [\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        },\n        {\n          \"materialIdOrNameOrUniqueTag\": \"<string>\",\n          \"mdlGroupId\": \"<guid>\",\n          \"startTime\": \"<dateTime>\",\n          \"endTime\": \"<dateTime>\",\n          \"data\": [\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"dataLineId\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"propertyIdOrNameOrUniqueTag\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"partialProcess\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2be1bf4-7b13-4361-a4a3-03bb9f99a531",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Upload Material Data",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Data.Impl.Material Data Service.Upload Material Data",
+            "description": {
+              "content": "\n\n\nUpload excel template with Ajax and Base64 Encoding. First parameter pass HttpFileInput html control or filecontent as Base64 encoded string. Use anyone (just one) input control on Rest API Test Tool to specify .xls-file to upload file and specify it\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "MaterialDataService.svc",
+                "materialdata",
+                "upload"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"objectIdOrPathOrUniqueTag\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3add6f0b-4798-4d17-b2a7-e66d63f59c85",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "MaterialDataService.svc",
+                    "materialdata",
+                    "upload"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"objectIdOrPathOrUniqueTag\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b77b8c76-838c-4374-be35-8e5f8bce40f2",
+    "name": "Rest Activity MaterialData API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,1456 @@
+{
+  "item": [
+    {
+      "id": "9b3b2db6-379e-4e9c-ade5-ab7ecf7ff996",
+      "name": "UOMService",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "739c729e-4cf5-4a8f-8658-6c7fe922ef99",
+          "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Create UOM",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Create UOM",
+            "description": {
+              "content": "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.createUOMCategory\r\n```\r\n[\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.UOM.createUOM\r\n```\r\n[\r\n  {\r\n    \"name\": \"name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"categoryIDorName\": \"BF1D8655-B7D6-4674-90F4-3677B2DB55CA\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"uomHistory\": [\r\n      {\r\n        \"beginDate\": \"2024-10-01T00:00:00\",\r\n        \"endDate\": \"2024-10-31T00:00:00\",\r\n        \"uomFactor\": 1.2\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UOMService.svc",
+                "uom"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uomInfo\": {\n    \"id\": \"<guid>\",\n    \"categoryID\": \"<guid>\",\n    \"categoryIDorName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"alternateName\": \"<string>\",\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"alternateNamelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"uomHistory\": [\n      {\n        \"uomFactor\": \"<double>\",\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\"\n      },\n      {\n        \"uomFactor\": \"<double>\",\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6a645893-5d02-4e9b-98b0-28cb6dbc92ea",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UOMService.svc",
+                    "uom"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uomInfo\": {\n    \"id\": \"<guid>\",\n    \"categoryID\": \"<guid>\",\n    \"categoryIDorName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"alternateName\": \"<string>\",\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"alternateNamelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"uomHistory\": [\n      {\n        \"uomFactor\": \"<double>\",\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\"\n      },\n      {\n        \"uomFactor\": \"<double>\",\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b18ecc47-9fb6-4541-957a-30a287e9017b",
+          "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Get UOM",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Get UOM",
+            "description": {
+              "content": "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.getUOMCategory\r\n```\r\n[\r\n  \"UOM Category Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.UOM.getUOM\r\n```\r\n[\r\n  \"UOM Category:UOM Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UOMService.svc",
+                "uom",
+                ":uomIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uomIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fed8231b-8025-435c-b7cf-52f5370dd0ae",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UOMService.svc",
+                    "uom",
+                    ":uomIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uomIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"categoryID\": \"<guid>\",\n  \"categoryIDorName\": \"<string>\",\n  \"name\": \"<string>\",\n  \"alternateName\": \"<string>\",\n  \"namelocalized\": [\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"alternateNamelocalized\": [\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"uomHistory\": [\n    {\n      \"uomFactor\": \"<double>\",\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\"\n    },\n    {\n      \"uomFactor\": \"<double>\",\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fb5971d9-444c-48de-9c76-a30ab4109459",
+          "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Update UOM",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Update UOM",
+            "description": {
+              "content": "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.updateUOMCategory\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.UOM.updateUOM\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"categoryIDorName\": \"BF1D8655-B7D6-4674-90F4-3677B2DB55CA\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UOMService.svc",
+                "uom",
+                ":uomIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uomIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uomInfo\": {\n    \"id\": \"<guid>\",\n    \"categoryID\": \"<guid>\",\n    \"categoryIDorName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"alternateName\": \"<string>\",\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"alternateNamelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"uomHistory\": [\n      {\n        \"uomFactor\": \"<double>\",\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\"\n      },\n      {\n        \"uomFactor\": \"<double>\",\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fd37dec9-3312-457c-b1c7-6a2319d86bb6",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UOMService.svc",
+                    "uom",
+                    ":uomIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uomIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uomInfo\": {\n    \"id\": \"<guid>\",\n    \"categoryID\": \"<guid>\",\n    \"categoryIDorName\": \"<string>\",\n    \"name\": \"<string>\",\n    \"alternateName\": \"<string>\",\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"alternateNamelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"uomHistory\": [\n      {\n        \"uomFactor\": \"<double>\",\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\"\n      },\n      {\n        \"uomFactor\": \"<double>\",\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34fd4d54-f65f-4c79-8c62-1c80f9113717",
+          "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Delete UOM",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Delete UOM",
+            "description": {
+              "content": "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.deleteUOMCategory\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.UOM.deleteUOM\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UOMService.svc",
+                "uom",
+                ":uomIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uomIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31cc67c1-3d29-4c83-b6d3-f6210087d390",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UOMService.svc",
+                    "uom",
+                    ":uomIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uomIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c2a4bc4-9124-4d07-9f6f-bb2e1e5008db",
+          "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Create UOM Category",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Create UOM Category",
+            "description": {
+              "content": "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.createUOMCategory\r\n```\r\n[\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UOMService.svc",
+                "uomCategory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uomCategoryInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"alternateName\": \"<string>\",\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"alternateNamelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a6171f69-676c-40eb-8888-bc4e3576412c",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UOMService.svc",
+                    "uomCategory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uomCategoryInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"alternateName\": \"<string>\",\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"alternateNamelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cae69b7f-9e51-46f9-9dd8-d87b78fe58be",
+          "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Get UOM Category",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Get UOM Category",
+            "description": {
+              "content": "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.getUOMCategory\r\n```\r\n[\r\n  \"UOM Category Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UOMService.svc",
+                "uomCategory",
+                ":uomCategoryIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uomCategoryIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c8851d4-4dc2-494c-822f-5298fb8214b4",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UOMService.svc",
+                    "uomCategory",
+                    ":uomCategoryIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uomCategoryIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\",\n  \"alternateName\": \"<string>\",\n  \"namelocalized\": [\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"alternateNamelocalized\": [\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2d368b9-9fae-43a1-8ec4-f956474c32dd",
+          "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Update UOM Category",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Update UOM Category",
+            "description": {
+              "content": "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.updateUOMCategory\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  {\r\n    \"name\": \"Name\",\r\n    \"alternateName\": \"alternateName\",\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"name\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"alternateNamelocalized\": [\r\n      {\r\n        \"value\": \"alternateName\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UOMService.svc",
+                "uomCategory",
+                ":uomCategoryIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uomCategoryIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"uomCategoryInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"alternateName\": \"<string>\",\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"alternateNamelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a4ee7802-06ba-4042-849b-d1bc01077d5a",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UOMService.svc",
+                    "uomCategory",
+                    ":uomCategoryIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uomCategoryIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"uomCategoryInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"alternateName\": \"<string>\",\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"alternateNamelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "712cfd6e-d7d5-44c0-bd13-f8aef07f4ba5",
+          "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Delete UOM Category",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.UOM.Impl.UOM Service.Delete UOM Category",
+            "description": {
+              "content": "\n\n<!-- https://commonmark.org/help/ \r\nhttps://spec.commonmark.org/0.31.2/\r\n-->\r\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\n\n\nenvianceSdk.UOM.deleteUOMCategory\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "UOMService.svc",
+                "uomCategory",
+                ":uomCategoryIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uomCategoryIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "512edb77-4d63-4ec9-a103-c2362023ab97",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "UOMService.svc",
+                    "uomCategory",
+                    ":uomCategoryIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uomCategoryIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "50fc19a1-c249-41d5-a52f-f148f35bc0f1",
+    "name": "Rest Activity UOMService API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

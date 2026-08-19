@@ -1,0 +1,155 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Message API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Message",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Messages.Impl.MessageService.CreateMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/MessageService.svc/messages",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nQueues a message for delivery to the Enviance Inbox for a specified recipient, as well as optionally to the recipient e-mail address.\r\n\r\n**Security:** All users\r\n\r\n**SDK API:**  `envianceSdk.messages.createMessage(messageInfo, onsuccess, onerror) `\r\n\r\n```\r\nPOST /ver2/MessageService.svc/messages/ HTTP/1.1\r\n \r\n{\r\n  \"messageInfo\": {\r\n    \"id\": \"d8ac14f5-c4b1-4db2-b0fc-15452f71737d\",\r\n    \"recipientId\": \"d2148a6f-4989-4a61-9c27-855a110f8c68\",\r\n    \"sentById\": \"21e1f9b6-fc7c-4257-85f1-01d097762d09\""
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Messages.Impl.MessageService.GetMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/MessageService.svc/messages/:messageId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nGets a message from the Enviance User Inbox. A User may only retrieve messages from his own Inbox. Getting a message through this API does NOT mark the message as *read*.\r\n\r\n**SDK API:**  `envianceSdk.messages.getMessage(messageId, onsuccess, onerror)`\r\n\r\n```\r\nGET /ver2/MessageService.svc/messages/d8ac14f5-c4b1-4db2-b0fc-15452f71737d HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n  \"id\": \"d8ac14f5-c4b1-4db2-b0fc-15452f71737d\",\r\n  \"recipientId\": \"d2148a6f-4989-4a61-9c27-855a110f8c68\",\r\n  \"sentById\": \"21e1f9b6-fc7c"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Messages.Impl.MessageService.DeleteMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/MessageService.svc/messages/:messageId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.messages.deleteMessage\r\n```\r\n[\r\n  \"5bfdbd05-225f-40ee-bff1-2efe18a75375\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

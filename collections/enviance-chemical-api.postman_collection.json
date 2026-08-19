@@ -1,0 +1,752 @@
+{
+  "item": [
+    {
+      "id": "3a93d170-28cf-41d8-809d-f8f54636700f",
+      "name": "Chemical",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f15ee6d3-905c-453e-ae24-060ec9be8134",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Service.Create Chemical",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Service.Create Chemical",
+            "description": {
+              "content": "\n\n\nenvianceSdk.chemicals.createChemical\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical Name\",\r\n    \"casnum\": \"0\",\r\n    \"alias\": \"chemicalAlias\",\r\n    \"description\": \"chemical description\",\r\n    \"historyItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Mw\": \"1\",\r\n        \"antA\": \"1\",\r\n        \"antB\": \"1\",\r\n        \"antC\": \"1\",\r\n        \"antAk\": \"1\",\r\n        \"antBk\": \"1\",\r\n        \"vp60\": \"1\",\r\n        \"density\": \"1\",\r\n        \"dipprA\": \"1\",\r\n        \"dipprB\": \"1\",\r\n        \"dipprC\": \"1\",\r\n        \"dipprD\": \"1\",\r\n        \"dipprE\": \"1\",\r\n        \"dipprF\": \"1\",\r\n        \"dipprG\": \"1\",\r\n        \"rcraHaz\": \"false\",\r\n        \"hap\": \"false\",\r\n        \"tri\": \"false\",\r\n        \"ehs\": \"false\",\r\n        \"pbt\": \"false\",\r\n        \"dioxin\": \"false\",\r\n        \"caa112R\": \"false\",\r\n        \"pac\": \"false\",\r\n        \"diisocyan\": \"false\",\r\n        \"cerclaHaz\": \"false\",\r\n        \"airToxicEmissionInventory\": \"false\",\r\n        \"solid\": \"false\",\r\n        \"nonEvaporative\": \"false\",\r\n        \"rcraVoc\": \"false\",\r\n        \"rcraSvoc\": \"false\",\r\n        \"caaVoc\": \"false\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-02-01T20:00:00\",\r\n        \"Mw\": \"2\",\r\n        \"antA\": \"3\",\r\n        \"antB\": \"4\",\r\n        \"antC\": \"5\",\r\n        \"antAk\": \"6\",\r\n        \"antBk\": \"7\",\r\n        \"vp60\": \"8\",\r\n        \"density\": \"9\",\r\n        \"dipprA\": \"10\",\r\n        \"dipprB\": \"11\",\r\n        \"dipprC\": \"12\",\r\n        \"dipprD\": \"13\",\r\n        \"dipprE\": \"14\",\r\n        \"dipprF\": \"15\",\r\n        \"dipprG\": \"16\",\r\n        \"rcraHaz\": \"false\",\r\n        \"hap\": \"true\",\r\n        \"tri\": \"false\",\r\n        \"ehs\": \"true\",\r\n        \"pbt\": \"false\",\r\n        \"dioxin\": \"false\",\r\n        \"caa112R\": \"false\",\r\n        \"pac\": \"false\",\r\n        \"diisocyan\": \"false\",\r\n        \"cerclaHaz\": \"false\",\r\n        \"airToxicEmissionInventory\": \"false\",\r\n        \"solid\": \"false\",\r\n        \"nonEvaporative\": \"false\",\r\n        \"rcraVoc\": \"true\",\r\n        \"rcraSvoc\": \"false\",\r\n        \"caaVoc\": \"false\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.createChemicalGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\",\r\n    \"chemicals\": [\r\n      \"896197B8-E007-4169-8C03-D9D0E8411150\",\r\n      \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicallists.createChemicalList\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical List Name\",\r\n    \"description\": \"Chemical List Description\",\r\n    \"chemicalListHistoryItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"1\"\r\n          },\r\n          {\r\n            \"chemicalIdOrAlias\": \"5376DF01-45B5-4153-ACCF-8E208DB69979\",\r\n            \"limit\": \"1\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"3\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ChemicalService.svc",
+                "chemicals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"chemicalInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"casNum\": \"<string>\",\n    \"alias\": \"<string>\",\n    \"description\": \"<string>\",\n    \"historyItems\": [\n      {\n        \"beginDate\": \"<dateTime>\",\n        \"mw\": \"<double>\",\n        \"antA\": \"<double>\",\n        \"antB\": \"<double>\",\n        \"antC\": \"<double>\",\n        \"antAk\": \"<double>\",\n        \"antBk\": \"<double>\",\n        \"vp60\": \"<double>\",\n        \"density\": \"<double>\",\n        \"dipprA\": \"<double>\",\n        \"dipprB\": \"<double>\",\n        \"dipprC\": \"<double>\",\n        \"dipprD\": \"<double>\",\n        \"dipprE\": \"<double>\",\n        \"dipprF\": \"<double>\",\n        \"dipprG\": \"<double>\",\n        \"rcraHaz\": \"<boolean>\",\n        \"hap\": \"<boolean>\",\n        \"tri\": \"<boolean>\",\n        \"ehs\": \"<boolean>\",\n        \"pbt\": \"<boolean>\",\n        \"dioxin\": \"<boolean>\",\n        \"caa112R\": \"<boolean>\",\n        \"pac\": \"<boolean>\",\n        \"diisocyan\": \"<boolean>\",\n        \"cerclaHaz\": \"<boolean>\",\n        \"airToxicEmissionInventory\": \"<boolean>\",\n        \"solid\": \"<boolean>\",\n        \"nonEvaporative\": \"<boolean>\",\n        \"rcraVoc\": \"<boolean>\",\n        \"rcraSvoc\": \"<boolean>\",\n        \"caaVoc\": \"<boolean>\"\n      },\n      {\n        \"beginDate\": \"<dateTime>\",\n        \"mw\": \"<double>\",\n        \"antA\": \"<double>\",\n        \"antB\": \"<double>\",\n        \"antC\": \"<double>\",\n        \"antAk\": \"<double>\",\n        \"antBk\": \"<double>\",\n        \"vp60\": \"<double>\",\n        \"density\": \"<double>\",\n        \"dipprA\": \"<double>\",\n        \"dipprB\": \"<double>\",\n        \"dipprC\": \"<double>\",\n        \"dipprD\": \"<double>\",\n        \"dipprE\": \"<double>\",\n        \"dipprF\": \"<double>\",\n        \"dipprG\": \"<double>\",\n        \"rcraHaz\": \"<boolean>\",\n        \"hap\": \"<boolean>\",\n        \"tri\": \"<boolean>\",\n        \"ehs\": \"<boolean>\",\n        \"pbt\": \"<boolean>\",\n        \"dioxin\": \"<boolean>\",\n        \"caa112R\": \"<boolean>\",\n        \"pac\": \"<boolean>\",\n        \"diisocyan\": \"<boolean>\",\n        \"cerclaHaz\": \"<boolean>\",\n        \"airToxicEmissionInventory\": \"<boolean>\",\n        \"solid\": \"<boolean>\",\n        \"nonEvaporative\": \"<boolean>\",\n        \"rcraVoc\": \"<boolean>\",\n        \"rcraSvoc\": \"<boolean>\",\n        \"caaVoc\": \"<boolean>\"\n      }\n    ]\n  },\n  \"copyFrom\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ecf01591-7bbd-4736-b28a-8abd7586d67a",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ChemicalService.svc",
+                    "chemicals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"chemicalInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"casNum\": \"<string>\",\n    \"alias\": \"<string>\",\n    \"description\": \"<string>\",\n    \"historyItems\": [\n      {\n        \"beginDate\": \"<dateTime>\",\n        \"mw\": \"<double>\",\n        \"antA\": \"<double>\",\n        \"antB\": \"<double>\",\n        \"antC\": \"<double>\",\n        \"antAk\": \"<double>\",\n        \"antBk\": \"<double>\",\n        \"vp60\": \"<double>\",\n        \"density\": \"<double>\",\n        \"dipprA\": \"<double>\",\n        \"dipprB\": \"<double>\",\n        \"dipprC\": \"<double>\",\n        \"dipprD\": \"<double>\",\n        \"dipprE\": \"<double>\",\n        \"dipprF\": \"<double>\",\n        \"dipprG\": \"<double>\",\n        \"rcraHaz\": \"<boolean>\",\n        \"hap\": \"<boolean>\",\n        \"tri\": \"<boolean>\",\n        \"ehs\": \"<boolean>\",\n        \"pbt\": \"<boolean>\",\n        \"dioxin\": \"<boolean>\",\n        \"caa112R\": \"<boolean>\",\n        \"pac\": \"<boolean>\",\n        \"diisocyan\": \"<boolean>\",\n        \"cerclaHaz\": \"<boolean>\",\n        \"airToxicEmissionInventory\": \"<boolean>\",\n        \"solid\": \"<boolean>\",\n        \"nonEvaporative\": \"<boolean>\",\n        \"rcraVoc\": \"<boolean>\",\n        \"rcraSvoc\": \"<boolean>\",\n        \"caaVoc\": \"<boolean>\"\n      },\n      {\n        \"beginDate\": \"<dateTime>\",\n        \"mw\": \"<double>\",\n        \"antA\": \"<double>\",\n        \"antB\": \"<double>\",\n        \"antC\": \"<double>\",\n        \"antAk\": \"<double>\",\n        \"antBk\": \"<double>\",\n        \"vp60\": \"<double>\",\n        \"density\": \"<double>\",\n        \"dipprA\": \"<double>\",\n        \"dipprB\": \"<double>\",\n        \"dipprC\": \"<double>\",\n        \"dipprD\": \"<double>\",\n        \"dipprE\": \"<double>\",\n        \"dipprF\": \"<double>\",\n        \"dipprG\": \"<double>\",\n        \"rcraHaz\": \"<boolean>\",\n        \"hap\": \"<boolean>\",\n        \"tri\": \"<boolean>\",\n        \"ehs\": \"<boolean>\",\n        \"pbt\": \"<boolean>\",\n        \"dioxin\": \"<boolean>\",\n        \"caa112R\": \"<boolean>\",\n        \"pac\": \"<boolean>\",\n        \"diisocyan\": \"<boolean>\",\n        \"cerclaHaz\": \"<boolean>\",\n        \"airToxicEmissionInventory\": \"<boolean>\",\n        \"solid\": \"<boolean>\",\n        \"nonEvaporative\": \"<boolean>\",\n        \"rcraVoc\": \"<boolean>\",\n        \"rcraSvoc\": \"<boolean>\",\n        \"caaVoc\": \"<boolean>\"\n      }\n    ]\n  },\n  \"copyFrom\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d5ccc17-2bf2-46d3-873e-99c6d199dee6",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Service.Get Chemical",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Service.Get Chemical",
+            "description": {
+              "content": "\n\n\nenvianceSdk.chemicals.getChemical\r\n```\r\n[\r\n  \"Chemical alias\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.getChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicallists.getChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ChemicalService.svc",
+                "chemicals",
+                ":chemicalIdOrAlias"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chemicalIdOrAlias",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9da22249-e63d-4b3a-ac34-03e67f8fe7fd",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ChemicalService.svc",
+                    "chemicals",
+                    ":chemicalIdOrAlias"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chemicalIdOrAlias",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\",\n  \"casNum\": \"<string>\",\n  \"alias\": \"<string>\",\n  \"description\": \"<string>\",\n  \"historyItems\": [\n    {\n      \"beginDate\": \"<dateTime>\",\n      \"mw\": \"<double>\",\n      \"antA\": \"<double>\",\n      \"antB\": \"<double>\",\n      \"antC\": \"<double>\",\n      \"antAk\": \"<double>\",\n      \"antBk\": \"<double>\",\n      \"vp60\": \"<double>\",\n      \"density\": \"<double>\",\n      \"dipprA\": \"<double>\",\n      \"dipprB\": \"<double>\",\n      \"dipprC\": \"<double>\",\n      \"dipprD\": \"<double>\",\n      \"dipprE\": \"<double>\",\n      \"dipprF\": \"<double>\",\n      \"dipprG\": \"<double>\",\n      \"rcraHaz\": \"<boolean>\",\n      \"hap\": \"<boolean>\",\n      \"tri\": \"<boolean>\",\n      \"ehs\": \"<boolean>\",\n      \"pbt\": \"<boolean>\",\n      \"dioxin\": \"<boolean>\",\n      \"caa112R\": \"<boolean>\",\n      \"pac\": \"<boolean>\",\n      \"diisocyan\": \"<boolean>\",\n      \"cerclaHaz\": \"<boolean>\",\n      \"airToxicEmissionInventory\": \"<boolean>\",\n      \"solid\": \"<boolean>\",\n      \"nonEvaporative\": \"<boolean>\",\n      \"rcraVoc\": \"<boolean>\",\n      \"rcraSvoc\": \"<boolean>\",\n      \"caaVoc\": \"<boolean>\"\n    },\n    {\n      \"beginDate\": \"<dateTime>\",\n      \"mw\": \"<double>\",\n      \"antA\": \"<double>\",\n      \"antB\": \"<double>\",\n      \"antC\": \"<double>\",\n      \"antAk\": \"<double>\",\n      \"antBk\": \"<double>\",\n      \"vp60\": \"<double>\",\n      \"density\": \"<double>\",\n      \"dipprA\": \"<double>\",\n      \"dipprB\": \"<double>\",\n      \"dipprC\": \"<double>\",\n      \"dipprD\": \"<double>\",\n      \"dipprE\": \"<double>\",\n      \"dipprF\": \"<double>\",\n      \"dipprG\": \"<double>\",\n      \"rcraHaz\": \"<boolean>\",\n      \"hap\": \"<boolean>\",\n      \"tri\": \"<boolean>\",\n      \"ehs\": \"<boolean>\",\n      \"pbt\": \"<boolean>\",\n      \"dioxin\": \"<boolean>\",\n      \"caa112R\": \"<boolean>\",\n      \"pac\": \"<boolean>\",\n      \"diisocyan\": \"<boolean>\",\n      \"cerclaHaz\": \"<boolean>\",\n      \"airToxicEmissionInventory\": \"<boolean>\",\n      \"solid\": \"<boolean>\",\n      \"nonEvaporative\": \"<boolean>\",\n      \"rcraVoc\": \"<boolean>\",\n      \"rcraSvoc\": \"<boolean>\",\n      \"caaVoc\": \"<boolean>\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "73f9e7dd-3920-40b9-bc37-44ff1aa5a1a3",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Service.Update Chemical",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Service.Update Chemical",
+            "description": {
+              "content": "\n\n\nenvianceSdk.chemicals.updateChemical\r\n```\r\n[\r\n  \"Chemical Alias\",\r\n  {\r\n    \"name\": \"Chemical Name\",\r\n    \"casnum\": \"0\",\r\n    \"alias\": \"chemicalAlias\",\r\n    \"description\": \"chemical description\",\r\n    \"historyItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"Mw\": \"1\",\r\n        \"antA\": \"1\",\r\n        \"antB\": \"1\",\r\n        \"antC\": \"1\",\r\n        \"antAk\": \"1\",\r\n        \"antBk\": \"1\",\r\n        \"vp60\": \"1\",\r\n        \"density\": \"1\",\r\n        \"dipprA\": \"1\",\r\n        \"dipprB\": \"1\",\r\n        \"dipprC\": \"1\",\r\n        \"dipprD\": \"1\",\r\n        \"dipprE\": \"1\",\r\n        \"dipprF\": \"1\",\r\n        \"dipprG\": \"1\",\r\n        \"rcraHaz\": \"false\",\r\n        \"hap\": \"false\",\r\n        \"tri\": \"false\",\r\n        \"ehs\": \"false\",\r\n        \"pbt\": \"false\",\r\n        \"dioxin\": \"false\",\r\n        \"caa112R\": \"false\",\r\n        \"pac\": \"false\",\r\n        \"diisocyan\": \"false\",\r\n        \"cerclaHaz\": \"false\",\r\n        \"airToxicEmissionInventory\": \"false\",\r\n        \"solid\": \"false\",\r\n        \"nonEvaporative\": \"false\",\r\n        \"rcraVoc\": \"false\",\r\n        \"rcraSvoc\": \"false\",\r\n        \"caaVoc\": \"false\"\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"Mw\": \"2\",\r\n        \"antA\": \"3\",\r\n        \"antB\": \"4\",\r\n        \"antC\": \"5\",\r\n        \"antAk\": \"6\",\r\n        \"antBk\": \"7\",\r\n        \"vp60\": \"8\",\r\n        \"density\": \"9\",\r\n        \"dipprA\": \"10\",\r\n        \"dipprB\": \"11\",\r\n        \"dipprC\": \"12\",\r\n        \"dipprD\": \"13\",\r\n        \"dipprE\": \"14\",\r\n        \"dipprF\": \"15\",\r\n        \"dipprG\": \"16\",\r\n        \"rcraHaz\": \"false\",\r\n        \"hap\": \"true\",\r\n        \"tri\": \"false\",\r\n        \"ehs\": \"true\",\r\n        \"pbt\": \"false\",\r\n        \"dioxin\": \"false\",\r\n        \"caa112R\": \"false\",\r\n        \"pac\": \"false\",\r\n        \"diisocyan\": \"false\",\r\n        \"cerclaHaz\": \"false\",\r\n        \"airToxicEmissionInventory\": \"false\",\r\n        \"solid\": \"false\",\r\n        \"nonEvaporative\": \"false\",\r\n        \"rcraVoc\": \"true\",\r\n        \"rcraSvoc\": \"false\",\r\n        \"caaVoc\": \"false\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.updateChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  {\r\n    \"name\": \"Chemical Group Name\",\r\n    \"description\": \"Chemical Group Description\",\r\n    \"chemicals\": [\r\n      \"896197B8-E007-4169-8C03-D9D0E8411150\",\r\n      \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicallists.updateChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  {\r\n    \"name\": \"Chemical List Name\",\r\n    \"description\": \"Chemical List Description\",\r\n    \"chemicalListHistoryItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"1\"\r\n          },\r\n          {\r\n            \"chemicalIdOrAlias\": \"5376DF01-45B5-4153-ACCF-8E208DB69979\",\r\n            \"limit\": \"1\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"3\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ChemicalService.svc",
+                "chemicals",
+                ":chemicalIdOrAlias"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chemicalIdOrAlias",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"chemicalInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"casNum\": \"<string>\",\n    \"alias\": \"<string>\",\n    \"description\": \"<string>\",\n    \"historyItems\": [\n      {\n        \"beginDate\": \"<dateTime>\",\n        \"mw\": \"<double>\",\n        \"antA\": \"<double>\",\n        \"antB\": \"<double>\",\n        \"antC\": \"<double>\",\n        \"antAk\": \"<double>\",\n        \"antBk\": \"<double>\",\n        \"vp60\": \"<double>\",\n        \"density\": \"<double>\",\n        \"dipprA\": \"<double>\",\n        \"dipprB\": \"<double>\",\n        \"dipprC\": \"<double>\",\n        \"dipprD\": \"<double>\",\n        \"dipprE\": \"<double>\",\n        \"dipprF\": \"<double>\",\n        \"dipprG\": \"<double>\",\n        \"rcraHaz\": \"<boolean>\",\n        \"hap\": \"<boolean>\",\n        \"tri\": \"<boolean>\",\n        \"ehs\": \"<boolean>\",\n        \"pbt\": \"<boolean>\",\n        \"dioxin\": \"<boolean>\",\n        \"caa112R\": \"<boolean>\",\n        \"pac\": \"<boolean>\",\n        \"diisocyan\": \"<boolean>\",\n        \"cerclaHaz\": \"<boolean>\",\n        \"airToxicEmissionInventory\": \"<boolean>\",\n        \"solid\": \"<boolean>\",\n        \"nonEvaporative\": \"<boolean>\",\n        \"rcraVoc\": \"<boolean>\",\n        \"rcraSvoc\": \"<boolean>\",\n        \"caaVoc\": \"<boolean>\"\n      },\n      {\n        \"beginDate\": \"<dateTime>\",\n        \"mw\": \"<double>\",\n        \"antA\": \"<double>\",\n        \"antB\": \"<double>\",\n        \"antC\": \"<double>\",\n        \"antAk\": \"<double>\",\n        \"antBk\": \"<double>\",\n        \"vp60\": \"<double>\",\n        \"density\": \"<double>\",\n        \"dipprA\": \"<double>\",\n        \"dipprB\": \"<double>\",\n        \"dipprC\": \"<double>\",\n        \"dipprD\": \"<double>\",\n        \"dipprE\": \"<double>\",\n        \"dipprF\": \"<double>\",\n        \"dipprG\": \"<double>\",\n        \"rcraHaz\": \"<boolean>\",\n        \"hap\": \"<boolean>\",\n        \"tri\": \"<boolean>\",\n        \"ehs\": \"<boolean>\",\n        \"pbt\": \"<boolean>\",\n        \"dioxin\": \"<boolean>\",\n        \"caa112R\": \"<boolean>\",\n        \"pac\": \"<boolean>\",\n        \"diisocyan\": \"<boolean>\",\n        \"cerclaHaz\": \"<boolean>\",\n        \"airToxicEmissionInventory\": \"<boolean>\",\n        \"solid\": \"<boolean>\",\n        \"nonEvaporative\": \"<boolean>\",\n        \"rcraVoc\": \"<boolean>\",\n        \"rcraSvoc\": \"<boolean>\",\n        \"caaVoc\": \"<boolean>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba9e43a1-7c9a-4ce4-858a-99caa51bba20",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ChemicalService.svc",
+                    "chemicals",
+                    ":chemicalIdOrAlias"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chemicalIdOrAlias",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"chemicalInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"casNum\": \"<string>\",\n    \"alias\": \"<string>\",\n    \"description\": \"<string>\",\n    \"historyItems\": [\n      {\n        \"beginDate\": \"<dateTime>\",\n        \"mw\": \"<double>\",\n        \"antA\": \"<double>\",\n        \"antB\": \"<double>\",\n        \"antC\": \"<double>\",\n        \"antAk\": \"<double>\",\n        \"antBk\": \"<double>\",\n        \"vp60\": \"<double>\",\n        \"density\": \"<double>\",\n        \"dipprA\": \"<double>\",\n        \"dipprB\": \"<double>\",\n        \"dipprC\": \"<double>\",\n        \"dipprD\": \"<double>\",\n        \"dipprE\": \"<double>\",\n        \"dipprF\": \"<double>\",\n        \"dipprG\": \"<double>\",\n        \"rcraHaz\": \"<boolean>\",\n        \"hap\": \"<boolean>\",\n        \"tri\": \"<boolean>\",\n        \"ehs\": \"<boolean>\",\n        \"pbt\": \"<boolean>\",\n        \"dioxin\": \"<boolean>\",\n        \"caa112R\": \"<boolean>\",\n        \"pac\": \"<boolean>\",\n        \"diisocyan\": \"<boolean>\",\n        \"cerclaHaz\": \"<boolean>\",\n        \"airToxicEmissionInventory\": \"<boolean>\",\n        \"solid\": \"<boolean>\",\n        \"nonEvaporative\": \"<boolean>\",\n        \"rcraVoc\": \"<boolean>\",\n        \"rcraSvoc\": \"<boolean>\",\n        \"caaVoc\": \"<boolean>\"\n      },\n      {\n        \"beginDate\": \"<dateTime>\",\n        \"mw\": \"<double>\",\n        \"antA\": \"<double>\",\n        \"antB\": \"<double>\",\n        \"antC\": \"<double>\",\n        \"antAk\": \"<double>\",\n        \"antBk\": \"<double>\",\n        \"vp60\": \"<double>\",\n        \"density\": \"<double>\",\n        \"dipprA\": \"<double>\",\n        \"dipprB\": \"<double>\",\n        \"dipprC\": \"<double>\",\n        \"dipprD\": \"<double>\",\n        \"dipprE\": \"<double>\",\n        \"dipprF\": \"<double>\",\n        \"dipprG\": \"<double>\",\n        \"rcraHaz\": \"<boolean>\",\n        \"hap\": \"<boolean>\",\n        \"tri\": \"<boolean>\",\n        \"ehs\": \"<boolean>\",\n        \"pbt\": \"<boolean>\",\n        \"dioxin\": \"<boolean>\",\n        \"caa112R\": \"<boolean>\",\n        \"pac\": \"<boolean>\",\n        \"diisocyan\": \"<boolean>\",\n        \"cerclaHaz\": \"<boolean>\",\n        \"airToxicEmissionInventory\": \"<boolean>\",\n        \"solid\": \"<boolean>\",\n        \"nonEvaporative\": \"<boolean>\",\n        \"rcraVoc\": \"<boolean>\",\n        \"rcraSvoc\": \"<boolean>\",\n        \"caaVoc\": \"<boolean>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f9501d2-14c0-408b-864b-3ddd3d3a05f3",
+          "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Service.Delete Chemical",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Material Activity.Chemicals.Impl.Chemical Service.Delete Chemical",
+            "description": {
+              "content": "\n\n\nenvianceSdk.chemicals.deleteChemical\r\n```\r\n[\r\n  \"Chemical Alias\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicalgroups.deleteChemicalGroup\r\n```\r\n[\r\n  \"Chemical Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.chemicallists.deleteChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ChemicalService.svc",
+                "chemicals",
+                ":chemicalIdOrAlias"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "chemicalIdOrAlias",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8fd1b49c-a185-48ee-83e8-e4d4a2107d65",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ChemicalService.svc",
+                    "chemicals",
+                    ":chemicalIdOrAlias"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "chemicalIdOrAlias",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "df5261f3-ceea-4b80-b139-659d375d2ff7",
+    "name": "Rest Activity Chemical API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

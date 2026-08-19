@@ -1078,3 +1078,9 @@ tools:
   description: For a given Workflow Type and user and optional set of compliance objects, this method
     returns the permissions for the specified user(s), taking into account all Roles with which t
   source_operation: openapi/enviance-restapi-openapi-original.json#Enviance.RestServices.Ver2.Workflows.Impl.WorkflowService.GuessPermissionsByUser
+deployment:
+  mode: none
+  verified: derived
+  tools: 252
+  checked: '2026-08-12'
+  source: catalog MCP census

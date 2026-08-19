@@ -1,0 +1,748 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity ScimIdentity API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ScimIdentity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.CreateGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Groups",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nCreate a new group in Enviance system. \r\n\r\n** Example:**\r\nPOST /ScimIdentityService.svc/scim/v1/Groups HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n** SDK API:**  envianceSdk.scim.createGroup(group, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.scim.createGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"displayName\": \"Enviance 2111 SCIM Demo Group\",\r\n    \"externalid\": \"apple\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.ListGroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Groups/",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "attributes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.scim.getGroup\r\n```\r\n[\r\n    \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Groups/:id",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nGets information about group.\r\n\r\n** Example:** \r\nGET /ScimIdentityService.svc/scim/v1/Groups/809d56ad-77ef-47a6-9f3c-f8853b118744 HTTP/1.1\r\n\r\n** SDK API:**  envianceSdk.scim.getGroup(id, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.scim.getGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Groups/:id",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.scim.fullUpdateGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"displayName\": \"Scim Grptrtrtr\",\r\n    \"members\": [\r\n      {\r\n        \"value\": \"scimupdatetest998990444\"\r\n      }\r\n    ],\r\n    \"externalid\": \"sweet apple\"\r\n  },\r\n  \"8fea1bf7-8afd-44ef-a9cd-c047af7653c2\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.partialUpdateGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:group\"\r"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdatePartialGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Groups/:id",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.scim.partialUpdateGroup\r\n```\r\n[\r\n    {\r\n        \"externalId\": \"banana\",\r\n        \"meta\": {\r\n            \"attributes\": [\r\n                \"urn:scim:schemas:enviance:group:rights\",\r\n                \"members\"\r\n            ]\r\n        },\r\n        \"schemas\": [\r\n            \"urn:scim:schemas:core:1.0\",\r\n            \"urn:scim:schemas:enviance:group\"\r\n        ],\r\n        \"urn:scim:schemas:enviance:group\": {\r\n            \"rights\": [\r\n                \"Manage Users\",\r\n                \"Manage "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.DeleteGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Groups/:id",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.scim.deleteGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetSchemas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/schemas/",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetSchema",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/schemas/:type",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.CreateUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Users",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nCreate a new user in Enviance system.\r\n\r\n** SDK API:**  envianceSdk.scim.createUser(user, onsuccess, onerror)\r\n\r\n** Example:**\r\nPOST /ScimIdentityService.svc/scim/v1/Users HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\nnull\n\n\nenvianceSdk.scim.createUser\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:user\"\r\n    ],\r\n    \"userName\": \"scimupdatetest998990444\",\r\n    \"password\": \"1111\",\r\n    \"name\": {\r\n      \"givenName\": \"Updated\",\r\n   "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.ListUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Users/",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "attributes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startIndex",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "count",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.scim.listUsers\r\n```\r\n[\r\n    {\r\n        \"attributes\": [\r\n            \"name.givenName\",\r\n            \"name.familyName\"\r\n        ],\r\n        \"count\": \"10\",\r\n        \"filter\": \"name.familyname co \",\r\n        \"scim\": \"\",\r\n        \"sortBy\": \"name.givenName\",\r\n        \"sortOrder\": \"ascending|descending\",\r\n        \"startIndex\": \"1\"\r\n    },\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.GetUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Users/:id",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nGets information about user.\r\n\r\n** Example:** \r\nGET /ScimIdentityService.svc/scim/v1/Users/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n** SDK API:**  envianceSdk.scim.getUser(id, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.scim.getUser\r\n```\r\n[\r\n  \"40E351F5-E4E9-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Users/:id",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.scim.fullUpdateUser\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:user\"\r\n    ],\r\n    \"userName\": \"scimupdatetest998990444\",\r\n    \"name\": {\r\n      \"givenName\": \"Updated\",\r\n      \"familyName\": \"Scim\"\r\n    },\r\n    \"emails\": [\r\n      {\r\n        \"type\": \"work\",\r\n        \"primary\": \"true\",\r\n        \"value\": \"scimuser1@enviance.com\"\r\n      }\r\n    ],\r\n    \"timezone\": \"America/New_York\",\r\n    \"preferredLanguage\": \"en_US\",\r\n    \"active\""
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdatePartialUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Users/:id",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.scim.partialUpdateUser\r\n```\r\n[\r\n    {\r\n        \"externalId\": \"apple\",\r\n        \"schemas\": [\r\n            \"urn:scim:schemas:core:1.0\"\r\n        ],\r\n        \"timezone\": \"America/Los_Angeles\"\r\n    },\r\n    \"e67d0934-0246-4b13-b431-7680778c9873\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.DeleteUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Users/:id",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.scim.deleteUser\r\n```\r\n[\r\n  \"40E351F5-E4E9-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Scim.Impl.ScimIdentityService.UpdateHomeUserWithPasswordBulk",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/ScimIdentityService.svc/scim/v1/Users/bulk",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.scim.UpdateHomeUserWithPasswordBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"id\": \"C591F8A4-D783-4FF8-928F-3DA512DBB1E6\",\r\n      \"password\": \"1111\"\r\n    },\r\n    {\r\n      \"id\": \"DD4358D4-1665-4848-BA16-1EA7E0CDEA0D\",\r\n      \"password\": \"1111\"\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

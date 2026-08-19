@@ -1,0 +1,1538 @@
+{
+  "item": [
+    {
+      "id": "3f55f016-ff6c-4287-889f-90d8fa137960",
+      "name": "Task",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a1255719-af76-4c6b-b69d-1ef398c765a8",
+          "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Create Task",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Create Task",
+            "description": {
+              "content": "\n\n\nenvianceSdk.tasks.createTask\r\n```\r\n[\r\n  {\r\n    \"name\": \"Task1\",\r\n    \"description\": \"Perform a spot check every month on the steam valves.\",\r\n    \"dueDate\": \"2012-12-08T09:00:00\",\r\n    \"timeZone\": {\r\n      \"name\": \"Pacific Time (US \\u0026 Canada) (UTC-08:00) (With DST)\"\r\n    },\r\n    \"assignor\": \"dnk\",\r\n    \"assignees\": [\r\n      {\r\n        \"userIdOrName\": \"dnk\"\r\n      },\r\n      {\r\n        \"groupIdOrName\": \"Administrators\"\r\n      }\r\n    ],\r\n    \"calendars\": [\r\n      \"System\",\r\n      \"My\"\r\n    ],\r\n    \"objects\": [\r\n      \"/1\"\r\n    ],\r\n    \"documents\": [\r\n      \"/asdf/qktop.ini\"\r\n    ],\r\n    \"schedules\": [\r\n      {\r\n        \"startDate\": \"2014-02-22T00:00:00\",\r\n        \"recurrenceType\": \"Monthly\",\r\n        \"startTime\": \"00:00:00\",\r\n        \"recurrenceInterval\": 1,\r\n        \"dayOfMonth\": 31\r\n      }\r\n    ],\r\n    \"notifications\": [\r\n      {\r\n        \"conditions\": {\r\n          \"immediately\": true,\r\n          \"whenDismissed\": true,\r\n          \"byDueDate\": {\r\n            \"conditionType\": \"IntervalBefore\",\r\n            \"intervalValue\": 5,\r\n            \"intervalType\": \"Hour\"\r\n          },\r\n          \"byCompletionStatus\": {\r\n            \"comparisonLogic\": \"\\u003E=\",\r\n            \"completionPercent\": 30\r\n          }\r\n        },\r\n        \"recipients\": {\r\n          \"toAssignees\": true,\r\n          \"toAssignor\": true,\r\n          \"users\": [\r\n            \"067A42E1-8FD4-4ADA-A7F5-0007473469AA\"\r\n          ],\r\n          \"groups\": [\r\n            \"503DFFD2-FB1F-412E-B9C5-034796E4653D\"\r\n          ]\r\n        },\r\n        \"deliveryMethod\": \"InboxAndEmail\",\r\n        \"comments\": \"Notification comment 1\"\r\n      }\r\n    ],\r\n    \"workflowtrigger\": {\r\n      \"isautoclosetask\": false,\r\n      \"taskcompletionfields\": [\r\n        \"CostToComplete\",\r\n        \"PercentComplete\",\r\n        \"Comments\",\r\n        \"ComplyStatus\",\r\n        \"Dismissed\",\r\n        \"CompletionDate\"\r\n      ],\r\n      \"workflows\": [\r\n        {\r\n          \"workflowtypeidorname\": \"b4290540-14e0-4351-aaef-867014c7ed6e\",\r\n          \"workflowname\": \"Igor WF Name\",\r\n          \"calendars\": [\r\n            \"My\",\r\n            \"System\"\r\n          ],\r\n          \"duedateflags\": [\r\n            \"Workflow\"\r\n          ],\r\n          \"duedateamount\": {\r\n            \"value\": 2,\r\n            \"hours\": \"Hour\",\r\n            \"period\": \"Before\"\r\n          },\r\n          \"timetocreateoptions\": [\r\n            {\r\n              \"category\": \"ByDueDate\",\r\n              \"value\": {\r\n                \"past\": false,\r\n                \"value\": 1,\r\n                \"hours\": \"Week\",\r\n                \"period\": \"After\"\r\n              }\r\n            },\r\n            {\r\n              \"category\": \"ByCompleteStatus\",\r\n              \"value\": {\r\n                \"operation\": \"OR\",\r\n                \"percent\": 10,\r\n                \"compare\": \"=\"\r\n              }\r\n            },\r\n            {\r\n              \"category\": \"OnDismissActivate\"\r\n            }\r\n          ],\r\n          \"assignee\": [\r\n            {\r\n              \"userIdOrName\": \"8f17d324-4d92-450e-aaa1-cbbfbc1826f3\"\r\n            },\r\n            {\r\n              \"groupIdOrName\": \"fcca10ce-09be-4a6f-a0c7-defb0f124a29\"\r\n            }\r\n          ]\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "TaskService.svc",
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"taskInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"createdOn\": \"<dateTime>\",\n    \"dueDate\": \"<dateTime>\",\n    \"timeZone\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"stdOffset\": \"<integer>\",\n      \"dstOffset\": \"<integer>\",\n      \"currentOffset\": \"<integer>\"\n    },\n    \"templateIdOrName\": \"<string>\",\n    \"assignor\": \"<string>\",\n    \"assignees\": [\n      {\n        \"userIdOrName\": \"<string>\",\n        \"groupIdOrName\": \"<string>\"\n      },\n      {\n        \"userIdOrName\": \"<string>\",\n        \"groupIdOrName\": \"<string>\"\n      }\n    ],\n    \"calendars\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"objects\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"schedules\": [\n      {\n        \"recurrenceType\": \"<enum>\",\n        \"startDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"startTime\": \"<string>\",\n        \"endTime\": \"<string>\",\n        \"recurrenceInterval\": \"<object>\",\n        \"dayOfMonth\": \"<object>\",\n        \"monthOfYear\": \"<integer>\",\n        \"TalLogicVersion\": \"<int16>\"\n      },\n      {\n        \"recurrenceType\": \"<enum>\",\n        \"startDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"startTime\": \"<string>\",\n        \"endTime\": \"<string>\",\n        \"recurrenceInterval\": \"<object>\",\n        \"dayOfMonth\": \"<object>\",\n        \"monthOfYear\": \"<integer>\",\n        \"TalLogicVersion\": \"<int16>\"\n      }\n    ],\n    \"notifications\": [\n      {\n        \"conditions\": {\n          \"immediately\": \"<boolean>\",\n          \"whenDismissed\": \"<boolean>\",\n          \"byDueDate\": {\n            \"conditionType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"byCompletionStatus\": {\n            \"completionPercent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comparisonLogic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"onlyWhenPastDue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"templateIdOrName\": \"<string>\",\n        \"recipients\": {\n          \"toAssignees\": \"<boolean>\",\n          \"toAssignor\": \"<boolean>\",\n          \"users\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"groups\": [\n            \"<guid>\",\n            \"<guid>\"\n          ]\n        },\n        \"deliveryMethod\": \"<enum>\",\n        \"comments\": \"<string>\"\n      },\n      {\n        \"conditions\": {\n          \"immediately\": \"<boolean>\",\n          \"whenDismissed\": \"<boolean>\",\n          \"byDueDate\": {\n            \"conditionType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"byCompletionStatus\": {\n            \"completionPercent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comparisonLogic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"onlyWhenPastDue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"templateIdOrName\": \"<string>\",\n        \"recipients\": {\n          \"toAssignees\": \"<boolean>\",\n          \"toAssignor\": \"<boolean>\",\n          \"users\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"groups\": [\n            \"<guid>\",\n            \"<guid>\"\n          ]\n        },\n        \"deliveryMethod\": \"<enum>\",\n        \"comments\": \"<string>\"\n      }\n    ],\n    \"workflowtrigger\": {\n      \"isautoclosetask\": \"<boolean>\",\n      \"workflows\": [\n        {\n          \"workflowtypeidorname\": \"<string>\",\n          \"duedateflags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"timetocreateoptions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"workflowname\": \"<string>\",\n          \"isusetaskname\": \"<boolean>\",\n          \"calendars\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"duedateamount\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hours\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"period\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"assignee\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        {\n          \"workflowtypeidorname\": \"<string>\",\n          \"duedateflags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"timetocreateoptions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"workflowname\": \"<string>\",\n          \"isusetaskname\": \"<boolean>\",\n          \"calendars\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"duedateamount\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hours\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"period\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"assignee\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      ]\n    },\n    \"suppressNotificationsBefore\": \"<dateTime>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4201bcb4-4c10-4c3c-bcad-4df189673c71",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "TaskService.svc",
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"taskInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"createdOn\": \"<dateTime>\",\n    \"dueDate\": \"<dateTime>\",\n    \"timeZone\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"stdOffset\": \"<integer>\",\n      \"dstOffset\": \"<integer>\",\n      \"currentOffset\": \"<integer>\"\n    },\n    \"templateIdOrName\": \"<string>\",\n    \"assignor\": \"<string>\",\n    \"assignees\": [\n      {\n        \"userIdOrName\": \"<string>\",\n        \"groupIdOrName\": \"<string>\"\n      },\n      {\n        \"userIdOrName\": \"<string>\",\n        \"groupIdOrName\": \"<string>\"\n      }\n    ],\n    \"calendars\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"objects\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"schedules\": [\n      {\n        \"recurrenceType\": \"<enum>\",\n        \"startDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"startTime\": \"<string>\",\n        \"endTime\": \"<string>\",\n        \"recurrenceInterval\": \"<object>\",\n        \"dayOfMonth\": \"<object>\",\n        \"monthOfYear\": \"<integer>\",\n        \"TalLogicVersion\": \"<int16>\"\n      },\n      {\n        \"recurrenceType\": \"<enum>\",\n        \"startDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"startTime\": \"<string>\",\n        \"endTime\": \"<string>\",\n        \"recurrenceInterval\": \"<object>\",\n        \"dayOfMonth\": \"<object>\",\n        \"monthOfYear\": \"<integer>\",\n        \"TalLogicVersion\": \"<int16>\"\n      }\n    ],\n    \"notifications\": [\n      {\n        \"conditions\": {\n          \"immediately\": \"<boolean>\",\n          \"whenDismissed\": \"<boolean>\",\n          \"byDueDate\": {\n            \"conditionType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"byCompletionStatus\": {\n            \"completionPercent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comparisonLogic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"onlyWhenPastDue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"templateIdOrName\": \"<string>\",\n        \"recipients\": {\n          \"toAssignees\": \"<boolean>\",\n          \"toAssignor\": \"<boolean>\",\n          \"users\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"groups\": [\n            \"<guid>\",\n            \"<guid>\"\n          ]\n        },\n        \"deliveryMethod\": \"<enum>\",\n        \"comments\": \"<string>\"\n      },\n      {\n        \"conditions\": {\n          \"immediately\": \"<boolean>\",\n          \"whenDismissed\": \"<boolean>\",\n          \"byDueDate\": {\n            \"conditionType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"byCompletionStatus\": {\n            \"completionPercent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comparisonLogic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"onlyWhenPastDue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"templateIdOrName\": \"<string>\",\n        \"recipients\": {\n          \"toAssignees\": \"<boolean>\",\n          \"toAssignor\": \"<boolean>\",\n          \"users\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"groups\": [\n            \"<guid>\",\n            \"<guid>\"\n          ]\n        },\n        \"deliveryMethod\": \"<enum>\",\n        \"comments\": \"<string>\"\n      }\n    ],\n    \"workflowtrigger\": {\n      \"isautoclosetask\": \"<boolean>\",\n      \"workflows\": [\n        {\n          \"workflowtypeidorname\": \"<string>\",\n          \"duedateflags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"timetocreateoptions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"workflowname\": \"<string>\",\n          \"isusetaskname\": \"<boolean>\",\n          \"calendars\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"duedateamount\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hours\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"period\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"assignee\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        {\n          \"workflowtypeidorname\": \"<string>\",\n          \"duedateflags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"timetocreateoptions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"workflowname\": \"<string>\",\n          \"isusetaskname\": \"<boolean>\",\n          \"calendars\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"duedateamount\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hours\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"period\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"assignee\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      ]\n    },\n    \"suppressNotificationsBefore\": \"<dateTime>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "073ca01d-a15d-432c-adb3-7bf552bd55ef",
+          "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Get Task",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Get Task",
+            "description": {
+              "content": "\n\n\nenvianceSdk.tasks.getTask\r\n```\r\n[\r\n  \"c1960122-16dd-4d43-91e4-ea0d9393ab78\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.tasks.getTaskOccurrence\r\n```\r\n[\r\n  \"ad7b8413-812a-4e59-95f4-03205ca685f0\",\r\n  \"2013-12-08T09:00:00\",\r\n  \"/Bug 1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "TaskService.svc",
+                "tasks",
+                ":taskId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f87d00f-0fa8-41b1-ba3b-b4c359c6d33d",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "TaskService.svc",
+                    "tasks",
+                    ":taskId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"createdBy\": \"<string>\",\n  \"createdOn\": \"<dateTime>\",\n  \"dueDate\": \"<dateTime>\",\n  \"timeZone\": {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"stdOffset\": \"<integer>\",\n    \"dstOffset\": \"<integer>\",\n    \"currentOffset\": \"<integer>\"\n  },\n  \"templateIdOrName\": \"<string>\",\n  \"assignor\": \"<string>\",\n  \"assignees\": [\n    {\n      \"userIdOrName\": \"<string>\",\n      \"groupIdOrName\": \"<string>\"\n    },\n    {\n      \"userIdOrName\": \"<string>\",\n      \"groupIdOrName\": \"<string>\"\n    }\n  ],\n  \"calendars\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"objects\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"documents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"schedules\": [\n    {\n      \"recurrenceType\": \"<enum>\",\n      \"startDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"startTime\": \"<string>\",\n      \"endTime\": \"<string>\",\n      \"recurrenceInterval\": \"<object>\",\n      \"dayOfMonth\": \"<object>\",\n      \"monthOfYear\": \"<integer>\",\n      \"TalLogicVersion\": \"<int16>\"\n    },\n    {\n      \"recurrenceType\": \"<enum>\",\n      \"startDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"startTime\": \"<string>\",\n      \"endTime\": \"<string>\",\n      \"recurrenceInterval\": \"<object>\",\n      \"dayOfMonth\": \"<object>\",\n      \"monthOfYear\": \"<integer>\",\n      \"TalLogicVersion\": \"<int16>\"\n    }\n  ],\n  \"notifications\": [\n    {\n      \"conditions\": {\n        \"immediately\": \"<boolean>\",\n        \"whenDismissed\": \"<boolean>\",\n        \"byDueDate\": {\n          \"conditionType\": \"IntervalAfter\",\n          \"intervalType\": \"QuarterHour\",\n          \"intervalValue\": 3095\n        },\n        \"byCompletionStatus\": {\n          \"completionPercent\": 539,\n          \"comparisonLogic\": \"string\",\n          \"onlyWhenPastDue\": true\n        }\n      },\n      \"templateIdOrName\": \"<string>\",\n      \"recipients\": {\n        \"toAssignees\": \"<boolean>\",\n        \"toAssignor\": \"<boolean>\",\n        \"users\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"groups\": [\n          \"<guid>\",\n          \"<guid>\"\n        ]\n      },\n      \"deliveryMethod\": \"<enum>\",\n      \"comments\": \"<string>\"\n    },\n    {\n      \"conditions\": {\n        \"immediately\": \"<boolean>\",\n        \"whenDismissed\": \"<boolean>\",\n        \"byDueDate\": {\n          \"conditionType\": \"IntervalAfter\",\n          \"intervalType\": \"Week\",\n          \"intervalValue\": 5589\n        },\n        \"byCompletionStatus\": {\n          \"completionPercent\": 7489,\n          \"comparisonLogic\": \"string\",\n          \"onlyWhenPastDue\": false\n        }\n      },\n      \"templateIdOrName\": \"<string>\",\n      \"recipients\": {\n        \"toAssignees\": \"<boolean>\",\n        \"toAssignor\": \"<boolean>\",\n        \"users\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"groups\": [\n          \"<guid>\",\n          \"<guid>\"\n        ]\n      },\n      \"deliveryMethod\": \"<enum>\",\n      \"comments\": \"<string>\"\n    }\n  ],\n  \"workflowtrigger\": {\n    \"isautoclosetask\": \"<boolean>\",\n    \"workflows\": [\n      {\n        \"workflowtypeidorname\": \"<string>\",\n        \"duedateflags\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"timetocreateoptions\": [\n          {\n            \"category\": \"string\",\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"category\": \"string\",\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"workflowname\": \"<string>\",\n        \"isusetaskname\": \"<boolean>\",\n        \"calendars\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"duedateamount\": {\n          \"value\": 8124,\n          \"hours\": \"string\",\n          \"period\": \"string\"\n        },\n        \"assignee\": [\n          {\n            \"userIdOrName\": \"<string>\",\n            \"groupIdOrName\": \"<string>\"\n          },\n          {\n            \"userIdOrName\": \"<string>\",\n            \"groupIdOrName\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"workflowtypeidorname\": \"<string>\",\n        \"duedateflags\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"timetocreateoptions\": [\n          {\n            \"category\": \"string\",\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"category\": \"string\",\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"workflowname\": \"<string>\",\n        \"isusetaskname\": \"<boolean>\",\n        \"calendars\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"duedateamount\": {\n          \"value\": 5312,\n          \"hours\": \"string\",\n          \"period\": \"string\"\n        },\n        \"assignee\": [\n          {\n            \"userIdOrName\": \"<string>\",\n            \"groupIdOrName\": \"<string>\"\n          },\n          {\n            \"userIdOrName\": \"<string>\",\n            \"groupIdOrName\": \"<string>\"\n          }\n        ]\n      }\n    ]\n  },\n  \"suppressNotificationsBefore\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2723a719-f2b2-4fec-89a1-2683535da10d",
+          "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Update Task",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Update Task",
+            "description": {
+              "content": "\n\nUpdates the properties of a simple (single occurrence) Task definition, potentially moving it to a new Location. Updating the object Location(s) of a Task effectively moves that Task to the new Location(s).\r\n\r\n**Security:** Requires Manage Tasks right. \r\n\r\n**SDK API:**  `envianceSdk.tasks.updateTask(taskId, taskInfo, onsuccess, onerror)`\r\n\r\n```\r\nPATCH /ver2/TaskService.svc/tasks/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n \r\n{\r\n  \"taskInfo\": {\r\n    \"name\": \"Check Valves Monthly\",\r\n    \"description\": \"Perform a spot check every month on the steam valves.\",\r\n    \"dueDate\": \"2012-12-08T09:00:00\",\r\n    \"timeZone\": \"USA Pacific\",\r\n    \"objects\": [\r\n      \"/A Facility/A Unit/A POI/Check Valves\",\r\n      \"/A Facility/A Unit/B POI/Check Valves\",\r\n      \"/A Facility/A Unit/C POI/Check Valves\"\r\n    ]\r\n  }\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.tasks.updateTask\r\n```\r\n[\r\n  \"F04DD9CA-35CA-4579-A266-5050660D7012\",\r\n  {\r\n    \"name\": \"Task 1 updated\",\r\n    \"description\": \"updated.\",\r\n    \"timeZone\": {\r\n      \"name\": \"Pacific Time (US \\u0026 Canada) (UTC-08:00) (With DST)\"\r\n    },\r\n    \"assignor\": \"eoleg2\",\r\n    \"assignees\": [\r\n      {\r\n        \"userIdOrName\": \"eoleg1\"\r\n      }\r\n    ],\r\n    \"calendars\": [\r\n      \"System\",\r\n      \"My\"\r\n    ],\r\n    \"objects\": [\r\n      \"/Area 1\"\r\n    ],\r\n    \"schedules\": [\r\n      {\r\n        \"startDate\": \"2014-02-22T00:00:00\",\r\n        \"recurrenceType\": \"Monthly\",\r\n        \"startTime\": \"00:00:00\",\r\n        \"recurrenceInterval\": 1,\r\n        \"dayOfMonth\": 31\r\n      }\r\n    ],\r\n    \"notifications\": [\r\n      {\r\n        \"conditions\": {\r\n          \"immediately\": true,\r\n          \"whenDismissed\": true,\r\n          \"byDueDate\": {\r\n            \"conditionType\": \"IntervalBefore\",\r\n            \"intervalValue\": 5,\r\n            \"intervalType\": \"Hour\"\r\n          },\r\n          \"byCompletionStatus\": {\r\n            \"comparisonLogic\": \"\\u003E=\",\r\n            \"completionPercent\": 30\r\n          }\r\n        },\r\n        \"recipients\": {\r\n          \"toAssignees\": true,\r\n          \"toAssignor\": true,\r\n          \"users\": [\r\n            \"067A42E1-8FD4-4ADA-A7F5-0007473469AA\"\r\n          ],\r\n          \"groups\": [\r\n            \"503DFFD2-FB1F-412E-B9C5-034796E4653D\"\r\n          ]\r\n        },\r\n        \"deliveryMethod\": \"InboxAndEmail\",\r\n        \"comments\": \"Notification comment 1\"\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "TaskService.svc",
+                "tasks",
+                ":taskId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"taskInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"createdOn\": \"<dateTime>\",\n    \"dueDate\": \"<dateTime>\",\n    \"timeZone\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"stdOffset\": \"<integer>\",\n      \"dstOffset\": \"<integer>\",\n      \"currentOffset\": \"<integer>\"\n    },\n    \"templateIdOrName\": \"<string>\",\n    \"assignor\": \"<string>\",\n    \"assignees\": [\n      {\n        \"userIdOrName\": \"<string>\",\n        \"groupIdOrName\": \"<string>\"\n      },\n      {\n        \"userIdOrName\": \"<string>\",\n        \"groupIdOrName\": \"<string>\"\n      }\n    ],\n    \"calendars\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"objects\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"schedules\": [\n      {\n        \"recurrenceType\": \"<enum>\",\n        \"startDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"startTime\": \"<string>\",\n        \"endTime\": \"<string>\",\n        \"recurrenceInterval\": \"<object>\",\n        \"dayOfMonth\": \"<object>\",\n        \"monthOfYear\": \"<integer>\",\n        \"TalLogicVersion\": \"<int16>\"\n      },\n      {\n        \"recurrenceType\": \"<enum>\",\n        \"startDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"startTime\": \"<string>\",\n        \"endTime\": \"<string>\",\n        \"recurrenceInterval\": \"<object>\",\n        \"dayOfMonth\": \"<object>\",\n        \"monthOfYear\": \"<integer>\",\n        \"TalLogicVersion\": \"<int16>\"\n      }\n    ],\n    \"notifications\": [\n      {\n        \"conditions\": {\n          \"immediately\": \"<boolean>\",\n          \"whenDismissed\": \"<boolean>\",\n          \"byDueDate\": {\n            \"conditionType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"byCompletionStatus\": {\n            \"completionPercent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comparisonLogic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"onlyWhenPastDue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"templateIdOrName\": \"<string>\",\n        \"recipients\": {\n          \"toAssignees\": \"<boolean>\",\n          \"toAssignor\": \"<boolean>\",\n          \"users\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"groups\": [\n            \"<guid>\",\n            \"<guid>\"\n          ]\n        },\n        \"deliveryMethod\": \"<enum>\",\n        \"comments\": \"<string>\"\n      },\n      {\n        \"conditions\": {\n          \"immediately\": \"<boolean>\",\n          \"whenDismissed\": \"<boolean>\",\n          \"byDueDate\": {\n            \"conditionType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"byCompletionStatus\": {\n            \"completionPercent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comparisonLogic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"onlyWhenPastDue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"templateIdOrName\": \"<string>\",\n        \"recipients\": {\n          \"toAssignees\": \"<boolean>\",\n          \"toAssignor\": \"<boolean>\",\n          \"users\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"groups\": [\n            \"<guid>\",\n            \"<guid>\"\n          ]\n        },\n        \"deliveryMethod\": \"<enum>\",\n        \"comments\": \"<string>\"\n      }\n    ],\n    \"workflowtrigger\": {\n      \"isautoclosetask\": \"<boolean>\",\n      \"workflows\": [\n        {\n          \"workflowtypeidorname\": \"<string>\",\n          \"duedateflags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"timetocreateoptions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"workflowname\": \"<string>\",\n          \"isusetaskname\": \"<boolean>\",\n          \"calendars\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"duedateamount\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hours\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"period\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"assignee\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        {\n          \"workflowtypeidorname\": \"<string>\",\n          \"duedateflags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"timetocreateoptions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"workflowname\": \"<string>\",\n          \"isusetaskname\": \"<boolean>\",\n          \"calendars\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"duedateamount\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hours\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"period\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"assignee\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      ]\n    },\n    \"suppressNotificationsBefore\": \"<dateTime>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "81f508c5-fb49-4d9f-82a3-d4b1f5c99a51",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "TaskService.svc",
+                    "tasks",
+                    ":taskId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"taskInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"createdBy\": \"<string>\",\n    \"createdOn\": \"<dateTime>\",\n    \"dueDate\": \"<dateTime>\",\n    \"timeZone\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"stdOffset\": \"<integer>\",\n      \"dstOffset\": \"<integer>\",\n      \"currentOffset\": \"<integer>\"\n    },\n    \"templateIdOrName\": \"<string>\",\n    \"assignor\": \"<string>\",\n    \"assignees\": [\n      {\n        \"userIdOrName\": \"<string>\",\n        \"groupIdOrName\": \"<string>\"\n      },\n      {\n        \"userIdOrName\": \"<string>\",\n        \"groupIdOrName\": \"<string>\"\n      }\n    ],\n    \"calendars\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"objects\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"schedules\": [\n      {\n        \"recurrenceType\": \"<enum>\",\n        \"startDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"startTime\": \"<string>\",\n        \"endTime\": \"<string>\",\n        \"recurrenceInterval\": \"<object>\",\n        \"dayOfMonth\": \"<object>\",\n        \"monthOfYear\": \"<integer>\",\n        \"TalLogicVersion\": \"<int16>\"\n      },\n      {\n        \"recurrenceType\": \"<enum>\",\n        \"startDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"startTime\": \"<string>\",\n        \"endTime\": \"<string>\",\n        \"recurrenceInterval\": \"<object>\",\n        \"dayOfMonth\": \"<object>\",\n        \"monthOfYear\": \"<integer>\",\n        \"TalLogicVersion\": \"<int16>\"\n      }\n    ],\n    \"notifications\": [\n      {\n        \"conditions\": {\n          \"immediately\": \"<boolean>\",\n          \"whenDismissed\": \"<boolean>\",\n          \"byDueDate\": {\n            \"conditionType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"byCompletionStatus\": {\n            \"completionPercent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comparisonLogic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"onlyWhenPastDue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"templateIdOrName\": \"<string>\",\n        \"recipients\": {\n          \"toAssignees\": \"<boolean>\",\n          \"toAssignor\": \"<boolean>\",\n          \"users\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"groups\": [\n            \"<guid>\",\n            \"<guid>\"\n          ]\n        },\n        \"deliveryMethod\": \"<enum>\",\n        \"comments\": \"<string>\"\n      },\n      {\n        \"conditions\": {\n          \"immediately\": \"<boolean>\",\n          \"whenDismissed\": \"<boolean>\",\n          \"byDueDate\": {\n            \"conditionType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"intervalValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"byCompletionStatus\": {\n            \"completionPercent\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comparisonLogic\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"onlyWhenPastDue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        \"templateIdOrName\": \"<string>\",\n        \"recipients\": {\n          \"toAssignees\": \"<boolean>\",\n          \"toAssignor\": \"<boolean>\",\n          \"users\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"groups\": [\n            \"<guid>\",\n            \"<guid>\"\n          ]\n        },\n        \"deliveryMethod\": \"<enum>\",\n        \"comments\": \"<string>\"\n      }\n    ],\n    \"workflowtrigger\": {\n      \"isautoclosetask\": \"<boolean>\",\n      \"workflows\": [\n        {\n          \"workflowtypeidorname\": \"<string>\",\n          \"duedateflags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"timetocreateoptions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"workflowname\": \"<string>\",\n          \"isusetaskname\": \"<boolean>\",\n          \"calendars\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"duedateamount\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hours\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"period\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"assignee\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        {\n          \"workflowtypeidorname\": \"<string>\",\n          \"duedateflags\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"timetocreateoptions\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"workflowname\": \"<string>\",\n          \"isusetaskname\": \"<boolean>\",\n          \"calendars\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"duedateamount\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"hours\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"period\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"assignee\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      ]\n    },\n    \"suppressNotificationsBefore\": \"<dateTime>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6e377f7b-d0a0-44c4-8014-dafd4cce1f57",
+          "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Delete Task",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Delete Task",
+            "description": {
+              "content": "\n\n\nenvianceSdk.tasks.deleteTask\r\n```\r\n[\r\n  \"c1960122-16dd-4d43-91e4-ea0d9393ab78\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "TaskService.svc",
+                "tasks",
+                ":taskId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a897121c-bc05-4ce6-8fb5-c439c5eb5e12",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "TaskService.svc",
+                    "tasks",
+                    ":taskId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9aed62b4-31df-4aef-b22f-7c9b56e405f5",
+          "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Export Task As I Cal",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Export Task As I Cal",
+            "description": {},
+            "url": {
+              "path": [
+                "ver2",
+                "TaskService.svc",
+                "tasks",
+                ":taskId",
+                "ical"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2281059c-4f37-4856-b9d5-e22df80abb98",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "TaskService.svc",
+                    "tasks",
+                    ":taskId",
+                    "ical"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d529d4c-f4da-4afb-b5d7-7d963acbf976",
+          "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Get Task Occurrence",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Get Task Occurrence",
+            "description": {
+              "content": "\n\nGets information about a Task occurrence.\r\n\r\n**Security:** Requires Manage Tasks right. \r\n\r\n**SDK API:**  `envianceSdk.tasks.getTaskOccurrence(taskId, dueDate, objectIdOrPath, onsuccess, onerror)`\r\n\r\n```\r\nGET /ver2/TaskService.svc/tasks/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n  \"name\": \"Check Valves Monthly\",\r\n  \"description\": \"Perform a spot check every month on the steam valves.\",\r\n  \"dueDate\": \"2012-12-08T09:00:00\",\r\n  \"timeZone\": \"USA Pacific\",\r\n  \"assignor\": \"CGauss\",\r\n  \"assignees\": [{\"userName\": \"LEuler\"}, {\"groupName\": \"Group A\"}],\r\n  \"calendars\": [\"System\", \"My\"],\r\n  \"objects\": [\r\n    \"/A Facility/A Unit/A POI/Check Valves\",\r\n    \"/A Facility/A Unit/B POI/Check Valves\"\r\n  ],\r\n  \"documents\": [\"/A folder/A subfolder/A document.doc\"]\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.tasks.getTaskOccurrence\r\n```\r\n[\r\n  \"ad7b8413-812a-4e59-95f4-03205ca685f0\",\r\n  \"2013-12-08T09:00:00\",\r\n  \"/Bug 1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "TaskService.svc",
+                "tasks",
+                ":taskId",
+                "occurrences",
+                ":dueDate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dueDate",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b011e42-4824-422b-bc20-c2f1e896e3ef",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "TaskService.svc",
+                    "tasks",
+                    ":taskId",
+                    "occurrences",
+                    ":dueDate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dueDate",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"statusChangeDate\": \"1976-01-08T14:28:31.762Z\",\n    \"objectIdOrPath\": \"string\",\n    \"dismissed\": false,\n    \"percentComplete\": \"string\",\n    \"hoursToComplete\": 5088.542347731842,\n    \"costToComplete\": 2131.5856485354225,\n    \"comment\": \"string\",\n    \"eventInstanceId\": \"string\",\n    \"compliancePeriodStartDate\": \"2009-09-19T04:55:04.422Z\",\n    \"compliancePeriodEndDate\": \"2025-05-18T23:19:54.585Z\",\n    \"comply\": \"string\",\n    \"ObjectId\": \"string\"\n  },\n  {\n    \"statusChangeDate\": \"1963-09-17T04:14:53.797Z\",\n    \"objectIdOrPath\": \"string\",\n    \"dismissed\": false,\n    \"percentComplete\": \"string\",\n    \"hoursToComplete\": 60.407148947815294,\n    \"costToComplete\": 9179.163107695405,\n    \"comment\": \"string\",\n    \"eventInstanceId\": \"string\",\n    \"compliancePeriodStartDate\": \"1963-07-15T01:47:17.322Z\",\n    \"compliancePeriodEndDate\": \"1958-08-10T02:48:42.917Z\",\n    \"comply\": \"string\",\n    \"ObjectId\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65711a8e-bea9-4ca8-8e11-cda2701f1469",
+          "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Get Task Occurrence By Object",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Get Task Occurrence By Object",
+            "description": {
+              "content": "\n\n\nenvianceSdk.tasks.getTaskOccurrence\r\n```\r\n[\r\n    \"ad7b8413-812a-4e59-95f4-03205ca685f0\",\r\n    \"2013-12-08T09:00:00\",\r\n    \"/Bug 1\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "TaskService.svc",
+                "tasks",
+                ":taskId",
+                "occurrences",
+                ":dueDate",
+                ":objectIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dueDate",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "objectIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8d797438-f6b5-4943-9512-c472c3ecfcc1",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "TaskService.svc",
+                    "tasks",
+                    ":taskId",
+                    "occurrences",
+                    ":dueDate",
+                    ":objectIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dueDate",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "objectIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"statusChangeDate\": \"1976-01-08T14:28:31.762Z\",\n    \"objectIdOrPath\": \"string\",\n    \"dismissed\": false,\n    \"percentComplete\": \"string\",\n    \"hoursToComplete\": 5088.542347731842,\n    \"costToComplete\": 2131.5856485354225,\n    \"comment\": \"string\",\n    \"eventInstanceId\": \"string\",\n    \"compliancePeriodStartDate\": \"2009-09-19T04:55:04.422Z\",\n    \"compliancePeriodEndDate\": \"2025-05-18T23:19:54.585Z\",\n    \"comply\": \"string\",\n    \"ObjectId\": \"string\"\n  },\n  {\n    \"statusChangeDate\": \"1963-09-17T04:14:53.797Z\",\n    \"objectIdOrPath\": \"string\",\n    \"dismissed\": false,\n    \"percentComplete\": \"string\",\n    \"hoursToComplete\": 60.407148947815294,\n    \"costToComplete\": 9179.163107695405,\n    \"comment\": \"string\",\n    \"eventInstanceId\": \"string\",\n    \"compliancePeriodStartDate\": \"1963-07-15T01:47:17.322Z\",\n    \"compliancePeriodEndDate\": \"1958-08-10T02:48:42.917Z\",\n    \"comply\": \"string\",\n    \"ObjectId\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b5ff0f3-16c7-49fb-b722-d774e57799a0",
+          "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Complete Task Occurrence",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Tasks.Impl.Task Service.Complete Task Occurrence",
+            "description": {
+              "content": "\n\n\n[\"ad7b8413-812a-4e59-95f4-03205ca685f0\", new Date(),null, [{   \"objectIdOrPath\": \"/A Facility/A Unit/A POI/Check Valves\",    \"dismissed\": \"False\",    \"percentComplete\": 100,    \"statusChangeDate\": \"2012-12-10T08:00:00\",    \"hoursToComplete\": 5.5,    \"costToComplete\": 0.0,    \"comment\": \"Done!\"} ], \"onsuccess\", \"onerror\"]\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "TaskService.svc",
+                "tasks",
+                ":taskId",
+                "occurrences",
+                ":dueDate",
+                ":objectIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dueDate",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "objectIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"taskOccurrenceInfos\": [\n    {\n      \"statusChangeDate\": \"<dateTime>\",\n      \"objectIdOrPath\": \"<string>\",\n      \"dismissed\": \"<boolean>\",\n      \"percentComplete\": \"<byte>\",\n      \"hoursToComplete\": \"<double>\",\n      \"costToComplete\": \"<decimal>\",\n      \"comment\": \"<string>\",\n      \"eventInstanceId\": \"<guid>\",\n      \"compliancePeriodStartDate\": \"<dateTime>\",\n      \"compliancePeriodEndDate\": \"<dateTime>\",\n      \"comply\": \"<string>\",\n      \"ObjectId\": \"<guid>\"\n    },\n    {\n      \"statusChangeDate\": \"<dateTime>\",\n      \"objectIdOrPath\": \"<string>\",\n      \"dismissed\": \"<boolean>\",\n      \"percentComplete\": \"<byte>\",\n      \"hoursToComplete\": \"<double>\",\n      \"costToComplete\": \"<decimal>\",\n      \"comment\": \"<string>\",\n      \"eventInstanceId\": \"<guid>\",\n      \"compliancePeriodStartDate\": \"<dateTime>\",\n      \"compliancePeriodEndDate\": \"<dateTime>\",\n      \"comply\": \"<string>\",\n      \"ObjectId\": \"<guid>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "24cfb92c-580b-4fcd-8be8-88b4f821f734",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "TaskService.svc",
+                    "tasks",
+                    ":taskId",
+                    "occurrences",
+                    ":dueDate",
+                    ":objectIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dueDate",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "objectIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"taskOccurrenceInfos\": [\n    {\n      \"statusChangeDate\": \"<dateTime>\",\n      \"objectIdOrPath\": \"<string>\",\n      \"dismissed\": \"<boolean>\",\n      \"percentComplete\": \"<byte>\",\n      \"hoursToComplete\": \"<double>\",\n      \"costToComplete\": \"<decimal>\",\n      \"comment\": \"<string>\",\n      \"eventInstanceId\": \"<guid>\",\n      \"compliancePeriodStartDate\": \"<dateTime>\",\n      \"compliancePeriodEndDate\": \"<dateTime>\",\n      \"comply\": \"<string>\",\n      \"ObjectId\": \"<guid>\"\n    },\n    {\n      \"statusChangeDate\": \"<dateTime>\",\n      \"objectIdOrPath\": \"<string>\",\n      \"dismissed\": \"<boolean>\",\n      \"percentComplete\": \"<byte>\",\n      \"hoursToComplete\": \"<double>\",\n      \"costToComplete\": \"<decimal>\",\n      \"comment\": \"<string>\",\n      \"eventInstanceId\": \"<guid>\",\n      \"compliancePeriodStartDate\": \"<dateTime>\",\n      \"compliancePeriodEndDate\": \"<dateTime>\",\n      \"comply\": \"<string>\",\n      \"ObjectId\": \"<guid>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1b5115a0-1e08-4e55-ae7f-f3dfa6800547",
+    "name": "Rest Activity Task API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

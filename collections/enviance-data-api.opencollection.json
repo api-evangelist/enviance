@@ -1,0 +1,444 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Data API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationPeriods",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/DataService.svc/calculations/calculationperiods",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.data.getCalculationPeriods\r\n```\r\n[\r\n  {\r\n    \"start\": {\r\n      \"relativity\": \"Current\",\r\n      \"periodType\": \"CalendarDay\"\r\n    },\r\n    \"end\": {\r\n      \"relativity\": \"Current\",\r\n      \"periodType\": \"Day\",\r\n      \"periodCount\": 1\r\n    },\r\n    \"intervalType\": \"Hourly\",\r\n    \"factor\": 1,\r\n    \"limit\": 100,\r\n    \"timezones\": []\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n\r\n[\r\n  {\r\n    \"start\": {\r\n      \"relativity\": \"Absolute\",\r\n      \"absoluteDate\": \"2012-01-01T00:00:00\"\r\n    },\r\n    \"end"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationRanges",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/DataService.svc/calculations/calculationranges",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.data.getCalculationRanges\r\n```\r\n[\r\n  [\r\n    {\r\n      \"parameterIdOrTag\": \"Pay F0415 Fee\",\r\n      \"beginDate\": \"2012-12-01T23:00:00\",\r\n      \"endDate\": \"2012-12-02T23:00:00\"\r\n    },\r\n    {\r\n      \"parameterIdOrTag\": \"FEEP Submittal\",\r\n      \"beginDate\": \"2012-12-01T23:00:00\",\r\n      \"endDate\": \"2012-12-02T23:00:00\"\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Data.Impl.DataService.GetCalculationByDateRange",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/DataService.svc/calculations/getbydaterange",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "objectId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNonNumericData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/DataService.svc/nonnumericdata/deletedatacommands",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nDeletes Non-Numeric Data Points for one Non-Numeric Requirement. Deleting Non-Numeric Data Points is an synchronous process. Deletions  of non-numeric datapoints in the Management System are *permanent*.\r\n\r\n**SDK API:** `envianceSdk.data.deleteNonNumericData(requirementIdOrPath, nonNumericDataPoints, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.data.deleteNonNumericData\r\n```\r\n[\r\n  \"Kuhar Division/Kuhar-Facility-NNR/Kuhar-NNR1\",\r\n  [\r\n    \"3e619f41-390d-4e88-9832-fb8f621a373c\"\r\n  ],\r\n  \"onsuccess\","
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNonNumericData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/DataService.svc/nonnumericdata/enterdatacommands",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.data.enterNonNumericData\r\n```\r\n[\r\n  [\r\n    {\r\n      \"requirementIdOrPath\": \"Kuhar Division/Kuhar-Facility-NNR/Kuhar-NNR1\",\r\n      \"completeDate\": \"2017-04-03T08:00:00\",\r\n      \"beginDate\": \"2017-04-03T08:00:00\",\r\n      \"endDate\": \"2017-04-03T08:00:00\",\r\n      \"comply\": \"Yes\",\r\n      \"comments\": \"NNR Yes Comment\"\r\n    },\r\n    {\r\n      \"requirementIdOrPath\": \"59ebc2fd-cb4e-4839-bc44-87340186d628\",\r\n      \"completeDate\": \"2017-04-02T08:00:00\",\r\n      \"beginDate\": \"2017-04-03T02:00:00"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Data.Impl.DataService.DeleteNumericData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/DataService.svc/numericdata/deletedatacommands",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nDeletes all Data Points for a set of one or more Parameters, within a specified date range. Deleting Data Points is an asynchronous process. Upon successfully receiving and queueing the data, a command id is returned. With this command id, the Get Command API can be used to track completion or failure of the data entry command. *Deletions are permanent*.\r\n\r\n**SDK API:**  `envianceSdk.data.deleteNumericData(numericDataRanges, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.data.deleteNumericData\r\n```\r"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Data.Impl.DataService.EnterNumericData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/DataService.svc/numericdata/enterdatacommands",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nProcesses a set of one or more numeric Data Points. Entering Data Points is an asynchronous process. Upon successfully receiving and queueing the data, a command id is returned. With this command id, the Get Command API can be used to track completion or failure of the data entry command.\r\n\r\n**SDK API:**  `envianceSdk.data.enterNumericData (numericDataPoints, collector, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.data.enterNumericData\r\n```\r\n[\r\n  [\r\n    {\r\n      \"parameterIdOrTag\": \"94A716F3-DFE2-"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Data.Impl.DataService.DownloadExcelData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/DataService.svc/numericdata/exceldata",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nDownload Excel template.\r\n\r\n**SDK API:** `envianceSdk.data.downloadExcelData (options, onsuccess, onerror)`\r\nnull\n\n\n1. Start date and Time Period:[{  \"start\": {    \"relativity\": \"Current\",  // \"Previous|Current|Following\"    \"periodType\": \"CalendarQuarter\" // \"Day|CalendarDay|Week|Month|CalendarMonth|Quarter|CalendarQuarter|Year|CalendarYear\"  },  \"intervalType\": \"Weekly\",  // \"Minutes|Hourly|HourlyTimeBased|Daily|DailyTimeBased|Weekly|WeeklyTimeBased|Monthly|MonthlyTimeBased|QuarterlyTimeBase"
+        },
+        {
+          "info": {
+            "name": "Upload excel file (base64)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/DataService.svc/numericdata/uploadexcel2commands",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Upload excel file (base64)\n\n\nPortal import. Upload excel template with async Multipart/FormData POST request. Use anyone (just one) input control on Rest API Test Tool to specify .xls-file to upload file and specify it\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Data.Impl.DataService.UploadExcelData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/DataService.svc/numericdata/uploadexcelcommands",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nUpload excel template with async Multipart/FormData POST request. Use anyone (just one) input control on Rest API Test Tool to specify .xls-file to upload file and specify itUpload excel template with Ajax and Base64 Encoding. First parameter pass HttpFileInput html control or filecontent as Base64 encoded string. Use anyone (just one) input control on Rest API Test Tool to specify .xls-file to upload file and specify it\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

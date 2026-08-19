@@ -1,0 +1,1097 @@
+{
+  "item": [
+    {
+      "id": "3a6126a7-e6f6-4ffc-9569-5270f3a885e1",
+      "name": "CustomField",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9c7ab352-7ffe-421a-b918-bc33ca385d19",
+          "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Create Custom Field",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Create Custom Field",
+            "description": {},
+            "url": {
+              "path": [
+                "ver2",
+                "CostomFieldService.svc",
+                "customFields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customFieldInfo\": {\n    \"description\": \"<string>\",\n    \"descriptionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"caption\": \"<string>\",\n    \"captionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"size\": \"<int16>\",\n    \"dataType\": \"<enum>\",\n    \"valueEntryMethod\": \"<enum>\",\n    \"hyperlinkType\": \"<enum>\",\n    \"isListValuesByTemplate\": \"<boolean>\",\n    \"trackValueHistory\": \"<boolean>\",\n    \"isLinkedList\": \"<boolean>\",\n    \"label\": \"<string>\",\n    \"labelLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"listItems\": [\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      },\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      }\n    ],\n    \"isSensitiveData\": \"<boolean>\",\n    \"sortOptionsByValue\": \"<boolean>\",\n    \"updated\": \"<dateTime>\",\n    \"linkedListId\": \"<guid>\",\n    \"autoIncrement\": \"<boolean>\",\n    \"grandChilds\": [\n      \"<guid>\",\n      \"<guid>\"\n    ],\n    \"value\": \"<object>\",\n    \"precision\": \"<integer>\",\n    \"links\": [\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d03cb5d-adaf-461d-a0ec-a056fa73748b",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "CostomFieldService.svc",
+                    "customFields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customFieldInfo\": {\n    \"description\": \"<string>\",\n    \"descriptionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"caption\": \"<string>\",\n    \"captionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"size\": \"<int16>\",\n    \"dataType\": \"<enum>\",\n    \"valueEntryMethod\": \"<enum>\",\n    \"hyperlinkType\": \"<enum>\",\n    \"isListValuesByTemplate\": \"<boolean>\",\n    \"trackValueHistory\": \"<boolean>\",\n    \"isLinkedList\": \"<boolean>\",\n    \"label\": \"<string>\",\n    \"labelLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"listItems\": [\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      },\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      }\n    ],\n    \"isSensitiveData\": \"<boolean>\",\n    \"sortOptionsByValue\": \"<boolean>\",\n    \"updated\": \"<dateTime>\",\n    \"linkedListId\": \"<guid>\",\n    \"autoIncrement\": \"<boolean>\",\n    \"grandChilds\": [\n      \"<guid>\",\n      \"<guid>\"\n    ],\n    \"value\": \"<object>\",\n    \"precision\": \"<integer>\",\n    \"links\": [\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b8d46ef-3904-469b-9de2-69eee66b2c8e",
+          "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Get Custom Field",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Get Custom Field",
+            "description": {
+              "content": "\n\n\nenvianceSdk.customFields.getCustomField\r\n```\r\n[\r\n  \"nameOrID\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "CostomFieldService.svc",
+                "customFields",
+                ":customFieldIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customFieldIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c95fbd13-8d86-43c8-8d60-7e9ddd529646",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "CostomFieldService.svc",
+                    "customFields",
+                    ":customFieldIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customFieldIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"description\": \"<string>\",\n  \"descriptionLocalizations\": [\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"caption\": \"<string>\",\n  \"captionLocalizations\": [\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"size\": \"<int16>\",\n  \"dataType\": \"<enum>\",\n  \"valueEntryMethod\": \"<enum>\",\n  \"hyperlinkType\": \"<enum>\",\n  \"isListValuesByTemplate\": \"<boolean>\",\n  \"trackValueHistory\": \"<boolean>\",\n  \"isLinkedList\": \"<boolean>\",\n  \"label\": \"<string>\",\n  \"labelLocalizations\": [\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"listItems\": [\n    {\n      \"id\": \"<guid>\",\n      \"value\": \"<object>\",\n      \"alias\": \"<string>\",\n      \"linkedItems\": [\n        \"<guid>\",\n        \"<guid>\"\n      ],\n      \"valueLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"aliasLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"isUsed\": \"<boolean>\",\n      \"isUsedCalc\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<guid>\",\n      \"value\": \"<object>\",\n      \"alias\": \"<string>\",\n      \"linkedItems\": [\n        \"<guid>\",\n        \"<guid>\"\n      ],\n      \"valueLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"aliasLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"isUsed\": \"<boolean>\",\n      \"isUsedCalc\": \"<boolean>\"\n    }\n  ],\n  \"isSensitiveData\": \"<boolean>\",\n  \"sortOptionsByValue\": \"<boolean>\",\n  \"updated\": \"<dateTime>\",\n  \"linkedListId\": \"<guid>\",\n  \"autoIncrement\": \"<boolean>\",\n  \"grandChilds\": [\n    \"<guid>\",\n    \"<guid>\"\n  ],\n  \"value\": \"<object>\",\n  \"precision\": \"<integer>\",\n  \"links\": [\n    {\n      \"systemQuickLinkId\": \"<guid>\",\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"systemQuickLinkId\": \"<guid>\",\n      \"name\": \"<string>\",\n      \"url\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f938b32a-db05-4326-8879-4e9e58ac8604",
+          "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Partial Update Custom Field",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Partial Update Custom Field",
+            "description": {
+              "content": "\n\n\nenvianceSdk.customFields.updateCustomField\r\n```\r\n[\r\n    \"customfieldIDorName\",\r\n    {\r\n        \"caption\": \"Custom Field Caption\",\r\n        \"captionLocalizations\": [\r\n            {\r\n                \"culture\": \"en-US\",\r\n                \"value\": \"Caption US\"\r\n            },\r\n            {\r\n                \"culture\": \"ru-RU\",\r\n                \"value\": \"Caption RU\"\r\n            },\r\n            {\r\n                \"culture\": \"zh-CN\",\r\n                \"value\": \"Caption Chinese\"\r\n            },\r\n            {\r\n                \"culture\": \"en-GB\",\r\n                \"value\": \"Caption UK\"\r\n            },\r\n            {\r\n                \"culture\": \"es-MX\",\r\n                \"value\": \"Caption Spanish\"\r\n            }\r\n        ],\r\n        \"dataType\": \"Number\",\r\n        \"description\": \"Custom Field Description\",\r\n        \"descriptionLocalizations\": [\r\n            {\r\n                \"culture\": \"en-US\",\r\n                \"value\": \"Description (United States)\"\r\n            },\r\n            {\r\n                \"culture\": \"ru-RU\",\r\n                \"value\": \"Description  (Russia)\"\r\n            },\r\n            {\r\n                \"culture\": \"zh-CN\",\r\n                \"value\": \"Description (Chinese)\"\r\n            },\r\n            {\r\n                \"culture\": \"en-GB\",\r\n                \"value\": \"Description (United Kingdom)\"\r\n            },\r\n            {\r\n                \"culture\": \"es-MX\",\r\n                \"value\": \"Description Spanish\"\r\n            }\r\n        ],\r\n        \"hyperlinkType\": null,\r\n        \"isLinkedList\": false,\r\n        \"isListValuesByTemplate\": null,\r\n        \"isSensitiveData\": true,\r\n        \"label\": null,\r\n        \"listItems\": [\r\n            {\r\n                \"id\": \"175d915f-9d70-40fe-a87b-d4b87b8ef721\",\r\n                \"value\": \"test\",\r\n                \"valueLocalizations\": [\r\n                    {\r\n                        \"culture\": \"en-US\",\r\n                        \"value\": \"test US\"\r\n                    },\r\n                    {\r\n                        \"culture\": \"ru-RU\",\r\n                        \"value\": \"test RU\"\r\n                    },\r\n                    {\r\n                        \"culture\": \"zh-CN\",\r\n                        \"value\": \"test Chinese\"\r\n                    },\r\n                    {\r\n                        \"culture\": \"en-GB\",\r\n                        \"value\": \"test UK\"\r\n                    },\r\n                    {\r\n                        \"culture\": \"es-MX\",\r\n                        \"value\": \"test Spanish\"\r\n                    }\r\n                ]\r\n            }\r\n        ],\r\n        \"name\": \"Custom Field Name\",\r\n        \"size\": null,\r\n        \"trackValueHistory\": false,\r\n        \"valueEntryMethod\": \"Dropdown List\"\r\n    },\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "CostomFieldService.svc",
+                "customFields",
+                ":customFieldIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customFieldIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customFieldInfo\": {\n    \"description\": \"<string>\",\n    \"descriptionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"caption\": \"<string>\",\n    \"captionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"size\": \"<int16>\",\n    \"dataType\": \"<enum>\",\n    \"valueEntryMethod\": \"<enum>\",\n    \"hyperlinkType\": \"<enum>\",\n    \"isListValuesByTemplate\": \"<boolean>\",\n    \"trackValueHistory\": \"<boolean>\",\n    \"isLinkedList\": \"<boolean>\",\n    \"label\": \"<string>\",\n    \"labelLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"listItems\": [\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      },\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      }\n    ],\n    \"isSensitiveData\": \"<boolean>\",\n    \"sortOptionsByValue\": \"<boolean>\",\n    \"updated\": \"<dateTime>\",\n    \"linkedListId\": \"<guid>\",\n    \"autoIncrement\": \"<boolean>\",\n    \"grandChilds\": [\n      \"<guid>\",\n      \"<guid>\"\n    ],\n    \"value\": \"<object>\",\n    \"precision\": \"<integer>\",\n    \"links\": [\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "229136f2-c808-467f-99c7-c0cd2297acfc",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "CostomFieldService.svc",
+                    "customFields",
+                    ":customFieldIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customFieldIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customFieldInfo\": {\n    \"description\": \"<string>\",\n    \"descriptionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"caption\": \"<string>\",\n    \"captionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"size\": \"<int16>\",\n    \"dataType\": \"<enum>\",\n    \"valueEntryMethod\": \"<enum>\",\n    \"hyperlinkType\": \"<enum>\",\n    \"isListValuesByTemplate\": \"<boolean>\",\n    \"trackValueHistory\": \"<boolean>\",\n    \"isLinkedList\": \"<boolean>\",\n    \"label\": \"<string>\",\n    \"labelLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"listItems\": [\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      },\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      }\n    ],\n    \"isSensitiveData\": \"<boolean>\",\n    \"sortOptionsByValue\": \"<boolean>\",\n    \"updated\": \"<dateTime>\",\n    \"linkedListId\": \"<guid>\",\n    \"autoIncrement\": \"<boolean>\",\n    \"grandChilds\": [\n      \"<guid>\",\n      \"<guid>\"\n    ],\n    \"value\": \"<object>\",\n    \"precision\": \"<integer>\",\n    \"links\": [\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f5def15-5308-480e-98be-8ec6c8e89a65",
+          "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Delete Custom Field",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Delete Custom Field",
+            "description": {},
+            "url": {
+              "path": [
+                "ver2",
+                "CostomFieldService.svc",
+                "customFields",
+                ":customFieldIdOrName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customFieldIdOrName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "15b21d54-8554-49c9-b8e2-a77d7d141a34",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "CostomFieldService.svc",
+                    "customFields",
+                    ":customFieldIdOrName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customFieldIdOrName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8e1e56c-c275-4d40-867a-054cdf36a836",
+          "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Get Custom Field List",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Get Custom Field List",
+            "description": {},
+            "url": {
+              "path": [
+                "ver2",
+                "CostomFieldService.svc",
+                "customFields",
+                "bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idsOrNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastUpdated\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0d7a482a-c390-4f0f-a7cb-21fb225c5e17",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "CostomFieldService.svc",
+                    "customFields",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idsOrNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"lastUpdated\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"description\": \"<string>\",\n    \"descriptionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"caption\": \"<string>\",\n    \"captionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"size\": \"<int16>\",\n    \"dataType\": \"<enum>\",\n    \"valueEntryMethod\": \"<enum>\",\n    \"hyperlinkType\": \"<enum>\",\n    \"isListValuesByTemplate\": \"<boolean>\",\n    \"trackValueHistory\": \"<boolean>\",\n    \"isLinkedList\": \"<boolean>\",\n    \"label\": \"<string>\",\n    \"labelLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"listItems\": [\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      },\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      }\n    ],\n    \"isSensitiveData\": \"<boolean>\",\n    \"sortOptionsByValue\": \"<boolean>\",\n    \"updated\": \"<dateTime>\",\n    \"linkedListId\": \"<guid>\",\n    \"autoIncrement\": \"<boolean>\",\n    \"grandChilds\": [\n      \"<guid>\",\n      \"<guid>\"\n    ],\n    \"value\": \"<object>\",\n    \"precision\": \"<integer>\",\n    \"links\": [\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\"\n  },\n  {\n    \"description\": \"<string>\",\n    \"descriptionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"caption\": \"<string>\",\n    \"captionLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"size\": \"<int16>\",\n    \"dataType\": \"<enum>\",\n    \"valueEntryMethod\": \"<enum>\",\n    \"hyperlinkType\": \"<enum>\",\n    \"isListValuesByTemplate\": \"<boolean>\",\n    \"trackValueHistory\": \"<boolean>\",\n    \"isLinkedList\": \"<boolean>\",\n    \"label\": \"<string>\",\n    \"labelLocalizations\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"listItems\": [\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      },\n      {\n        \"id\": \"<guid>\",\n        \"value\": \"<object>\",\n        \"alias\": \"<string>\",\n        \"linkedItems\": [\n          \"<guid>\",\n          \"<guid>\"\n        ],\n        \"valueLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"aliasLocalizations\": [\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"culture\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"isUsed\": \"<boolean>\",\n        \"isUsedCalc\": \"<boolean>\"\n      }\n    ],\n    \"isSensitiveData\": \"<boolean>\",\n    \"sortOptionsByValue\": \"<boolean>\",\n    \"updated\": \"<dateTime>\",\n    \"linkedListId\": \"<guid>\",\n    \"autoIncrement\": \"<boolean>\",\n    \"grandChilds\": [\n      \"<guid>\",\n      \"<guid>\"\n    ],\n    \"value\": \"<object>\",\n    \"precision\": \"<integer>\",\n    \"links\": [\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"systemQuickLinkId\": \"<guid>\",\n        \"name\": \"<string>\",\n        \"url\": \"<string>\",\n        \"type\": \"<string>\"\n      }\n    ],\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b30d500-f3d7-4e8f-8ca0-75fa1e7d3a49",
+          "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Update Custom Field Bulk Partial",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Custom Fields.Impl.Custom Field Service.Update Custom Field Bulk Partial",
+            "description": {
+              "content": "\n\n\nenvianceSdk.customFields.updateCustomFieldBulk\r\n```\r\n[\r\n    [\r\n        {\r\n            \"label\": \"Custom Field Label\",\r\n            \"labelLocalizations\": [\r\n                {\r\n                    \"culture\": \"en-US\",\r\n                    \"value\": null\r\n                },\r\n                {\r\n                    \"culture\": \"zh-CN\",\r\n                    \"value\": \"CN Label\"\r\n                }\r\n            ],\r\n            \"name\": \"Some Udf 1\"\r\n        },\r\n        {\r\n            \"caption\": \"Custom Field Caption_up\",\r\n            \"captionLocalizations\": [\r\n                {\r\n                    \"culture\": \"en-US\",\r\n                    \"value\": \"Caption US\"\r\n                },\r\n                {\r\n                    \"culture\": \"ru-RU\",\r\n                    \"value\": \"Caption RU\"\r\n                },\r\n                {\r\n                    \"culture\": \"zh-CN\",\r\n                    \"value\": \"Caption Chinese\"\r\n                },\r\n                {\r\n                    \"culture\": \"en-GB\",\r\n                    \"value\": \"Caption UK\"\r\n                },\r\n                {\r\n                    \"culture\": \"es-MX\",\r\n                    \"value\": \"Caption Spanish\"\r\n                }\r\n            ],\r\n            \"name\": \"Some Udf 2\"\r\n        }\r\n    ],\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "CostomFieldService.svc",
+                "customFields",
+                "bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customFieldInfoList\": [\n    {\n      \"description\": \"<string>\",\n      \"descriptionLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"caption\": \"<string>\",\n      \"captionLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"size\": \"<int16>\",\n      \"dataType\": \"<enum>\",\n      \"valueEntryMethod\": \"<enum>\",\n      \"hyperlinkType\": \"<enum>\",\n      \"isListValuesByTemplate\": \"<boolean>\",\n      \"trackValueHistory\": \"<boolean>\",\n      \"isLinkedList\": \"<boolean>\",\n      \"label\": \"<string>\",\n      \"labelLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"listItems\": [\n        {\n          \"id\": \"<guid>\",\n          \"value\": \"<object>\",\n          \"alias\": \"<string>\",\n          \"linkedItems\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"valueLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aliasLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"isUsed\": \"<boolean>\",\n          \"isUsedCalc\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<guid>\",\n          \"value\": \"<object>\",\n          \"alias\": \"<string>\",\n          \"linkedItems\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"valueLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aliasLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"isUsed\": \"<boolean>\",\n          \"isUsedCalc\": \"<boolean>\"\n        }\n      ],\n      \"isSensitiveData\": \"<boolean>\",\n      \"sortOptionsByValue\": \"<boolean>\",\n      \"updated\": \"<dateTime>\",\n      \"linkedListId\": \"<guid>\",\n      \"autoIncrement\": \"<boolean>\",\n      \"grandChilds\": [\n        \"<guid>\",\n        \"<guid>\"\n      ],\n      \"value\": \"<object>\",\n      \"precision\": \"<integer>\",\n      \"links\": [\n        {\n          \"systemQuickLinkId\": \"<guid>\",\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"systemQuickLinkId\": \"<guid>\",\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"id\": \"<guid>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"descriptionLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"caption\": \"<string>\",\n      \"captionLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"size\": \"<int16>\",\n      \"dataType\": \"<enum>\",\n      \"valueEntryMethod\": \"<enum>\",\n      \"hyperlinkType\": \"<enum>\",\n      \"isListValuesByTemplate\": \"<boolean>\",\n      \"trackValueHistory\": \"<boolean>\",\n      \"isLinkedList\": \"<boolean>\",\n      \"label\": \"<string>\",\n      \"labelLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"listItems\": [\n        {\n          \"id\": \"<guid>\",\n          \"value\": \"<object>\",\n          \"alias\": \"<string>\",\n          \"linkedItems\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"valueLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aliasLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"isUsed\": \"<boolean>\",\n          \"isUsedCalc\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<guid>\",\n          \"value\": \"<object>\",\n          \"alias\": \"<string>\",\n          \"linkedItems\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"valueLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aliasLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"isUsed\": \"<boolean>\",\n          \"isUsedCalc\": \"<boolean>\"\n        }\n      ],\n      \"isSensitiveData\": \"<boolean>\",\n      \"sortOptionsByValue\": \"<boolean>\",\n      \"updated\": \"<dateTime>\",\n      \"linkedListId\": \"<guid>\",\n      \"autoIncrement\": \"<boolean>\",\n      \"grandChilds\": [\n        \"<guid>\",\n        \"<guid>\"\n      ],\n      \"value\": \"<object>\",\n      \"precision\": \"<integer>\",\n      \"links\": [\n        {\n          \"systemQuickLinkId\": \"<guid>\",\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"systemQuickLinkId\": \"<guid>\",\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"id\": \"<guid>\",\n      \"name\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d573d1e3-5941-4c1e-b447-d6e4f4cb0d37",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "CostomFieldService.svc",
+                    "customFields",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customFieldInfoList\": [\n    {\n      \"description\": \"<string>\",\n      \"descriptionLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"caption\": \"<string>\",\n      \"captionLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"size\": \"<int16>\",\n      \"dataType\": \"<enum>\",\n      \"valueEntryMethod\": \"<enum>\",\n      \"hyperlinkType\": \"<enum>\",\n      \"isListValuesByTemplate\": \"<boolean>\",\n      \"trackValueHistory\": \"<boolean>\",\n      \"isLinkedList\": \"<boolean>\",\n      \"label\": \"<string>\",\n      \"labelLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"listItems\": [\n        {\n          \"id\": \"<guid>\",\n          \"value\": \"<object>\",\n          \"alias\": \"<string>\",\n          \"linkedItems\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"valueLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aliasLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"isUsed\": \"<boolean>\",\n          \"isUsedCalc\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<guid>\",\n          \"value\": \"<object>\",\n          \"alias\": \"<string>\",\n          \"linkedItems\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"valueLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aliasLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"isUsed\": \"<boolean>\",\n          \"isUsedCalc\": \"<boolean>\"\n        }\n      ],\n      \"isSensitiveData\": \"<boolean>\",\n      \"sortOptionsByValue\": \"<boolean>\",\n      \"updated\": \"<dateTime>\",\n      \"linkedListId\": \"<guid>\",\n      \"autoIncrement\": \"<boolean>\",\n      \"grandChilds\": [\n        \"<guid>\",\n        \"<guid>\"\n      ],\n      \"value\": \"<object>\",\n      \"precision\": \"<integer>\",\n      \"links\": [\n        {\n          \"systemQuickLinkId\": \"<guid>\",\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"systemQuickLinkId\": \"<guid>\",\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"id\": \"<guid>\",\n      \"name\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"descriptionLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"caption\": \"<string>\",\n      \"captionLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"size\": \"<int16>\",\n      \"dataType\": \"<enum>\",\n      \"valueEntryMethod\": \"<enum>\",\n      \"hyperlinkType\": \"<enum>\",\n      \"isListValuesByTemplate\": \"<boolean>\",\n      \"trackValueHistory\": \"<boolean>\",\n      \"isLinkedList\": \"<boolean>\",\n      \"label\": \"<string>\",\n      \"labelLocalizations\": [\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"culture\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"listItems\": [\n        {\n          \"id\": \"<guid>\",\n          \"value\": \"<object>\",\n          \"alias\": \"<string>\",\n          \"linkedItems\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"valueLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aliasLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"isUsed\": \"<boolean>\",\n          \"isUsedCalc\": \"<boolean>\"\n        },\n        {\n          \"id\": \"<guid>\",\n          \"value\": \"<object>\",\n          \"alias\": \"<string>\",\n          \"linkedItems\": [\n            \"<guid>\",\n            \"<guid>\"\n          ],\n          \"valueLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"aliasLocalizations\": [\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"culture\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"value\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"isUsed\": \"<boolean>\",\n          \"isUsedCalc\": \"<boolean>\"\n        }\n      ],\n      \"isSensitiveData\": \"<boolean>\",\n      \"sortOptionsByValue\": \"<boolean>\",\n      \"updated\": \"<dateTime>\",\n      \"linkedListId\": \"<guid>\",\n      \"autoIncrement\": \"<boolean>\",\n      \"grandChilds\": [\n        \"<guid>\",\n        \"<guid>\"\n      ],\n      \"value\": \"<object>\",\n      \"precision\": \"<integer>\",\n      \"links\": [\n        {\n          \"systemQuickLinkId\": \"<guid>\",\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"systemQuickLinkId\": \"<guid>\",\n          \"name\": \"<string>\",\n          \"url\": \"<string>\",\n          \"type\": \"<string>\"\n        }\n      ],\n      \"id\": \"<guid>\",\n      \"name\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "58d55f60-6a55-4fb9-83d0-6ac4939e7c6c",
+    "name": "Rest Activity CustomField API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

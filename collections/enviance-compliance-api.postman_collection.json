@@ -1,0 +1,1320 @@
+{
+  "item": [
+    {
+      "id": "68a50256-f06a-4a97-9f84-4ddc632b6b8f",
+      "name": "Compliance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c91c8292-4137-4758-af62-089ec3920d36",
+          "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Create Location",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Create Location",
+            "description": {
+              "content": "\n\nCreates a new Location object in the Compliance Model, optionally by copying the structure from another Location to the new Location. Supported object types are Division, Facility (Program), Unit (Element), and Point of Interest. This API does not support historical custom fields (those with Track Value History enabled).\r\n\r\n**Security:** User with permission to Compliance Objects.\r\n\r\n**SDK API (create):**  `envianceSdk.compliance.createLocation (locationInfo, onsuccess, onerror)`\r\n\r\n**SDK API (create async):**  `envianceSdk.compliance.createLocationAsync (locationInfo, onsuccess, onerror)` \r\n\r\n**SDK API (copy):**  `envianceSdk.compliance.copyLocation(locationInfo, copyFrom, onsuccess, onerror)`\r\n\r\n**SDK API (copy async):**  `envianceSdk.compliance.copyLocationAsync (locationInfo, copyFrom, onsuccess, onerror)`\r\n\r\n```\r\n//EXAMPLE (CREATE)\r\n\r\nPOST /ver2/ComplianceService.svc/locations HTTP 1.1\r\nContent-Type: application/json; charset=utf-8\r\n\r\n{\r\n  \"locationInfo\": {\r\n    \"name\": \"Toy Manufacturing\",\r\n    \"type\": \"Facility\",\r\n    \"parentPath\": \"/Manufacturing Division/Toys/\",\r\n    \"timeZone\": { \"name\": \"Pacific Time (US & Canada) (UTC-08:00) (With DST)\" },\r\n    \"activeDate\": \"2012-01-01T00:00:00\",\r\n    \"fieldTemplate\": \"Manufacturing Facility\",\r\n    \"fieldValues\": [\r\n      {\"name\": \"Aspect\",\r\n      \"values\": [\"Air pollution control waste\"]},\r\n      {\"name\": \"Start Date\",\r\n      \"values\": [\"2012-09-19T20:00:00\"]},\r\n      {\"name\": \"Type\",\r\n      \"values\": [\"Spill\", \"Near Miss\"]},\r\n      {\"name\": \"Category\",\r\n      \"values\": [\"Cat1\", \"Cat1.1\", \"Cat1.1.1\"]}\r\n    ],\r\n  \"documents\": [\"/Folder A/Document.doc\"]\r\n  }\r\n}\r\n\r\n//EXAMPLE (COPY)\r\nPOST /ver2/ComplianceService.svc/locations HTTP 1.1\r\nContent-Type: application/json; charset=utf-8\r\n \r\n{\r\n  \"locationInfo\": {\r\n  \"name\": \"Toy Manufacturing\",\r\n  \"type\": \"Facility\",\r\n  \"parentPath\": \"/Manufacturing Division/Toys/\",\r\n  \"timeZone\": { \"name\": \"Pacific Time (US & Canada) (UTC-08:00) (With DST)\" },\r\n  \"activeDate\": \"2012-01-01T00:00:00\",\r\n  \"fieldTemplate\": \"Manufacturing Facility\",\r\n  \"fieldValues\": [\r\n    {\"name\": \"Aspect\",\r\n    \"values\": [\"Air pollution control waste\"]},\r\n    {\"name\": \"Start Date\",\r\n    \"values\": [\"2012-09-19T20:00:00\"]},\r\n    {\"name\": \"Type\",\r\n    \"values\": [\"Spill\", \"Near Miss\"]},\r\n    {\"name\": \"Category\",\r\n    \"values\": [\"Cat1\", \"Cat1.1\", \"Cat1.1.1\"]}\r\n  ],\r\n  \"documents\": [\"/Folder A/Document.doc\"]\r\n  },\r\n  \"copyFrom\": \"/Manufacturing Division/Books\"\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.compliance.createLocation\r\n```\r\n[\r\n  {\r\n    \"name\": \"Toy Manufacturing\",\r\n    \"type\": \"Facility\",\r\n    \"isSensitiveData\": true,\r\n    \"parentPath\": \"/Manufacturing Division/Toys/\",\r\n    \"timeZone\": {\r\n      \"name\": \"USA Pacific\"\r\n    },\r\n    \"fieldTemplate\": \"Manufacturing Facility\",\r\n    \"CorityCachedID\": 0,\r\n    \"CorityLink\": false,\r\n    \"fieldValues\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Category\",\r\n        \"values\": [\r\n          \"Cat1\",\r\n          \"Cat1.1\",\r\n          \"Cat1.1.1\"\r\n        ]\r\n      }\r\n    ],\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"DemoLoc POI (US)\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"documents\": [\r\n      \"/Folder A/Document.doc\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ComplianceService.svc",
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"locationInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"isSensitiveData\": \"<boolean>\",\n    \"CorityLink\": \"<boolean>\",\n    \"CorityCachedID\": \"<integer>\",\n    \"CorityObjectType\": \"<string>\",\n    \"type\": \"<string>\",\n    \"parentPath\": \"<string>\",\n    \"parentPathLocalized\": \"<string>\",\n    \"timeZone\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"stdOffset\": \"<integer>\",\n      \"dstOffset\": \"<integer>\",\n      \"currentOffset\": \"<integer>\"\n    },\n    \"activeDate\": \"<dateTime>\",\n    \"inactiveDate\": \"<dateTime>\",\n    \"responsibleUser\": \"<string>\",\n    \"fieldTemplate\": \"<string>\",\n    \"calcFieldTemplate\": \"<string>\",\n    \"fieldValues\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"calcFieldValues\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"address\": {\n      \"street1\": \"<string>\",\n      \"street2\": \"<string>\",\n      \"street3\": \"<string>\",\n      \"city\": \"<string>\",\n      \"countyOrRegion\": \"<string>\",\n      \"stateOrProvince\": \"<string>\",\n      \"country\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    },\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"geoLocation\": {\n      \"latitude\": \"<double>\",\n      \"longitude\": \"<double>\",\n      \"latNS\": \"<string>\",\n      \"latDeg\": \"<integer>\",\n      \"latMin\": \"<integer>\",\n      \"latSec\": \"<double>\",\n      \"longEW\": \"<string>\",\n      \"longDeg\": \"<integer>\",\n      \"longMin\": \"<integer>\",\n      \"longSec\": \"<double>\",\n      \"utmZone\": \"<string>\",\n      \"utmEast\": \"<double>\",\n      \"utmNorth\": \"<double>\",\n      \"formatType\": \"<integer>\"\n    },\n    \"security\": {},\n    \"tags\": [\n      {\n        \"tagScheme\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"tagHistory\": [\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          },\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          }\n        ]\n      },\n      {\n        \"tagScheme\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"tagHistory\": [\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          },\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          }\n        ]\n      }\n    ],\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"mailingAddress\": {\n      \"Country\": \"<string>\",\n      \"State\": \"<string>\",\n      \"City\": \"<string>\",\n      \"PostalCode\": \"<string>\",\n      \"Address1\": \"<string>\",\n      \"Address2\": \"<string>\",\n      \"Address3\": \"<string>\"\n    },\n    \"contactInformation\": {\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"Title\": \"<string>\",\n      \"Company\": \"<string>\",\n      \"TelNo\": \"<string>\",\n      \"FaxNo\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Email\": \"<string>\"\n    },\n    \"locationHistory\": [\n      {\n        \"BeginDate\": \"<dateTime>\",\n        \"LocationId\": \"<string>\",\n        \"Location\": \"<string>\"\n      },\n      {\n        \"BeginDate\": \"<dateTime>\",\n        \"LocationId\": \"<string>\",\n        \"Location\": \"<string>\"\n      }\n    ],\n    \"regulatoryIdentification\": {\n      \"RCRA\": \"<string>\",\n      \"TRI\": \"<string>\",\n      \"RMP\": \"<string>\",\n      \"StateID1\": \"<string>\",\n      \"StateID2\": \"<string>\",\n      \"StateID3\": \"<string>\",\n      \"LocalID1\": \"<string>\",\n      \"LocalID2\": \"<string>\",\n      \"LocalID3\": \"<string>\",\n      \"IDType1\": \"<string>\",\n      \"IDType2\": \"<string>\",\n      \"IDType3\": \"<string>\",\n      \"IDNo1\": \"<string>\",\n      \"IDNo2\": \"<string>\",\n      \"IDNo3\": \"<string>\"\n    },\n    \"note\": \"<string>\",\n    \"SIC1\": \"<string>\",\n    \"SIC2\": \"<string>\",\n    \"dunBradNo\": \"<string>\",\n    \"otherAddress\": \"<string>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e96bb972-2231-456f-ad09-b4cf2d9dc727",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ComplianceService.svc",
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"locationInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"isSensitiveData\": \"<boolean>\",\n    \"CorityLink\": \"<boolean>\",\n    \"CorityCachedID\": \"<integer>\",\n    \"CorityObjectType\": \"<string>\",\n    \"type\": \"<string>\",\n    \"parentPath\": \"<string>\",\n    \"parentPathLocalized\": \"<string>\",\n    \"timeZone\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"stdOffset\": \"<integer>\",\n      \"dstOffset\": \"<integer>\",\n      \"currentOffset\": \"<integer>\"\n    },\n    \"activeDate\": \"<dateTime>\",\n    \"inactiveDate\": \"<dateTime>\",\n    \"responsibleUser\": \"<string>\",\n    \"fieldTemplate\": \"<string>\",\n    \"calcFieldTemplate\": \"<string>\",\n    \"fieldValues\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"calcFieldValues\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"address\": {\n      \"street1\": \"<string>\",\n      \"street2\": \"<string>\",\n      \"street3\": \"<string>\",\n      \"city\": \"<string>\",\n      \"countyOrRegion\": \"<string>\",\n      \"stateOrProvince\": \"<string>\",\n      \"country\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    },\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"geoLocation\": {\n      \"latitude\": \"<double>\",\n      \"longitude\": \"<double>\",\n      \"latNS\": \"<string>\",\n      \"latDeg\": \"<integer>\",\n      \"latMin\": \"<integer>\",\n      \"latSec\": \"<double>\",\n      \"longEW\": \"<string>\",\n      \"longDeg\": \"<integer>\",\n      \"longMin\": \"<integer>\",\n      \"longSec\": \"<double>\",\n      \"utmZone\": \"<string>\",\n      \"utmEast\": \"<double>\",\n      \"utmNorth\": \"<double>\",\n      \"formatType\": \"<integer>\"\n    },\n    \"security\": {},\n    \"tags\": [\n      {\n        \"tagScheme\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"tagHistory\": [\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          },\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          }\n        ]\n      },\n      {\n        \"tagScheme\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"tagHistory\": [\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          },\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          }\n        ]\n      }\n    ],\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"mailingAddress\": {\n      \"Country\": \"<string>\",\n      \"State\": \"<string>\",\n      \"City\": \"<string>\",\n      \"PostalCode\": \"<string>\",\n      \"Address1\": \"<string>\",\n      \"Address2\": \"<string>\",\n      \"Address3\": \"<string>\"\n    },\n    \"contactInformation\": {\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"Title\": \"<string>\",\n      \"Company\": \"<string>\",\n      \"TelNo\": \"<string>\",\n      \"FaxNo\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Email\": \"<string>\"\n    },\n    \"locationHistory\": [\n      {\n        \"BeginDate\": \"<dateTime>\",\n        \"LocationId\": \"<string>\",\n        \"Location\": \"<string>\"\n      },\n      {\n        \"BeginDate\": \"<dateTime>\",\n        \"LocationId\": \"<string>\",\n        \"Location\": \"<string>\"\n      }\n    ],\n    \"regulatoryIdentification\": {\n      \"RCRA\": \"<string>\",\n      \"TRI\": \"<string>\",\n      \"RMP\": \"<string>\",\n      \"StateID1\": \"<string>\",\n      \"StateID2\": \"<string>\",\n      \"StateID3\": \"<string>\",\n      \"LocalID1\": \"<string>\",\n      \"LocalID2\": \"<string>\",\n      \"LocalID3\": \"<string>\",\n      \"IDType1\": \"<string>\",\n      \"IDType2\": \"<string>\",\n      \"IDType3\": \"<string>\",\n      \"IDNo1\": \"<string>\",\n      \"IDNo2\": \"<string>\",\n      \"IDNo3\": \"<string>\"\n    },\n    \"note\": \"<string>\",\n    \"SIC1\": \"<string>\",\n    \"SIC2\": \"<string>\",\n    \"dunBradNo\": \"<string>\",\n    \"otherAddress\": \"<string>\"\n  },\n  \"copyFrom\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98252c59-7f82-472d-b5f7-521991609655",
+          "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Get Location",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Get Location",
+            "description": {
+              "content": "\n\n\nenvianceSdk.compliance.getLocation\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.compliancePermission.getLocationPermission\r\n```\r\n[\r\n  \"324a63d8-35df-473f-b8d8-514872c7f70e\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ComplianceService.svc",
+                "locations",
+                ":locationIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1d4473ec-506c-4edd-829a-e62d1dfa33a4",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ComplianceService.svc",
+                    "locations",
+                    ":locationIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\",\n  \"isSensitiveData\": \"<boolean>\",\n  \"CorityLink\": \"<boolean>\",\n  \"CorityCachedID\": \"<integer>\",\n  \"CorityObjectType\": \"<string>\",\n  \"type\": \"<string>\",\n  \"parentPath\": \"<string>\",\n  \"parentPathLocalized\": \"<string>\",\n  \"timeZone\": {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"stdOffset\": \"<integer>\",\n    \"dstOffset\": \"<integer>\",\n    \"currentOffset\": \"<integer>\"\n  },\n  \"activeDate\": \"<dateTime>\",\n  \"inactiveDate\": \"<dateTime>\",\n  \"responsibleUser\": \"<string>\",\n  \"fieldTemplate\": \"<string>\",\n  \"calcFieldTemplate\": \"<string>\",\n  \"fieldValues\": [\n    {\n      \"name\": \"<string>\",\n      \"urlItems\": [\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        }\n      ],\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"caption\": \"<string>\",\n      \"captionLocalized\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"urlItems\": [\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        }\n      ],\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"caption\": \"<string>\",\n      \"captionLocalized\": \"<string>\"\n    }\n  ],\n  \"calcFieldValues\": [\n    {\n      \"name\": \"<string>\",\n      \"urlItems\": [\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        }\n      ],\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"caption\": \"<string>\",\n      \"captionLocalized\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"urlItems\": [\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        }\n      ],\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"caption\": \"<string>\",\n      \"captionLocalized\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\",\n  \"address\": {\n    \"street1\": \"<string>\",\n    \"street2\": \"<string>\",\n    \"street3\": \"<string>\",\n    \"city\": \"<string>\",\n    \"countyOrRegion\": \"<string>\",\n    \"stateOrProvince\": \"<string>\",\n    \"country\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"documents\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"geoLocation\": {\n    \"latitude\": \"<double>\",\n    \"longitude\": \"<double>\",\n    \"latNS\": \"<string>\",\n    \"latDeg\": \"<integer>\",\n    \"latMin\": \"<integer>\",\n    \"latSec\": \"<double>\",\n    \"longEW\": \"<string>\",\n    \"longDeg\": \"<integer>\",\n    \"longMin\": \"<integer>\",\n    \"longSec\": \"<double>\",\n    \"utmZone\": \"<string>\",\n    \"utmEast\": \"<double>\",\n    \"utmNorth\": \"<double>\",\n    \"formatType\": \"<integer>\"\n  },\n  \"security\": {},\n  \"tags\": [\n    {\n      \"tagScheme\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"tagHistory\": [\n        {\n          \"BeginDate\": \"<dateTime>\",\n          \"EndDate\": \"<dateTime>\"\n        },\n        {\n          \"BeginDate\": \"<dateTime>\",\n          \"EndDate\": \"<dateTime>\"\n        }\n      ]\n    },\n    {\n      \"tagScheme\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"tagHistory\": [\n        {\n          \"BeginDate\": \"<dateTime>\",\n          \"EndDate\": \"<dateTime>\"\n        },\n        {\n          \"BeginDate\": \"<dateTime>\",\n          \"EndDate\": \"<dateTime>\"\n        }\n      ]\n    }\n  ],\n  \"namelocalized\": [\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"culture\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"mailingAddress\": {\n    \"Country\": \"<string>\",\n    \"State\": \"<string>\",\n    \"City\": \"<string>\",\n    \"PostalCode\": \"<string>\",\n    \"Address1\": \"<string>\",\n    \"Address2\": \"<string>\",\n    \"Address3\": \"<string>\"\n  },\n  \"contactInformation\": {\n    \"FirstName\": \"<string>\",\n    \"LastName\": \"<string>\",\n    \"Title\": \"<string>\",\n    \"Company\": \"<string>\",\n    \"TelNo\": \"<string>\",\n    \"FaxNo\": \"<string>\",\n    \"Mobile\": \"<string>\",\n    \"Email\": \"<string>\"\n  },\n  \"locationHistory\": [\n    {\n      \"BeginDate\": \"<dateTime>\",\n      \"LocationId\": \"<string>\",\n      \"Location\": \"<string>\"\n    },\n    {\n      \"BeginDate\": \"<dateTime>\",\n      \"LocationId\": \"<string>\",\n      \"Location\": \"<string>\"\n    }\n  ],\n  \"regulatoryIdentification\": {\n    \"RCRA\": \"<string>\",\n    \"TRI\": \"<string>\",\n    \"RMP\": \"<string>\",\n    \"StateID1\": \"<string>\",\n    \"StateID2\": \"<string>\",\n    \"StateID3\": \"<string>\",\n    \"LocalID1\": \"<string>\",\n    \"LocalID2\": \"<string>\",\n    \"LocalID3\": \"<string>\",\n    \"IDType1\": \"<string>\",\n    \"IDType2\": \"<string>\",\n    \"IDType3\": \"<string>\",\n    \"IDNo1\": \"<string>\",\n    \"IDNo2\": \"<string>\",\n    \"IDNo3\": \"<string>\"\n  },\n  \"note\": \"<string>\",\n  \"SIC1\": \"<string>\",\n  \"SIC2\": \"<string>\",\n  \"dunBradNo\": \"<string>\",\n  \"otherAddress\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5114e70a-a0e7-4832-8b09-e6aea28743f3",
+          "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Update Location",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Update Location",
+            "description": {
+              "content": "\n\nUpdates (and potentially moves) an existing Location object in the Compliance Model. Specifying a new parent path moves the Location underneath another parent Location. Updating the Custom Field Template of a Location object, if that object currently has no Template, adds the Template to the object. When switching from one Template to another Template, those values that belong to fields common to both Templates are kept, any values for fields not in the new Template are removed permanently. Setting the Template to null permanently removes all Custom Field values. This API does not support historical custom fields (those with Track Value History enabled).\r\n\r\n**Security:** User with permission to Compliance Objects.\r\n\r\n**SDK API:**  `envianceSdk.compliance.updateLocation (locationIdOrPath, locationInfo, onsuccess, onerror)`\r\n\r\n**SDK API (async):**  `envianceSdk.compliance.updateLocationAsync (locationIdOrPath, locationInfo, onsuccess, onerror)`\r\n\r\n```\r\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\r\nContent-Type: application/json; charset=utf-8\r\n \r\n{\r\n  \"locationInfo\": {\r\n  \"name\": \"Toy Manufacturing\",\r\n  \"fieldValues\": [\r\n    {\"name\": \"Aspect\", \"values\": [\"Air pollution control waste\"]},\r\n    {\"name\": \"Start Date\", \"values\": [\"2012-09-19T20:00:00\"]},\r\n    {\"name\": \"Type\", \"values\": [\"Spill\", \"Near Miss\"]},\r\n    {\"name\": \"Category\", \"values\": [\"Cat1\", \"Cat1.1\", \"Cat1.1.1\"]}\r\n  ],\r\n  \"documents\": [\"/Folder A/Document.doc\"]\r\n  }\r\n}\r\n\r\n//EXAMPLE with MOVE\r\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\r\nContent-Type: application/json; charset=utf-8\r\n \r\n{\r\n  \"locationInfo\": {\r\n  \"name\": \"Toy Manufacturing\",\r\n  \"parentPath\": \"/New Manufacturing Division/Toys/\"\r\n  }\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.compliance.updateLocation\r\n```\r\n[\r\n  \"0128E876-42C3-4820-8219-000A3F2409AA\",\r\n  {\r\n    \"name\": \"Toy Manufacturing\",\r\n    \"isSensitiveData\": true,\r\n    \"CorityCachedID\": 0,\r\n    \"CorityLink\": false,\r\n    \"fieldValues\": [\r\n      {\r\n        \"name\": \"Aspect\",\r\n        \"values\": [\r\n          \"Air pollution control waste\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Start Date\",\r\n        \"values\": [\r\n          \"2012-09-19T20:00\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Type\",\r\n        \"values\": [\r\n          \"Spill\",\r\n          \"Near Miss\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Category\",\r\n        \"values\": [\r\n          \"Cat1\",\r\n          \"Cat1.1\",\r\n          \"Cat1.1.1\"\r\n        ]\r\n      }\r\n    ],\r\n    \"namelocalized\": [\r\n      {\r\n        \"value\": \"DemoLoc POI (US)\",\r\n        \"culture\": \"en-us\"\r\n      }\r\n    ],\r\n    \"documents\": [\r\n      \"/Folder A/Document.doc\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ComplianceService.svc",
+                "locations",
+                ":locationIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"locationInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"isSensitiveData\": \"<boolean>\",\n    \"CorityLink\": \"<boolean>\",\n    \"CorityCachedID\": \"<integer>\",\n    \"CorityObjectType\": \"<string>\",\n    \"type\": \"<string>\",\n    \"parentPath\": \"<string>\",\n    \"parentPathLocalized\": \"<string>\",\n    \"timeZone\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"stdOffset\": \"<integer>\",\n      \"dstOffset\": \"<integer>\",\n      \"currentOffset\": \"<integer>\"\n    },\n    \"activeDate\": \"<dateTime>\",\n    \"inactiveDate\": \"<dateTime>\",\n    \"responsibleUser\": \"<string>\",\n    \"fieldTemplate\": \"<string>\",\n    \"calcFieldTemplate\": \"<string>\",\n    \"fieldValues\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"calcFieldValues\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"address\": {\n      \"street1\": \"<string>\",\n      \"street2\": \"<string>\",\n      \"street3\": \"<string>\",\n      \"city\": \"<string>\",\n      \"countyOrRegion\": \"<string>\",\n      \"stateOrProvince\": \"<string>\",\n      \"country\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    },\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"geoLocation\": {\n      \"latitude\": \"<double>\",\n      \"longitude\": \"<double>\",\n      \"latNS\": \"<string>\",\n      \"latDeg\": \"<integer>\",\n      \"latMin\": \"<integer>\",\n      \"latSec\": \"<double>\",\n      \"longEW\": \"<string>\",\n      \"longDeg\": \"<integer>\",\n      \"longMin\": \"<integer>\",\n      \"longSec\": \"<double>\",\n      \"utmZone\": \"<string>\",\n      \"utmEast\": \"<double>\",\n      \"utmNorth\": \"<double>\",\n      \"formatType\": \"<integer>\"\n    },\n    \"security\": {},\n    \"tags\": [\n      {\n        \"tagScheme\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"tagHistory\": [\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          },\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          }\n        ]\n      },\n      {\n        \"tagScheme\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"tagHistory\": [\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          },\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          }\n        ]\n      }\n    ],\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"mailingAddress\": {\n      \"Country\": \"<string>\",\n      \"State\": \"<string>\",\n      \"City\": \"<string>\",\n      \"PostalCode\": \"<string>\",\n      \"Address1\": \"<string>\",\n      \"Address2\": \"<string>\",\n      \"Address3\": \"<string>\"\n    },\n    \"contactInformation\": {\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"Title\": \"<string>\",\n      \"Company\": \"<string>\",\n      \"TelNo\": \"<string>\",\n      \"FaxNo\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Email\": \"<string>\"\n    },\n    \"locationHistory\": [\n      {\n        \"BeginDate\": \"<dateTime>\",\n        \"LocationId\": \"<string>\",\n        \"Location\": \"<string>\"\n      },\n      {\n        \"BeginDate\": \"<dateTime>\",\n        \"LocationId\": \"<string>\",\n        \"Location\": \"<string>\"\n      }\n    ],\n    \"regulatoryIdentification\": {\n      \"RCRA\": \"<string>\",\n      \"TRI\": \"<string>\",\n      \"RMP\": \"<string>\",\n      \"StateID1\": \"<string>\",\n      \"StateID2\": \"<string>\",\n      \"StateID3\": \"<string>\",\n      \"LocalID1\": \"<string>\",\n      \"LocalID2\": \"<string>\",\n      \"LocalID3\": \"<string>\",\n      \"IDType1\": \"<string>\",\n      \"IDType2\": \"<string>\",\n      \"IDType3\": \"<string>\",\n      \"IDNo1\": \"<string>\",\n      \"IDNo2\": \"<string>\",\n      \"IDNo3\": \"<string>\"\n    },\n    \"note\": \"<string>\",\n    \"SIC1\": \"<string>\",\n    \"SIC2\": \"<string>\",\n    \"dunBradNo\": \"<string>\",\n    \"otherAddress\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f8b8b206-4f68-4946-a94e-f0f50c81b03c",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ComplianceService.svc",
+                    "locations",
+                    ":locationIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"locationInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"isSensitiveData\": \"<boolean>\",\n    \"CorityLink\": \"<boolean>\",\n    \"CorityCachedID\": \"<integer>\",\n    \"CorityObjectType\": \"<string>\",\n    \"type\": \"<string>\",\n    \"parentPath\": \"<string>\",\n    \"parentPathLocalized\": \"<string>\",\n    \"timeZone\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"stdOffset\": \"<integer>\",\n      \"dstOffset\": \"<integer>\",\n      \"currentOffset\": \"<integer>\"\n    },\n    \"activeDate\": \"<dateTime>\",\n    \"inactiveDate\": \"<dateTime>\",\n    \"responsibleUser\": \"<string>\",\n    \"fieldTemplate\": \"<string>\",\n    \"calcFieldTemplate\": \"<string>\",\n    \"fieldValues\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"calcFieldValues\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"description\": \"<string>\",\n    \"address\": {\n      \"street1\": \"<string>\",\n      \"street2\": \"<string>\",\n      \"street3\": \"<string>\",\n      \"city\": \"<string>\",\n      \"countyOrRegion\": \"<string>\",\n      \"stateOrProvince\": \"<string>\",\n      \"country\": \"<string>\",\n      \"postalCode\": \"<string>\"\n    },\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"geoLocation\": {\n      \"latitude\": \"<double>\",\n      \"longitude\": \"<double>\",\n      \"latNS\": \"<string>\",\n      \"latDeg\": \"<integer>\",\n      \"latMin\": \"<integer>\",\n      \"latSec\": \"<double>\",\n      \"longEW\": \"<string>\",\n      \"longDeg\": \"<integer>\",\n      \"longMin\": \"<integer>\",\n      \"longSec\": \"<double>\",\n      \"utmZone\": \"<string>\",\n      \"utmEast\": \"<double>\",\n      \"utmNorth\": \"<double>\",\n      \"formatType\": \"<integer>\"\n    },\n    \"security\": {},\n    \"tags\": [\n      {\n        \"tagScheme\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"tagHistory\": [\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          },\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          }\n        ]\n      },\n      {\n        \"tagScheme\": \"<string>\",\n        \"tag\": \"<string>\",\n        \"tagHistory\": [\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          },\n          {\n            \"BeginDate\": \"<dateTime>\",\n            \"EndDate\": \"<dateTime>\"\n          }\n        ]\n      }\n    ],\n    \"namelocalized\": [\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      },\n      {\n        \"culture\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"mailingAddress\": {\n      \"Country\": \"<string>\",\n      \"State\": \"<string>\",\n      \"City\": \"<string>\",\n      \"PostalCode\": \"<string>\",\n      \"Address1\": \"<string>\",\n      \"Address2\": \"<string>\",\n      \"Address3\": \"<string>\"\n    },\n    \"contactInformation\": {\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"Title\": \"<string>\",\n      \"Company\": \"<string>\",\n      \"TelNo\": \"<string>\",\n      \"FaxNo\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Email\": \"<string>\"\n    },\n    \"locationHistory\": [\n      {\n        \"BeginDate\": \"<dateTime>\",\n        \"LocationId\": \"<string>\",\n        \"Location\": \"<string>\"\n      },\n      {\n        \"BeginDate\": \"<dateTime>\",\n        \"LocationId\": \"<string>\",\n        \"Location\": \"<string>\"\n      }\n    ],\n    \"regulatoryIdentification\": {\n      \"RCRA\": \"<string>\",\n      \"TRI\": \"<string>\",\n      \"RMP\": \"<string>\",\n      \"StateID1\": \"<string>\",\n      \"StateID2\": \"<string>\",\n      \"StateID3\": \"<string>\",\n      \"LocalID1\": \"<string>\",\n      \"LocalID2\": \"<string>\",\n      \"LocalID3\": \"<string>\",\n      \"IDType1\": \"<string>\",\n      \"IDType2\": \"<string>\",\n      \"IDType3\": \"<string>\",\n      \"IDNo1\": \"<string>\",\n      \"IDNo2\": \"<string>\",\n      \"IDNo3\": \"<string>\"\n    },\n    \"note\": \"<string>\",\n    \"SIC1\": \"<string>\",\n    \"SIC2\": \"<string>\",\n    \"dunBradNo\": \"<string>\",\n    \"otherAddress\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cad03fdd-7c81-46cf-9c3f-80fccf57a20b",
+          "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Delete Location",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Delete Location",
+            "description": {
+              "content": "\n\n\nenvianceSdk.compliance.deleteLocation\r\n```\r\n[\r\n  \"eccd2310-9b5f-440b-bf0d-91f9803d036b\",\r\n  true,\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ComplianceService.svc",
+                "locations",
+                ":locationIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "39c2d137-79b5-4303-8ed1-3678cd9db966",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ComplianceService.svc",
+                    "locations",
+                    ":locationIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "599c4a14-792a-4beb-bd98-a0a93b35108a",
+          "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Get Overrides",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Get Overrides",
+            "description": {
+              "content": "\n\n\nenvianceSdk.compliance.getOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ComplianceService.svc",
+                "locations",
+                "overrides",
+                ":locationIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "267efa88-cdb9-48d5-841f-010084b98074",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ComplianceService.svc",
+                    "locations",
+                    "overrides",
+                    ":locationIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"roleOverrides\": [\n    {\n      \"role\": {\n        \"id\": \"string\",\n        \"name\": \"string\"\n      },\n      \"users\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"isDeleted\": false,\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"isDeleted\": false,\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"groups\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"role\": {\n        \"id\": \"string\",\n        \"name\": \"string\"\n      },\n      \"users\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"isDeleted\": true,\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"isDeleted\": false,\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"groups\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"policiesOverride\": [\n    {\n      \"workflowType\": {\n        \"id\": \"string\",\n        \"name\": \"string\"\n      },\n      \"policies\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"workflowType\": {\n        \"id\": \"string\",\n        \"name\": \"string\"\n      },\n      \"policies\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27e68ecc-7ba7-42fe-bbc7-0ccfd966364f",
+          "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Update Overrides",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Update Overrides",
+            "description": {
+              "content": "\n\n\nenvianceSdk.compliance.updateOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\",\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"name\": \"Role 1\"\r\n        },\r\n        \"users\": [\r\n          {\r\n            \"name\": \"478e9887-ca75-4fa8-afd0-fc79aa952345\"\r\n          }\r\n        ],\r\n        \"groups\": [\r\n          {\r\n            \"name\": \"Group1\"\r\n          },\r\n          {\r\n            \"name\": \"Group2\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"policiesOverride\": [\r\n      {\r\n        \"workflowDefinition\": {\r\n          \"name\": \"workflowType 1\"\r\n        },\r\n        \"policies\": [\r\n          {\r\n            \"name\": \"policy1\"\r\n          },\r\n          {\r\n            \"name\": \"policy2\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.compliance.updateOverrides\r\n```\r\n[\r\n  \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\",\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"id\": \"960e9887-ca75-4fa8-afd0-fc79aa952ff6\"\r\n        },\r\n        \"users\": [\r\n          {\r\n            \"id\": \"123e9887-ca75-4fa8-afd0-fc79aa952346\"\r\n          },\r\n          {\r\n            \"id\": \"234e9887-ca75-4fa8-afd0-fc79aa952126\"\r\n          }\r\n        ],\r\n        \"groups\": [\r\n          {\r\n            \"id\": \"678e9887-ca75-4fa8-afd0-fc79aa952456\"\r\n          },\r\n          {\r\n            \"id\": \"675e9887-ca75-4fa8-afd0-fc79aa952236\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"policiesOverride\": [\r\n      {\r\n        \"workflowType\": {\r\n          \"id\": \"674e9887-ca75-4fa8-afd0-fc79aa952126\"\r\n        },\r\n        \"policies\": [\r\n          {\r\n            \"id\": \"345e9887-ca75-4fa8-afd0-fc79aa952346\"\r\n          },\r\n          {\r\n            \"id\": \"465e9887-ca75-4fa8-afd0-fc79aa952786\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ComplianceService.svc",
+                "locations",
+                "overrides",
+                ":locationIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"overridesInfo\": {\n    \"roleOverrides\": [\n      {\n        \"role\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"users\": [\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ],\n        \"groups\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"role\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"users\": [\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ],\n        \"groups\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"policiesOverride\": [\n      {\n        \"workflowType\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"policies\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"workflowType\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"policies\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "244c0b87-9dec-4c2c-8621-ed304069c0d7",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ComplianceService.svc",
+                    "locations",
+                    "overrides",
+                    ":locationIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"overridesInfo\": {\n    \"roleOverrides\": [\n      {\n        \"role\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"users\": [\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ],\n        \"groups\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"role\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"users\": [\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ],\n        \"groups\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"policiesOverride\": [\n      {\n        \"workflowType\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"policies\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"workflowType\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"policies\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1240ddba-e952-4aa3-9a00-a66b2a0190a0",
+          "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Delete Overrides",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Compliance Model.Impl.Compliance Service.Delete Overrides",
+            "description": {
+              "content": "\n\n\nenvianceSdk.compliance.deleteOverrides\r\n```\r\n[\r\n  \"e2076afc-b3a1-4b87-ace7-fec821987789\",\r\n  {\r\n    \"roleOverrides\": [\r\n      {\r\n        \"role\": {\r\n          \"name\": \"Role 1\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.compliance.deleteOverrides\r\n```\r\n[\r\n  \"e2076afc-b3a1-4b87-ace7-fec821987789\",\r\n  {\r\n    \"policiesOverride\": [\r\n      {\r\n        \"workflowType\": {\r\n          \"id\": \"433bc93f-ddc4-4938-9a6a-a1749864ea7d\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ComplianceService.svc",
+                "locations",
+                "overrides",
+                ":locationIdOrPath"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationIdOrPath",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"overridesInfo\": {\n    \"roleOverrides\": [\n      {\n        \"role\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"users\": [\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ],\n        \"groups\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"role\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"users\": [\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ],\n        \"groups\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"policiesOverride\": [\n      {\n        \"workflowType\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"policies\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"workflowType\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"policies\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0c778d1d-122a-489e-8a16-e33ad03d91ee",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ComplianceService.svc",
+                    "locations",
+                    "overrides",
+                    ":locationIdOrPath"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationIdOrPath",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"overridesInfo\": {\n    \"roleOverrides\": [\n      {\n        \"role\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"users\": [\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ],\n        \"groups\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"role\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"users\": [\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"isDeleted\": \"<boolean>\",\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ],\n        \"groups\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"policiesOverride\": [\n      {\n        \"workflowType\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"policies\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"workflowType\": {\n          \"id\": \"<guid>\",\n          \"name\": \"<string>\"\n        },\n        \"policies\": [\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          },\n          {\n            \"id\": \"<guid>\",\n            \"name\": \"<string>\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8ff4d800-ab8f-4696-bc32-14011207e11f",
+    "name": "Rest Activity Compliance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

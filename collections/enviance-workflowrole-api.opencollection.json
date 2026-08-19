@@ -1,0 +1,244 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity WorkflowRole API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "WorkflowRole",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.CreateWorkflowRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowRoleService.svc/workflowrole",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.createWorkflowRole\r\n```\r\n[\r\n  {\r\n    \"name\": \"WorkflowRole1\",\r\n    \"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\",\r\n    \"defaultMembers\": {\r\n      \"userIdsOrNames\": [\r\n        \"user1\"\r\n      ],\r\n      \"groupIdsOrNames\": [\r\n        \"group1\"\r\n      ]\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.createWorkflowRoleAsync\r\n```\r\n[\r\n  {\r\n    \"name\": \"WorkflowRole1\",\r\n    \"description\": \"Lorem ipsum dolor sit "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.GetWorkflowRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/WorkflowRoleService.svc/workflowrole/:roleId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.getWorkflowRole\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.UpdateWorkflowRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/WorkflowRoleService.svc/workflowrole/:roleId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\n[\"7bd06df1-041b-4d1e-8091-1e74f7dd7219\",{\"name\":\"WorkflowRole1update\"\"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\",\"defaultMembers\": {\"userIdsOrNames\": [\"User1\"],\"groupIdsOrNames\": [\"group1\"]},\"onsuccess\",\"onerror\"][\"7bd06df1-041b-4d1e-8091-1e74f7dd7219\",{\"name\":\"WorkflowRole1update\"\"description\": \"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo\",\"defaultMembers\": {\"userIdsOrNames\": [\"User1\"],\"groupIdsOrNames\": [\"group1\"]},\""
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.DeleteWorkflowRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/WorkflowRoleService.svc/workflowrole/:roleId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "roleId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.deleteWorkflowRole\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.deleteWorkflowRoleAsync\r\n```\r\n[\r\n  \"276067c5-1316-433d-9943-86475ed8fed4\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Workflows.Role.Impl.WorkflowRoleService.CopyWorkflowRole",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/WorkflowRoleService.svc/workflowrole/copy",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.workflows.copyWorkflowRole\r\n```\r\n[\r\n  \"5cd5138d-c792-4dec-ae92-8a6fc70ae4c4\",\r\n  \"WorkflowRole1copied\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.workflows.copyWorkflowRoleAsync\r\n```\r\n[\r\n  \"5cd5138d-c792-4dec-ae92-8a6fc70ae4c4\",\r\n  \"WorkflowRole1copied\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

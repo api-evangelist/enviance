@@ -1,0 +1,478 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity FormTemplate API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FormTemplate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.CreateFormTemplate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nCreate form template in enviance system\r\n\r\n** SDK API:**  'envianceSdk.formtemplates.createFormTemplate (formTemplateInfo, onsuccess, onerror)'\r\n\r\n** SDK API:**  'envianceSdk.formtemplates.createFormTemplateAsync (formTemplateInfo, onsuccess, onerror)'\r\n\r\n```\r\nPOST /formtemplates HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\r\n  \"formTemplateInfo\" : {\r\n    \"name\": \"Form Template REST API Demo - t222\",\r\n    \"description\": \"Desc\",\r\n    \"version\": 10,\r\n    \r\n    \"udfs\": [\r\n        {"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates/:formtemplateIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "formTemplateIdOrName",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "\n\nGet information about form template from enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.getFormTemplate (formtemplateIdOrName, onsuccess, onerror)\r\n\r\n```\r\nGET /formtemplates/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n    \"id\": \"ecdb1461-3e4d-488b-ae9f-94de6a8fd1c3\",\r\n    \"name\": \"Form Template TEST1\",\r\n    \"description\": \"Desc\",\r\n    \"versionId\": \"784bc71e-a396-456c-b808-01985d0d7f68\",\r\n    \"version\": 1,\r\n    \"versionComment\": \"\",\r\n    \"udfs\": [\r\n        {\r\n "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.UpdateFormTemplate",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates/:formtemplateIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\n[\"960e9887-ca75-4fa8-afd0-fc79aa952ff6\", {r    \"name\": \"Mayur Template 7\",r    \"description\": \"Update Desc\",r    \"version\": 20,r    \"versionComment\": \"Version 9 Created from REST API\",r    \"udfs\": [r        {r            \"id\": \"de137d17-dec2-45da-aef5-f48f2a6a522a\",r            \"order\": 0,r            \"scripts\": [],r            \"validation\": [r                {r                    \"length\": 20,r                    \"regEx\": \"rer\",r                    \"requiredValidationScope\": \"SaveStepData\",r"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.DeleteFormTemplate",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates/:formtemplateIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.formtemplates.deleteFormTemplateVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"102fe594-20eb-4938-96cc-cac8eebd282d\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\nenvianceSdk.formtemplates.deleteFormTemplate\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.UpdateFormTemplateCreateNewVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates/:formtemplateIdOrName/newversion",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nUpdate form template by creating new versions within enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.updateFormTemplateCreateNewVersion (formTemplateIdOrName, formTemplateInfo, onsuccess, onerror)\r\nnull\n\n\n[\"960e9887-ca75-4fa8-afd0-fc79aa952ff6\", {r    \"version\": 2,r    \"versionComment\": \"Version 2 Created from REST API\",r    \"udfs\": [r        {r            \"id\": \"de137d17-dec2-45da-aef5-f48f2a6a522a\",r            \"order\": 0,r            \"scripts\": [],r            \"validation\": [r "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.RevertToVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates/:formTemplateIdOrName/revert/:versionIdOrNumber",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "formTemplateIdOrName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "versionIdOrNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nRevert the current form template version to specified version within enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.updateFormTemplateCreateNewVersion (formTemplateIdOrName, formTemplateInfo, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.formtemplates.revertToVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"5bd631e0-bc70-4e94-9bcf-891543ba5ff4 \",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\nenvianceSdk.formtemplates.revertToVersionAsync\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplateVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates/:formTemplateIdOrName/version/:versionIdOrNumber",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "formTemplateIdOrName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "versionIdOrNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nGet information about form template version from enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.getFormTemplateVersion (formTemplateIdOrName, versionIdOrNumber, onsuccess, onerror)\r\n\r\n```\r\nGET /formtemplates/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n    \"id\": \"ecdb1461-3e4d-488b-ae9f-94de6a8fd1c3\",\r\n    \"name\": \"Form Template TEST1\",\r\n    \"description\": \"Desc\",\r\n    \"versionId\": \"784bc71e-a396-456c-b808-01985d0d7f68\",\r\n    \"version\": 1,\r\n    \"versionComment\""
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.DeleteFormTemplateVersion",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates/:formTemplateIdOrName/version/:versionIdOrNumber",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "formTemplateIdOrName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "versionIdOrNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.formtemplates.deleteFormTemplateVersion\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"102fe594-20eb-4938-96cc-cac8eebd282d\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.GetFormTemplateVersions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates/:formTemplateIdOrName/versions",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "formTemplateIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nGet information about form template versions from enviance system.\r\n\r\n** SDK API:**  envianceSdk.formtemplates.getFormTemplateVersions (formTemplateIdOrName, onsuccess, onerror)\r\n\r\n```\r\nGET /formtemplates/9ca22677-2670-41a9-bafd-3b2825592863/versions HTTP/1.1\r\n\r\n```\r\n\n\n\nenvianceSdk.formtemplates.getFormTemplateVersions\r\n```\r\n[\r\n  \"aa9fd53d-e476-420d-9372-4fb5334aa488\",\r\n  \"onsuccess\",\r\n  \"onsuccess\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.FormTemplates.Impl.FormTemplateService.CopyFormTemplate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/FormTemplateService.svc/formtemplates/copy",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\nCreate form template in enviance system\r\n\r\n** SDK API:**  'envianceSdk.formtemplates.copyFormTemplate (sourceTemplateIdOrName, newTemplateName, onsuccess, onerror)'\r\n\r\n```\r\nPOST /formtemplates/copy HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\r\n  \"sourceTemplateIdOrName\" :\"Form Template REST API Demo - t222\",\r\n  \"newTemplateName\" : \"Form Template REST API Demo - t222 - COPY\"\r\n}\r\n\r\n```\r\n\n\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

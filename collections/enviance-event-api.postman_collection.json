@@ -1,0 +1,818 @@
+{
+  "item": [
+    {
+      "id": "b4dbd202-0377-4d62-9d56-6174ee4f5700",
+      "name": "Event",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bd854573-6862-4a3d-bbdb-b90e245de382",
+          "name": "Enviance.Rest Services.Ver2.Events.Impl.Event Service.Create Event",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Events.Impl.Event Service.Create Event",
+            "description": {
+              "content": "\n\nCreates a new Event in the specified Event Log. Events can only be created for manual Event Logs. Attempting to create an Event on an  automatic Event Log will result in an error.\r\n\r\n**Security:** All users.\r\n\r\n**SDK API:**  `envianceSdk.events.createEvent(eventLogIdOrTag, eventInfo, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.events.createEvent\r\n```\r\n[\r\n  \"ae6cac58-1953-4965-82b4-1f2621fc808d\",\r\n  {\r\n    \"name\": \"Excess Stack Emission\",\r\n    \"beginDate\": \"2012-10-01T01:22:00\",\r\n    \"endDate\": \"2012-10-01T01:25:00\",\r\n    \"state\": \"Open\",\r\n    \"complianceType\": \"Internal\",\r\n    \"acceptAsDeviation\": \"false\",\r\n    \"requirementIdOrPath\": \"Generation/Stacks/Stack 1/NOx Emission\",\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Collected By\",\r\n        \"values\": [\r\n          \"Isaac Newton\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Measured\",\r\n        \"values\": [\r\n          \"Yes\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Impact\",\r\n        \"values\": [\r\n          \"Air\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Next Measure Time\",\r\n        \"values\": [\r\n          \"2012-11-19T12:00:00\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "EventService.svc",
+                "eventlogs",
+                ":eventLogIdOrTag",
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventLogIdOrTag",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"beginDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"taskId\": \"<guid>\",\n    \"state\": \"<string>\",\n    \"complianceType\": \"<string>\",\n    \"acceptAsDeviation\": \"<boolean>\",\n    \"requirementIdOrPath\": \"<string>\",\n    \"fields\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "00eee066-c6f9-4fc2-bea9-d897b09859ee",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "EventService.svc",
+                    "eventlogs",
+                    ":eventLogIdOrTag",
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventLogIdOrTag",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"beginDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"taskId\": \"<guid>\",\n    \"state\": \"<string>\",\n    \"complianceType\": \"<string>\",\n    \"acceptAsDeviation\": \"<boolean>\",\n    \"requirementIdOrPath\": \"<string>\",\n    \"fields\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6fe2c42e-73df-4809-9c51-50c8a7fa63aa",
+          "name": "Enviance.Rest Services.Ver2.Events.Impl.Event Service.Get Event",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Events.Impl.Event Service.Get Event",
+            "description": {
+              "content": "\n\n\nenvianceSdk.events.getEvent\r\n```\r\n[\r\n  \"eventlog_id_or_tag\",\r\n  \"event_id_or_tag\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "EventService.svc",
+                "eventlogs",
+                ":eventLogIdOrTag",
+                "events",
+                ":eventIdOrTag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventLogIdOrTag",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventIdOrTag",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6709c2ca-86ef-4ffc-8e04-2d23ad8736d7",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "EventService.svc",
+                    "eventlogs",
+                    ":eventLogIdOrTag",
+                    "events",
+                    ":eventIdOrTag"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventLogIdOrTag",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventIdOrTag",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<guid>\",\n  \"name\": \"<string>\",\n  \"beginDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\",\n  \"taskId\": \"<guid>\",\n  \"state\": \"<string>\",\n  \"complianceType\": \"<string>\",\n  \"acceptAsDeviation\": \"<boolean>\",\n  \"requirementIdOrPath\": \"<string>\",\n  \"fields\": [\n    {\n      \"name\": \"<string>\",\n      \"urlItems\": [\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        }\n      ],\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"caption\": \"<string>\",\n      \"captionLocalized\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"urlItems\": [\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        },\n        {\n          \"label\": \"<string>\",\n          \"url\": \"<string>\"\n        }\n      ],\n      \"values\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"beginDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\",\n      \"caption\": \"<string>\",\n      \"captionLocalized\": \"<string>\"\n    }\n  ],\n  \"documents\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56b5c209-9eba-4e2d-91ca-475ddfce95a0",
+          "name": "Enviance.Rest Services.Ver2.Events.Impl.Event Service.Update Event",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Events.Impl.Event Service.Update Event",
+            "description": {
+              "content": "\n\nUpdates an existing Event.\r\n\r\n**Security:** All users.\r\n\r\n**SDK API:**  `envianceSdk.events.updateEvent(eventLogIdOrTag, eventIdOrTag, eventInfo, onsuccess, onerror)`\r\nnull\n\n\nenvianceSdk.events.updateEvent\r\n```\r\n[\r\n  \"ae6cac58-1953-4965-82b4-1f2621fc808d\",\r\n  \"event_id_or_tag\",\r\n  {\r\n    \"name\": \"Excess Stack Emission\",\r\n    \"beginDate\": \"2012-10-01T01:22:00\",\r\n    \"endDate\": \"2012-10-01T01:25:00\",\r\n    \"state\": \"Open\",\r\n    \"complianceType\": \"Internal\",\r\n    \"acceptAsDeviation\": \"false\",\r\n    \"requirementIdOrPath\": \"Generation/Stacks/Stack 1/NOx Emission\",\r\n    \"fields\": [\r\n      {\r\n        \"name\": \"Collected By\",\r\n        \"values\": [\r\n          \"Isaac Newton\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Measured\",\r\n        \"values\": [\r\n          \"Yes\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Impact\",\r\n        \"values\": [\r\n          \"Air\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Next Measure Time\",\r\n        \"values\": [\r\n          \"2012-11-19T12:00:00\"\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "EventService.svc",
+                "eventlogs",
+                ":eventLogIdOrTag",
+                "events",
+                ":eventIdOrTag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventLogIdOrTag",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventIdOrTag",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"beginDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"taskId\": \"<guid>\",\n    \"state\": \"<string>\",\n    \"complianceType\": \"<string>\",\n    \"acceptAsDeviation\": \"<boolean>\",\n    \"requirementIdOrPath\": \"<string>\",\n    \"fields\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c422df7f-e148-4af4-b1f4-daf2873895d9",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "EventService.svc",
+                    "eventlogs",
+                    ":eventLogIdOrTag",
+                    "events",
+                    ":eventIdOrTag"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventLogIdOrTag",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventIdOrTag",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventInfo\": {\n    \"id\": \"<guid>\",\n    \"name\": \"<string>\",\n    \"beginDate\": \"<dateTime>\",\n    \"endDate\": \"<dateTime>\",\n    \"taskId\": \"<guid>\",\n    \"state\": \"<string>\",\n    \"complianceType\": \"<string>\",\n    \"acceptAsDeviation\": \"<boolean>\",\n    \"requirementIdOrPath\": \"<string>\",\n    \"fields\": [\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"urlItems\": [\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"url\": \"<string>\"\n          }\n        ],\n        \"values\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"beginDate\": \"<dateTime>\",\n        \"endDate\": \"<dateTime>\",\n        \"caption\": \"<string>\",\n        \"captionLocalized\": \"<string>\"\n      }\n    ],\n    \"documents\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8a1572f-c8d2-44a9-a27c-3ea073d4b624",
+          "name": "Enviance.Rest Services.Ver2.Events.Impl.Event Service.Delete Event",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Events.Impl.Event Service.Delete Event",
+            "description": {
+              "content": "\n\n\nenvianceSdk.events.deleteEvent\r\n```\r\n[\r\n  \"eventlog_id_or_tag \",\r\n  \"event_id_or_tag\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "EventService.svc",
+                "eventlogs",
+                ":eventLogIdOrTag",
+                "events",
+                ":eventIdOrTag"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventLogIdOrTag",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eventIdOrTag",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b511b7a-cbf5-4d4e-8b4e-065f53220b54",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "EventService.svc",
+                    "eventlogs",
+                    ":eventLogIdOrTag",
+                    "events",
+                    ":eventIdOrTag"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventLogIdOrTag",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eventIdOrTag",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b83e339b-c372-4d08-9c58-93d977dec250",
+    "name": "Rest Activity Event API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

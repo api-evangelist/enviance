@@ -1,0 +1,2805 @@
+{
+  "item": [
+    {
+      "id": "8a109aea-62ea-4f51-aecc-a299e612f11c",
+      "name": "ScimIdentity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ba254e04-919d-449c-ba94-bce4b261ca06",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Create Group",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Create Group",
+            "description": {
+              "content": "\n\nCreate a new group in Enviance system. \r\n\r\n** Example:**\r\nPOST /ScimIdentityService.svc/scim/v1/Groups HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n** SDK API:**  envianceSdk.scim.createGroup(group, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.scim.createGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"displayName\": \"Enviance 2111 SCIM Demo Group\",\r\n    \"externalid\": \"apple\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"<string>\",\n  \"members\": [\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    }\n  ],\n  \"urn:scim:schemas:enviance:group\": {\n    \"rights\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3c608cd2-5716-435e-afff-d52b0c2ef244",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"displayName\": \"<string>\",\n  \"members\": [\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    }\n  ],\n  \"urn:scim:schemas:enviance:group\": {\n    \"rights\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30df5b06-f259-4b8c-af0d-575e53f6dbaa",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.List Groups",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.List Groups",
+            "description": {
+              "content": "\n\n\nenvianceSdk.scim.getGroup\r\n```\r\n[\r\n    \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Groups",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "attributes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a189f5b-7d08-440d-be55-178ab6e15b86",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Groups",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "attributes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "count",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalResults\": 3631,\n  \"Resources\": [\n    {\n      \"id\": \"string\",\n      \"externalId\": \"string\",\n      \"meta\": {\n        \"created\": \"<dateTime>\",\n        \"lastModified\": \"<string>\",\n        \"location\": \"<string>\",\n        \"version\": \"<string>\",\n        \"attributes\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"externalId\": \"string\",\n      \"meta\": {\n        \"created\": \"<dateTime>\",\n        \"lastModified\": \"<string>\",\n        \"location\": \"<string>\",\n        \"version\": \"<string>\",\n        \"attributes\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    }\n  ],\n  \"startIndex\": 9893,\n  \"itemsPerPage\": 8775\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34a178d2-16f6-410b-b537-8f7c6871a894",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Get Group",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Get Group",
+            "description": {
+              "content": "\n\nGets information about group.\r\n\r\n** Example:** \r\nGET /ScimIdentityService.svc/scim/v1/Groups/809d56ad-77ef-47a6-9f3c-f8853b118744 HTTP/1.1\r\n\r\n** SDK API:**  envianceSdk.scim.getGroup(id, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.scim.getGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Groups",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "67d663f3-cf0d-48d4-9e2d-680f83143b4f",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Groups",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"displayName\": \"<string>\",\n  \"members\": [\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    }\n  ],\n  \"urn:scim:schemas:enviance:group\": {\n    \"rights\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5fbd9248-1241-46df-8c54-11dad0fa2c0a",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update Partial Group",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update Partial Group",
+            "description": {
+              "content": "\n\n\nenvianceSdk.scim.partialUpdateGroup\r\n```\r\n[\r\n    {\r\n        \"externalId\": \"banana\",\r\n        \"meta\": {\r\n            \"attributes\": [\r\n                \"urn:scim:schemas:enviance:group:rights\",\r\n                \"members\"\r\n            ]\r\n        },\r\n        \"schemas\": [\r\n            \"urn:scim:schemas:core:1.0\",\r\n            \"urn:scim:schemas:enviance:group\"\r\n        ],\r\n        \"urn:scim:schemas:enviance:group\": {\r\n            \"rights\": [\r\n                \"Manage Users\",\r\n                \"Manage Groups\"\r\n            ]\r\n        }\r\n    },\r\n    \"8fea1bf7-8afd-44ef-a9cd-c047af7653c2\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Groups",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"<string>\",\n  \"members\": [\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    }\n  ],\n  \"urn:scim:schemas:enviance:group\": {\n    \"rights\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d5211b60-c33d-4ce4-a35c-bb939457a79f",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Groups",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"displayName\": \"<string>\",\n  \"members\": [\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    }\n  ],\n  \"urn:scim:schemas:enviance:group\": {\n    \"rights\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed2b8b59-5795-4416-bcb4-88fa29d17ad8",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update Group",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update Group",
+            "description": {
+              "content": "\n\n\nenvianceSdk.scim.fullUpdateGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"displayName\": \"Scim Grptrtrtr\",\r\n    \"members\": [\r\n      {\r\n        \"value\": \"scimupdatetest998990444\"\r\n      }\r\n    ],\r\n    \"externalid\": \"sweet apple\"\r\n  },\r\n  \"8fea1bf7-8afd-44ef-a9cd-c047af7653c2\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.partialUpdateGroup\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:group\"\r\n    ],\r\n    \"urn:scim:schemas:enviance:group\": {\r\n      \"rights\": [\r\n        \"Manage Users\",\r\n        \"Manage Groups\"\r\n      ]\r\n    },\r\n    \"externalId\": \"banana\",\r\n    \"meta\": {\r\n      \"attributes\": [\r\n        \"urn:scim:schemas:enviance:group:rights\",\r\n        \"members\"\r\n      ]\r\n    }\r\n  },\r\n  \"8fea1bf7-8afd-44ef-a9cd-c047af7653c2\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Groups",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"displayName\": \"<string>\",\n  \"members\": [\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    }\n  ],\n  \"urn:scim:schemas:enviance:group\": {\n    \"rights\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "09fc599a-bf4d-4358-905d-752929ad96e9",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Groups",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"displayName\": \"<string>\",\n  \"members\": [\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"operation\": \"<string>\"\n    }\n  ],\n  \"urn:scim:schemas:enviance:group\": {\n    \"rights\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "573d3147-da69-4d13-a6e1-02405343eee6",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Delete Group",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Delete Group",
+            "description": {
+              "content": "\n\n\nenvianceSdk.scim.deleteGroup\r\n```\r\n[\r\n  \"10EEE1F5-E345-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Groups",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0fe93d5-df77-4b8f-8716-fdc6ae0692ba",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Groups",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0dc8f3fb-30c8-4333-b86a-2acb9b0f6bec",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Get Schemas",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Get Schemas",
+            "description": {},
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "schemas",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27b48cc5-1592-4b93-834f-aaac2eea68cc",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "schemas",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "024367e0-fa2e-49a6-9706-e90442eda598",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Get Schema",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Get Schema",
+            "description": {},
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "schemas",
+                ":type"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "type",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eab5b3b5-e358-46d7-a4a0-5c685b4df383",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "schemas",
+                    ":type"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "type",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f44deff6-27a7-450b-9e97-e2bda2cb92e1",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Create User",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Create User",
+            "description": {
+              "content": "\n\nCreate a new user in Enviance system.\r\n\r\n** SDK API:**  envianceSdk.scim.createUser(user, onsuccess, onerror)\r\n\r\n** Example:**\r\nPOST /ScimIdentityService.svc/scim/v1/Users HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\nnull\n\n\nenvianceSdk.scim.createUser\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:user\"\r\n    ],\r\n    \"userName\": \"scimupdatetest998990444\",\r\n    \"password\": \"1111\",\r\n    \"name\": {\r\n      \"givenName\": \"Updated\",\r\n      \"familyName\": \"Scim\"\r\n    },\r\n    \"emails\": [\r\n      {\r\n        \"type\": \"work\",\r\n        \"primary\": \"true\",\r\n        \"value\": \"scimuser1@enviance.com\"\r\n      }\r\n    ],\r\n    \"timezone\": \"America/New_York\",\r\n    \"preferredLanguage\": \"en_US\",\r\n    \"active\": true,\r\n    \"urn:scim:schemas:enviance:user\": {\r\n      \"properties\": [\r\n        {\r\n          \"propertyName\": \"supervisorusername\",\r\n          \"type\": \"supervisorusername\",\r\n          \"propertyValue\": \"someUsername\"\r\n        },\r\n        {\r\n          \"propertyName\": \"name2\",\r\n          \"propertyValue\": \"val2\",\r\n          \"type\": \"name2\",\r\n          \"isSensitiveData\": true\r\n        }\r\n      ],\r\n      \"emailDelivery\": \"HTML Email\",\r\n      \"receiveInformation\": true,\r\n      \"commandFailureNotification\": \"Inbox\",\r\n      \"companyName\": \"Enviance, Inc\",\r\n      \"mustChangePasswordAtNextLogin\": \"false\",\r\n      \"canNotChangePassword\": \"true\",\r\n      \"NotExpirePassword\": \"false\",\r\n      \"userRights\": [\r\n        {\r\n          \"name\": \"Manage Groups\",\r\n          \"granted\": true\r\n        }\r\n      ],\r\n      \"expires\": \"9999-12-31T00:00:00\",\r\n      \"comments\": \"This is a full Scim User\"\r\n    }\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"groups\": [\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    },\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    }\n  ],\n  \"password\": \"<string>\",\n  \"userType\": \"<enum>\",\n  \"active\": \"<boolean>\",\n  \"addresses\": [\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"displayName\": \"<string>\",\n  \"emails\": [\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"name\": {\n    \"formatted\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"givenName\": \"<string>\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"preferredLanguage\": \"<string>\",\n  \"title\": \"<string>\",\n  \"urn:scim:schemas:enviance:user\": {\n    \"userRights\": [\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      }\n    ],\n    \"expires\": \"<dateTime>\",\n    \"emailDelivery\": \"<string>\",\n    \"receiveInformation\": \"<boolean>\",\n    \"commandFailureNotification\": \"<string>\",\n    \"reportCompletionNotification\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n    \"canNotChangePassword\": \"<boolean>\",\n    \"notExpirePassword\": \"<boolean>\",\n    \"comments\": \"<string>\",\n    \"properties\": [\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7060c5c4-eb9e-4ee8-8d98-8592696b4d03",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userName\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"groups\": [\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    },\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    }\n  ],\n  \"password\": \"<string>\",\n  \"userType\": \"<enum>\",\n  \"active\": \"<boolean>\",\n  \"addresses\": [\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"displayName\": \"<string>\",\n  \"emails\": [\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"name\": {\n    \"formatted\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"givenName\": \"<string>\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"preferredLanguage\": \"<string>\",\n  \"title\": \"<string>\",\n  \"urn:scim:schemas:enviance:user\": {\n    \"userRights\": [\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      }\n    ],\n    \"expires\": \"<dateTime>\",\n    \"emailDelivery\": \"<string>\",\n    \"receiveInformation\": \"<boolean>\",\n    \"commandFailureNotification\": \"<string>\",\n    \"reportCompletionNotification\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n    \"canNotChangePassword\": \"<boolean>\",\n    \"notExpirePassword\": \"<boolean>\",\n    \"comments\": \"<string>\",\n    \"properties\": [\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e12b0c97-e1bd-4a55-be6f-b7c5f4f011ee",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.List Users",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.List Users",
+            "description": {
+              "content": "\n\n\nenvianceSdk.scim.listUsers\r\n```\r\n[\r\n    {\r\n        \"attributes\": [\r\n            \"name.givenName\",\r\n            \"name.familyName\"\r\n        ],\r\n        \"count\": \"10\",\r\n        \"filter\": \"name.familyname co \",\r\n        \"scim\": \"\",\r\n        \"sortBy\": \"name.givenName\",\r\n        \"sortOrder\": \"ascending|descending\",\r\n        \"startIndex\": \"1\"\r\n    },\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Users",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "attributes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "startIndex",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "count",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a016beee-96ae-4e16-b14e-19eac5928bef",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Users",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "attributes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "startIndex",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "count",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalResults\": 508,\n  \"Resources\": [\n    {\n      \"id\": \"string\",\n      \"externalId\": \"string\",\n      \"meta\": {\n        \"created\": \"<dateTime>\",\n        \"lastModified\": \"<string>\",\n        \"location\": \"<string>\",\n        \"version\": \"<string>\",\n        \"attributes\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"externalId\": \"string\",\n      \"meta\": {\n        \"created\": \"<dateTime>\",\n        \"lastModified\": \"<string>\",\n        \"location\": \"<string>\",\n        \"version\": \"<string>\",\n        \"attributes\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    }\n  ],\n  \"startIndex\": 9238,\n  \"itemsPerPage\": 1966\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3681d5af-5ce6-4efe-bf14-900bde981dbb",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Get User",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Get User",
+            "description": {
+              "content": "\n\nGets information about user.\r\n\r\n** Example:** \r\nGET /ScimIdentityService.svc/scim/v1/Users/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n** SDK API:**  envianceSdk.scim.getUser(id, onsuccess, onerror)\r\nnull\n\n\nenvianceSdk.scim.getUser\r\n```\r\n[\r\n  \"40E351F5-E4E9-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5fa6c3e7-83a9-45da-b2c1-84a10ac365ca",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userName\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"groups\": [\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    },\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    }\n  ],\n  \"password\": \"<string>\",\n  \"userType\": \"<enum>\",\n  \"active\": \"<boolean>\",\n  \"addresses\": [\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"displayName\": \"<string>\",\n  \"emails\": [\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"name\": {\n    \"formatted\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"givenName\": \"<string>\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"preferredLanguage\": \"<string>\",\n  \"title\": \"<string>\",\n  \"urn:scim:schemas:enviance:user\": {\n    \"userRights\": [\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      }\n    ],\n    \"expires\": \"<dateTime>\",\n    \"emailDelivery\": \"<string>\",\n    \"receiveInformation\": \"<boolean>\",\n    \"commandFailureNotification\": \"<string>\",\n    \"reportCompletionNotification\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n    \"canNotChangePassword\": \"<boolean>\",\n    \"notExpirePassword\": \"<boolean>\",\n    \"comments\": \"<string>\",\n    \"properties\": [\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c482f25-f4f5-48c2-8d45-1bfe6dafa8e7",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Delete User",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Delete User",
+            "description": {
+              "content": "\n\n\nenvianceSdk.scim.deleteUser\r\n```\r\n[\r\n  \"40E351F5-E4E9-4AEC-9ABD-46F7D5CECAFF\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29d9b572-658a-4c35-826a-22054cb079db",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71f9ab06-7bcd-429e-9bf0-ef03f65cf086",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update User",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update User",
+            "description": {
+              "content": "\n\n\nenvianceSdk.scim.fullUpdateUser\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\",\r\n      \"urn:scim:schemas:enviance:user\"\r\n    ],\r\n    \"userName\": \"scimupdatetest998990444\",\r\n    \"name\": {\r\n      \"givenName\": \"Updated\",\r\n      \"familyName\": \"Scim\"\r\n    },\r\n    \"emails\": [\r\n      {\r\n        \"type\": \"work\",\r\n        \"primary\": \"true\",\r\n        \"value\": \"scimuser1@enviance.com\"\r\n      }\r\n    ],\r\n    \"timezone\": \"America/New_York\",\r\n    \"preferredLanguage\": \"en_US\",\r\n    \"active\": true,\r\n    \"urn:scim:schemas:enviance:user\": {\r\n      \"properties\": [\r\n        {\r\n          \"propertyName\": \"supervisorusername\",\r\n          \"type\": \"supervisorusername\",\r\n          \"propertyValue\": \"someUsername\"\r\n        },\r\n        {\r\n          \"propertyName\": \"name2\",\r\n          \"propertyValue\": \"val2\",\r\n          \"type\": \"name2\",\r\n          \"isSensitiveData\": true\r\n        }\r\n      ],\r\n      \"emailDelivery\": \"HTML Email\",\r\n      \"receiveInformation\": true,\r\n      \"commandFailureNotification\": \"Inbox\",\r\n      \"companyName\": \"Enviance, Inc\",\r\n      \"mustChangePasswordAtNextLogin\": \"false\",\r\n      \"canNotChangePassword\": \"true\",\r\n      \"NotExpirePassword\": \"false\",\r\n      \"userRights\": [\r\n        {\r\n          \"name\": \"Manage Groups\",\r\n          \"granted\": true\r\n        }\r\n      ],\r\n      \"expires\": \"12/21/2017\",\r\n      \"comments\": \"This is a full Scim User\"\r\n    }\r\n  },\r\n  \"e67d0934-0246-4b13-b431-7680778c9873\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.scim.partialUpdateUser\r\n```\r\n[\r\n  {\r\n    \"schemas\": [\r\n      \"urn:scim:schemas:core:1.0\"\r\n    ],\r\n    \"timezone\": \"America/Los_Angeles\",\r\n    \"externalId\": \"apple\"\r\n  },\r\n  \"e67d0934-0246-4b13-b431-7680778c9873\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"groups\": [\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    },\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    }\n  ],\n  \"password\": \"<string>\",\n  \"userType\": \"<enum>\",\n  \"active\": \"<boolean>\",\n  \"addresses\": [\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"displayName\": \"<string>\",\n  \"emails\": [\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"name\": {\n    \"formatted\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"givenName\": \"<string>\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"preferredLanguage\": \"<string>\",\n  \"title\": \"<string>\",\n  \"urn:scim:schemas:enviance:user\": {\n    \"userRights\": [\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      }\n    ],\n    \"expires\": \"<dateTime>\",\n    \"emailDelivery\": \"<string>\",\n    \"receiveInformation\": \"<boolean>\",\n    \"commandFailureNotification\": \"<string>\",\n    \"reportCompletionNotification\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n    \"canNotChangePassword\": \"<boolean>\",\n    \"notExpirePassword\": \"<boolean>\",\n    \"comments\": \"<string>\",\n    \"properties\": [\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ce51231d-5496-4ef6-9e74-35b18bb3466a",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userName\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"groups\": [\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    },\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    }\n  ],\n  \"password\": \"<string>\",\n  \"userType\": \"<enum>\",\n  \"active\": \"<boolean>\",\n  \"addresses\": [\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"displayName\": \"<string>\",\n  \"emails\": [\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"name\": {\n    \"formatted\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"givenName\": \"<string>\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"preferredLanguage\": \"<string>\",\n  \"title\": \"<string>\",\n  \"urn:scim:schemas:enviance:user\": {\n    \"userRights\": [\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      }\n    ],\n    \"expires\": \"<dateTime>\",\n    \"emailDelivery\": \"<string>\",\n    \"receiveInformation\": \"<boolean>\",\n    \"commandFailureNotification\": \"<string>\",\n    \"reportCompletionNotification\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n    \"canNotChangePassword\": \"<boolean>\",\n    \"notExpirePassword\": \"<boolean>\",\n    \"comments\": \"<string>\",\n    \"properties\": [\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d84c420-c533-4ff2-b396-cdd7d31b8905",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update Partial User",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update Partial User",
+            "description": {
+              "content": "\n\n\nenvianceSdk.scim.partialUpdateUser\r\n```\r\n[\r\n    {\r\n        \"externalId\": \"apple\",\r\n        \"schemas\": [\r\n            \"urn:scim:schemas:core:1.0\"\r\n        ],\r\n        \"timezone\": \"America/Los_Angeles\"\r\n    },\r\n    \"e67d0934-0246-4b13-b431-7680778c9873\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"groups\": [\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    },\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    }\n  ],\n  \"password\": \"<string>\",\n  \"userType\": \"<enum>\",\n  \"active\": \"<boolean>\",\n  \"addresses\": [\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"displayName\": \"<string>\",\n  \"emails\": [\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"name\": {\n    \"formatted\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"givenName\": \"<string>\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"preferredLanguage\": \"<string>\",\n  \"title\": \"<string>\",\n  \"urn:scim:schemas:enviance:user\": {\n    \"userRights\": [\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      }\n    ],\n    \"expires\": \"<dateTime>\",\n    \"emailDelivery\": \"<string>\",\n    \"receiveInformation\": \"<boolean>\",\n    \"commandFailureNotification\": \"<string>\",\n    \"reportCompletionNotification\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n    \"canNotChangePassword\": \"<boolean>\",\n    \"notExpirePassword\": \"<boolean>\",\n    \"comments\": \"<string>\",\n    \"properties\": [\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "edd5249f-bfc1-4bc9-8e44-b86e69905af6",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"userName\": \"<string>\",\n  \"timezone\": \"<string>\",\n  \"groups\": [\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    },\n    {\n      \"value\": \"<guid>\",\n      \"display\": \"<string>\"\n    }\n  ],\n  \"password\": \"<string>\",\n  \"userType\": \"<enum>\",\n  \"active\": \"<boolean>\",\n  \"addresses\": [\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"country\": \"<string>\",\n      \"formatted\": \"<string>\",\n      \"locality\": \"<string>\",\n      \"postalCode\": \"<string>\",\n      \"primary\": \"<boolean>\",\n      \"region\": \"<string>\",\n      \"streetAddress\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"displayName\": \"<string>\",\n  \"emails\": [\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"primary\": \"<boolean>\",\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"name\": {\n    \"formatted\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"givenName\": \"<string>\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    },\n    {\n      \"value\": \"<string>\",\n      \"type\": \"<string>\",\n      \"Fax\": \"<string>\",\n      \"Home\": \"<string>\",\n      \"Mobile\": \"<string>\",\n      \"Other\": \"<string>\",\n      \"Pager\": \"<string>\",\n      \"Work\": \"<string>\"\n    }\n  ],\n  \"preferredLanguage\": \"<string>\",\n  \"title\": \"<string>\",\n  \"urn:scim:schemas:enviance:user\": {\n    \"userRights\": [\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"granted\": \"<boolean>\"\n      }\n    ],\n    \"expires\": \"<dateTime>\",\n    \"emailDelivery\": \"<string>\",\n    \"receiveInformation\": \"<boolean>\",\n    \"commandFailureNotification\": \"<string>\",\n    \"reportCompletionNotification\": \"<string>\",\n    \"companyName\": \"<string>\",\n    \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n    \"canNotChangePassword\": \"<boolean>\",\n    \"notExpirePassword\": \"<boolean>\",\n    \"comments\": \"<string>\",\n    \"properties\": [\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      },\n      {\n        \"propertyName\": \"<string>\",\n        \"propertyValue\": \"<string>\",\n        \"isSensitiveData\": \"<boolean>\",\n        \"type\": \"<string>\"\n      }\n    ]\n  },\n  \"id\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"meta\": {\n    \"created\": \"<dateTime>\",\n    \"lastModified\": \"<string>\",\n    \"location\": \"<string>\",\n    \"version\": \"<string>\",\n    \"attributes\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "82f873b2-ae08-43b9-9a67-95176ece4e1c",
+          "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update Home User With Password Bulk",
+          "request": {
+            "name": "Enviance.Rest Services.Ver2.Scim.Impl.Scim Identity Service.Update Home User With Password Bulk",
+            "description": {
+              "content": "\n\n\nenvianceSdk.scim.UpdateHomeUserWithPasswordBulk\r\n```\r\n[\r\n  [\r\n    {\r\n      \"id\": \"C591F8A4-D783-4FF8-928F-3DA512DBB1E6\",\r\n      \"password\": \"1111\"\r\n    },\r\n    {\r\n      \"id\": \"DD4358D4-1665-4848-BA16-1EA7E0CDEA0D\",\r\n      \"password\": \"1111\"\r\n    }\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ver2",
+                "ScimIdentityService.svc",
+                "scim",
+                "v1",
+                "Users",
+                "bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "Specify specific system to run instead of Home",
+                "key": "EnvApi-Systemid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Clients application/package ID",
+                "key": "EnvApi-Packageid",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "Udfs of DateTime should use Iso",
+                "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": "true"
+              },
+              {
+                "disabled": false,
+                "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                "key": "EnvApi-Udf-Value-Invariant",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Extend objects with User-given Localizations",
+                "key": "EnvApi-Localization-All",
+                "value": "<string>"
+              },
+              {
+                "disabled": false,
+                "description": "(optional) Client ID for double submit prevention",
+                "key": "x-client-request-id",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userList\": [\n    {\n      \"userName\": \"<string>\",\n      \"timezone\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<guid>\",\n          \"display\": \"<string>\"\n        },\n        {\n          \"value\": \"<guid>\",\n          \"display\": \"<string>\"\n        }\n      ],\n      \"password\": \"<string>\",\n      \"userType\": \"<enum>\",\n      \"active\": \"<boolean>\",\n      \"addresses\": [\n        {\n          \"country\": \"<string>\",\n          \"formatted\": \"<string>\",\n          \"locality\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"primary\": \"<boolean>\",\n          \"region\": \"<string>\",\n          \"streetAddress\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"country\": \"<string>\",\n          \"formatted\": \"<string>\",\n          \"locality\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"primary\": \"<boolean>\",\n          \"region\": \"<string>\",\n          \"streetAddress\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"displayName\": \"<string>\",\n      \"emails\": [\n        {\n          \"primary\": \"<boolean>\",\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"primary\": \"<boolean>\",\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"name\": {\n        \"formatted\": \"<string>\",\n        \"familyName\": \"<string>\",\n        \"givenName\": \"<string>\"\n      },\n      \"phoneNumbers\": [\n        {\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Fax\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Mobile\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Pager\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Fax\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Mobile\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Pager\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"preferredLanguage\": \"<string>\",\n      \"title\": \"<string>\",\n      \"urn:scim:schemas:enviance:user\": {\n        \"userRights\": [\n          {\n            \"name\": \"<string>\",\n            \"granted\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"granted\": \"<boolean>\"\n          }\n        ],\n        \"expires\": \"<dateTime>\",\n        \"emailDelivery\": \"<string>\",\n        \"receiveInformation\": \"<boolean>\",\n        \"commandFailureNotification\": \"<string>\",\n        \"reportCompletionNotification\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n        \"canNotChangePassword\": \"<boolean>\",\n        \"notExpirePassword\": \"<boolean>\",\n        \"comments\": \"<string>\",\n        \"properties\": [\n          {\n            \"propertyName\": \"<string>\",\n            \"propertyValue\": \"<string>\",\n            \"isSensitiveData\": \"<boolean>\",\n            \"type\": \"<string>\"\n          },\n          {\n            \"propertyName\": \"<string>\",\n            \"propertyValue\": \"<string>\",\n            \"isSensitiveData\": \"<boolean>\",\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"id\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"meta\": {\n        \"created\": \"<dateTime>\",\n        \"lastModified\": \"<string>\",\n        \"location\": \"<string>\",\n        \"version\": \"<string>\",\n        \"attributes\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    {\n      \"userName\": \"<string>\",\n      \"timezone\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<guid>\",\n          \"display\": \"<string>\"\n        },\n        {\n          \"value\": \"<guid>\",\n          \"display\": \"<string>\"\n        }\n      ],\n      \"password\": \"<string>\",\n      \"userType\": \"<enum>\",\n      \"active\": \"<boolean>\",\n      \"addresses\": [\n        {\n          \"country\": \"<string>\",\n          \"formatted\": \"<string>\",\n          \"locality\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"primary\": \"<boolean>\",\n          \"region\": \"<string>\",\n          \"streetAddress\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"country\": \"<string>\",\n          \"formatted\": \"<string>\",\n          \"locality\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"primary\": \"<boolean>\",\n          \"region\": \"<string>\",\n          \"streetAddress\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"displayName\": \"<string>\",\n      \"emails\": [\n        {\n          \"primary\": \"<boolean>\",\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"primary\": \"<boolean>\",\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"name\": {\n        \"formatted\": \"<string>\",\n        \"familyName\": \"<string>\",\n        \"givenName\": \"<string>\"\n      },\n      \"phoneNumbers\": [\n        {\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Fax\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Mobile\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Pager\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Fax\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Mobile\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Pager\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"preferredLanguage\": \"<string>\",\n      \"title\": \"<string>\",\n      \"urn:scim:schemas:enviance:user\": {\n        \"userRights\": [\n          {\n            \"name\": \"<string>\",\n            \"granted\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"granted\": \"<boolean>\"\n          }\n        ],\n        \"expires\": \"<dateTime>\",\n        \"emailDelivery\": \"<string>\",\n        \"receiveInformation\": \"<boolean>\",\n        \"commandFailureNotification\": \"<string>\",\n        \"reportCompletionNotification\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n        \"canNotChangePassword\": \"<boolean>\",\n        \"notExpirePassword\": \"<boolean>\",\n        \"comments\": \"<string>\",\n        \"properties\": [\n          {\n            \"propertyName\": \"<string>\",\n            \"propertyValue\": \"<string>\",\n            \"isSensitiveData\": \"<boolean>\",\n            \"type\": \"<string>\"\n          },\n          {\n            \"propertyName\": \"<string>\",\n            \"propertyValue\": \"<string>\",\n            \"isSensitiveData\": \"<boolean>\",\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"id\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"meta\": {\n        \"created\": \"<dateTime>\",\n        \"lastModified\": \"<string>\",\n        \"location\": \"<string>\",\n        \"version\": \"<string>\",\n        \"attributes\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e03d127-78e2-4bc5-afac-3284ba478c43",
+              "name": "not available",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ver2",
+                    "ScimIdentityService.svc",
+                    "scim",
+                    "v1",
+                    "Users",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Specify specific system to run instead of Home",
+                    "key": "EnvApi-Systemid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Clients application/package ID",
+                    "key": "EnvApi-Packageid",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "Udfs of DateTime should use Iso",
+                    "key": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                    "value": "true"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(obsolete) Udfs of DateTime type whould be in ReadInUserTz",
+                    "key": "EnvApi-Udf-DateTime-ReadInUserTz",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Udfs - Force Non-Localized (invariant) values",
+                    "key": "EnvApi-Udf-Value-Invariant",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Extend objects with User-given Localizations",
+                    "key": "EnvApi-Localization-All",
+                    "value": "<string>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(optional) Client ID for double submit prevention",
+                    "key": "x-client-request-id",
+                    "value": "<string>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userList\": [\n    {\n      \"userName\": \"<string>\",\n      \"timezone\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<guid>\",\n          \"display\": \"<string>\"\n        },\n        {\n          \"value\": \"<guid>\",\n          \"display\": \"<string>\"\n        }\n      ],\n      \"password\": \"<string>\",\n      \"userType\": \"<enum>\",\n      \"active\": \"<boolean>\",\n      \"addresses\": [\n        {\n          \"country\": \"<string>\",\n          \"formatted\": \"<string>\",\n          \"locality\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"primary\": \"<boolean>\",\n          \"region\": \"<string>\",\n          \"streetAddress\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"country\": \"<string>\",\n          \"formatted\": \"<string>\",\n          \"locality\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"primary\": \"<boolean>\",\n          \"region\": \"<string>\",\n          \"streetAddress\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"displayName\": \"<string>\",\n      \"emails\": [\n        {\n          \"primary\": \"<boolean>\",\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"primary\": \"<boolean>\",\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"name\": {\n        \"formatted\": \"<string>\",\n        \"familyName\": \"<string>\",\n        \"givenName\": \"<string>\"\n      },\n      \"phoneNumbers\": [\n        {\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Fax\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Mobile\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Pager\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Fax\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Mobile\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Pager\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"preferredLanguage\": \"<string>\",\n      \"title\": \"<string>\",\n      \"urn:scim:schemas:enviance:user\": {\n        \"userRights\": [\n          {\n            \"name\": \"<string>\",\n            \"granted\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"granted\": \"<boolean>\"\n          }\n        ],\n        \"expires\": \"<dateTime>\",\n        \"emailDelivery\": \"<string>\",\n        \"receiveInformation\": \"<boolean>\",\n        \"commandFailureNotification\": \"<string>\",\n        \"reportCompletionNotification\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n        \"canNotChangePassword\": \"<boolean>\",\n        \"notExpirePassword\": \"<boolean>\",\n        \"comments\": \"<string>\",\n        \"properties\": [\n          {\n            \"propertyName\": \"<string>\",\n            \"propertyValue\": \"<string>\",\n            \"isSensitiveData\": \"<boolean>\",\n            \"type\": \"<string>\"\n          },\n          {\n            \"propertyName\": \"<string>\",\n            \"propertyValue\": \"<string>\",\n            \"isSensitiveData\": \"<boolean>\",\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"id\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"meta\": {\n        \"created\": \"<dateTime>\",\n        \"lastModified\": \"<string>\",\n        \"location\": \"<string>\",\n        \"version\": \"<string>\",\n        \"attributes\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    },\n    {\n      \"userName\": \"<string>\",\n      \"timezone\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<guid>\",\n          \"display\": \"<string>\"\n        },\n        {\n          \"value\": \"<guid>\",\n          \"display\": \"<string>\"\n        }\n      ],\n      \"password\": \"<string>\",\n      \"userType\": \"<enum>\",\n      \"active\": \"<boolean>\",\n      \"addresses\": [\n        {\n          \"country\": \"<string>\",\n          \"formatted\": \"<string>\",\n          \"locality\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"primary\": \"<boolean>\",\n          \"region\": \"<string>\",\n          \"streetAddress\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"country\": \"<string>\",\n          \"formatted\": \"<string>\",\n          \"locality\": \"<string>\",\n          \"postalCode\": \"<string>\",\n          \"primary\": \"<boolean>\",\n          \"region\": \"<string>\",\n          \"streetAddress\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"displayName\": \"<string>\",\n      \"emails\": [\n        {\n          \"primary\": \"<boolean>\",\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"primary\": \"<boolean>\",\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"name\": {\n        \"formatted\": \"<string>\",\n        \"familyName\": \"<string>\",\n        \"givenName\": \"<string>\"\n      },\n      \"phoneNumbers\": [\n        {\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Fax\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Mobile\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Pager\": \"<string>\",\n          \"Work\": \"<string>\"\n        },\n        {\n          \"value\": \"<string>\",\n          \"type\": \"<string>\",\n          \"Fax\": \"<string>\",\n          \"Home\": \"<string>\",\n          \"Mobile\": \"<string>\",\n          \"Other\": \"<string>\",\n          \"Pager\": \"<string>\",\n          \"Work\": \"<string>\"\n        }\n      ],\n      \"preferredLanguage\": \"<string>\",\n      \"title\": \"<string>\",\n      \"urn:scim:schemas:enviance:user\": {\n        \"userRights\": [\n          {\n            \"name\": \"<string>\",\n            \"granted\": \"<boolean>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"granted\": \"<boolean>\"\n          }\n        ],\n        \"expires\": \"<dateTime>\",\n        \"emailDelivery\": \"<string>\",\n        \"receiveInformation\": \"<boolean>\",\n        \"commandFailureNotification\": \"<string>\",\n        \"reportCompletionNotification\": \"<string>\",\n        \"companyName\": \"<string>\",\n        \"mustChangePasswordAtNextLogin\": \"<boolean>\",\n        \"canNotChangePassword\": \"<boolean>\",\n        \"notExpirePassword\": \"<boolean>\",\n        \"comments\": \"<string>\",\n        \"properties\": [\n          {\n            \"propertyName\": \"<string>\",\n            \"propertyValue\": \"<string>\",\n            \"isSensitiveData\": \"<boolean>\",\n            \"type\": \"<string>\"\n          },\n          {\n            \"propertyName\": \"<string>\",\n            \"propertyValue\": \"<string>\",\n            \"isSensitiveData\": \"<boolean>\",\n            \"type\": \"<string>\"\n          }\n        ]\n      },\n      \"id\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"meta\": {\n        \"created\": \"<dateTime>\",\n        \"lastModified\": \"<string>\",\n        \"location\": \"<string>\",\n        \"version\": \"<string>\",\n        \"attributes\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8be631ae-3933-42b4-8412-d369e75891d9",
+    "name": "Rest Activity ScimIdentity API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "EMS Rest API\n\nContact Support:\n Name: Cority\n Email: support@cority.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,419 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Task API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Task",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Tasks.Impl.TaskService.CreateTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/TaskService.svc/tasks",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.tasks.createTask\r\n```\r\n[\r\n  {\r\n    \"name\": \"Task1\",\r\n    \"description\": \"Perform a spot check every month on the steam valves.\",\r\n    \"dueDate\": \"2012-12-08T09:00:00\",\r\n    \"timeZone\": {\r\n      \"name\": \"Pacific Time (US \\u0026 Canada) (UTC-08:00) (With DST)\"\r\n    },\r\n    \"assignor\": \"dnk\",\r\n    \"assignees\": [\r\n      {\r\n        \"userIdOrName\": \"dnk\"\r\n      },\r\n      {\r\n        \"groupIdOrName\": \"Administrators\"\r\n      }\r\n    ],\r\n    \"calendars\": [\r\n      \"System\",\r\n      \"My\"\r\n    ]"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/TaskService.svc/tasks/:taskId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.tasks.getTask\r\n```\r\n[\r\n  \"c1960122-16dd-4d43-91e4-ea0d9393ab78\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.tasks.getTaskOccurrence\r\n```\r\n[\r\n  \"ad7b8413-812a-4e59-95f4-03205ca685f0\",\r\n  \"2013-12-08T09:00:00\",\r\n  \"/Bug 1\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Tasks.Impl.TaskService.UpdateTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/TaskService.svc/tasks/:taskId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nUpdates the properties of a simple (single occurrence) Task definition, potentially moving it to a new Location. Updating the object Location(s) of a Task effectively moves that Task to the new Location(s).\r\n\r\n**Security:** Requires Manage Tasks right. \r\n\r\n**SDK API:**  `envianceSdk.tasks.updateTask(taskId, taskInfo, onsuccess, onerror)`\r\n\r\n```\r\nPATCH /ver2/TaskService.svc/tasks/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n \r\n{\r\n  \"taskInfo\": {\r"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Tasks.Impl.TaskService.DeleteTask",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/TaskService.svc/tasks/:taskId",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.tasks.deleteTask\r\n```\r\n[\r\n  \"c1960122-16dd-4d43-91e4-ea0d9393ab78\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Tasks.Impl.TaskService.ExportTaskAsICal",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/TaskService.svc/tasks/:taskId/ical",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTaskOccurrence",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/TaskService.svc/tasks/:taskId/occurrences/:dueDate",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dueDate",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\nGets information about a Task occurrence.\r\n\r\n**Security:** Requires Manage Tasks right. \r\n\r\n**SDK API:**  `envianceSdk.tasks.getTaskOccurrence(taskId, dueDate, objectIdOrPath, onsuccess, onerror)`\r\n\r\n```\r\nGET /ver2/TaskService.svc/tasks/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n  \"name\": \"Check Valves Monthly\",\r\n  \"description\": \"Perform a spot check every month on the steam valves.\",\r\n  \"dueDate\": \"2012-12-08T09:00:00\",\r\n  \"timeZone\": \"USA Pacific\",\r\n  \"assignor\": \"CGaus"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Tasks.Impl.TaskService.GetTaskOccurrenceByObject",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/TaskService.svc/tasks/:taskId/occurrences/:dueDate/:objectIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dueDate",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "objectIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.tasks.getTaskOccurrence\r\n```\r\n[\r\n    \"ad7b8413-812a-4e59-95f4-03205ca685f0\",\r\n    \"2013-12-08T09:00:00\",\r\n    \"/Bug 1\",\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Tasks.Impl.TaskService.CompleteTaskOccurrence",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/TaskService.svc/tasks/:taskId/occurrences/:dueDate/:objectIdOrPath",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dueDate",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "objectIdOrPath",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\n[\"ad7b8413-812a-4e59-95f4-03205ca685f0\", new Date(),null, [{   \"objectIdOrPath\": \"/A Facility/A Unit/A POI/Check Valves\",    \"dismissed\": \"False\",    \"percentComplete\": 100,    \"statusChangeDate\": \"2012-12-10T08:00:00\",    \"hoursToComplete\": 5.5,    \"costToComplete\": 0.0,    \"comment\": \"Done!\"} ], \"onsuccess\", \"onerror\"]\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

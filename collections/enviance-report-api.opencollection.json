@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity Report API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Report",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.Reports.Impl.ReportService.ExecuteReportCommand",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/ReportService.svc/reports/executereportcommands",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.reports.execute\r\n```\r\n[\r\n    {\r\n        \"format\": \"Html\",\r\n        \"from\": \"2012-02-01T00:00:00\",\r\n        \"parameters\": {\r\n            \"objects\": [\r\n                \"/Division X/Facility 1\",\r\n                \"52fbb610-0fa5-4873-9f2b-53cdb0bb00f2\"\r\n            ]\r\n        },\r\n        \"reportIdOrPath\": \"715C32AE-F2C7-45B9-B8A6-5D8D1A65D001\",\r\n        \"to\": \"2012-02-10T00:00:00\"\r\n    },\r\n    \"onsuccess\",\r\n    \"onerror\"\r\n]\r\n```\r\n\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

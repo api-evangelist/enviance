@@ -1,0 +1,251 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity MaterialData API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MaterialData",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.GetMaterialData",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/MaterialDataService.svc/materialdata/:activityIdOrNameOrUniqueTag/begin/:completeBegin/end/:completeEnd/:locationIdOrPathOrUniqueTag",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "activityIdOrNameOrUniqueTag",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "completeBegin",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "completeEnd",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationIdOrPathOrUniqueTag",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.DeleteMaterialData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/MaterialDataService.svc/materialdata/deletedatacommands/:locationIdOrPathOrUniqueTag",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "locationIdOrPathOrUniqueTag",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.materialData.deleteMaterialData\r\n```\r\n[\r\n  \"/Division for MDLG/FAC for MDLG\",\r\n  [\r\n    \"6B6BB16B-C207-416C-B818-1DB075AA453C\",\r\n    \"004D8F0D-C03A-4A65-BFD1-3CFFDDF99569\"\r\n  ],\r\n  \"true\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.DownloadMaterialData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/MaterialDataService.svc/materialdata/download",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.materialData.downloadMaterialData\r\n```\r\n[\r\n  {\r\n    \"activityIdOrNameOrUniqueTag\": \"Activity for MDLG\",\r\n    \"completeBegin\": \"2015-05-29T00:00:00\",\r\n    \"completeEnd\": \"2015-05-29T00:00:00\",\r\n    \"objectIdOrPathOrUniqueTag\": \"/Division for MDLG/FAC for MDLG\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.EnterMaterialData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/MaterialDataService.svc/materialdata/enterdatacommands/",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.materialData.enterMaterialData\r\n```\r\n[\r\n  [\r\n    {\r\n      \"parentIdOrPathOrUniqueTag\": \"/Division for MDLG/FAC for MDLG\",\r\n      \"activityIdOrNameOrUniqueTag\": \"Activity for MDLG\",\r\n      \"complete\": \"2015-05-29T00:00:00\",\r\n      \"collector\": \"Create MdlG-Happy path\",\r\n      \"dataLines\": [\r\n        {\r\n          \"materialIdOrNameOrUniqueTag\": \"Material 1 for MDLG\",\r\n          \"startTime\": \"2015-05-27T00:00:00\",\r\n          \"endTime\": \"2015-05-28T00:00:00\",\r\n          \"data\": [\r\n    "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.MaterialActivity.Data.Impl.MaterialDataService.UploadMaterialData",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/MaterialDataService.svc/materialdata/upload",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nUpload excel template with Ajax and Base64 Encoding. First parameter pass HttpFileInput html control or filecontent as Base64 encoded string. Use anyone (just one) input control on Rest API Test Tool to specify .xls-file to upload file and specify it\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

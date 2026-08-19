@@ -1,0 +1,203 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rest Activity ChemicalList API",
+    "version": "Platform.v2026.2.0.0.20260708"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ChemicalList",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.CreateChemicalList",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/ver2/ChemicalListService.svc/chemicalLists",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.chemicallists.createChemicalList\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical List Name\",\r\n    \"description\": \"Chemical List Description\",\r\n    \"chemicalListHistoryItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"1\"\r\n          },\r\n          {\r\n            \"chemicalIdOrAlias\": \"5376DF01-45B5-4153-ACCF-8E208DB69979\",\r\n            \"limit\": \"1\"\r\n    "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.UpdateChemicalList",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/ver2/ChemicalListService.svc/chemicalLists/:chemicalListIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "chemicalListIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.chemicallists.updateChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  {\r\n    \"name\": \"Chemical List Name\",\r\n    \"description\": \"Chemical List Description\",\r\n    \"chemicalListHistoryItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"1\"\r\n          },\r\n          {\r\n            \"chemicalIdOrAlias\": \"5376DF01-45B5-4153-ACCF-8E208DB69979\",\r\n     "
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.DeleteChemicalList",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/ver2/ChemicalListService.svc/chemicalLists/:chemicalListIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "chemicalListIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.chemicallists.deleteChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        },
+        {
+          "info": {
+            "name": "Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.GetChemicalList",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/ver2/ChemicalListService.svc/ChemicalLists/:chemicalListIdOrName",
+            "headers": [
+              {
+                "name": "EnvApi-Systemid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Packageid",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-Iso-In-CustomFields",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-DateTime-ReadInUserTz",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Udf-Value-Invariant",
+                "value": ""
+              },
+              {
+                "name": "EnvApi-Localization-All",
+                "value": ""
+              },
+              {
+                "name": "x-client-request-id",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "chemicalListIdOrName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "\n\n\nenvianceSdk.chemicallists.getChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
