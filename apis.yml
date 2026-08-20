@@ -44,6 +44,15 @@ tags:
 - Sustainability
 - Chemical Management
 - Regulatory
+- Software-as-a-Service
+tags_raw:
+- Company
+- Environmental
+- Compliance
+- EHS
+- Sustainability
+- Chemical Management
+- Regulatory
 - SaaS
 apis:
 - aid: enviance:enviance-activity-api
@@ -212,6 +221,8 @@ apis:
   humanURL: https://api.enviance.com/
   baseURL: https://api.enviance.com
   tags:
+  - Custom Field
+  tags_raw:
   - CustomField
   properties:
   - type: OpenAPI
@@ -645,6 +656,8 @@ apis:
   humanURL: https://api.enviance.com/
   baseURL: https://api.enviance.com
   tags:
+  - Workflows
+  tags_raw:
   - Workflow
   properties:
   - type: OpenAPI
