@@ -1,0 +1,36 @@
+slug: enviance
+provider: Enviance
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Chemical
+  spec_file: enviance-chemical-api-openapi.yml
+  capability_id: BC-730
+  capability_id_l1: BC-730
+  capability_name: Health, Safety & Environment Management
+  confidence: 0.7
+  evidence: POST /ver2/ChemicalService.svc/chemicals ... MaterialActivity.Chemicals.Impl.ChemicalService.CreateChemical;
+    schema ChemicalInfo
+  reason: CRUD over the chemicals inventory of an EHS compliance platform, which the vendor description
+    confirms manages 'chemicals and materials inventories'. That is health, safety and environment management;
+    no candidate L2 covers hazardous-material inventory precisely, so I stop at L1.
+- tag: Security
+  spec_file: enviance-security-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: CreateGroup, GetGroupMembers, SetGroupMembers, RemoveGroupMember
+  reason: Manages security groups and their user membership, i.e. access control administration within
+    the application. Identity & access management is the honest reading; no other business capability
+    fits.

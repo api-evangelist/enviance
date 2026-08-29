@@ -701,6 +701,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/enviance-capability-edges.yml
+  name: Enviance Business Capability Map
 - type: DomainSecurity
   url: security/enviance-domain-security.yml
 - type: AgenticAccess
