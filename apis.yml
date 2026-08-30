@@ -701,6 +701,11 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/cority/
+  name: Cority
+  x-relationship: acquired
+  x-evidence: "Originally an independent cloud environmental-compliance vendor, Enviance was acquired by Cority and its product now ships as 'Cority Enviance."
 - type: CapabilityMap
   url: capabilities/enviance-capability-edges.yml
   name: Enviance Business Capability Map
