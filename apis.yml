@@ -25,18 +25,14 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/enviance.png
 name: Enviance
-description: >-
-  Enviance (now Cority Enviance) is an environmental, health, and safety (EHS)
-  compliance-management SaaS platform. Originally an independent cloud
-  environmental-compliance vendor, Enviance was acquired by Cority and its
-  product now ships as "Cority Enviance." The platform manages regulatory
-  requirements, compliance tasks, emissions and environmental events, chemicals
-  and materials inventories, documents, workflows, and reporting for enterprises
-  in regulated industries. Its EMS REST API (the "Cority Enviance App API")
-  exposes 250+ operations across 39 service areas — Activity, Chemical, Material,
-  Compliance, Requirement, Event, Task, Workflow, Document, Report, Portal, Bulk
-  data, SCIM identity, and more — for building custom interfaces and integrating
-  Enviance with corporate and third-party systems.
+description: Enviance (now Cority Enviance) is an environmental, health, and safety (EHS) compliance-management
+  SaaS platform. Originally an independent cloud environmental-compliance vendor, Enviance was acquired
+  by Cority and its product now ships as "Cority Enviance." The platform manages regulatory requirements,
+  compliance tasks, emissions and environmental events, chemicals and materials inventories, documents,
+  workflows, and reporting for enterprises in regulated industries. Its EMS REST API (the "Cority Enviance
+  App API") exposes 250+ operations across 39 service areas — Activity, Chemical, Material, Compliance,
+  Requirement, Event, Task, Workflow, Document, Report, Portal, Bulk data, SCIM identity, and more — for
+  building custom interfaces and integrating Enviance with corporate and third-party systems.
 url: https://raw.githubusercontent.com/api-evangelist/enviance/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -47,7 +43,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-19'
+modified: '2026-09-16'
 tags:
 - Company
 - Environmental
@@ -279,8 +275,7 @@ apis:
     url: https://api.enviance.com/swagger
 - aid: enviance:enviance-domainwhitelistservice-api
   name: Enviance DomainWhitelistService API
-  description: >-
-    The DomainWhitelistService API from Enviance — 1 operation(s) for domainwhitelistservice.
+  description: The DomainWhitelistService API from Enviance — 1 operation(s) for domainwhitelistservice.
   humanURL: https://api.enviance.com/
   baseURL: https://api.enviance.com
   tags:
@@ -702,11 +697,14 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Website
+  url: https://enviance.com
 - type: ParentCompany
   url: https://apis.io/providers/cority/
   name: Cority
   x-relationship: acquired
-  x-evidence: "Originally an independent cloud environmental-compliance vendor, Enviance was acquired by Cority and its product now ships as 'Cority Enviance."
+  x-evidence: Originally an independent cloud environmental-compliance vendor, Enviance was acquired by
+    Cority and its product now ships as 'Cority Enviance.
 - type: CapabilityMap
   url: capabilities/enviance-capability-edges.yml
   name: Enviance Business Capability Map
@@ -730,7 +728,10 @@ common:
   url: data-model/enviance-data-model.yml
 - type: X-MCPServerCandidate
   url: mcp/enviance-mcp.yml
-  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate
+    — a tool list derived from the published API contracts, not an existing server. The scorer already
+    read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type
+    surfaces with a server that does not exist.'
 - type: Lifecycle
   url: lifecycle/enviance-lifecycle.yml
 - type: Overlay
