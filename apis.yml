@@ -223,24 +223,6 @@ apis:
     url: https://api.enviance.com/
   - type: APIReference
     url: https://api.enviance.com/swagger
-- aid: enviance:enviance-customfield-api
-  name: Enviance CustomField API
-  description: The CustomField API from Enviance — 3 operation(s) for customfield.
-  humanURL: https://api.enviance.com/
-  baseURL: https://api.enviance.com
-  tags:
-  - Custom Field
-  tags_raw:
-  - CustomField
-  properties:
-  - type: OpenAPI
-    url: openapi/enviance-customfield-api-openapi.yml
-  - type: DeveloperPortal
-    url: https://api.enviance.com/
-  - type: Documentation
-    url: https://api.enviance.com/
-  - type: APIReference
-    url: https://api.enviance.com/swagger
 - aid: enviance:enviance-data-api
   name: Enviance Data API
   description: The Data API from Enviance — 10 operation(s) for data.
@@ -275,7 +257,8 @@ apis:
     url: https://api.enviance.com/swagger
 - aid: enviance:enviance-domainwhitelistservice-api
   name: Enviance DomainWhitelistService API
-  description: The DomainWhitelistService API from Enviance — 1 operation(s) for domainwhitelistservice.
+  description: >-
+    The DomainWhitelistService API from Enviance — 1 operation(s) for domainwhitelistservice.
   humanURL: https://api.enviance.com/
   baseURL: https://api.enviance.com
   tags:
@@ -685,6 +668,22 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/enviance-workflowrole-api-openapi.yml
+  - type: DeveloperPortal
+    url: https://api.enviance.com/
+  - type: Documentation
+    url: https://api.enviance.com/
+  - type: APIReference
+    url: https://api.enviance.com/swagger
+- aid: enviance:enviance-custom-field-api
+  name: Enviance Custom Field API
+  description: The Custom Field API from Enviance — 3 operation(s) for custom field.
+  humanURL: https://api.enviance.com/
+  baseURL: https://api.enviance.com
+  tags:
+  - Custom Field
+  properties:
+  - type: OpenAPI
+    url: openapi/enviance-custom-field-api-openapi.yml
   - type: DeveloperPortal
     url: https://api.enviance.com/
   - type: Documentation
