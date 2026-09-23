@@ -1,7 +1,7 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   version: Platform.v2026.2.0.0.20260708
-  title: Rest Activity ChemicalList API
+  title: Rest Chemical List API
   description: EMS Rest API
   contact:
     name: Cority
@@ -14,280 +14,488 @@ paths:
     post:
       tags:
       - ChemicalList
-      description: "\n\n\nenvianceSdk.chemicallists.createChemicalList\r\n```\r\n[\r\n  {\r\n    \"name\": \"Chemical List Name\",\r\n    \"description\": \"Chemical List Description\",\r\n    \"chemicalListHistoryItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"1\"\r\n          },\r\n          {\r\n            \"chemicalIdOrAlias\": \"5376DF01-45B5-4153-ACCF-8E208DB69979\",\r\n            \"limit\": \"1\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"3\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.chemicallists.createChemicalList
+
+        ```
+
+        [
+
+        {
+
+        "name": "Chemical List Name",
+
+        "description": "Chemical List Description",
+
+        "chemicalListHistoryItems": [
+
+        {
+
+        "beginDate": "2012-01-01T20:00:00",
+
+        "limits": [
+
+        {
+
+        "chemicalIdOrAlias": "FF710D9F-4367-4C0C-A5CB-497CB18FA842",
+
+        "limit": "1"
+
+        },
+
+        {
+
+        "chemicalIdOrAlias": "5376DF01-45B5-4153-ACCF-8E208DB69979",
+
+        "limit": "1"
+
+        }
+
+        ]
+
+        },
+
+        {
+
+        "beginDate": "2013-01-01T20:00:00",
+
+        "limits": [
+
+        {
+
+        "chemicalIdOrAlias": "FF710D9F-4367-4C0C-A5CB-497CB18FA842",
+
+        "limit": "3"
+
+        }
+
+        ]
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.CreateChemicalList
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
-      - name: CreateChemicalListWrapper
-        in: body
-        required: true
         schema:
-          $ref: '#/definitions/CreateChemicalList'
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            type: string
-            format: guid
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateChemicalList'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateChemicalList'
+        required: true
+      summary: Enviance rest services ver2 material activity chemicals impl chemical list…
+      x-summary-source: derived
   /ver2/ChemicalListService.svc/chemicalLists/{chemicalListIdOrName}:
     patch:
       tags:
       - ChemicalList
-      description: "\n\n\nenvianceSdk.chemicallists.updateChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  {\r\n    \"name\": \"Chemical List Name\",\r\n    \"description\": \"Chemical List Description\",\r\n    \"chemicalListHistoryItems\": [\r\n      {\r\n        \"beginDate\": \"2012-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"1\"\r\n          },\r\n          {\r\n            \"chemicalIdOrAlias\": \"5376DF01-45B5-4153-ACCF-8E208DB69979\",\r\n            \"limit\": \"1\"\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"beginDate\": \"2013-01-01T20:00:00\",\r\n        \"limits\": [\r\n          {\r\n            \"chemicalIdOrAlias\": \"FF710D9F-4367-4C0C-A5CB-497CB18FA842\",\r\n            \"limit\": \"3\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.chemicallists.updateChemicalList
+
+        ```
+
+        [
+
+        "Chemical List Name",
+
+        {
+
+        "name": "Chemical List Name",
+
+        "description": "Chemical List Description",
+
+        "chemicalListHistoryItems": [
+
+        {
+
+        "beginDate": "2012-01-01T20:00:00",
+
+        "limits": [
+
+        {
+
+        "chemicalIdOrAlias": "FF710D9F-4367-4C0C-A5CB-497CB18FA842",
+
+        "limit": "1"
+
+        },
+
+        {
+
+        "chemicalIdOrAlias": "5376DF01-45B5-4153-ACCF-8E208DB69979",
+
+        "limit": "1"
+
+        }
+
+        ]
+
+        },
+
+        {
+
+        "beginDate": "2013-01-01T20:00:00",
+
+        "limits": [
+
+        {
+
+        "chemicalIdOrAlias": "FF710D9F-4367-4C0C-A5CB-497CB18FA842",
+
+        "limit": "3"
+
+        }
+
+        ]
+
+        }
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.UpdateChemicalList
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: chemicalListIdOrName
         in: path
         required: true
-        type: string
-      - name: UpdateChemicalListWrapper
-        in: body
-        required: true
         schema:
-          $ref: '#/definitions/UpdateChemicalList'
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            type: string
-            format: guid
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateChemicalList'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateChemicalList'
+        required: true
+      summary: Enviance rest services ver2 material activity chemicals impl chemical list…
+      x-summary-source: derived
     delete:
       tags:
       - ChemicalList
-      description: "\n\n\nenvianceSdk.chemicallists.deleteChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.chemicallists.deleteChemicalList
+
+        ```
+
+        [
+
+        "Chemical List Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.DeleteChemicalList
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: chemicalListIdOrName
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       responses:
         default:
           description: not available
+      summary: Enviance rest services ver2 material activity chemicals impl chemical list…
+      x-summary-source: derived
   /ver2/ChemicalListService.svc/ChemicalLists/{chemicalListIdOrName}:
     get:
       tags:
       - ChemicalList
-      description: "\n\n\nenvianceSdk.chemicallists.getChemicalList\r\n```\r\n[\r\n  \"Chemical List Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.chemicallists.getChemicalList
+
+        ```
+
+        [
+
+        "Chemical List Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.Impl.ChemicalListService.GetChemicalList
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: chemicalListIdOrName
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
-definitions:
-  Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo:
-    properties:
-      chemicalIdOrAlias:
-        type: string
-        uniqueItems: false
-      limit:
-        type: number
-        format: double
-        uniqueItems: false
-    type: object
-    format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo
-  CreateChemicalList:
-    properties:
-      chemicalListInfo:
-        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
-      copyFrom:
-        type: string
-        uniqueItems: false
-    type: object
-    format: CreateChemicalList
-  UpdateChemicalList:
-    properties:
-      chemicalListInfo:
-        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
-    type: object
-    format: UpdateChemicalList
-  Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo:
-    properties:
-      id:
-        type: string
-        format: guid
-        uniqueItems: false
-      name:
-        type: string
-        uniqueItems: false
-      description:
-        type: string
-        uniqueItems: false
-      chemicalListHistoryItems:
-        type: array
-        items:
-          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo'
-        uniqueItems: false
-    type: object
-    format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo
-  Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo:
-    properties:
-      id:
-        type: string
-        format: guid
-        uniqueItems: false
-      beginDate:
-        type: string
-        format: date-time
-        uniqueItems: false
-      limits:
-        type: array
-        items:
-          $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo'
-        uniqueItems: false
-    type: object
-    format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo
-securityDefinitions:
-  Basic:
-    type: basic
-    description: Forces authentication with credentials via an api gateway
-  EnvianceAuth:
-    type: apiKey
-    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
-    name: Authorization
-    in: header
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
+      summary: Enviance rest services ver2 material activity chemicals impl chemical list…
+      x-summary-source: derived
+components:
+  schemas:
+    Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        chemicalListHistoryItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo
+    CreateChemicalList:
+      properties:
+        chemicalListInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateChemicalList
+    Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        limits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo
+    UpdateChemicalList:
+      properties:
+        chemicalListInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
+      type: object
+      format: UpdateChemicalList
+    Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo:
+      properties:
+        chemicalIdOrAlias:
+          type: string
+          uniqueItems: false
+        limit:
+          type: number
+          format: double
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header

@@ -1,7 +1,7 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   version: Platform.v2026.2.0.0.20260708
-  title: Rest Activity MaterialGroup API
+  title: Rest Material Group API
   description: EMS Rest API
   contact:
     name: Cority
@@ -14,368 +14,552 @@ paths:
     post:
       tags:
       - MaterialGroup
-      description: "\n\n\nenvianceSdk.materialGroups.createMaterialGroup\r\n```\r\n[\r\n  {\r\n    \"name\": \"Material Group Name\",\r\n    \"description\": \"Material Group Description\",\r\n    \"materialIdOrNames\": [\r\n      \"Material Name 1\",\r\n      \"Material Name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.materialGroups.createMaterialGroup
+
+        ```
+
+        [
+
+        {
+
+        "name": "Material Group Name",
+
+        "description": "Material Group Description",
+
+        "materialIdOrNames": [
+
+        "Material Name 1",
+
+        "Material Name 2"
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.CreateMaterialGroup
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
-      - name: CreateMaterialGroupWrapper
-        in: body
-        required: true
         schema:
-          $ref: '#/definitions/CreateMaterialGroup'
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            type: string
-            format: guid
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMaterialGroup'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateMaterialGroup'
+        required: true
+      summary: Enviance rest services ver2 material activity material groups impl material…
+      x-summary-source: derived
   /ver2/MaterialGroupService.svc/materialGroups/{materialGroupIdOrName}:
     get:
       tags:
       - MaterialGroup
-      description: "\n\n\nenvianceSdk.materialGroups.getMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.materialGroups.getMaterialGroup
+
+        ```
+
+        [
+
+        "Material Group Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.GetMaterialGroup
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: materialGroupIdOrName
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo'
+      summary: Enviance rest services ver2 material activity material groups impl material…
+      x-summary-source: derived
     patch:
       tags:
       - MaterialGroup
-      description: "\n\n\nenvianceSdk.materialGroups.updateMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  {\r\n    \"name\": \"Material Group Name\",\r\n    \"description\": \"Material Group Description\",\r\n    \"materialIdOrNames\": [\r\n      \"Material Name 1\",\r\n      \"Material Name 2\"\r\n    ]\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.materialGroups.updateMaterialGroup
+
+        ```
+
+        [
+
+        "Material Group Name",
+
+        {
+
+        "name": "Material Group Name",
+
+        "description": "Material Group Description",
+
+        "materialIdOrNames": [
+
+        "Material Name 1",
+
+        "Material Name 2"
+
+        ]
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.UpdateMaterialGroup
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: materialGroupIdOrName
         in: path
         required: true
-        type: string
-      - name: UpdateMaterialGroupWrapper
-        in: body
-        required: true
         schema:
-          $ref: '#/definitions/UpdateMaterialGroup'
+          type: string
       responses:
         default:
           description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMaterialGroup'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateMaterialGroup'
+        required: true
+      summary: Enviance rest services ver2 material activity material groups impl material…
+      x-summary-source: derived
     delete:
       tags:
       - MaterialGroup
-      description: "\n\n\nenvianceSdk.materialGroups.deleteMaterialGroup\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.materialGroups.deleteMaterialGroup
+
+        ```
+
+        [
+
+        "Material Group Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.DeleteMaterialGroup
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: materialGroupIdOrName
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       responses:
         default:
           description: not available
+      summary: Enviance rest services ver2 material activity material groups impl material…
+      x-summary-source: derived
   /ver2/MaterialGroupService.svc/materialGroups/trackingMac/{materialGroupIdOrName}:
     get:
       tags:
       - MaterialGroup
-      description: "\n\n\nenvianceSdk.materialGroups.getDependentMacs\r\n```\r\n[\r\n  \"Material Group Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.materialGroups.getDependentMacs
+
+        ```
+
+        [
+
+        "Material Group Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.GetDependentMacs
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: materialGroupIdOrName
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            type: array
-            items:
-              type: string
-              format: guid
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: guid
+            application/xml:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: guid
+      summary: Enviance rest services ver2 material activity material groups impl material…
+      x-summary-source: derived
     post:
       tags:
       - MaterialGroup
-      description: "\n\n\nenvianceSdk.materialGroups.updateDependentMacs\r\n```\r\n[\r\n  \"Material Group 2\",\r\n  [\r\n    \"70EEE1F5-E4E9-4AEC-9ABD-46F7D5CECAFF\",\r\n    \"0128E876-42C3-4820-8219-000A3F2409BB\"\r\n  ],\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.materialGroups.updateDependentMacs
+
+        ```
+
+        [
+
+        "Material Group 2",
+
+        [
+
+        "70EEE1F5-E4E9-4AEC-9ABD-46F7D5CECAFF",
+
+        "0128E876-42C3-4820-8219-000A3F2409BB"
+
+        ],
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.Impl.MaterialGroupService.UpdateDependentMac
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: materialGroupIdOrName
         in: path
         required: true
-        type: string
-      - name: UpdateDependentMacWrapper
-        in: body
-        required: true
         schema:
-          $ref: '#/definitions/UpdateDependentMac'
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            type: string
-            format: guid
-definitions:
-  Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo:
-    properties:
-      id:
-        type: string
-        format: guid
-        uniqueItems: false
-      name:
-        type: string
-        uniqueItems: false
-      description:
-        type: string
-        uniqueItems: false
-      materialIdOrNames:
-        type: array
-        items:
-          type: string
-        uniqueItems: false
-    type: object
-    format: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo
-  UpdateMaterialGroup:
-    properties:
-      materialGroupInfo:
-        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo'
-    type: object
-    format: UpdateMaterialGroup
-  UpdateDependentMac:
-    properties:
-      macIds:
-        type: array
-        items:
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDependentMac'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateDependentMac'
+        required: true
+      summary: Enviance rest services ver2 material activity material groups impl material…
+      x-summary-source: derived
+components:
+  schemas:
+    Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo:
+      properties:
+        id:
           type: string
           format: guid
-        uniqueItems: false
-    type: object
-    format: UpdateDependentMac
-  CreateMaterialGroup:
-    properties:
-      materialGroupInfo:
-        $ref: '#/definitions/Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo'
-      copyFrom:
-        type: string
-        uniqueItems: false
-    type: object
-    format: CreateMaterialGroup
-securityDefinitions:
-  Basic:
-    type: basic
-    description: Forces authentication with credentials via an api gateway
-  EnvianceAuth:
-    type: apiKey
-    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
-    name: Authorization
-    in: header
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        materialIdOrNames:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo
+    CreateMaterialGroup:
+      properties:
+        materialGroupInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateMaterialGroup
+    UpdateMaterialGroup:
+      properties:
+        materialGroupInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo'
+      type: object
+      format: UpdateMaterialGroup
+    UpdateDependentMac:
+      properties:
+        macIds:
+          type: array
+          items:
+            type: string
+            format: guid
+          uniqueItems: false
+      type: object
+      format: UpdateDependentMac
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header

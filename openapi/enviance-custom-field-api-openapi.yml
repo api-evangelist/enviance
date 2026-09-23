@@ -1,0 +1,922 @@
+openapi: 3.2.0
+info:
+  version: Platform.v2026.2.0.0.20260708
+  title: Rest Custom Field API
+  description: EMS Rest API
+  contact:
+    name: Cority
+    email: support@cority.com
+    url: https://cority.com
+tags:
+- name: Custom Field
+paths:
+  /ver2/CostomFieldService.svc/customFields:
+    post:
+      tags:
+      - Custom Field
+      operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.CreateCustomField
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCustomField'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateCustomField'
+        required: true
+      summary: Enviance rest services ver2 custom fields impl custom field service create…
+      x-summary-source: derived
+  /ver2/CostomFieldService.svc/customFields/{customFieldIdOrName}:
+    get:
+      tags:
+      - Custom Field
+      description: 'envianceSdk.customFields.getCustomField
+
+        ```
+
+        [
+
+        "nameOrID",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.GetCustomField
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: customFieldIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.CustomFields.CustomFieldInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.CustomFields.CustomFieldInfo'
+      summary: Enviance rest services ver2 custom fields impl custom field service get custom…
+      x-summary-source: derived
+    patch:
+      tags:
+      - Custom Field
+      description: 'envianceSdk.customFields.updateCustomField
+
+        ```
+
+        [
+
+        "customfieldIDorName",
+
+        {
+
+        "caption": "Custom Field Caption",
+
+        "captionLocalizations": [
+
+        {
+
+        "culture": "en-US",
+
+        "value": "Caption US"
+
+        },
+
+        {
+
+        "culture": "ru-RU",
+
+        "value": "Caption RU"
+
+        },
+
+        {
+
+        "culture": "zh-CN",
+
+        "value": "Caption Chinese"
+
+        },
+
+        {
+
+        "culture": "en-GB",
+
+        "value": "Caption UK"
+
+        },
+
+        {
+
+        "culture": "es-MX",
+
+        "value": "Caption Spanish"
+
+        }
+
+        ],
+
+        "dataType": "Number",
+
+        "description": "Custom Field Description",
+
+        "descriptionLocalizations": [
+
+        {
+
+        "culture": "en-US",
+
+        "value": "Description (United States)"
+
+        },
+
+        {
+
+        "culture": "ru-RU",
+
+        "value": "Description (Russia)"
+
+        },
+
+        {
+
+        "culture": "zh-CN",
+
+        "value": "Description (Chinese)"
+
+        },
+
+        {
+
+        "culture": "en-GB",
+
+        "value": "Description (United Kingdom)"
+
+        },
+
+        {
+
+        "culture": "es-MX",
+
+        "value": "Description Spanish"
+
+        }
+
+        ],
+
+        "hyperlinkType": null,
+
+        "isLinkedList": false,
+
+        "isListValuesByTemplate": null,
+
+        "isSensitiveData": true,
+
+        "label": null,
+
+        "listItems": [
+
+        {
+
+        "id": "175d915f-9d70-40fe-a87b-d4b87b8ef721",
+
+        "value": "test",
+
+        "valueLocalizations": [
+
+        {
+
+        "culture": "en-US",
+
+        "value": "test US"
+
+        },
+
+        {
+
+        "culture": "ru-RU",
+
+        "value": "test RU"
+
+        },
+
+        {
+
+        "culture": "zh-CN",
+
+        "value": "test Chinese"
+
+        },
+
+        {
+
+        "culture": "en-GB",
+
+        "value": "test UK"
+
+        },
+
+        {
+
+        "culture": "es-MX",
+
+        "value": "test Spanish"
+
+        }
+
+        ]
+
+        }
+
+        ],
+
+        "name": "Custom Field Name",
+
+        "size": null,
+
+        "trackValueHistory": false,
+
+        "valueEntryMethod": "Dropdown List"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.PartialUpdateCustomField
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: customFieldIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PartialUpdateCustomField'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/PartialUpdateCustomField'
+        required: true
+      summary: Enviance rest services ver2 custom fields impl custom field service partial…
+      x-summary-source: derived
+    delete:
+      tags:
+      - Custom Field
+      operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.DeleteCustomField
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      - name: customFieldIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+      summary: Enviance rest services ver2 custom fields impl custom field service delete…
+      x-summary-source: derived
+  /ver2/CostomFieldService.svc/customFields/bulk:
+    post:
+      tags:
+      - Custom Field
+      operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.GetCustomFieldList
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.CustomFields.CustomFieldInfo'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Ver2.CustomFields.CustomFieldInfo'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetCustomFieldList'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/GetCustomFieldList'
+        required: true
+      summary: Enviance rest services ver2 custom fields impl custom field service get custom…
+      x-summary-source: derived
+    patch:
+      tags:
+      - Custom Field
+      description: 'envianceSdk.customFields.updateCustomFieldBulk
+
+        ```
+
+        [
+
+        [
+
+        {
+
+        "label": "Custom Field Label",
+
+        "labelLocalizations": [
+
+        {
+
+        "culture": "en-US",
+
+        "value": null
+
+        },
+
+        {
+
+        "culture": "zh-CN",
+
+        "value": "CN Label"
+
+        }
+
+        ],
+
+        "name": "Some Udf 1"
+
+        },
+
+        {
+
+        "caption": "Custom Field Caption_up",
+
+        "captionLocalizations": [
+
+        {
+
+        "culture": "en-US",
+
+        "value": "Caption US"
+
+        },
+
+        {
+
+        "culture": "ru-RU",
+
+        "value": "Caption RU"
+
+        },
+
+        {
+
+        "culture": "zh-CN",
+
+        "value": "Caption Chinese"
+
+        },
+
+        {
+
+        "culture": "en-GB",
+
+        "value": "Caption UK"
+
+        },
+
+        {
+
+        "culture": "es-MX",
+
+        "value": "Caption Spanish"
+
+        }
+
+        ],
+
+        "name": "Some Udf 2"
+
+        }
+
+        ],
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
+      operationId: Enviance.RestServices.Ver2.CustomFields.Impl.CustomFieldService.UpdateCustomFieldBulkPartial
+      parameters:
+      - name: EnvApi-Systemid
+        in: header
+        description: Specify specific system to run instead of Home
+        schema:
+          type: string
+      - name: EnvApi-Packageid
+        in: header
+        description: (optional) Clients application/package ID
+        schema:
+          type: string
+      - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
+        in: header
+        description: Udfs of DateTime should use Iso
+        schema:
+          type: string
+          default: 'true'
+      - name: EnvApi-Udf-DateTime-ReadInUserTz
+        in: header
+        description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
+        schema:
+          type: string
+      - name: EnvApi-Udf-Value-Invariant
+        in: header
+        description: (optional) Udfs - Force Non-Localized (invariant) values
+        schema:
+          type: string
+      - name: EnvApi-Localization-All
+        in: header
+        description: (optional) Extend objects with User-given Localizations
+        schema:
+          type: string
+      - name: x-client-request-id
+        in: header
+        description: (optional) Client ID for double submit prevention
+        schema:
+          type: string
+      responses:
+        default:
+          description: not available
+          content:
+            application/json:
+              schema:
+                type: object
+            application/xml:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomFieldBulkPartial'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomFieldBulkPartial'
+        required: true
+      summary: Enviance rest services ver2 custom fields impl custom field service update…
+      x-summary-source: derived
+components:
+  schemas:
+    PartialUpdateCustomField:
+      properties:
+        customFieldInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.CustomFields.CustomFieldInfo'
+      type: object
+      format: PartialUpdateCustomField
+    UpdateCustomFieldBulkPartial:
+      properties:
+        customFieldInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.CustomFields.CustomFieldInfo'
+          uniqueItems: false
+      type: object
+      format: UpdateCustomFieldBulkPartial
+    CreateCustomField:
+      properties:
+        customFieldInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.CustomFields.CustomFieldInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateCustomField
+    GetCustomFieldList:
+      properties:
+        idsOrNames:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        lastUpdated:
+          type: string
+          format: date-time
+          uniqueItems: false
+      type: object
+      format: GetCustomFieldList
+    Enviance.RestServices.Ver2.CustomFields.ListItemInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        value:
+          type: object
+        alias:
+          type: string
+          uniqueItems: false
+        linkedItems:
+          type: array
+          items:
+            type: string
+            format: guid
+          uniqueItems: false
+        valueLocalizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.LocalizationInfo'
+          uniqueItems: false
+        aliasLocalizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.LocalizationInfo'
+          uniqueItems: false
+        isUsed:
+          type: boolean
+          uniqueItems: false
+        isUsedCalc:
+          type: boolean
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.CustomFields.ListItemInfo
+    Enviance.RestServices.Common.LocalizationInfo:
+      properties:
+        culture:
+          type: string
+          uniqueItems: false
+        value:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.LocalizationInfo
+    Enviance.RestServices.Common.SystemQuickLink:
+      properties:
+        systemQuickLinkId:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.SystemQuickLink
+    Enviance.RestServices.Ver2.CustomFields.CustomFieldInfo:
+      properties:
+        description:
+          type: string
+          uniqueItems: false
+        descriptionLocalizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.LocalizationInfo'
+          uniqueItems: false
+        caption:
+          type: string
+          uniqueItems: false
+        captionLocalizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.LocalizationInfo'
+          uniqueItems: false
+        size:
+          type: integer
+          format: int16
+          uniqueItems: false
+        dataType:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - Text
+          - Float
+          - Datetime
+          - Boolean
+          - Formula
+          - Hyperlink
+          - CitationHyperlink
+          - UniqueTag
+          - Undefined
+          - Label
+        valueEntryMethod:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - Text
+          - TextWithHistory
+          - DropdownList
+          - CheckBox
+          - Date
+          - Time
+          - DateAndTime
+          - AutoIncrement
+          - ManualIncrement
+          - MultiSelectionList
+          - CalculatedNumber
+          - PredefinedNumber
+          - PredefinedTime
+          - NumericLookup
+        hyperlinkType:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - DefaultURL
+          - ActivityProperties
+          - TaskProperties
+          - ObjectProperties
+          - ChemicalProperties
+          - MaterialProperties
+          - ChemicalListProperties
+          - CitationProperties
+          - TaskCompletion
+          - DataEntry
+        isListValuesByTemplate:
+          type: boolean
+          uniqueItems: false
+        trackValueHistory:
+          type: boolean
+          uniqueItems: false
+        isLinkedList:
+          type: boolean
+          uniqueItems: false
+        label:
+          type: string
+          uniqueItems: false
+        labelLocalizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.LocalizationInfo'
+          uniqueItems: false
+        listItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.CustomFields.ListItemInfo'
+          uniqueItems: false
+        isSensitiveData:
+          type: boolean
+          uniqueItems: false
+        sortOptionsByValue:
+          type: boolean
+          uniqueItems: false
+        updated:
+          type: string
+          format: date-time
+          uniqueItems: false
+        linkedListId:
+          type: string
+          format: guid
+          uniqueItems: false
+        autoIncrement:
+          type: boolean
+          uniqueItems: false
+        grandChilds:
+          type: array
+          items:
+            type: string
+            format: guid
+          uniqueItems: false
+        value:
+          type: object
+        precision:
+          type: integer
+          format: int32
+          uniqueItems: false
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.SystemQuickLink'
+          uniqueItems: false
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.CustomFields.CustomFieldInfo
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header

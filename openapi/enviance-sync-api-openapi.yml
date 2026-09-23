@@ -1,7 +1,7 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   version: Platform.v2026.2.0.0.20260708
-  title: Rest Activity Sync API
+  title: Rest Sync API
   description: EMS Rest API
   contact:
     name: Cority
@@ -14,86 +14,110 @@ paths:
     get:
       tags:
       - Sync
-      description: "\n\n\nenvianceSdk.sync.getLastChanges\r\n```\r\n[\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.sync.getLastChanges
+
+        ```
+
+        [
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.Sync.SyncService.GetLastChanges
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/Enviance.RestServices.Common.ModuleChangeTime'
-definitions:
-  Enviance.RestServices.Common.IdTimestamp:
-    properties:
-      id:
-        type: string
-        format: guid
-        uniqueItems: false
-      timestampUtc:
-        type: string
-        format: date-time
-        uniqueItems: false
-    type: object
-    format: Enviance.RestServices.Common.IdTimestamp
-  Enviance.RestServices.Common.ModuleChangeTime:
-    properties:
-      module:
-        type: string
-        uniqueItems: false
-      timestampUtc:
-        type: string
-        format: date-time
-        uniqueItems: false
-      timestampUtcList:
-        type: array
-        items:
-          $ref: '#/definitions/Enviance.RestServices.Common.IdTimestamp'
-        uniqueItems: false
-    type: object
-    format: Enviance.RestServices.Common.ModuleChangeTime
-securityDefinitions:
-  Basic:
-    type: basic
-    description: Forces authentication with credentials via an api gateway
-  EnvianceAuth:
-    type: apiKey
-    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
-    name: Authorization
-    in: header
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Common.ModuleChangeTime'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enviance.RestServices.Common.ModuleChangeTime'
+      summary: Enviance rest services ver2 sync sync service get last changes
+      x-summary-source: derived
+components:
+  schemas:
+    Enviance.RestServices.Common.ModuleChangeTime:
+      properties:
+        module:
+          type: string
+          uniqueItems: false
+        timestampUtc:
+          type: string
+          format: date-time
+          uniqueItems: false
+        timestampUtcList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.IdTimestamp'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.ModuleChangeTime
+    Enviance.RestServices.Common.IdTimestamp:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        timestampUtc:
+          type: string
+          format: date-time
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.IdTimestamp
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header

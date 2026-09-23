@@ -1,7 +1,7 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
   version: Platform.v2026.2.0.0.20260708
-  title: Rest Activity Tag API
+  title: Rest Tag API
   description: EMS Rest API
   contact:
     name: Cority
@@ -14,243 +14,501 @@ paths:
     post:
       tags:
       - Tag
-      description: "\n\nCreates a new Tag.\r\n\r\n**Security:** Requires Manage Tag Schemes system right.\r\n\r\n**SDK API:** `envianceSdk.tags.createTag (tagInfo, onsuccess, onerror)`\r\n\r\n```\r\nPOST/TagService.svc/tags HTTP/1.1\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{\r\n  \"tagInfo\": {\r\n    \"name\": \"Tag Name\",\r\n    \"tagSchemeIdOrName\": \"Tag Scheme 1\",\r\n    \"description\": \"Tag Description\"\r\n  }\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.tags.createTag\r\n```\r\n[\r\n  {\r\n    \"name\": \"Tag Name\",\r\n    \"description\": \"Tag 1 description\",\r\n    \"tagSchemeIdOrName\": \"Tag 1 scheme\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.tagSchemes.createTagScheme\r\n```\r\n[\r\n  {\r\n    \"name\": \"Tag Scheme Name\",\r\n    \"description\": \"Tag Scheme 1 description\",\r\n    \"enforceUniqueness\": \"1\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'Creates a new Tag.
+
+
+        **Security:** Requires Manage Tag Schemes system right.
+
+
+        **SDK API:** `envianceSdk.tags.createTag (tagInfo, onsuccess, onerror)`
+
+
+        ```
+
+        POST/TagService.svc/tags HTTP/1.1
+
+        Content-Type: application/json; charset=UTF-8
+
+
+        {
+
+        "tagInfo": {
+
+        "name": "Tag Name",
+
+        "tagSchemeIdOrName": "Tag Scheme 1",
+
+        "description": "Tag Description"
+
+        }
+
+        }
+
+
+        ```
+
+
+        envianceSdk.tags.createTag
+
+        ```
+
+        [
+
+        {
+
+        "name": "Tag Name",
+
+        "description": "Tag 1 description",
+
+        "tagSchemeIdOrName": "Tag 1 scheme"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.tagSchemes.createTagScheme
+
+        ```
+
+        [
+
+        {
+
+        "name": "Tag Scheme Name",
+
+        "description": "Tag Scheme 1 description",
+
+        "enforceUniqueness": "1"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.CreateTag
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
-      - name: CreateTagWrapper
-        in: body
-        required: true
         schema:
-          $ref: '#/definitions/CreateTag'
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            type: string
-            format: guid
+          content:
+            application/json:
+              schema:
+                type: string
+                format: guid
+            application/xml:
+              schema:
+                type: string
+                format: guid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTag'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CreateTag'
+        required: true
+      summary: Enviance rest services ver2 tagging objects tag impl tag service create tag
+      x-summary-source: derived
   /ver2/TagService.svc/tags/{tagIdOrSchemeIdAndTagName}:
     get:
       tags:
       - Tag
-      description: "\n\n\nenvianceSdk.tags.getTag\r\n```\r\n[\r\n  \"Tag Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.tagSchemes.getTagScheme\r\n```\r\n[\r\n  \"Tag Scheme Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.tags.getTag
+
+        ```
+
+        [
+
+        "Tag Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.tagSchemes.getTagScheme
+
+        ```
+
+        [
+
+        "Tag Scheme Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.GetTag
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: tagIdOrSchemeIdAndTagName
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       responses:
         default:
           description: not available
-          schema:
-            $ref: '#/definitions/Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo'
+      summary: Enviance rest services ver2 tagging objects tag impl tag service get tag
+      x-summary-source: derived
     patch:
       tags:
       - Tag
-      description: "\n\nUpdates an existing Tag.\r\n\r\n**Security:** Requires Manage Tag Schemes system right.\r\n\r\n**SDK API:** `envianceSdk.tags.updateTag (tagIdOrSchemeIdAndTagName, tagInfo, onsuccess, onerror)`\r\n\r\n```\r\nGET /TagService.svc/tags/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1\r\n\r\n//RESPONSE\r\n{\r\n  \"id\": \"9ca22677-2670-41a9-bafd-3b2825592863\",\r\n  \"name\": \"Tag Name\",\r\n  \"tagSchemeIdOrName\": \"Tag Scheme 1\",\r\n  \"description\": \"Tag Description\"\r\n}\r\n\r\n```\r\n\n\n\nenvianceSdk.tags.updateTag\r\n```\r\n[\r\n  \"Tag Name\",\r\n  {\r\n    \"name\": \"Tag Name\",\r\n    \"description\": \"Tag 1 description\",\r\n    \"tagSchemeIdOrName\": \"Tag 1 scheme\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.tagSchemes.updateTagScheme\r\n```\r\n[\r\n  \"Tag Scheme Name\",\r\n  {\r\n    \"name\": \"Tag Scheme Name\",\r\n    \"description\": \"Tag Scheme 1 description\",\r\n    \"enforceUniqueness\": \"1\"\r\n  },\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'Updates an existing Tag.
+
+
+        **Security:** Requires Manage Tag Schemes system right.
+
+
+        **SDK API:** `envianceSdk.tags.updateTag (tagIdOrSchemeIdAndTagName, tagInfo, onsuccess, onerror)`
+
+
+        ```
+
+        GET /TagService.svc/tags/9ca22677-2670-41a9-bafd-3b2825592863 HTTP/1.1
+
+
+        //RESPONSE
+
+        {
+
+        "id": "9ca22677-2670-41a9-bafd-3b2825592863",
+
+        "name": "Tag Name",
+
+        "tagSchemeIdOrName": "Tag Scheme 1",
+
+        "description": "Tag Description"
+
+        }
+
+
+        ```
+
+
+        envianceSdk.tags.updateTag
+
+        ```
+
+        [
+
+        "Tag Name",
+
+        {
+
+        "name": "Tag Name",
+
+        "description": "Tag 1 description",
+
+        "tagSchemeIdOrName": "Tag 1 scheme"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.tagSchemes.updateTagScheme
+
+        ```
+
+        [
+
+        "Tag Scheme Name",
+
+        {
+
+        "name": "Tag Scheme Name",
+
+        "description": "Tag Scheme 1 description",
+
+        "enforceUniqueness": "1"
+
+        },
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.UpdateTag
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: tagIdOrSchemeIdAndTagName
         in: path
         required: true
-        type: string
-      - name: UpdateTagWrapper
-        in: body
-        required: true
         schema:
-          $ref: '#/definitions/UpdateTag'
+          type: string
       responses:
         default:
           description: not available
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTag'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/UpdateTag'
+        required: true
+      summary: Enviance rest services ver2 tagging objects tag impl tag service update tag
+      x-summary-source: derived
     delete:
       tags:
       - Tag
-      description: "\n\n\nenvianceSdk.tags.deleteTag\r\n```\r\n[\r\n  \"Tag Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\nenvianceSdk.tagSchemes.deleteTagScheme\r\n```\r\n[\r\n  \"Tag Scheme Name\",\r\n  \"onsuccess\",\r\n  \"onerror\"\r\n]\r\n```\r\n\n"
+      description: 'envianceSdk.tags.deleteTag
+
+        ```
+
+        [
+
+        "Tag Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```
+
+        envianceSdk.tagSchemes.deleteTagScheme
+
+        ```
+
+        [
+
+        "Tag Scheme Name",
+
+        "onsuccess",
+
+        "onerror"
+
+        ]
+
+        ```'
       operationId: Enviance.RestServices.Ver2.TaggingObjects.Tag.Impl.TagService.DeleteTag
-      consumes:
-      - application/json
-      - application/xml
-      produces:
-      - application/json
-      - application/xml
       parameters:
       - name: EnvApi-Systemid
         in: header
         description: Specify specific system to run instead of Home
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Packageid
         in: header
         description: (optional) Clients application/package ID
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-DateTime-Iso-In-CustomFields
         in: header
         description: Udfs of DateTime should use Iso
-        type: string
-        default: 'true'
+        schema:
+          type: string
+          default: 'true'
       - name: EnvApi-Udf-DateTime-ReadInUserTz
         in: header
         description: (obsolete) Udfs of DateTime type whould be in ReadInUserTz
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Udf-Value-Invariant
         in: header
         description: (optional) Udfs - Force Non-Localized (invariant) values
-        type: string
+        schema:
+          type: string
       - name: EnvApi-Localization-All
         in: header
         description: (optional) Extend objects with User-given Localizations
-        type: string
+        schema:
+          type: string
       - name: x-client-request-id
         in: header
         description: (optional) Client ID for double submit prevention
-        type: string
+        schema:
+          type: string
       - name: tagIdOrSchemeIdAndTagName
         in: path
         required: true
-        type: string
+        schema:
+          type: string
       responses:
         default:
           description: not available
-definitions:
-  CreateTag:
-    properties:
-      tagInfo:
-        $ref: '#/definitions/Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo'
-    type: object
-    format: CreateTag
-  UpdateTag:
-    properties:
-      tagInfo:
-        $ref: '#/definitions/Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo'
-    type: object
-    format: UpdateTag
-  Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo:
-    properties:
-      id:
-        type: string
-        format: guid
-        uniqueItems: false
-      tagSchemeIdOrName:
-        type: string
-        uniqueItems: false
-      name:
-        type: string
-        uniqueItems: false
-      description:
-        type: string
-        uniqueItems: false
-    type: object
-    format: Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo
-securityDefinitions:
-  Basic:
-    type: basic
-    description: Forces authentication with credentials via an api gateway
-  EnvianceAuth:
-    type: apiKey
-    description: "**Enviance \\<SessionId\\>**. \r\n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
-    name: Authorization
-    in: header
+      summary: Enviance rest services ver2 tagging objects tag impl tag service delete tag
+      x-summary-source: derived
+components:
+  schemas:
+    Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        tagSchemeIdOrName:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo
+    UpdateTag:
+      properties:
+        tagInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo'
+      type: object
+      format: UpdateTag
+    CreateTag:
+      properties:
+        tagInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.TaggingObjects.Tag.TagInfo'
+      type: object
+      format: CreateTag
+  securitySchemes:
+    Basic:
+      type: http
+      scheme: basic
+      description: Forces authentication with credentials via an api gateway
+    EnvianceAuth:
+      type: apiKey
+      description: "**Enviance \\<SessionId\\>**. \n\t\t\t\t\t  Obtain SessionId by POST /ver2/AuthenticationService.svc/sessions first"
+      name: Authorization
+      in: header
