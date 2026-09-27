@@ -1154,73 +1154,9 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnInfo:
-      properties:
-        name:
-          type: string
-          uniqueItems: false
-        size:
-          type: integer
-          format: int32
-          uniqueItems: false
-        type:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnInfo
-    UpdateDataView:
-      properties:
-        info:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo'
-      type: object
-      format: UpdateDataView
-    Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnSortingInfo:
-      properties:
-        name:
-          type: string
-          uniqueItems: false
-        order:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnSortingInfo
-    Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyle:
-      properties:
-        font:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleFont'
-        numFmt:
-          type: string
-          uniqueItems: false
-        alignment:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleAlignment'
-      type: object
-      format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyle
     GetDataViewPublishConfigs:
       type: object
       format: GetDataViewPublishConfigs
-    Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConnectionInfo:
-      properties:
-        id:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        description:
-          type: string
-          uniqueItems: false
-        connectionType:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConnectionInfo
-    Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleAlignment:
-      properties:
-        horizontal:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleAlignment
     Enviance.RestServices.Ver2.Eql.Dto.EqlReportCell:
       properties:
         row:
@@ -1241,6 +1177,61 @@ components:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyle'
       type: object
       format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCell
+    Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConnectionInfo:
+      properties:
+        id:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        connectionType:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConnectionInfo
+    Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo:
+      properties:
+        id:
+          type: string
+          uniqueItems: false
+        connectionIdOrName:
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        cron:
+          type: string
+          uniqueItems: false
+        fileFormat:
+          type: string
+          uniqueItems: false
+        incrementDateColumnName:
+          type: string
+          uniqueItems: false
+        configMode:
+          type: string
+          uniqueItems: false
+        resumeMode:
+          type: string
+          uniqueItems: false
+        startDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        endDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        disabled:
+          type: boolean
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo
     Enviance.RestServices.Ver2.Eql.Dto.EqlExecuteInformation:
       properties:
         eql:
@@ -1289,6 +1280,44 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Eql.Dto.EqlExecuteInformation
+    Enviance.RestServices.Ver2.Eql.Dto.EqlReportSheet:
+      properties:
+        name:
+          type: string
+          uniqueItems: false
+        cells:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCell'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportSheet
+    Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleAlignment:
+      properties:
+        horizontal:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleAlignment
+    UpdateDataViewPublishConfigs:
+      properties:
+        publishConfigInfos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo'
+          uniqueItems: false
+      type: object
+      format: UpdateDataViewPublishConfigs
+    Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnSortingInfo:
+      properties:
+        name:
+          type: string
+          uniqueItems: false
+        order:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnSortingInfo
     Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo:
       properties:
         id:
@@ -1321,51 +1350,23 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo
-    Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo:
-      properties:
-        id:
-          type: string
-          uniqueItems: false
-        connectionIdOrName:
-          type: string
-          uniqueItems: false
-        path:
-          type: string
-          uniqueItems: false
-        cron:
-          type: string
-          uniqueItems: false
-        fileFormat:
-          type: string
-          uniqueItems: false
-        incrementDateColumnName:
-          type: string
-          uniqueItems: false
-        configMode:
-          type: string
-          uniqueItems: false
-        resumeMode:
-          type: string
-          uniqueItems: false
-        startDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        endDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        disabled:
-          type: boolean
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo
-    CreateDataView:
+    UpdateDataView:
       properties:
         info:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo'
       type: object
-      format: CreateDataView
+      format: UpdateDataView
+    Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyle:
+      properties:
+        font:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleFont'
+        numFmt:
+          type: string
+          uniqueItems: false
+        alignment:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleAlignment'
+      type: object
+      format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyle
     Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleFont:
       properties:
         bold:
@@ -1377,27 +1378,26 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportCellStyleFont
-    Enviance.RestServices.Ver2.Eql.Dto.EqlReportSheet:
+    CreateDataView:
+      properties:
+        info:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewInfo'
+      type: object
+      format: CreateDataView
+    Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnInfo:
       properties:
         name:
           type: string
           uniqueItems: false
-        cells:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlReportCell'
+        size:
+          type: integer
+          format: int32
+          uniqueItems: false
+        type:
+          type: string
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Eql.Dto.EqlReportSheet
-    UpdateDataViewPublishConfigs:
-      properties:
-        publishConfigInfos:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewPublishConfigInfo'
-          uniqueItems: false
-      type: object
-      format: UpdateDataViewPublishConfigs
+      format: Enviance.RestServices.Ver2.Eql.Dto.EqlDataViewColumnInfo
   securitySchemes:
     Basic:
       type: http

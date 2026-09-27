@@ -1178,12 +1178,51 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    UpdateDocumentFolder:
+    Enviance.RestServices.Ver2.Documents.DocumentZipItem:
       properties:
-        documentFolderInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentFolderInfo'
+        documentIdOrPath:
+          type: string
+          uniqueItems: false
+        resultDocumentPathName:
+          type: string
+          uniqueItems: false
       type: object
-      format: UpdateDocumentFolder
+      format: Enviance.RestServices.Ver2.Documents.DocumentZipItem
+    CreateDocument:
+      properties:
+        documentInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateDocument
+    GetDocumentsBulk:
+      properties:
+        documents:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentZipItem'
+          uniqueItems: false
+      type: object
+      format: GetDocumentsBulk
+    Enviance.RestServices.Ver2.Documents.DocumentFolderInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        description:
+          type: string
+          uniqueItems: false
+        parentFolderIdOrPath:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Documents.DocumentFolderInfo
     Enviance.RestServices.Ver2.Documents.DocumentInfo:
       properties:
         id:
@@ -1244,32 +1283,18 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Documents.DocumentInfo
-    Enviance.RestServices.Ver2.Documents.DocumentFolderInfo:
+    UpdateDocument:
       properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        description:
-          type: string
-          uniqueItems: false
-        parentFolderIdOrPath:
-          type: string
-          uniqueItems: false
+        documentInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentInfo'
       type: object
-      format: Enviance.RestServices.Ver2.Documents.DocumentFolderInfo
-    GetDocumentsBulk:
+      format: UpdateDocument
+    UpdateDocumentFolder:
       properties:
-        documents:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentZipItem'
-          uniqueItems: false
+        documentFolderInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentFolderInfo'
       type: object
-      format: GetDocumentsBulk
+      format: UpdateDocumentFolder
     CreateDocumentFolder:
       properties:
         documentFolderInfo:
@@ -1279,31 +1304,6 @@ components:
           uniqueItems: false
       type: object
       format: CreateDocumentFolder
-    UpdateDocument:
-      properties:
-        documentInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentInfo'
-      type: object
-      format: UpdateDocument
-    CreateDocument:
-      properties:
-        documentInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Documents.DocumentInfo'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreateDocument
-    Enviance.RestServices.Ver2.Documents.DocumentZipItem:
-      properties:
-        documentIdOrPath:
-          type: string
-          uniqueItems: false
-        resultDocumentPathName:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Documents.DocumentZipItem
   securitySchemes:
     Basic:
       type: http

@@ -487,6 +487,42 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    CreateWorkflowRole:
+      properties:
+        workflowRoleInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo'
+      type: object
+      format: CreateWorkflowRole
+    Enviance.RestServices.Ver2.Workflows.Role.DefaultMembers:
+      properties:
+        userIdsOrNames:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        groupIdsOrNames:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.Role.DefaultMembers
+    CopyWorkflowRole:
+      properties:
+        sourceId:
+          type: string
+          uniqueItems: false
+        newRoleName:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CopyWorkflowRole
+    UpdateWorkflowRole:
+      properties:
+        workflowRoleInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo'
+      type: object
+      format: UpdateWorkflowRole
     Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo:
       properties:
         id:
@@ -503,42 +539,6 @@ components:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.Role.DefaultMembers'
       type: object
       format: Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo
-    CreateWorkflowRole:
-      properties:
-        workflowRoleInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo'
-      type: object
-      format: CreateWorkflowRole
-    UpdateWorkflowRole:
-      properties:
-        workflowRoleInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.Role.WorkflowRoleInfo'
-      type: object
-      format: UpdateWorkflowRole
-    CopyWorkflowRole:
-      properties:
-        sourceId:
-          type: string
-          uniqueItems: false
-        newRoleName:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CopyWorkflowRole
-    Enviance.RestServices.Ver2.Workflows.Role.DefaultMembers:
-      properties:
-        userIdsOrNames:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        groupIdsOrNames:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.Role.DefaultMembers
   securitySchemes:
     Basic:
       type: http

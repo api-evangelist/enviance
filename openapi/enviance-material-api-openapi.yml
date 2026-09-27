@@ -922,18 +922,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo:
-      properties:
-        propertyIdOrName:
-          type: string
-          uniqueItems: false
-        valueHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo
     Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialChemicalMapInfo:
       properties:
         chemicalIdOrAlias:
@@ -946,6 +934,40 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialChemicalMapInfo
+    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        value:
+          type: number
+          format: double
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo
+    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo:
+      properties:
+        propertyIdOrName:
+          type: string
+          uniqueItems: false
+        valueHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo
+    UpdateMaterial:
+      properties:
+        materialInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo'
+      type: object
+      format: UpdateMaterial
     Enviance.RestServices.Udfs.Property:
       properties:
         name:
@@ -977,12 +999,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Udfs.Property
-    UpdateMaterial:
-      properties:
-        materialInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo'
-      type: object
-      format: UpdateMaterial
     CreateMaterial:
       properties:
         materialInfo:
@@ -992,53 +1008,6 @@ components:
           uniqueItems: false
       type: object
       format: CreateMaterial
-    Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        beginDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        present:
-          type: boolean
-          uniqueItems: false
-        minConc:
-          type: number
-          format: double
-          uniqueItems: false
-        avgConc:
-          type: number
-          format: double
-          uniqueItems: false
-        maxConc:
-          type: number
-          format: double
-          uniqueItems: false
-        created:
-          type: string
-          format: date-time
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo
-    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        beginDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        value:
-          type: number
-          format: double
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo
     Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo:
       properties:
         id:
@@ -1074,6 +1043,37 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo
+    Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        present:
+          type: boolean
+          uniqueItems: false
+        minConc:
+          type: number
+          format: double
+          uniqueItems: false
+        avgConc:
+          type: number
+          format: double
+          uniqueItems: false
+        maxConc:
+          type: number
+          format: double
+          uniqueItems: false
+        created:
+          type: string
+          format: date-time
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo
     Enviance.Business.Udf.Rest.UrlItem:
       properties:
         label:

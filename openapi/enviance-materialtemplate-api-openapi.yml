@@ -337,15 +337,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CreateMaterialTemplate:
-      properties:
-        materialTemplateInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreateMaterialTemplate
     Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo:
       properties:
         id:
@@ -365,6 +356,15 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo
+    CreateMaterialTemplate:
+      properties:
+        materialTemplateInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateMaterialTemplate
     UpdateMaterialTemplate:
       properties:
         materialTemplateInfo:

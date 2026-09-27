@@ -1175,6 +1175,56 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdatePackageItem:
+      properties:
+        packageItemInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
+      type: object
+      format: UpdatePackageItem
+    SavePackageAppData:
+      properties:
+        value:
+          $ref: '#/components/schemas/System.Object'
+        dtype:
+          type: string
+          uniqueItems: false
+      type: object
+      format: SavePackageAppData
+    Enviance.RestServices.Ver2.Packages.PackageItemInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        packageIdOrName:
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        content:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Packages.PackageItemInfo
+    CreatePackage:
+      properties:
+        packageInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreatePackage
+    UpdatePackage:
+      properties:
+        packageInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageInfo'
+      type: object
+      format: UpdatePackage
     Enviance.RestServices.Ver2.Packages.PackageInfo:
       properties:
         isRoutingEnabled:
@@ -1215,36 +1265,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Packages.PackageInfo
-    UpdatePackage:
-      properties:
-        packageInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageInfo'
-      type: object
-      format: UpdatePackage
-    SavePackageAppData:
-      properties:
-        value:
-          $ref: '#/components/schemas/System.Object'
-        dtype:
-          type: string
-          uniqueItems: false
-      type: object
-      format: SavePackageAppData
-    CreatePackage:
-      properties:
-        packageInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageInfo'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreatePackage
-    UpdatePackageItem:
-      properties:
-        packageItemInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
-      type: object
-      format: UpdatePackageItem
     CreatePackageItem:
       properties:
         packageItemInfo:
@@ -1254,26 +1274,6 @@ components:
           uniqueItems: false
       type: object
       format: CreatePackageItem
-    Enviance.RestServices.Ver2.Packages.PackageItemInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        packageIdOrName:
-          type: string
-          uniqueItems: false
-        path:
-          type: string
-          uniqueItems: false
-        type:
-          type: string
-          uniqueItems: false
-        content:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Packages.PackageItemInfo
     System.Object:
       type: object
       format: System.Object

@@ -495,6 +495,12 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    CreateEvent:
+      properties:
+        eventInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Events.EventInfo'
+      type: object
+      format: CreateEvent
     Enviance.RestServices.Udfs.Property:
       properties:
         name:
@@ -526,12 +532,12 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Udfs.Property
-    CreateEvent:
+    UpdateEvent:
       properties:
         eventInfo:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Events.EventInfo'
       type: object
-      format: CreateEvent
+      format: UpdateEvent
     Enviance.RestServices.Ver2.Events.EventInfo:
       properties:
         id:
@@ -587,12 +593,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.Business.Udf.Rest.UrlItem
-    UpdateEvent:
-      properties:
-        eventInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Events.EventInfo'
-      type: object
-      format: UpdateEvent
   securitySchemes:
     Basic:
       type: http

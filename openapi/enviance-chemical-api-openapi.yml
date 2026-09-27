@@ -1018,15 +1018,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalHistoryItemInfo
-    CreateChemical:
-      properties:
-        chemicalInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreateChemical
     Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo:
       properties:
         id:
@@ -1052,6 +1043,15 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo
+    CreateChemical:
+      properties:
+        chemicalInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateChemical
     UpdateChemical:
       properties:
         chemicalInfo:

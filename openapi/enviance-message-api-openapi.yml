@@ -318,6 +318,12 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    CreateMessage:
+      properties:
+        messageInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Messages.MessageInfo'
+      type: object
+      format: CreateMessage
     Enviance.RestServices.Ver2.Messages.MessageInfo:
       properties:
         id:
@@ -354,12 +360,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Messages.MessageInfo
-    CreateMessage:
-      properties:
-        messageInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Messages.MessageInfo'
-      type: object
-      format: CreateMessage
   securitySchemes:
     Basic:
       type: http
