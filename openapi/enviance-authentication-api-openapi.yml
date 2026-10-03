@@ -467,6 +467,76 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    Enviance.RestServices.Common.TimeZoneInfo:
+      properties:
+        id:
+          type: integer
+          format: int32
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        stdOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+        dstOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+        currentOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.TimeZoneInfo
+    AuthenticateByOAuthToken:
+      properties:
+        oAuthRefreshToken:
+          type: string
+          uniqueItems: false
+      type: object
+      format: AuthenticateByOAuthToken
+    Enviance.RestServices.Ver2.Security.QlikJWTTokenInfo:
+      properties:
+        token:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+        userId:
+          type: string
+          uniqueItems: false
+        userDirectory:
+          type: string
+          uniqueItems: false
+        stream:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Security.QlikJWTTokenInfo
+    Enviance.RestServices.Ver1.Security.Credentials:
+      properties:
+        userName:
+          type: string
+          uniqueItems: false
+        password:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver1.Security.Credentials
+    Enviance.RestServices.Ver2.Security.EncryptedCredentials:
+      description: "\n\n<!-- https://commonmark.org/help/ \nhttps://spec.commonmark.org/0.31.2/\n-->\n\n# EncryptedCredentials\n\nUpdates (and potentially moves) an existing Location object in the Compliance Model. Specifying a new parent path moves the Location underneath another parent Location. Updating the Custom Field Template of a Location object, if that object currently has no Template, adds the Template to the object. When switching from one Template to another Template, those values that belong to fields common to both Templates are kept, any values for fields not in the new Template are removed permanently. Setting the Template to null permanently removes all Custom Field values. This API does not support historical custom fields (those with Track Value History enabled).\n\n**Security:** User with permission to Compliance Objects.\n\n**SDK API:**  `envianceSdk.compliance.updateLocation (locationIdOrPath, locationInfo, onsuccess, onerror)`\n\n**SDK API (async):**  `envianceSdk.compliance.updateLocationAsync (locationIdOrPath, locationInfo, onsuccess, onerror)`\n\n```\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\nContent-Type: application/json; charset=utf-8\n \n{\n  \"locationInfo\": {\n  \"name\": \"Toy Manufacturing\",\n  \"fieldValues\": [\n    {\"name\": \"Aspect\", \"values\": [\"Air pollution control waste\"]},\n    {\"name\": \"Start Date\", \"values\": [\"2012-09-19T20:00:00\"]},\n    {\"name\": \"Type\", \"values\": [\"Spill\", \"Near Miss\"]},\n    {\"name\": \"Category\", \"values\": [\"Cat1\", \"Cat1.1\", \"Cat1.1.1\"]}\n  ],\n  \"documents\": [\"/Folder A/Document.doc\"]\n  }\n}\n\n//EXAMPLE with MOVE\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\nContent-Type: application/json; charset=utf-8\n \n{\n  \"locationInfo\": {\n  \"name\": \"Toy Manufacturing\",\n  \"parentPath\": \"/New Manufacturing Division/Toys/\"\n  }\n}\n\n```"
+      properties:
+        encryptedUserName:
+          type: string
+          uniqueItems: false
+        certUniqueId:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Security.EncryptedCredentials
     Enviance.RestServices.Ver2.Security.OAuthGetAccesTokenResponseInfo:
       properties:
         AccessToken:
@@ -511,76 +581,6 @@ components:
           type: object
       type: object
       format: Enviance.RestServices.Ver1.Security.SessionInfo
-    Enviance.RestServices.Ver2.Security.QlikJWTTokenInfo:
-      properties:
-        token:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-        userId:
-          type: string
-          uniqueItems: false
-        userDirectory:
-          type: string
-          uniqueItems: false
-        stream:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Security.QlikJWTTokenInfo
-    Enviance.RestServices.Common.TimeZoneInfo:
-      properties:
-        id:
-          type: integer
-          format: int32
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        stdOffset:
-          type: integer
-          format: int32
-          uniqueItems: false
-        dstOffset:
-          type: integer
-          format: int32
-          uniqueItems: false
-        currentOffset:
-          type: integer
-          format: int32
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.TimeZoneInfo
-    Enviance.RestServices.Ver1.Security.Credentials:
-      properties:
-        userName:
-          type: string
-          uniqueItems: false
-        password:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver1.Security.Credentials
-    Enviance.RestServices.Ver2.Security.EncryptedCredentials:
-      description: "\n\n<!-- https://commonmark.org/help/ \nhttps://spec.commonmark.org/0.31.2/\n-->\n\n# EncryptedCredentials\n\nUpdates (and potentially moves) an existing Location object in the Compliance Model. Specifying a new parent path moves the Location underneath another parent Location. Updating the Custom Field Template of a Location object, if that object currently has no Template, adds the Template to the object. When switching from one Template to another Template, those values that belong to fields common to both Templates are kept, any values for fields not in the new Template are removed permanently. Setting the Template to null permanently removes all Custom Field values. This API does not support historical custom fields (those with Track Value History enabled).\n\n**Security:** User with permission to Compliance Objects.\n\n**SDK API:**  `envianceSdk.compliance.updateLocation (locationIdOrPath, locationInfo, onsuccess, onerror)`\n\n**SDK API (async):**  `envianceSdk.compliance.updateLocationAsync (locationIdOrPath, locationInfo, onsuccess, onerror)`\n\n```\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\nContent-Type: application/json; charset=utf-8\n \n{\n  \"locationInfo\": {\n  \"name\": \"Toy Manufacturing\",\n  \"fieldValues\": [\n    {\"name\": \"Aspect\", \"values\": [\"Air pollution control waste\"]},\n    {\"name\": \"Start Date\", \"values\": [\"2012-09-19T20:00:00\"]},\n    {\"name\": \"Type\", \"values\": [\"Spill\", \"Near Miss\"]},\n    {\"name\": \"Category\", \"values\": [\"Cat1\", \"Cat1.1\", \"Cat1.1.1\"]}\n  ],\n  \"documents\": [\"/Folder A/Document.doc\"]\n  }\n}\n\n//EXAMPLE with MOVE\nPATCH /ver2/ComplianceService.svc/locations/06cc9d1c-731b-4031-b471-de3336b0166d HTTP 1.1\nContent-Type: application/json; charset=utf-8\n \n{\n  \"locationInfo\": {\n  \"name\": \"Toy Manufacturing\",\n  \"parentPath\": \"/New Manufacturing Division/Toys/\"\n  }\n}\n\n```"
-      properties:
-        encryptedUserName:
-          type: string
-          uniqueItems: false
-        certUniqueId:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Security.EncryptedCredentials
-    AuthenticateByOAuthToken:
-      properties:
-        oAuthRefreshToken:
-          type: string
-          uniqueItems: false
-      type: object
-      format: AuthenticateByOAuthToken
   securitySchemes:
     Basic:
       type: http

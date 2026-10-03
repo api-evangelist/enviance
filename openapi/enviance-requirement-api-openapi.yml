@@ -695,6 +695,94 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    Enviance.RestServices.Ver2.Requirements.Calcs.RequirementShortInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        uom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Requirements.Calcs.RequirementShortInfo
+    Enviance.RestServices.Ver2.Requirements.Calcs.CalcGraph:
+      properties:
+        relations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.Calcs.RequirementRelation'
+          uniqueItems: false
+        infos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.Calcs.RequirementShortInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Requirements.Calcs.CalcGraph
+    Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper:
+      properties:
+        reqInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.RequirementInfo'
+      type: object
+      format: Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper
+    UpdateRequirement:
+      properties:
+        reqInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper'
+      type: object
+      format: UpdateRequirement
+    Enviance.Business.TaggingObjects.Tags.Entities.TagHistory:
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        EndDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+      type: object
+      format: Enviance.Business.TaggingObjects.Tags.Entities.TagHistory
+    Enviance.RestServices.Ver2.Requirements.Calcs.RequirementRelation:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        parId:
+          type: string
+          format: guid
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Requirements.Calcs.RequirementRelation
+    Enviance.RestServices.Common.TagAssociationInfo:
+      properties:
+        tagScheme:
+          type: string
+          uniqueItems: false
+        tag:
+          type: string
+          uniqueItems: false
+        tagHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.Business.TaggingObjects.Tags.Entities.TagHistory'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.TagAssociationInfo
     Enviance.RestServices.Ver2.Requirements.RequirementInfo:
       properties:
         id:
@@ -773,80 +861,26 @@ components:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.Numeric.RequirementSourceInfo'
       type: object
       format: Enviance.RestServices.Ver2.Requirements.RequirementInfo
-    Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper:
+    Enviance.RestServices.Common.AssigneeV2:
       properties:
-        reqInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.RequirementInfo'
-      type: object
-      format: Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper
-    Enviance.RestServices.Ver2.Requirements.Calcs.RequirementRelation:
-      properties:
-        id:
+        userIdOrName:
           type: string
-          format: guid
           uniqueItems: false
-        parId:
-          type: string
-          format: guid
-          uniqueItems: false
-        type:
+        groupIdOrName:
           type: string
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Requirements.Calcs.RequirementRelation
-    Enviance.RestServices.Ver2.Requirements.Calcs.RequirementShortInfo:
+      format: Enviance.RestServices.Common.AssigneeV2
+    Enviance.Business.Udf.Rest.UrlItem:
       properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
+        label:
           type: string
           uniqueItems: false
-        path:
-          type: string
-          uniqueItems: false
-        type:
-          type: string
-          uniqueItems: false
-        uom:
+        url:
           type: string
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Requirements.Calcs.RequirementShortInfo
-    Enviance.RestServices.Ver2.Requirements.Calcs.CalcGraph:
-      properties:
-        relations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.Calcs.RequirementRelation'
-          uniqueItems: false
-        infos:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.Calcs.RequirementShortInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Requirements.Calcs.CalcGraph
-    DoRecalculation:
-      properties:
-        requirementIds:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        completeDates:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        dateRanges:
-          type: array
-          items:
-            $ref: '#/components/schemas/System.String[]'
-          uniqueItems: false
-      type: object
-      format: DoRecalculation
+      format: Enviance.Business.Udf.Rest.UrlItem
     Enviance.RestServices.Ver2.Requirements.Numeric.NotifyRecipientInfo:
       properties:
         recipients:
@@ -893,56 +927,21 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Udfs.Property
-    Enviance.RestServices.Common.AssigneeV2:
+    Enviance.RestServices.Common.CitationObjectInfo:
       properties:
-        userIdOrName:
+        idOrPath:
           type: string
           uniqueItems: false
-        groupIdOrName:
+        version:
+          type: integer
+          format: int32
+          uniqueItems: false
+        versionId:
           type: string
+          format: guid
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Common.AssigneeV2
-    CreateRequirement:
-      properties:
-        reqInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreateRequirement
-    UpdateRequirement:
-      properties:
-        reqInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper'
-      type: object
-      format: UpdateRequirement
-    Enviance.RestServices.Common.TagAssociationInfo:
-      properties:
-        tagScheme:
-          type: string
-          uniqueItems: false
-        tag:
-          type: string
-          uniqueItems: false
-        tagHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.Business.TaggingObjects.Tags.Entities.TagHistory'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.TagAssociationInfo
-    Enviance.Business.Udf.Rest.UrlItem:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.Business.Udf.Rest.UrlItem
+      format: Enviance.RestServices.Common.CitationObjectInfo
     Enviance.RestServices.Ver2.Requirements.Numeric.RequirementSourceInfo:
       properties:
         templateIdOrName:
@@ -996,33 +995,34 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Requirements.Numeric.RequirementSourceInfo
-    Enviance.Business.TaggingObjects.Tags.Entities.TagHistory:
+    CreateRequirement:
       properties:
-        BeginDate:
+        reqInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Requirements.RequirementInfoWrapper'
+        copyFrom:
           type: string
-          format: date-time
-          uniqueItems: false
-        EndDate:
-          type: string
-          format: date-time
           uniqueItems: false
       type: object
-      format: Enviance.Business.TaggingObjects.Tags.Entities.TagHistory
-    Enviance.RestServices.Common.CitationObjectInfo:
+      format: CreateRequirement
+    DoRecalculation:
       properties:
-        idOrPath:
-          type: string
+        requirementIds:
+          type: array
+          items:
+            type: string
           uniqueItems: false
-        version:
-          type: integer
-          format: int32
+        completeDates:
+          type: array
+          items:
+            type: string
           uniqueItems: false
-        versionId:
-          type: string
-          format: guid
+        dateRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/System.String[]'
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Common.CitationObjectInfo
+      format: DoRecalculation
   securitySchemes:
     Basic:
       type: http

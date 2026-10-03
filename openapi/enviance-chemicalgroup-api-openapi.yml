@@ -353,6 +353,15 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    UpdateChemicalGroup:
+      properties:
+        chemicalGroupIdOrName:
+          type: string
+          uniqueItems: false
+        chemicalGroupInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalGroupInfo'
+      type: object
+      format: UpdateChemicalGroup
     CreateChemicalGroup:
       properties:
         chemicalGroupInfo:
@@ -381,15 +390,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalGroupInfo
-    UpdateChemicalGroup:
-      properties:
-        chemicalGroupIdOrName:
-          type: string
-          uniqueItems: false
-        chemicalGroupInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalGroupInfo'
-      type: object
-      format: UpdateChemicalGroup
   securitySchemes:
     Basic:
       type: http

@@ -1259,24 +1259,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Security.GroupInfo
-    AddGroupMembers:
-      properties:
-        members:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: AddGroupMembers
-    SetGroupMembers:
-      properties:
-        members:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: SetGroupMembers
     SetGroupMembersAsync:
       properties:
         members:
@@ -1286,6 +1268,24 @@ components:
           uniqueItems: false
       type: object
       format: SetGroupMembersAsync
+    SetGroupMembers:
+      properties:
+        members:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: SetGroupMembers
+    AddGroupMembers:
+      properties:
+        members:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: AddGroupMembers
   securitySchemes:
     Basic:
       type: http

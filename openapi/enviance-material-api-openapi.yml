@@ -922,92 +922,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialChemicalMapInfo:
-      properties:
-        chemicalIdOrAlias:
-          type: string
-          uniqueItems: false
-        chemicalConcentrationHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialChemicalMapInfo
-    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        beginDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        value:
-          type: number
-          format: double
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo
-    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo:
-      properties:
-        propertyIdOrName:
-          type: string
-          uniqueItems: false
-        valueHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo
-    UpdateMaterial:
-      properties:
-        materialInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo'
-      type: object
-      format: UpdateMaterial
-    Enviance.RestServices.Udfs.Property:
-      properties:
-        name:
-          type: string
-          uniqueItems: false
-        urlItems:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.Business.Udf.Rest.UrlItem'
-          uniqueItems: false
-        values:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        beginDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        endDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        caption:
-          type: string
-          uniqueItems: false
-        captionLocalized:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Udfs.Property
-    CreateMaterial:
-      properties:
-        materialInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreateMaterial
     Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo:
       properties:
         id:
@@ -1043,6 +957,102 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo
+    UpdateMaterial:
+      properties:
+        materialInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo'
+      type: object
+      format: UpdateMaterial
+    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo:
+      properties:
+        propertyIdOrName:
+          type: string
+          uniqueItems: false
+        valueHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialPropertyMapInfo
+    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        value:
+          type: number
+          format: double
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialValueHistoryInfo
+    Enviance.Business.Udf.Rest.UrlItem:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.Business.Udf.Rest.UrlItem
+    CreateMaterial:
+      properties:
+        materialInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateMaterial
+    Enviance.RestServices.Udfs.Property:
+      properties:
+        name:
+          type: string
+          uniqueItems: false
+        urlItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.Business.Udf.Rest.UrlItem'
+          uniqueItems: false
+        values:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        endDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        caption:
+          type: string
+          uniqueItems: false
+        captionLocalized:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Udfs.Property
+    Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialChemicalMapInfo:
+      properties:
+        chemicalIdOrAlias:
+          type: string
+          uniqueItems: false
+        chemicalConcentrationHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Materials.MaterialChemicalMapInfo
     Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo:
       properties:
         id:
@@ -1074,16 +1084,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Materials.ChemicalConcentrationHistoryInfo
-    Enviance.Business.Udf.Rest.UrlItem:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.Business.Udf.Rest.UrlItem
   securitySchemes:
     Basic:
       type: http

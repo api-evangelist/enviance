@@ -2652,18 +2652,30 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    UpdatePanelTemplate:
+    SavePanelSettings:
       properties:
-        panelTemplateInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
+        panelSettings:
+          type: string
+          uniqueItems: false
       type: object
-      format: UpdatePanelTemplate
-    CreatePage:
+      format: SavePanelSettings
+    Enviance.RestServices.Ver2.Portal.Dto.PageWithPropsInfo:
       properties:
-        pageInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo'
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        pagegroupid:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
       type: object
-      format: CreatePage
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageWithPropsInfo
     Enviance.RestServices.Ver2.Portal.Dto.PowerBIReportInfo:
       properties:
         id:
@@ -2696,7 +2708,7 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Portal.Dto.PowerBIReportInfo
-    Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo:
+    Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo:
       properties:
         id:
           type: string
@@ -2705,10 +2717,11 @@ components:
         name:
           type: string
           uniqueItems: false
-        properties:
-          type: object
+        accesslevel:
+          type: string
+          uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo
+      format: Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo
     UpdatePage:
       properties:
         pageInfo:
@@ -2726,6 +2739,71 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Portal.Dto.IdNameInfo
+    UpdatePageGroup:
+      properties:
+        pageGroupInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo'
+      type: object
+      format: UpdatePageGroup
+    Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PanelPermissionsInfo:
+      properties:
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
+          uniqueItems: false
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PanelPermissionsInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo:
+      properties:
+        visibleToAll:
+          type: boolean
+          uniqueItems: false
+        exceptUsers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
+          uniqueItems: false
+        exceptGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo
+    DeletePanelTemplate:
+      type: object
+      format: DeletePanelTemplate
+    CreatePageGroup:
+      properties:
+        pageGroupInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo'
+      type: object
+      format: CreatePageGroup
+    CreatePanelTemplate:
+      properties:
+        panelTemplateInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
+      type: object
+      format: CreatePanelTemplate
     Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo:
       properties:
         accessLevels:
@@ -2745,6 +2823,31 @@ components:
           type: object
       type: object
       format: Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo
+    CreatePanel:
+      properties:
+        panelInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo'
+      type: object
+      format: CreatePanel
+    Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo:
+      properties:
+        accessLevels:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo'
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        pagegroupid:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo
     Enviance.RestServices.Ver2.Portal.Dto.PanelFlatInfo:
       properties:
         settings:
@@ -2772,7 +2875,31 @@ components:
           type: object
       type: object
       format: Enviance.RestServices.Ver2.Portal.Dto.PanelFlatInfo
-    Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo:
+    SavePageSettings:
+      properties:
+        pageSettings:
+          type: string
+          uniqueItems: false
+      type: object
+      format: SavePageSettings
+    Enviance.RestServices.Ver2.Portal.Dto.PanelWithPropsInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        pageid:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PanelWithPropsInfo
+    Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo:
       properties:
         id:
           type: string
@@ -2781,11 +2908,46 @@ components:
         name:
           type: string
           uniqueItems: false
-        accesslevel:
+        properties:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo
+    UpdatePanel:
+      properties:
+        panelInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo'
+      type: object
+      format: UpdatePanel
+    CreatePage:
+      properties:
+        pageInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo'
+      type: object
+      format: CreatePage
+    UpdatePanelTemplate:
+      properties:
+        panelTemplateInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
+      type: object
+      format: UpdatePanelTemplate
+    Enviance.RestServices.Ver2.Portal.Dto.PageGroupAllNestedInfo:
+      properties:
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageFlatWithPanelsInfo'
+          uniqueItems: false
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
           type: string
           uniqueItems: false
+        properties:
+          type: object
       type: object
-      format: Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo
+      format: Enviance.RestServices.Ver2.Portal.Dto.PageGroupAllNestedInfo
     Enviance.RestServices.Ver2.Portal.Dto.PageFlatWithPanelsInfo:
       properties:
         settings:
@@ -2818,168 +2980,6 @@ components:
           type: object
       type: object
       format: Enviance.RestServices.Ver2.Portal.Dto.PageFlatWithPanelsInfo
-    Enviance.RestServices.Ver2.Portal.Dto.PageWithPropsInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        pagegroupid:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        properties:
-          type: object
-      type: object
-      format: Enviance.RestServices.Ver2.Portal.Dto.PageWithPropsInfo
-    SavePageSettings:
-      properties:
-        pageSettings:
-          type: string
-          uniqueItems: false
-      type: object
-      format: SavePageSettings
-    Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        properties:
-          type: object
-      type: object
-      format: Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo
-    Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo:
-      properties:
-        accessLevels:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo'
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        pagegroupid:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        properties:
-          type: object
-      type: object
-      format: Enviance.RestServices.Ver2.Portal.Dto.PageWithAllInfo
-    Enviance.RestServices.Ver2.Portal.Dto.PanelPermissionsInfo:
-      properties:
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
-          uniqueItems: false
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Portal.Dto.PanelPermissionsInfo
-    DeletePanelTemplate:
-      type: object
-      format: DeletePanelTemplate
-    Enviance.RestServices.Ver2.Portal.Dto.PageGroupAllNestedInfo:
-      properties:
-        pages:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageFlatWithPanelsInfo'
-          uniqueItems: false
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        properties:
-          type: object
-      type: object
-      format: Enviance.RestServices.Ver2.Portal.Dto.PageGroupAllNestedInfo
-    UpdatePanel:
-      properties:
-        panelInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo'
-      type: object
-      format: UpdatePanel
-    Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo:
-      properties:
-        visibleToAll:
-          type: boolean
-          uniqueItems: false
-        exceptUsers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
-          uniqueItems: false
-        exceptGroups:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.UserGroupPermissionInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Portal.Dto.PagePermissionsInfo
-    CreatePanelTemplate:
-      properties:
-        panelTemplateInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelTemplateInfo'
-      type: object
-      format: CreatePanelTemplate
-    CreatePanel:
-      properties:
-        panelInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PanelWithAllInfo'
-      type: object
-      format: CreatePanel
-    Enviance.RestServices.Ver2.Portal.Dto.PanelWithPropsInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        pageid:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        properties:
-          type: object
-      type: object
-      format: Enviance.RestServices.Ver2.Portal.Dto.PanelWithPropsInfo
-    SavePanelSettings:
-      properties:
-        panelSettings:
-          type: string
-          uniqueItems: false
-      type: object
-      format: SavePanelSettings
-    UpdatePageGroup:
-      properties:
-        pageGroupInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo'
-      type: object
-      format: UpdatePageGroup
-    CreatePageGroup:
-      properties:
-        pageGroupInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Portal.Dto.PageGroupInfo'
-      type: object
-      format: CreatePageGroup
     Enviance.RestServices.Ver2.Portal.Dto.PageGroupWithPagesInfo:
       properties:
         pages:

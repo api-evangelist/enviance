@@ -433,32 +433,6 @@ components:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
       type: object
       format: UpdateChemicalList
-    CreateChemicalList:
-      properties:
-        chemicalListInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreateChemicalList
-    Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        beginDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        limits:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo
     Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo:
       properties:
         id:
@@ -478,6 +452,23 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo
+    Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        limits:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListHistoryItemInfo
     Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo:
       properties:
         chemicalIdOrAlias:
@@ -489,6 +480,15 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListLimitItemInfo
+    CreateChemicalList:
+      properties:
+        chemicalListInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Chemicals.ChemicalListInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateChemicalList
   securitySchemes:
     Basic:
       type: http

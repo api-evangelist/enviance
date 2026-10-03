@@ -1168,6 +1168,53 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    Enviance.RestServices.Ver2.ComplianceModel.WorkflowRoleOverride:
+      required:
+      - role
+      properties:
+        role:
+          $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleUserDto'
+          uniqueItems: false
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.ComplianceModel.WorkflowRoleOverride
+    Enviance.RestServices.Common.SimpleIdName:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.SimpleIdName
+    Enviance.Business.TaggingObjects.Tags.Entities.TagHistory:
+      properties:
+        BeginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        EndDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+      type: object
+      format: Enviance.Business.TaggingObjects.Tags.Entities.TagHistory
+    UpdateOverrides:
+      properties:
+        overridesInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo'
+      type: object
+      format: UpdateOverrides
     CreateLocation:
       properties:
         locationInfo:
@@ -1177,136 +1224,6 @@ components:
           uniqueItems: false
       type: object
       format: CreateLocation
-    Enviance.RestServices.Common.SimpleUserDto:
-      properties:
-        firstName:
-          type: string
-          uniqueItems: false
-        lastName:
-          type: string
-          uniqueItems: false
-        isDeleted:
-          type: boolean
-          uniqueItems: false
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.SimpleUserDto
-    UpdateLocation:
-      properties:
-        locationInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.LocationInfo'
-      type: object
-      format: UpdateLocation
-    Enviance.RestServices.Ver2.ComplianceModel.LocationHistoryInfo:
-      properties:
-        BeginDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        LocationId:
-          type: string
-          uniqueItems: false
-        Location:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.ComplianceModel.LocationHistoryInfo
-    Enviance.Business.Udf.Rest.UrlItem:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.Business.Udf.Rest.UrlItem
-    Enviance.RestServices.Common.TagAssociationInfo:
-      properties:
-        tagScheme:
-          type: string
-          uniqueItems: false
-        tag:
-          type: string
-          uniqueItems: false
-        tagHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.Business.TaggingObjects.Tags.Entities.TagHistory'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.TagAssociationInfo
-    UpdateOverrides:
-      properties:
-        overridesInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo'
-      type: object
-      format: UpdateOverrides
-    Enviance.RestServices.Ver2.ComplianceModel.RegulatoryIdentificationInfo:
-      properties:
-        RCRA:
-          type: string
-          uniqueItems: false
-        TRI:
-          type: string
-          uniqueItems: false
-        RMP:
-          type: string
-          uniqueItems: false
-        StateID1:
-          type: string
-          uniqueItems: false
-        StateID2:
-          type: string
-          uniqueItems: false
-        StateID3:
-          type: string
-          uniqueItems: false
-        LocalID1:
-          type: string
-          uniqueItems: false
-        LocalID2:
-          type: string
-          uniqueItems: false
-        LocalID3:
-          type: string
-          uniqueItems: false
-        IDType1:
-          type: string
-          uniqueItems: false
-        IDType2:
-          type: string
-          uniqueItems: false
-        IDType3:
-          type: string
-          uniqueItems: false
-        IDNo1:
-          type: string
-          uniqueItems: false
-        IDNo2:
-          type: string
-          uniqueItems: false
-        IDNo3:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.ComplianceModel.RegulatoryIdentificationInfo
-    Enviance.RestServices.Common.LocalizationInfo:
-      properties:
-        culture:
-          type: string
-          uniqueItems: false
-        value:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.LocalizationInfo
     Enviance.RestServices.Udfs.Property:
       properties:
         name:
@@ -1338,17 +1255,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Udfs.Property
-    Enviance.RestServices.Common.SimpleIdName:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.SimpleIdName
     Enviance.RestServices.Ver2.ComplianceModel.WorkflowPoliciesOverride:
       required:
       - workflowType
@@ -1362,148 +1268,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.ComplianceModel.WorkflowPoliciesOverride
-    Enviance.RestServices.Ver2.ComplianceModel.MailingAddressInfo:
-      properties:
-        Country:
-          type: string
-          uniqueItems: false
-        State:
-          type: string
-          uniqueItems: false
-        City:
-          type: string
-          uniqueItems: false
-        PostalCode:
-          type: string
-          uniqueItems: false
-        Address1:
-          type: string
-          uniqueItems: false
-        Address2:
-          type: string
-          uniqueItems: false
-        Address3:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.ComplianceModel.MailingAddressInfo
-    Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo:
-      properties:
-        roleOverrides:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.WorkflowRoleOverride'
-          uniqueItems: false
-        policiesOverride:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.WorkflowPoliciesOverride'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo
-    Enviance.RestServices.Ver2.ComplianceModel.WorkflowRoleOverride:
-      required:
-      - role
-      properties:
-        role:
-          $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleUserDto'
-          uniqueItems: false
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.ComplianceModel.WorkflowRoleOverride
-    Enviance.RestServices.Common.TimeZoneInfo:
-      properties:
-        id:
-          type: integer
-          format: int32
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        stdOffset:
-          type: integer
-          format: int32
-          uniqueItems: false
-        dstOffset:
-          type: integer
-          format: int32
-          uniqueItems: false
-        currentOffset:
-          type: integer
-          format: int32
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.TimeZoneInfo
-    Enviance.RestServices.Ver2.ComplianceModel.ContactInfo:
-      properties:
-        FirstName:
-          type: string
-          uniqueItems: false
-        LastName:
-          type: string
-          uniqueItems: false
-        Title:
-          type: string
-          uniqueItems: false
-        Company:
-          type: string
-          uniqueItems: false
-        TelNo:
-          type: string
-          uniqueItems: false
-        FaxNo:
-          type: string
-          uniqueItems: false
-        Mobile:
-          type: string
-          uniqueItems: false
-        Email:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.ComplianceModel.ContactInfo
-    DeleteOverrides:
-      properties:
-        overridesInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo'
-      type: object
-      format: DeleteOverrides
-    Enviance.RestServices.Ver2.ComplianceModel.Address:
-      properties:
-        street1:
-          type: string
-          uniqueItems: false
-        street2:
-          type: string
-          uniqueItems: false
-        street3:
-          type: string
-          uniqueItems: false
-        city:
-          type: string
-          uniqueItems: false
-        countyOrRegion:
-          type: string
-          uniqueItems: false
-        stateOrProvince:
-          type: string
-          uniqueItems: false
-        country:
-          type: string
-          uniqueItems: false
-        postalCode:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.ComplianceModel.Address
     Enviance.RestServices.Ver2.ComplianceModel.GeoLocation:
       properties:
         latitude:
@@ -1561,6 +1325,93 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.ComplianceModel.GeoLocation
+    Enviance.RestServices.Ver2.ComplianceModel.ContactInfo:
+      properties:
+        FirstName:
+          type: string
+          uniqueItems: false
+        LastName:
+          type: string
+          uniqueItems: false
+        Title:
+          type: string
+          uniqueItems: false
+        Company:
+          type: string
+          uniqueItems: false
+        TelNo:
+          type: string
+          uniqueItems: false
+        FaxNo:
+          type: string
+          uniqueItems: false
+        Mobile:
+          type: string
+          uniqueItems: false
+        Email:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.ComplianceModel.ContactInfo
+    Enviance.RestServices.Common.SimpleUserDto:
+      properties:
+        firstName:
+          type: string
+          uniqueItems: false
+        lastName:
+          type: string
+          uniqueItems: false
+        isDeleted:
+          type: boolean
+          uniqueItems: false
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.SimpleUserDto
+    Enviance.RestServices.Common.TimeZoneInfo:
+      properties:
+        id:
+          type: integer
+          format: int32
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        stdOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+        dstOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+        currentOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.TimeZoneInfo
+    Enviance.RestServices.Common.LocalizationInfo:
+      properties:
+        culture:
+          type: string
+          uniqueItems: false
+        value:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.LocalizationInfo
+    DeleteOverrides:
+      properties:
+        overridesInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo'
+      type: object
+      format: DeleteOverrides
     Enviance.RestServices.Ver2.ComplianceModel.LocationInfo:
       properties:
         id:
@@ -1674,18 +1525,167 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.ComplianceModel.LocationInfo
-    Enviance.Business.TaggingObjects.Tags.Entities.TagHistory:
+    Enviance.RestServices.Common.TagAssociationInfo:
+      properties:
+        tagScheme:
+          type: string
+          uniqueItems: false
+        tag:
+          type: string
+          uniqueItems: false
+        tagHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.Business.TaggingObjects.Tags.Entities.TagHistory'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.TagAssociationInfo
+    Enviance.RestServices.Ver2.ComplianceModel.LocationHistoryInfo:
       properties:
         BeginDate:
           type: string
           format: date-time
           uniqueItems: false
-        EndDate:
+        LocationId:
           type: string
-          format: date-time
+          uniqueItems: false
+        Location:
+          type: string
           uniqueItems: false
       type: object
-      format: Enviance.Business.TaggingObjects.Tags.Entities.TagHistory
+      format: Enviance.RestServices.Ver2.ComplianceModel.LocationHistoryInfo
+    Enviance.RestServices.Ver2.ComplianceModel.Address:
+      properties:
+        street1:
+          type: string
+          uniqueItems: false
+        street2:
+          type: string
+          uniqueItems: false
+        street3:
+          type: string
+          uniqueItems: false
+        city:
+          type: string
+          uniqueItems: false
+        countyOrRegion:
+          type: string
+          uniqueItems: false
+        stateOrProvince:
+          type: string
+          uniqueItems: false
+        country:
+          type: string
+          uniqueItems: false
+        postalCode:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.ComplianceModel.Address
+    Enviance.RestServices.Ver2.ComplianceModel.MailingAddressInfo:
+      properties:
+        Country:
+          type: string
+          uniqueItems: false
+        State:
+          type: string
+          uniqueItems: false
+        City:
+          type: string
+          uniqueItems: false
+        PostalCode:
+          type: string
+          uniqueItems: false
+        Address1:
+          type: string
+          uniqueItems: false
+        Address2:
+          type: string
+          uniqueItems: false
+        Address3:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.ComplianceModel.MailingAddressInfo
+    UpdateLocation:
+      properties:
+        locationInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.LocationInfo'
+      type: object
+      format: UpdateLocation
+    Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo:
+      properties:
+        roleOverrides:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.WorkflowRoleOverride'
+          uniqueItems: false
+        policiesOverride:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.ComplianceModel.WorkflowPoliciesOverride'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.ComplianceModel.WorkflowOverridesInfo
+    Enviance.Business.Udf.Rest.UrlItem:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.Business.Udf.Rest.UrlItem
+    Enviance.RestServices.Ver2.ComplianceModel.RegulatoryIdentificationInfo:
+      properties:
+        RCRA:
+          type: string
+          uniqueItems: false
+        TRI:
+          type: string
+          uniqueItems: false
+        RMP:
+          type: string
+          uniqueItems: false
+        StateID1:
+          type: string
+          uniqueItems: false
+        StateID2:
+          type: string
+          uniqueItems: false
+        StateID3:
+          type: string
+          uniqueItems: false
+        LocalID1:
+          type: string
+          uniqueItems: false
+        LocalID2:
+          type: string
+          uniqueItems: false
+        LocalID3:
+          type: string
+          uniqueItems: false
+        IDType1:
+          type: string
+          uniqueItems: false
+        IDType2:
+          type: string
+          uniqueItems: false
+        IDType3:
+          type: string
+          uniqueItems: false
+        IDNo1:
+          type: string
+          uniqueItems: false
+        IDNo2:
+          type: string
+          uniqueItems: false
+        IDNo3:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.ComplianceModel.RegulatoryIdentificationInfo
   securitySchemes:
     Basic:
       type: http

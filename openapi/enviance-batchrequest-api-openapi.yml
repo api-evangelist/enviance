@@ -79,6 +79,28 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    Execute:
+      properties:
+        batch:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.BatchRequest.OperationParams'
+          uniqueItems: false
+        continueOnError:
+          type: boolean
+          uniqueItems: false
+      type: object
+      format: Execute
+    Enviance.RestServices.Ver2.BatchRequest.StringPair:
+      properties:
+        name:
+          type: string
+          uniqueItems: false
+        value:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.BatchRequest.StringPair
     Enviance.RestServices.Ver2.BatchRequest.OperationParams:
       properties:
         headers:
@@ -97,18 +119,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.BatchRequest.OperationParams
-    Execute:
-      properties:
-        batch:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.BatchRequest.OperationParams'
-          uniqueItems: false
-        continueOnError:
-          type: boolean
-          uniqueItems: false
-      type: object
-      format: Execute
     Enviance.RestServices.Ver2.BatchRequest.OperationResponse:
       properties:
         code:
@@ -128,16 +138,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.BatchRequest.OperationResponse
-    Enviance.RestServices.Ver2.BatchRequest.StringPair:
-      properties:
-        name:
-          type: string
-          uniqueItems: false
-        value:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.BatchRequest.StringPair
   securitySchemes:
     Basic:
       type: http

@@ -83,6 +83,18 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    Enviance.RestServices.Common.IdTimestamp:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        timestampUtc:
+          type: string
+          format: date-time
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.IdTimestamp
     Enviance.RestServices.Common.ModuleChangeTime:
       properties:
         module:
@@ -99,18 +111,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Common.ModuleChangeTime
-    Enviance.RestServices.Common.IdTimestamp:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        timestampUtc:
-          type: string
-          format: date-time
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.IdTimestamp
   securitySchemes:
     Basic:
       type: http

@@ -4753,12 +4753,136 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    InitiateChildWorkflow:
+    UpdateWorkflows:
       properties:
-        childWorkflowInitiationInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.ChildWorkflowInitiationInfo'
+        workflowUpdateInfos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowWithStepUpdateInfo'
+          uniqueItems: false
       type: object
-      format: InitiateChildWorkflow
+      format: UpdateWorkflows
+    Enviance.Workflow.Business.Engine.UploadExcel2Result:
+      properties:
+        containsError:
+          type: boolean
+          uniqueItems: false
+        fileInfo:
+          $ref: '#/components/schemas/Enviance.Workflow.Business.Engine.ExcelFileInfo'
+      type: object
+      format: Enviance.Workflow.Business.Engine.UploadExcel2Result
+    GenerateWorkflowAttachmentUploadUrl:
+      properties:
+        attachmentInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowCreateAttachmentInfo'
+      type: object
+      format: GenerateWorkflowAttachmentUploadUrl
+    Enviance.RestServices.Ver2.Workflows.WorkflowInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        uniqueId:
+          type: string
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        workflowTypeName:
+          type: string
+          uniqueItems: false
+        parentUniqueId:
+          type: string
+          format: guid
+          uniqueItems: false
+        parentWorkflowSourceCustomField:
+          $ref: '#/components/schemas/Enviance.RestServices.Common.CustomFieldInfo'
+        dueDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        status:
+          type: string
+          uniqueItems: false
+        creator:
+          type: string
+          uniqueItems: false
+        created:
+          type: string
+          format: date-time
+          uniqueItems: false
+        lastRun:
+          type: string
+          format: date-time
+          uniqueItems: false
+        assignedBy:
+          type: string
+          uniqueItems: false
+        assignedTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.AssigneeV2'
+          uniqueItems: false
+        objects:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        documents:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        calendars:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        comment:
+          type: string
+          uniqueItems: false
+        closeDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        jsonData:
+          type: object
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.WorkflowInfo
+    Enviance.RestServices.Common.SimpleIdName:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.SimpleIdName
+    UpdateWorkflowStep:
+      properties:
+        stepInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+      type: object
+      format: UpdateWorkflowStep
+    Enviance.RestServices.Ver2.Workflows.UserGroup:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleUserDto'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.UserGroup
     Enviance.RestServices.Ver2.Workflows.WorkflowCreateAttachmentInfo:
       properties:
         fileSize:
@@ -4780,129 +4904,16 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Workflows.WorkflowCreateAttachmentInfo
-    CreateWorkflowsOld:
+    Enviance.RestServices.Common.AssigneeV2:
       properties:
-        workflowInfos:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
-          uniqueItems: false
-      type: object
-      format: CreateWorkflowsOld
-    UpdateWorkflows:
-      properties:
-        workflowUpdateInfos:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowWithStepUpdateInfo'
-          uniqueItems: false
-      type: object
-      format: UpdateWorkflows
-    CreateWorkflow:
-      properties:
-        workflowInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
-        initStepInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
-      type: object
-      format: CreateWorkflow
-    Enviance.RestServices.Common.SimpleUserDto:
-      properties:
-        firstName:
+        userIdOrName:
           type: string
           uniqueItems: false
-        lastName:
-          type: string
-          uniqueItems: false
-        isDeleted:
-          type: boolean
-          uniqueItems: false
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
+        groupIdOrName:
           type: string
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Common.SimpleUserDto
-    GetWorkflowCurrentStepBulk:
-      properties:
-        workflowIdsOrUniqueIds:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: GetWorkflowCurrentStepBulk
-    GetWorkflowStepBulk:
-      properties:
-        workflowStepMaps:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepMap'
-          uniqueItems: false
-      type: object
-      format: GetWorkflowStepBulk
-    Enviance.Business.Udf.Rest.UrlItem:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.Business.Udf.Rest.UrlItem
-    Enviance.RestServices.Ver2.Workflows.UserGroup:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleUserDto'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.UserGroup
-    GuessPermissions:
-      properties:
-        options:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions'
-      type: object
-      format: GuessPermissions
-    UpdateWorkflowStep:
-      properties:
-        stepInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
-      type: object
-      format: UpdateWorkflowStep
-    CreateWorkflows:
-      properties:
-        workflowInfos:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowWithStepInfo'
-          uniqueItems: false
-      type: object
-      format: CreateWorkflows
-    Enviance.RestServices.Ver2.Workflows.WorkflowStepMap:
-      properties:
-        workflowIdOrUniqueId:
-          type: string
-          uniqueItems: false
-        stepIdsOrNames:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.WorkflowStepMap
+      format: Enviance.RestServices.Common.AssigneeV2
     Enviance.RestServices.Udfs.Property:
       properties:
         name:
@@ -4934,17 +4945,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Udfs.Property
-    Enviance.RestServices.Common.CustomFieldInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.CustomFieldInfo
     Enviance.RestServices.Ver2.Workflows.WorkflowWithStepUpdateInfo:
       properties:
         id:
@@ -5023,8 +5023,39 @@ components:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
       type: object
       format: Enviance.RestServices.Ver2.Workflows.WorkflowWithStepUpdateInfo
-    Enviance.RestServices.Common.SimpleIdName:
+    Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions:
       properties:
+        version:
+          type: integer
+          format: int32
+          uniqueItems: false
+        objects:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        username:
+          type: string
+          uniqueItems: false
+        groupname:
+          type: string
+          uniqueItems: false
+        stepIdOrName:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions
+    Enviance.RestServices.Common.SimpleUserDto:
+      properties:
+        firstName:
+          type: string
+          uniqueItems: false
+        lastName:
+          type: string
+          uniqueItems: false
+        isDeleted:
+          type: boolean
+          uniqueItems: false
         id:
           type: string
           format: guid
@@ -5033,7 +5064,28 @@ components:
           type: string
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Common.SimpleIdName
+      format: Enviance.RestServices.Common.SimpleUserDto
+    CreateWorkflows:
+      properties:
+        workflowInfos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowWithStepInfo'
+          uniqueItems: false
+      type: object
+      format: CreateWorkflows
+    Enviance.RestServices.Ver2.Workflows.WorkflowStepMap:
+      properties:
+        workflowIdOrUniqueId:
+          type: string
+          uniqueItems: false
+        stepIdsOrNames:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.WorkflowStepMap
     Enviance.RestServices.Ver2.Workflows.WorkflowRoleInfo:
       properties:
         id:
@@ -5063,31 +5115,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Workflows.WorkflowRoleInfo
-    Enviance.Workflow.Business.Engine.UploadExcel2Result:
-      properties:
-        containsError:
-          type: boolean
-          uniqueItems: false
-        fileInfo:
-          $ref: '#/components/schemas/Enviance.Workflow.Business.Engine.ExcelFileInfo'
-      type: object
-      format: Enviance.Workflow.Business.Engine.UploadExcel2Result
-    UpdateWorkflowCurrentStep:
-      properties:
-        stepInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
-      type: object
-      format: UpdateWorkflowCurrentStep
-    Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentDownloadUrlInfo:
-      properties:
-        downloadUrl:
-          type: string
-          uniqueItems: false
-        provider:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentDownloadUrlInfo
     Enviance.RestServices.Ver2.Workflows.WorkflowWithStepInfo:
       properties:
         id:
@@ -5163,6 +5190,172 @@ components:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
       type: object
       format: Enviance.RestServices.Ver2.Workflows.WorkflowWithStepInfo
+    UpdateWorkflow:
+      properties:
+        workflowInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
+      type: object
+      format: UpdateWorkflow
+    UpdateWorkflowCurrentStep:
+      properties:
+        stepInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+      type: object
+      format: UpdateWorkflowCurrentStep
+    Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        created:
+          type: string
+          format: date-time
+          uniqueItems: false
+        ownerId:
+          type: string
+          format: guid
+          uniqueItems: false
+        workflowInstanceId:
+          type: string
+          format: guid
+          uniqueItems: false
+        provider:
+          type: string
+          uniqueItems: false
+        fileSize:
+          type: integer
+          format: int32
+          uniqueItems: false
+        mimeType:
+          type: string
+          uniqueItems: false
+        extension:
+          type: string
+          uniqueItems: false
+        label:
+          type: string
+          uniqueItems: false
+        workflowDefinitionID:
+          type: string
+          format: guid
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentInfo
+    GetWorkflowCurrentStepBulk:
+      properties:
+        workflowIdsOrUniqueIds:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: GetWorkflowCurrentStepBulk
+    CreateWorkflow:
+      properties:
+        workflowInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
+        initStepInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+      type: object
+      format: CreateWorkflow
+    Enviance.RestServices.Ver2.Workflows.Transition:
+      properties:
+        stepActionName:
+          type: string
+          uniqueItems: false
+        assignTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.AssigneeV2'
+          uniqueItems: false
+        dueDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        closeDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.Transition
+    Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentUploadUrlInfo:
+      properties:
+        uploadUrl:
+          type: string
+          uniqueItems: false
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        created:
+          type: string
+          format: date-time
+          uniqueItems: false
+        ownerId:
+          type: string
+          format: guid
+          uniqueItems: false
+        workflowInstanceId:
+          type: string
+          format: guid
+          uniqueItems: false
+        provider:
+          type: string
+          uniqueItems: false
+        fileSize:
+          type: integer
+          format: int32
+          uniqueItems: false
+        mimeType:
+          type: string
+          uniqueItems: false
+        extension:
+          type: string
+          uniqueItems: false
+        label:
+          type: string
+          uniqueItems: false
+        workflowDefinitionID:
+          type: string
+          format: guid
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentUploadUrlInfo
+    Enviance.Workflow.Business.Engine.ExecutionContext.WorkflowExecutionResult:
+      type: object
+      format: Enviance.Workflow.Business.Engine.ExecutionContext.WorkflowExecutionResult
+    Enviance.RestServices.Ver2.Workflows.WorkflowStepPermissionsInfo:
+      properties:
+        readWriteFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
+          uniqueItems: false
+        readOnlyFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
+          uniqueItems: false
+        stepActions:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        stepInitiators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
+          uniqueItems: false
+        workflowActions:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        assignedRole:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowRoleInfo'
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.WorkflowStepPermissionsInfo
     Enviance.Workflow.Business.Engine.ExcelFileInfo:
       properties:
         fileName:
@@ -5176,6 +5369,122 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.Workflow.Business.Engine.ExcelFileInfo
+    Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        comment:
+          type: string
+          uniqueItems: false
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Udfs.Property'
+          uniqueItems: false
+        transition:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.Transition'
+        taskCompletion:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo
+    Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentDownloadUrlInfo:
+      properties:
+        downloadUrl:
+          type: string
+          uniqueItems: false
+        provider:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentDownloadUrlInfo
+    GuessPermissionsByUser:
+      properties:
+        options:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions'
+      type: object
+      format: GuessPermissionsByUser
+    Enviance.RestServices.Ver2.Workflows.ChildWorkflowInitiationInfo:
+      properties:
+        parentStepIdOrName:
+          type: string
+          uniqueItems: false
+        initiatorIdOrName:
+          type: string
+          uniqueItems: false
+        childWorkflowInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
+        childInitStepInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
+      type: object
+      format: Enviance.RestServices.Ver2.Workflows.ChildWorkflowInitiationInfo
+    Enviance.RestServices.Common.CustomFieldInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.CustomFieldInfo
+    InitiateChildWorkflow:
+      properties:
+        childWorkflowInitiationInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.ChildWorkflowInitiationInfo'
+      type: object
+      format: InitiateChildWorkflow
+    GuessPermissions:
+      properties:
+        options:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions'
+      type: object
+      format: GuessPermissions
+    GetWorkflowStepBulk:
+      properties:
+        workflowStepMaps:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepMap'
+          uniqueItems: false
+      type: object
+      format: GetWorkflowStepBulk
+    DeleteWorkflows:
+      properties:
+        workflowIdOrUniqueIds:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: DeleteWorkflows
+    Enviance.Business.Udf.Rest.UrlItem:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.Business.Udf.Rest.UrlItem
+    CreateWorkflowsOld:
+      properties:
+        workflowInfos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
+          uniqueItems: false
+      type: object
+      format: CreateWorkflowsOld
     Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo:
       properties:
         statusChangeDate:
@@ -5224,197 +5533,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo
-    UpdateWorkflow:
-      properties:
-        workflowInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
-      type: object
-      format: UpdateWorkflow
-    Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        created:
-          type: string
-          format: date-time
-          uniqueItems: false
-        ownerId:
-          type: string
-          format: guid
-          uniqueItems: false
-        workflowInstanceId:
-          type: string
-          format: guid
-          uniqueItems: false
-        provider:
-          type: string
-          uniqueItems: false
-        fileSize:
-          type: integer
-          format: int32
-          uniqueItems: false
-        mimeType:
-          type: string
-          uniqueItems: false
-        extension:
-          type: string
-          uniqueItems: false
-        label:
-          type: string
-          uniqueItems: false
-        workflowDefinitionID:
-          type: string
-          format: guid
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentInfo
-    Enviance.RestServices.Ver2.Workflows.ChildWorkflowInitiationInfo:
-      properties:
-        parentStepIdOrName:
-          type: string
-          uniqueItems: false
-        initiatorIdOrName:
-          type: string
-          uniqueItems: false
-        childWorkflowInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowInfo'
-        childInitStepInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo'
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.ChildWorkflowInitiationInfo
-    DeleteWorkflows:
-      properties:
-        workflowIdOrUniqueIds:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: DeleteWorkflows
-    Enviance.Workflow.Business.Engine.ExecutionContext.WorkflowExecutionResult:
-      type: object
-      format: Enviance.Workflow.Business.Engine.ExecutionContext.WorkflowExecutionResult
-    Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        comment:
-          type: string
-          uniqueItems: false
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Udfs.Property'
-          uniqueItems: false
-        transition:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.Transition'
-        taskCompletion:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.WorkflowStepInfo
-    Enviance.RestServices.Ver2.Workflows.WorkflowInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        uniqueId:
-          type: string
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        workflowTypeName:
-          type: string
-          uniqueItems: false
-        parentUniqueId:
-          type: string
-          format: guid
-          uniqueItems: false
-        parentWorkflowSourceCustomField:
-          $ref: '#/components/schemas/Enviance.RestServices.Common.CustomFieldInfo'
-        dueDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        status:
-          type: string
-          uniqueItems: false
-        creator:
-          type: string
-          uniqueItems: false
-        created:
-          type: string
-          format: date-time
-          uniqueItems: false
-        lastRun:
-          type: string
-          format: date-time
-          uniqueItems: false
-        assignedBy:
-          type: string
-          uniqueItems: false
-        assignedTo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Common.AssigneeV2'
-          uniqueItems: false
-        objects:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        documents:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        calendars:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        comment:
-          type: string
-          uniqueItems: false
-        closeDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        jsonData:
-          type: object
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.WorkflowInfo
-    Enviance.RestServices.Ver2.Workflows.Transition:
-      properties:
-        stepActionName:
-          type: string
-          uniqueItems: false
-        assignTo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Common.AssigneeV2'
-          uniqueItems: false
-        dueDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        closeDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.Transition
     UploadExcel2Workflow:
       properties:
         fileInfo:
@@ -5427,124 +5545,6 @@ components:
           uniqueItems: false
       type: object
       format: UploadExcel2Workflow
-    Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions:
-      properties:
-        version:
-          type: integer
-          format: int32
-          uniqueItems: false
-        objects:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        username:
-          type: string
-          uniqueItems: false
-        groupname:
-          type: string
-          uniqueItems: false
-        stepIdOrName:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions
-    Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentUploadUrlInfo:
-      properties:
-        uploadUrl:
-          type: string
-          uniqueItems: false
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        created:
-          type: string
-          format: date-time
-          uniqueItems: false
-        ownerId:
-          type: string
-          format: guid
-          uniqueItems: false
-        workflowInstanceId:
-          type: string
-          format: guid
-          uniqueItems: false
-        provider:
-          type: string
-          uniqueItems: false
-        fileSize:
-          type: integer
-          format: int32
-          uniqueItems: false
-        mimeType:
-          type: string
-          uniqueItems: false
-        extension:
-          type: string
-          uniqueItems: false
-        label:
-          type: string
-          uniqueItems: false
-        workflowDefinitionID:
-          type: string
-          format: guid
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.WorkflowAttachmentUploadUrlInfo
-    Enviance.RestServices.Common.AssigneeV2:
-      properties:
-        userIdOrName:
-          type: string
-          uniqueItems: false
-        groupIdOrName:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.AssigneeV2
-    Enviance.RestServices.Ver2.Workflows.WorkflowStepPermissionsInfo:
-      properties:
-        readWriteFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
-          uniqueItems: false
-        readOnlyFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
-          uniqueItems: false
-        stepActions:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        stepInitiators:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Common.SimpleIdName'
-          uniqueItems: false
-        workflowActions:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        assignedRole:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowRoleInfo'
-      type: object
-      format: Enviance.RestServices.Ver2.Workflows.WorkflowStepPermissionsInfo
-    GuessPermissionsByUser:
-      properties:
-        options:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowTypeOptions'
-      type: object
-      format: GuessPermissionsByUser
-    GenerateWorkflowAttachmentUploadUrl:
-      properties:
-        attachmentInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Workflows.WorkflowCreateAttachmentInfo'
-      type: object
-      format: GenerateWorkflowAttachmentUploadUrl
   securitySchemes:
     Basic:
       type: http

@@ -1060,148 +1060,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    DeleteNumericData:
-      properties:
-        numericDataRanges:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.NumericDataRangeInfo'
-          uniqueItems: false
-      type: object
-      format: DeleteNumericData
-    DownloadExcelData:
-      properties:
-        start:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.Range.RangeParamStart'
-        end:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.Range.RangeParamEnd'
-        intervalType:
-          type: string
-          format: enum
-          uniqueItems: false
-          enum:
-          - Minutes
-          - Hourly
-          - HourlyTimeBased
-          - Daily
-          - DailyTimeBased
-          - Weekly
-          - WeeklyTimeBased
-          - Monthly
-          - MonthlyTimeBased
-          - QuarterlyTimeBased
-          - Yearly
-          - YearlyTimeBased
-        factor:
-          type: integer
-          format: int32
-          uniqueItems: false
-        limit:
-          type: integer
-          format: int32
-          uniqueItems: false
-        completeDates:
-          type: array
-          items:
-            type: string
-            format: date-time
-          uniqueItems: false
-        containerIdOrPath:
-          type: string
-          uniqueItems: false
-        parameterIdsOrTags:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        parameterWildcard:
-          type: string
-          uniqueItems: false
-        includeAllChildren:
-          type: boolean
-          uniqueItems: false
-        useFullPath:
-          type: boolean
-          uniqueItems: false
-      type: object
-      format: DownloadExcelData
-    GetCalculationRanges:
-      properties:
-        start:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.Range.RangeParamStart'
-        end:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.Range.RangeParamEnd'
-      type: object
-      format: GetCalculationRanges
-    Enviance.Business.Udf.Rest.UrlItem:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.Business.Udf.Rest.UrlItem
-    Enviance.Business.Data.CommandInfo:
-      properties:
-        CommandLogID:
-          type: string
-          format: guid
-          uniqueItems: false
-        ObjectID:
-          type: string
-          format: guid
-          uniqueItems: false
-      type: object
-      format: Enviance.Business.Data.CommandInfo
-    EnterNumericData:
-      properties:
-        numericDataPoints:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.NumericDataPointInfo'
-          uniqueItems: false
-        collector:
-          type: string
-          uniqueItems: false
-      type: object
-      format: EnterNumericData
-    Enviance.RestServices.Ver2.Data.Range.RangeParamStart:
-      properties:
-        relativity:
-          type: string
-          format: enum
-          uniqueItems: false
-          enum:
-          - Absolute
-          - Previous
-          - Current
-          - Following
-        periodType:
-          type: string
-          format: enum
-          uniqueItems: false
-          enum:
-          - Day
-          - CalendarDay
-          - Week
-          - Month
-          - CalendarMonth
-          - Quarter
-          - CalendarQuarter
-          - Year
-          - CalendarYear
-        absoluteDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        periodCount:
-          type: integer
-          format: int32
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Data.Range.RangeParamStart
     Enviance.RestServices.Ver2.Data.Range.RangeResult:
       properties:
         beginDate:
@@ -1214,161 +1072,18 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Data.Range.RangeResult
-    Enviance.RestServices.Ver2.Data.NumericDataPointInfo:
-      required:
-      - completeDate
+    EnterNonNumericData:
       properties:
-        parameterIdOrTag:
-          type: string
-          uniqueItems: false
-        completeDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        value:
-          type: number
-          format: double
-          uniqueItems: false
-        qualityData:
+        nonNumericDataPoints:
           type: array
           items:
-            $ref: '#/components/schemas/Enviance.RestServices.Udfs.Property'
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.NonNumeric.NonNumericDataPointInfo'
           uniqueItems: false
         collector:
           type: string
           uniqueItems: false
-        acronym:
-          type: string
-          uniqueItems: false
-        uomId:
-          type: string
-          format: guid
-          uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Data.NumericDataPointInfo
-    Enviance.RestServices.Udfs.Property:
-      properties:
-        name:
-          type: string
-          uniqueItems: false
-        urlItems:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.Business.Udf.Rest.UrlItem'
-          uniqueItems: false
-        values:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        beginDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        endDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        caption:
-          type: string
-          uniqueItems: false
-        captionLocalized:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Udfs.Property
-    DeleteNonNumericData:
-      properties:
-        requirementIdOrPath:
-          type: string
-          uniqueItems: false
-        nonNumericDataPoints:
-          type: array
-          items:
-            type: string
-            format: guid
-          uniqueItems: false
-      type: object
-      format: DeleteNonNumericData
-    Enviance.Business.Data.UploadExcel2Result:
-      properties:
-        CommandLog:
-          $ref: '#/components/schemas/Enviance.Business.Data.CommandInfo'
-        ContainsError:
-          type: boolean
-          uniqueItems: false
-        FileInfo:
-          $ref: '#/components/schemas/Enviance.Business.Data.ExcelFileInfo'
-      type: object
-      format: Enviance.Business.Data.UploadExcel2Result
-    UploadExcel2Data:
-      properties:
-        fileInfo:
-          $ref: '#/components/schemas/Enviance.Business.Data.ExcelFileInfo'
-        intervalType:
-          type: string
-          format: enum
-          uniqueItems: false
-          enum:
-          - Minutes
-          - Hourly
-          - HourlyTimeBased
-          - Daily
-          - DailyTimeBased
-          - Weekly
-          - WeeklyTimeBased
-          - Monthly
-          - MonthlyTimeBased
-          - QuarterlyTimeBased
-          - Yearly
-          - YearlyTimeBased
-        allowQualityData:
-          type: boolean
-          uniqueItems: false
-        timeForDaily:
-          type: string
-          uniqueItems: false
-      type: object
-      format: UploadExcel2Data
-    Enviance.RestServices.Ver2.Data.Range.RangePeriod:
-      properties:
-        beginDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        endDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        saveDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        dontExistInTimeZone:
-          type: array
-          items:
-            type: integer
-            format: int16
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Data.Range.RangePeriod
-    UploadExcelData:
-      properties:
-        content:
-          type: string
-          uniqueItems: false
-        excelProcessorType:
-          type: string
-          format: enum
-          uniqueItems: false
-          enum:
-          - Parameter
-          - MDLGroup
-        containerIdOrPath:
-          type: string
-          uniqueItems: false
-      type: object
-      format: UploadExcelData
+      format: EnterNonNumericData
     Enviance.RestServices.Ver2.Data.NumericDataRangeInfo:
       required:
       - parameterIdOrTag
@@ -1426,7 +1141,139 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Data.NonNumeric.NonNumericDataPointInfo
-    Enviance.RestServices.Ver2.Data.Range.RangeParamEnd:
+    Enviance.Business.Data.UploadExcel2Result:
+      properties:
+        CommandLog:
+          $ref: '#/components/schemas/Enviance.Business.Data.CommandInfo'
+        ContainsError:
+          type: boolean
+          uniqueItems: false
+        FileInfo:
+          $ref: '#/components/schemas/Enviance.Business.Data.ExcelFileInfo'
+      type: object
+      format: Enviance.Business.Data.UploadExcel2Result
+    Enviance.RestServices.Ver2.Data.Range.RangePeriod:
+      properties:
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        endDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        saveDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        dontExistInTimeZone:
+          type: array
+          items:
+            type: integer
+            format: int16
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Data.Range.RangePeriod
+    Enviance.RestServices.Udfs.Property:
+      properties:
+        name:
+          type: string
+          uniqueItems: false
+        urlItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.Business.Udf.Rest.UrlItem'
+          uniqueItems: false
+        values:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        beginDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        endDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        caption:
+          type: string
+          uniqueItems: false
+        captionLocalized:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Udfs.Property
+    Enviance.Business.Data.CommandInfo:
+      properties:
+        CommandLogID:
+          type: string
+          format: guid
+          uniqueItems: false
+        ObjectID:
+          type: string
+          format: guid
+          uniqueItems: false
+      type: object
+      format: Enviance.Business.Data.CommandInfo
+    DownloadExcelData:
+      properties:
+        start:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.Range.RangeParamStart'
+        end:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.Range.RangeParamEnd'
+        intervalType:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - Minutes
+          - Hourly
+          - HourlyTimeBased
+          - Daily
+          - DailyTimeBased
+          - Weekly
+          - WeeklyTimeBased
+          - Monthly
+          - MonthlyTimeBased
+          - QuarterlyTimeBased
+          - Yearly
+          - YearlyTimeBased
+        factor:
+          type: integer
+          format: int32
+          uniqueItems: false
+        limit:
+          type: integer
+          format: int32
+          uniqueItems: false
+        completeDates:
+          type: array
+          items:
+            type: string
+            format: date-time
+          uniqueItems: false
+        containerIdOrPath:
+          type: string
+          uniqueItems: false
+        parameterIdsOrTags:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        parameterWildcard:
+          type: string
+          uniqueItems: false
+        includeAllChildren:
+          type: boolean
+          uniqueItems: false
+        useFullPath:
+          type: boolean
+          uniqueItems: false
+      type: object
+      format: DownloadExcelData
+    Enviance.RestServices.Ver2.Data.Range.RangeParamStart:
       properties:
         relativity:
           type: string
@@ -1434,8 +1281,9 @@ components:
           uniqueItems: false
           enum:
           - Absolute
+          - Previous
           - Current
-          - AfterStart
+          - Following
         periodType:
           type: string
           format: enum
@@ -1459,19 +1307,20 @@ components:
           format: int32
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Data.Range.RangeParamEnd
-    EnterNonNumericData:
+      format: Enviance.RestServices.Ver2.Data.Range.RangeParamStart
+    DeleteNonNumericData:
       properties:
+        requirementIdOrPath:
+          type: string
+          uniqueItems: false
         nonNumericDataPoints:
           type: array
           items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.NonNumeric.NonNumericDataPointInfo'
-          uniqueItems: false
-        collector:
-          type: string
+            type: string
+            format: guid
           uniqueItems: false
       type: object
-      format: EnterNonNumericData
+      format: DeleteNonNumericData
     GetCalculationPeriods:
       properties:
         start:
@@ -1511,6 +1360,32 @@ components:
           uniqueItems: false
       type: object
       format: GetCalculationPeriods
+    DeleteNumericData:
+      properties:
+        numericDataRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.NumericDataRangeInfo'
+          uniqueItems: false
+      type: object
+      format: DeleteNumericData
+    UploadExcelData:
+      properties:
+        content:
+          type: string
+          uniqueItems: false
+        excelProcessorType:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - Parameter
+          - MDLGroup
+        containerIdOrPath:
+          type: string
+          uniqueItems: false
+      type: object
+      format: UploadExcelData
     Enviance.Business.Data.ExcelFileInfo:
       properties:
         FileName:
@@ -1524,6 +1399,131 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.Business.Data.ExcelFileInfo
+    Enviance.RestServices.Ver2.Data.NumericDataPointInfo:
+      required:
+      - completeDate
+      properties:
+        parameterIdOrTag:
+          type: string
+          uniqueItems: false
+        completeDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        value:
+          type: number
+          format: double
+          uniqueItems: false
+        qualityData:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Udfs.Property'
+          uniqueItems: false
+        collector:
+          type: string
+          uniqueItems: false
+        acronym:
+          type: string
+          uniqueItems: false
+        uomId:
+          type: string
+          format: guid
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Data.NumericDataPointInfo
+    EnterNumericData:
+      properties:
+        numericDataPoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.NumericDataPointInfo'
+          uniqueItems: false
+        collector:
+          type: string
+          uniqueItems: false
+      type: object
+      format: EnterNumericData
+    Enviance.RestServices.Ver2.Data.Range.RangeParamEnd:
+      properties:
+        relativity:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - Absolute
+          - Current
+          - AfterStart
+        periodType:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - Day
+          - CalendarDay
+          - Week
+          - Month
+          - CalendarMonth
+          - Quarter
+          - CalendarQuarter
+          - Year
+          - CalendarYear
+        absoluteDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        periodCount:
+          type: integer
+          format: int32
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Data.Range.RangeParamEnd
+    UploadExcel2Data:
+      properties:
+        fileInfo:
+          $ref: '#/components/schemas/Enviance.Business.Data.ExcelFileInfo'
+        intervalType:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - Minutes
+          - Hourly
+          - HourlyTimeBased
+          - Daily
+          - DailyTimeBased
+          - Weekly
+          - WeeklyTimeBased
+          - Monthly
+          - MonthlyTimeBased
+          - QuarterlyTimeBased
+          - Yearly
+          - YearlyTimeBased
+        allowQualityData:
+          type: boolean
+          uniqueItems: false
+        timeForDaily:
+          type: string
+          uniqueItems: false
+      type: object
+      format: UploadExcel2Data
+    Enviance.Business.Udf.Rest.UrlItem:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.Business.Udf.Rest.UrlItem
+    GetCalculationRanges:
+      properties:
+        start:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.Range.RangeParamStart'
+        end:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Data.Range.RangeParamEnd'
+      type: object
+      format: GetCalculationRanges
   securitySchemes:
     Basic:
       type: http
