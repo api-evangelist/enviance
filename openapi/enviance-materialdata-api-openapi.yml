@@ -475,47 +475,21 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    DeleteMaterialData:
+    Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataInfo:
       properties:
-        mdlGroupIds:
-          type: array
-          items:
-            type: string
-            format: guid
-          uniqueItems: false
-      type: object
-      format: DeleteMaterialData
-    UploadMaterialData:
-      properties:
-        objectIdOrPathOrUniqueTag:
-          type: string
-          uniqueItems: false
-      type: object
-      format: UploadMaterialData
-    Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLinesInfo:
-      properties:
-        materialIdOrNameOrUniqueTag:
-          type: string
-          uniqueItems: false
-        mdlGroupId:
+        dataLineId:
           type: string
           format: guid
           uniqueItems: false
-        startTime:
+        propertyIdOrNameOrUniqueTag:
           type: string
-          format: date-time
           uniqueItems: false
-        endTime:
-          type: string
-          format: date-time
-          uniqueItems: false
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataInfo'
+        value:
+          type: number
+          format: double
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLinesInfo
+      format: Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataInfo
     Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLineGroupInfo:
       required:
       - complete
@@ -544,21 +518,35 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLineGroupInfo
-    Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataInfo:
+    EnterMaterialData:
       properties:
-        dataLineId:
-          type: string
-          format: guid
+        mdlGroupsInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLineGroupInfo'
           uniqueItems: false
-        propertyIdOrNameOrUniqueTag:
+        partialProcess:
           type: string
-          uniqueItems: false
-        value:
-          type: number
-          format: double
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataInfo
+      format: EnterMaterialData
+    UploadMaterialData:
+      properties:
+        objectIdOrPathOrUniqueTag:
+          type: string
+          uniqueItems: false
+      type: object
+      format: UploadMaterialData
+    DeleteMaterialData:
+      properties:
+        mdlGroupIds:
+          type: array
+          items:
+            type: string
+            format: guid
+          uniqueItems: false
+      type: object
+      format: DeleteMaterialData
     DownloadMaterialData:
       properties:
         activityIdOrNameOrUniqueTag:
@@ -575,18 +563,30 @@ components:
           uniqueItems: false
       type: object
       format: DownloadMaterialData
-    EnterMaterialData:
+    Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLinesInfo:
       properties:
-        mdlGroupsInfo:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLineGroupInfo'
-          uniqueItems: false
-        partialProcess:
+        materialIdOrNameOrUniqueTag:
           type: string
           uniqueItems: false
+        mdlGroupId:
+          type: string
+          format: guid
+          uniqueItems: false
+        startTime:
+          type: string
+          format: date-time
+          uniqueItems: false
+        endTime:
+          type: string
+          format: date-time
+          uniqueItems: false
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataInfo'
+          uniqueItems: false
       type: object
-      format: EnterMaterialData
+      format: Enviance.RestServices.Ver2.MaterialActivity.Data.MaterialDataLinesInfo
   securitySchemes:
     Basic:
       type: http

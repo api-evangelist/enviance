@@ -1229,6 +1229,15 @@ components:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Security.GroupInfo'
       type: object
       format: UpdateGroup
+    AddGroupMembers:
+      properties:
+        members:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: AddGroupMembers
     AddGroupMembersAsync:
       properties:
         members:
@@ -1238,6 +1247,15 @@ components:
           uniqueItems: false
       type: object
       format: AddGroupMembersAsync
+    SetGroupMembersAsync:
+      properties:
+        members:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: SetGroupMembersAsync
     Enviance.RestServices.Ver2.Security.GroupInfo:
       properties:
         id:
@@ -1259,15 +1277,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Security.GroupInfo
-    SetGroupMembersAsync:
-      properties:
-        members:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: SetGroupMembersAsync
     SetGroupMembers:
       properties:
         members:
@@ -1277,15 +1286,6 @@ components:
           uniqueItems: false
       type: object
       format: SetGroupMembers
-    AddGroupMembers:
-      properties:
-        members:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: AddGroupMembers
   securitySchemes:
     Basic:
       type: http

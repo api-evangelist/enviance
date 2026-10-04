@@ -1628,22 +1628,72 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Enviance.RestServices.Ver2.Scim.ScimResources.Users.Property:
+    Enviance.RestServices.Ver2.Scim.ScimResources.ScimListResponse:
       properties:
-        propertyName:
-          type: string
+        totalResults:
+          type: integer
+          format: int32
           uniqueItems: false
-        propertyValue:
-          type: string
+        Resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Resource'
           uniqueItems: false
-        isSensitiveData:
-          type: boolean
+        startIndex:
+          type: integer
+          format: int32
           uniqueItems: false
-        type:
-          type: string
+        itemsPerPage:
+          type: integer
+          format: int32
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.Property
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.ScimListResponse
+    Enviance.RestServices.Ver2.Scim.ScimResources.Users.EnvianceScimUserExtention:
+      properties:
+        userRights:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.NameGrantedDto'
+          uniqueItems: false
+        expires:
+          type: string
+          format: date-time
+          uniqueItems: false
+        emailDelivery:
+          type: string
+          uniqueItems: false
+        receiveInformation:
+          type: boolean
+          uniqueItems: false
+        commandFailureNotification:
+          type: string
+          uniqueItems: false
+        reportCompletionNotification:
+          type: string
+          uniqueItems: false
+        companyName:
+          type: string
+          uniqueItems: false
+        mustChangePasswordAtNextLogin:
+          type: boolean
+          uniqueItems: false
+        canNotChangePassword:
+          type: boolean
+          uniqueItems: false
+        notExpirePassword:
+          type: boolean
+          uniqueItems: false
+        comments:
+          type: string
+          uniqueItems: false
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Users.Property'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.EnvianceScimUserExtention
     Enviance.RestServices.Ver2.Scim.ScimResources.Groups.Member:
       properties:
         value:
@@ -1654,6 +1704,20 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Scim.ScimResources.Groups.Member
+    Enviance.RestServices.Ver2.Scim.ScimResources.Users.ReadOnlyGroup:
+      properties:
+        value:
+          type: string
+          format: guid
+          uniqueItems: false
+        display:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.ReadOnlyGroup
+    Enviance.RestServices.Ver2.Scim.ScimResources.SchemaDefination.IScimSchema:
+      type: object
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.SchemaDefination.IScimSchema
     Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser:
       properties:
         userName:
@@ -1718,31 +1782,19 @@ components:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.MetaData'
       type: object
       format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser
-    Enviance.RestServices.Ver2.Scim.ScimResources.SchemaDefination.IScimSchema:
-      type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.SchemaDefination.IScimSchema
-    Enviance.RestServices.Ver2.Scim.ScimResources.Users.ElectronicMailAddress:
+    Enviance.RestServices.Ver2.Scim.ScimResources.Users.Name:
       properties:
-        primary:
-          type: boolean
-          uniqueItems: false
-        value:
+        formatted:
           type: string
           uniqueItems: false
-        type:
+        familyName:
           type: string
           uniqueItems: false
-        Home:
-          type: string
-          uniqueItems: false
-        Other:
-          type: string
-          uniqueItems: false
-        Work:
+        givenName:
           type: string
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.ElectronicMailAddress
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.Name
     Enviance.RestServices.Ver2.Scim.ScimResources.Groups.EnvianceScimGroupExtention:
       properties:
         rights:
@@ -1752,16 +1804,34 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Scim.ScimResources.Groups.EnvianceScimGroupExtention
-    Enviance.RestServices.Ver2.Scim.ScimResources.NameGrantedDto:
+    Enviance.RestServices.Ver2.Scim.ScimResources.Resource:
       properties:
-        name:
+        id:
           type: string
           uniqueItems: false
-        granted:
+        externalId:
+          type: string
+          uniqueItems: false
+        meta:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.MetaData'
+      type: object
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.Resource
+    Enviance.RestServices.Ver2.Scim.ScimResources.Users.Property:
+      properties:
+        propertyName:
+          type: string
+          uniqueItems: false
+        propertyValue:
+          type: string
+          uniqueItems: false
+        isSensitiveData:
           type: boolean
           uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.NameGrantedDto
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.Property
     Enviance.RestServices.Ver2.Scim.ScimResources.MetaData:
       properties:
         created:
@@ -1784,6 +1854,16 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Scim.ScimResources.MetaData
+    Enviance.RestServices.Ver2.Scim.ScimResources.NameGrantedDto:
+      properties:
+        name:
+          type: string
+          uniqueItems: false
+        granted:
+          type: boolean
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.NameGrantedDto
     Enviance.RestServices.Ver2.Scim.ScimResources.Users.PhoneNumber:
       properties:
         value:
@@ -1812,64 +1892,37 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.PhoneNumber
-    Enviance.RestServices.Ver2.Scim.ScimResources.Users.Name:
+    Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup:
       properties:
-        formatted:
+        displayName:
           type: string
           uniqueItems: false
-        familyName:
-          type: string
-          uniqueItems: false
-        givenName:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.Name
-    Enviance.RestServices.Ver2.Scim.ScimResources.Users.EnvianceScimUserExtention:
-      properties:
-        userRights:
+        members:
           type: array
           items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.NameGrantedDto'
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.Member'
           uniqueItems: false
-        expires:
-          type: string
-          format: date-time
-          uniqueItems: false
-        emailDelivery:
+        urn:scim:schemas:enviance:group:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.EnvianceScimGroupExtention'
+        id:
           type: string
           uniqueItems: false
-        receiveInformation:
-          type: boolean
-          uniqueItems: false
-        commandFailureNotification:
+        externalId:
           type: string
           uniqueItems: false
-        reportCompletionNotification:
-          type: string
-          uniqueItems: false
-        companyName:
-          type: string
-          uniqueItems: false
-        mustChangePasswordAtNextLogin:
-          type: boolean
-          uniqueItems: false
-        canNotChangePassword:
-          type: boolean
-          uniqueItems: false
-        notExpirePassword:
-          type: boolean
-          uniqueItems: false
-        comments:
-          type: string
-          uniqueItems: false
-        properties:
+        meta:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.MetaData'
+      type: object
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup
+    UpdateHomeUserWithPasswordBulk:
+      properties:
+        userList:
           type: array
           items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Users.Property'
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.EnvianceScimUserExtention
+      format: UpdateHomeUserWithPasswordBulk
     Enviance.RestServices.Ver2.Scim.ScimResources.Users.Address:
       properties:
         country:
@@ -1907,81 +1960,28 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.Address
-    Enviance.RestServices.Ver2.Scim.ScimResources.ScimListResponse:
+    Enviance.RestServices.Ver2.Scim.ScimResources.Users.ElectronicMailAddress:
       properties:
-        totalResults:
-          type: integer
-          format: int32
+        primary:
+          type: boolean
           uniqueItems: false
-        Resources:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Resource'
-          uniqueItems: false
-        startIndex:
-          type: integer
-          format: int32
-          uniqueItems: false
-        itemsPerPage:
-          type: integer
-          format: int32
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.ScimListResponse
-    Enviance.RestServices.Ver2.Scim.ScimResources.Resource:
-      properties:
-        id:
-          type: string
-          uniqueItems: false
-        externalId:
-          type: string
-          uniqueItems: false
-        meta:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.MetaData'
-      type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.Resource
-    Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup:
-      properties:
-        displayName:
-          type: string
-          uniqueItems: false
-        members:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.Member'
-          uniqueItems: false
-        urn:scim:schemas:enviance:group:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Groups.EnvianceScimGroupExtention'
-        id:
-          type: string
-          uniqueItems: false
-        externalId:
-          type: string
-          uniqueItems: false
-        meta:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.MetaData'
-      type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.Groups.ScimGroup
-    UpdateHomeUserWithPasswordBulk:
-      properties:
-        userList:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Scim.ScimResources.Users.ScimUser'
-          uniqueItems: false
-      type: object
-      format: UpdateHomeUserWithPasswordBulk
-    Enviance.RestServices.Ver2.Scim.ScimResources.Users.ReadOnlyGroup:
-      properties:
         value:
           type: string
-          format: guid
           uniqueItems: false
-        display:
+        type:
+          type: string
+          uniqueItems: false
+        Home:
+          type: string
+          uniqueItems: false
+        Other:
+          type: string
+          uniqueItems: false
+        Work:
           type: string
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.ReadOnlyGroup
+      format: Enviance.RestServices.Ver2.Scim.ScimResources.Users.ElectronicMailAddress
   securitySchemes:
     Basic:
       type: http

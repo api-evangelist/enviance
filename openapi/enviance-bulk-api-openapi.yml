@@ -820,24 +820,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    Enviance.RestServices.Ver2.Bulk.BatchesQueryOptionInfo:
-      properties:
-        page:
-          type: integer
-          format: int32
-          uniqueItems: false
-        pageSize:
-          type: integer
-          format: int32
-          uniqueItems: false
-        onlyCurrentUser:
-          type: boolean
-          uniqueItems: false
-        withCount:
-          type: boolean
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.BatchesQueryOptionInfo
     Enviance.RestServices.Ver2.Bulk.EventsQueryOptionInfo:
       properties:
         page:
@@ -864,6 +846,149 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Bulk.EventsQueryOptionInfo
+    Enviance.RestServices.Ver2.Bulk.BatchesResultInfo:
+      properties:
+        batchesCount:
+          type: integer
+          format: int32
+          uniqueItems: false
+        batches:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.BatchInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.BatchesResultInfo
+    Enviance.RestServices.Ver2.Bulk.ExecutedInfo:
+      properties:
+        executedOwner:
+          type: string
+          uniqueItems: false
+        executedDuration:
+          type: string
+          uniqueItems: false
+        executedRowsTotal:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.ExecutedInfo
+    SetCanceled:
+      properties:
+        batchToCancelIds:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: SetCanceled
+    Enviance.RestServices.Ver2.Bulk.UploadResultInfo:
+      properties:
+        fileId:
+          type: string
+          format: guid
+          uniqueItems: false
+        worksheets:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        sendEmailNotification:
+          type: boolean
+          uniqueItems: false
+        supressEmailService:
+          type: boolean
+          uniqueItems: false
+        worksheetValidation:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.WorksheetValidationInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.UploadResultInfo
+    Enviance.RestServices.Ver2.Bulk.StatusInfo:
+      properties:
+        queueOrder:
+          type: integer
+          format: int32
+          uniqueItems: false
+        queueLength:
+          type: string
+          uniqueItems: false
+        queueCurrentHours:
+          type: string
+          uniqueItems: false
+        executed:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.ExecutedInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.StatusInfo
+    Enviance.RestServices.Ver2.Bulk.WorksheetValidationInfo:
+      properties:
+        worksheetName:
+          type: string
+          uniqueItems: false
+        validationErrors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.WorkSheetValidationError'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.WorksheetValidationInfo
+    Enviance.RestServices.Ver2.Bulk.SheetInfo:
+      properties:
+        name:
+          type: string
+          uniqueItems: false
+        cells:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.CellInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.SheetInfo
+    UploadFile:
+      type: object
+      format: UploadFile
+    Enviance.RestServices.Ver2.Bulk.CreateBatchInfo:
+      properties:
+        fileId:
+          type: string
+          format: guid
+          uniqueItems: false
+        worksheets:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        sendEmailNotification:
+          type: boolean
+          uniqueItems: false
+        supressEmailService:
+          type: boolean
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.CreateBatchInfo
+    Enviance.RestServices.Ver2.Bulk.FileInfo:
+      properties:
+        excelData:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.ExcelInfo'
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.FileInfo
+    Enviance.RestServices.Ver2.Bulk.EventsResultInfo:
+      properties:
+        eventsCount:
+          type: integer
+          format: int32
+          uniqueItems: false
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.EventInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.EventsResultInfo
     Enviance.RestServices.Ver2.Bulk.BatchInfo:
       properties:
         id:
@@ -922,94 +1047,18 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Bulk.BatchInfo
-    Enviance.RestServices.Ver2.Bulk.WorksheetValidationInfo:
+    CreateBatch:
       properties:
-        worksheetName:
-          type: string
-          uniqueItems: false
-        validationErrors:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.WorkSheetValidationError'
-          uniqueItems: false
+        createBatchInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.CreateBatchInfo'
       type: object
-      format: Enviance.RestServices.Ver2.Bulk.WorksheetValidationInfo
-    Enviance.RestServices.Ver2.Bulk.WorkSheetValidationError:
-      properties:
-        message:
-          type: string
-          uniqueItems: false
-        position:
-          type: string
-          uniqueItems: false
-        type:
-          type: string
-          format: enum
-          uniqueItems: false
-          enum:
-          - ColumnErrorMessage
-          - RowLimitErrorMessage
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.WorkSheetValidationError
-    Enviance.RestServices.Ver2.Bulk.UploadResultInfo:
-      properties:
-        fileId:
-          type: string
-          format: guid
-          uniqueItems: false
-        worksheets:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        sendEmailNotification:
-          type: boolean
-          uniqueItems: false
-        supressEmailService:
-          type: boolean
-          uniqueItems: false
-        worksheetValidation:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.WorksheetValidationInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.UploadResultInfo
-    SetCanceled:
-      properties:
-        batchToCancelIds:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: SetCanceled
-    Enviance.RestServices.Ver2.Bulk.CellInfo:
-      properties:
-        address:
-          type: string
-          uniqueItems: false
-        preview:
-          type: object
-        value:
-          type: object
-        error:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.CellInfo
+      format: CreateBatch
     EventsQuery:
       properties:
         eventsQueryOptionInfo:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.EventsQueryOptionInfo'
       type: object
       format: EventsQuery
-    BatchesQuery:
-      properties:
-        batchesQueryOptionInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.BatchesQueryOptionInfo'
-      type: object
-      format: BatchesQuery
     Enviance.RestServices.Ver2.Bulk.ExcelInfo:
       properties:
         sheets:
@@ -1019,87 +1068,15 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Bulk.ExcelInfo
-    Enviance.RestServices.Ver2.Bulk.FileInfo:
+    SetResumed:
       properties:
-        excelData:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.ExcelInfo'
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.FileInfo
-    SetPaused:
-      properties:
-        batchToPauseIds:
+        batchToResumeIds:
           type: array
           items:
             type: string
           uniqueItems: false
       type: object
-      format: SetPaused
-    Enviance.RestServices.Ver2.Bulk.CreateBatchInfo:
-      properties:
-        fileId:
-          type: string
-          format: guid
-          uniqueItems: false
-        worksheets:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        sendEmailNotification:
-          type: boolean
-          uniqueItems: false
-        supressEmailService:
-          type: boolean
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.CreateBatchInfo
-    Enviance.RestServices.Ver2.Bulk.ExecutedInfo:
-      properties:
-        executedOwner:
-          type: string
-          uniqueItems: false
-        executedDuration:
-          type: string
-          uniqueItems: false
-        executedRowsTotal:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.ExecutedInfo
-    CreateBatch:
-      properties:
-        createBatchInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.CreateBatchInfo'
-      type: object
-      format: CreateBatch
-    Enviance.RestServices.Ver2.Bulk.BatchesResultInfo:
-      properties:
-        batchesCount:
-          type: integer
-          format: int32
-          uniqueItems: false
-        batches:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.BatchInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.BatchesResultInfo
-    Enviance.RestServices.Ver2.Bulk.SheetInfo:
-      properties:
-        name:
-          type: string
-          uniqueItems: false
-        cells:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.CellInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.SheetInfo
-    UploadFile:
-      type: object
-      format: UploadFile
+      format: SetResumed
     Enviance.RestServices.Ver2.Bulk.EventInfo:
       properties:
         id:
@@ -1122,47 +1099,70 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Bulk.EventInfo
-    SetResumed:
+    Enviance.RestServices.Ver2.Bulk.CellInfo:
       properties:
-        batchToResumeIds:
+        address:
+          type: string
+          uniqueItems: false
+        preview:
+          type: object
+        value:
+          type: object
+        error:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.CellInfo
+    Enviance.RestServices.Ver2.Bulk.WorkSheetValidationError:
+      properties:
+        message:
+          type: string
+          uniqueItems: false
+        position:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - ColumnErrorMessage
+          - RowLimitErrorMessage
+      type: object
+      format: Enviance.RestServices.Ver2.Bulk.WorkSheetValidationError
+    SetPaused:
+      properties:
+        batchToPauseIds:
           type: array
           items:
             type: string
           uniqueItems: false
       type: object
-      format: SetResumed
-    Enviance.RestServices.Ver2.Bulk.EventsResultInfo:
+      format: SetPaused
+    BatchesQuery:
       properties:
-        eventsCount:
+        batchesQueryOptionInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.BatchesQueryOptionInfo'
+      type: object
+      format: BatchesQuery
+    Enviance.RestServices.Ver2.Bulk.BatchesQueryOptionInfo:
+      properties:
+        page:
           type: integer
           format: int32
           uniqueItems: false
-        events:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.EventInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Bulk.EventsResultInfo
-    Enviance.RestServices.Ver2.Bulk.StatusInfo:
-      properties:
-        queueOrder:
+        pageSize:
           type: integer
           format: int32
           uniqueItems: false
-        queueLength:
-          type: string
+        onlyCurrentUser:
+          type: boolean
           uniqueItems: false
-        queueCurrentHours:
-          type: string
-          uniqueItems: false
-        executed:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Bulk.ExecutedInfo'
+        withCount:
+          type: boolean
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Bulk.StatusInfo
+      format: Enviance.RestServices.Ver2.Bulk.BatchesQueryOptionInfo
   securitySchemes:
     Basic:
       type: http

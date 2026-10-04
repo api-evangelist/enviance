@@ -356,12 +356,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo
-    UpdateMaterialTemplate:
-      properties:
-        materialTemplateInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo'
-      type: object
-      format: UpdateMaterialTemplate
     CreateMaterialTemplate:
       properties:
         materialTemplateInfo:
@@ -371,6 +365,12 @@ components:
           uniqueItems: false
       type: object
       format: CreateMaterialTemplate
+    UpdateMaterialTemplate:
+      properties:
+        materialTemplateInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialTemplates.MaterialTemplateInfo'
+      type: object
+      format: UpdateMaterialTemplate
   securitySchemes:
     Basic:
       type: http

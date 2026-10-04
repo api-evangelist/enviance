@@ -79,6 +79,28 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    LastFormConfigChanges:
+      properties:
+        packageIdOrName:
+          type: string
+          uniqueItems: false
+        typeName:
+          type: string
+          uniqueItems: false
+        stepName:
+          type: string
+          uniqueItems: false
+        typeVersion:
+          type: integer
+          format: int32
+          uniqueItems: false
+        objectIDs:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+      type: object
+      format: LastFormConfigChanges
     Enviance.RestServices.Common.IdTimestamp:
       properties:
         id:
@@ -107,28 +129,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Common.ModuleChangeTime
-    LastFormConfigChanges:
-      properties:
-        packageIdOrName:
-          type: string
-          uniqueItems: false
-        typeName:
-          type: string
-          uniqueItems: false
-        stepName:
-          type: string
-          uniqueItems: false
-        typeVersion:
-          type: integer
-          format: int32
-          uniqueItems: false
-        objectIDs:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-      type: object
-      format: LastFormConfigChanges
   securitySchemes:
     Basic:
       type: http

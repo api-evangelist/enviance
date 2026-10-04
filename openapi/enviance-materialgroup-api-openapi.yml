@@ -509,15 +509,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CreateMaterialGroup:
-      properties:
-        materialGroupInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreateMaterialGroup
     UpdateDependentMac:
       properties:
         macIds:
@@ -553,6 +544,15 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo
+    CreateMaterialGroup:
+      properties:
+        materialGroupInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.MaterialGroups.MaterialGroupInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateMaterialGroup
   securitySchemes:
     Basic:
       type: http

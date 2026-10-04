@@ -1085,83 +1085,163 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CompleteTaskOccurrence:
+    Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo:
       properties:
-        taskOccurrenceInfos:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo'
+        statusChangeDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        objectIdOrPath:
+          type: string
+          uniqueItems: false
+        dismissed:
+          type: boolean
+          uniqueItems: false
+        percentComplete:
+          type: string
+          format: byte
+          uniqueItems: false
+        hoursToComplete:
+          type: number
+          format: double
+          uniqueItems: false
+        costToComplete:
+          type: number
+          format: decimal
+          uniqueItems: false
+        comment:
+          type: string
+          uniqueItems: false
+        eventInstanceId:
+          type: string
+          format: guid
+          uniqueItems: false
+        compliancePeriodStartDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        compliancePeriodEndDate:
+          type: string
+          format: date-time
+          uniqueItems: false
+        comply:
+          type: string
+          uniqueItems: false
+        ObjectId:
+          type: string
+          format: guid
           uniqueItems: false
       type: object
-      format: CompleteTaskOccurrence
-    UpdateTask:
+      format: Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo
+    CreateTask:
       properties:
         taskInfo:
           $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.TaskInfo'
-      type: object
-      format: UpdateTask
-    Enviance.RestServices.Common.AssigneeV2:
-      properties:
-        userIdOrName:
-          type: string
-          uniqueItems: false
-        groupIdOrName:
+        copyFrom:
           type: string
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Common.AssigneeV2
-    Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateInfo:
-      required:
-      - category
+      format: CreateTask
+    Enviance.RestServices.Ver2.Tasks.Notifications.CompletionStatusCondition:
       properties:
-        category:
+        completionPercent:
+          type: integer
+          format: int32
+          uniqueItems: false
+        comparisonLogic:
           type: string
           uniqueItems: false
-        value:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateValue'
+        onlyWhenPastDue:
+          type: boolean
+          uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateInfo
-    Enviance.RestServices.Ver2.Tasks.Schedules.TaskScheduleInfo:
+      format: Enviance.RestServices.Ver2.Tasks.Notifications.CompletionStatusCondition
+    Enviance.RestServices.Ver2.Tasks.Notifications.NotificationConditions:
       properties:
-        recurrenceType:
+        immediately:
+          type: boolean
+          uniqueItems: false
+        whenDismissed:
+          type: boolean
+          uniqueItems: false
+        byDueDate:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Notifications.DueDateCondition'
+        byCompletionStatus:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Notifications.CompletionStatusCondition'
+      type: object
+      format: Enviance.RestServices.Ver2.Tasks.Notifications.NotificationConditions
+    Enviance.RestServices.Common.TimeZoneInfo:
+      properties:
+        id:
+          type: integer
+          format: int32
+          uniqueItems: false
+        name:
+          type: string
+          uniqueItems: false
+        stdOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+        dstOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+        currentOffset:
+          type: integer
+          format: int32
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.TimeZoneInfo
+    Enviance.RestServices.Ver2.Tasks.Notifications.NotificationRecipients:
+      properties:
+        toAssignees:
+          type: boolean
+          uniqueItems: false
+        toAssignor:
+          type: boolean
+          uniqueItems: false
+        users:
+          type: array
+          items:
+            type: string
+            format: guid
+          uniqueItems: false
+        groups:
+          type: array
+          items:
+            type: string
+            format: guid
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Tasks.Notifications.NotificationRecipients
+    Enviance.RestServices.Ver2.Tasks.Notifications.DueDateCondition:
+      properties:
+        conditionType:
           type: string
           format: enum
           uniqueItems: false
           enum:
-          - Hourly
-          - Daily
-          - Weekly
-          - Monthly
-          - Yearly
-          - AfterLastCompletion
-        startDate:
+          - IntervalBefore
+          - IntervalAfter
+          - PastDue
+        intervalType:
           type: string
-          format: date-time
+          format: enum
           uniqueItems: false
-        endDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        startTime:
-          type: string
-          uniqueItems: false
-        endTime:
-          type: string
-          uniqueItems: false
-        recurrenceInterval:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Schedules.RecurrenceIntervalInfoExt'
-        dayOfMonth:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Schedules.DayOfMonthInfoExt'
-        monthOfYear:
+          enum:
+          - QuarterHour
+          - Hour
+          - Day
+          - Week
+          - Month
+          - Year
+        intervalValue:
           type: integer
           format: int32
           uniqueItems: false
-        TalLogicVersion:
-          type: integer
-          format: int16
-          uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Tasks.Schedules.TaskScheduleInfo
+      format: Enviance.RestServices.Ver2.Tasks.Notifications.DueDateCondition
     Enviance.RestServices.Ver2.Tasks.Triggering.TaskWorkflowInfo:
       properties:
         isautoclosetask:
@@ -1174,45 +1254,85 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Tasks.Triggering.TaskWorkflowInfo
-    Enviance.RestServices.Ver2.Tasks.Triggering.WorkflowTriggerInfo:
+    Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateInfo:
       required:
-      - workflowtypeidorname
-      - duedateflags
-      - timetocreateoptions
+      - category
       properties:
-        workflowtypeidorname:
+        category:
           type: string
           uniqueItems: false
-        workflowname:
-          type: string
-          uniqueItems: false
-        isusetaskname:
-          type: boolean
-          uniqueItems: false
-        calendars:
+        value:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateValue'
+      type: object
+      format: Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateInfo
+    UpdateTask:
+      properties:
+        taskInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.TaskInfo'
+      type: object
+      format: UpdateTask
+    CompleteTaskOccurrence:
+      properties:
+        taskOccurrenceInfos:
           type: array
           items:
-            type: string
-          uniqueItems: false
-        duedateflags:
-          type: array
-          items:
-            type: string
-          uniqueItems: false
-        duedateamount:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Triggering.DueDateInfo'
-        timetocreateoptions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateInfo'
-          uniqueItems: false
-        assignee:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Common.AssigneeV2'
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo'
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Tasks.Triggering.WorkflowTriggerInfo
+      format: CompleteTaskOccurrence
+    Enviance.RestServices.Ver2.Tasks.Schedules.RecurrenceIntervalInfoExt:
+      type: object
+      format: Enviance.RestServices.Ver2.Tasks.Schedules.RecurrenceIntervalInfoExt
+    Enviance.RestServices.Ver2.Tasks.Notifications.TaskNotificationInfo:
+      properties:
+        conditions:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Notifications.NotificationConditions'
+        templateIdOrName:
+          type: string
+          uniqueItems: false
+        recipients:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Notifications.NotificationRecipients'
+        deliveryMethod:
+          type: string
+          format: enum
+          uniqueItems: false
+          enum:
+          - Inbox
+          - Email
+          - InboxAndEmail
+        comments:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Tasks.Notifications.TaskNotificationInfo
+    Enviance.RestServices.Common.AssigneeV2:
+      properties:
+        userIdOrName:
+          type: string
+          uniqueItems: false
+        groupIdOrName:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Common.AssigneeV2
+    Enviance.RestServices.Ver2.Tasks.Triggering.DueDateInfo:
+      required:
+      - value
+      - hours
+      - period
+      properties:
+        value:
+          type: integer
+          format: int32
+          uniqueItems: false
+        hours:
+          type: string
+          uniqueItems: false
+        period:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Tasks.Triggering.DueDateInfo
     Enviance.RestServices.Ver2.Tasks.TaskInfo:
       properties:
         id:
@@ -1282,97 +1402,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Tasks.TaskInfo
-    Enviance.RestServices.Common.TimeZoneInfo:
-      properties:
-        id:
-          type: integer
-          format: int32
-          uniqueItems: false
-        name:
-          type: string
-          uniqueItems: false
-        stdOffset:
-          type: integer
-          format: int32
-          uniqueItems: false
-        dstOffset:
-          type: integer
-          format: int32
-          uniqueItems: false
-        currentOffset:
-          type: integer
-          format: int32
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Common.TimeZoneInfo
-    Enviance.RestServices.Ver2.Tasks.Notifications.NotificationConditions:
-      properties:
-        immediately:
-          type: boolean
-          uniqueItems: false
-        whenDismissed:
-          type: boolean
-          uniqueItems: false
-        byDueDate:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Notifications.DueDateCondition'
-        byCompletionStatus:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Notifications.CompletionStatusCondition'
-      type: object
-      format: Enviance.RestServices.Ver2.Tasks.Notifications.NotificationConditions
-    Enviance.RestServices.Ver2.Tasks.Notifications.TaskNotificationInfo:
-      properties:
-        conditions:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Notifications.NotificationConditions'
-        templateIdOrName:
-          type: string
-          uniqueItems: false
-        recipients:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Notifications.NotificationRecipients'
-        deliveryMethod:
-          type: string
-          format: enum
-          uniqueItems: false
-          enum:
-          - Inbox
-          - Email
-          - InboxAndEmail
-        comments:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Tasks.Notifications.TaskNotificationInfo
-    Enviance.RestServices.Ver2.Tasks.Triggering.DueDateInfo:
-      required:
-      - value
-      - hours
-      - period
-      properties:
-        value:
-          type: integer
-          format: int32
-          uniqueItems: false
-        hours:
-          type: string
-          uniqueItems: false
-        period:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Tasks.Triggering.DueDateInfo
-    Enviance.RestServices.Ver2.Tasks.Notifications.CompletionStatusCondition:
-      properties:
-        completionPercent:
-          type: integer
-          format: int32
-          uniqueItems: false
-        comparisonLogic:
-          type: string
-          uniqueItems: false
-        onlyWhenPastDue:
-          type: boolean
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Tasks.Notifications.CompletionStatusCondition
     Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateValue:
       properties:
         past:
@@ -1400,118 +1429,89 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateValue
-    Enviance.RestServices.Ver2.Tasks.Notifications.DueDateCondition:
+    Enviance.RestServices.Ver2.Tasks.Triggering.WorkflowTriggerInfo:
+      required:
+      - workflowtypeidorname
+      - duedateflags
+      - timetocreateoptions
       properties:
-        conditionType:
+        workflowtypeidorname:
           type: string
-          format: enum
           uniqueItems: false
-          enum:
-          - IntervalBefore
-          - IntervalAfter
-          - PastDue
-        intervalType:
+        workflowname:
           type: string
-          format: enum
           uniqueItems: false
-          enum:
-          - QuarterHour
-          - Hour
-          - Day
-          - Week
-          - Month
-          - Year
-        intervalValue:
-          type: integer
-          format: int32
+        isusetaskname:
+          type: boolean
+          uniqueItems: false
+        calendars:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        duedateflags:
+          type: array
+          items:
+            type: string
+          uniqueItems: false
+        duedateamount:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Triggering.DueDateInfo'
+        timetocreateoptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Triggering.TimeToCreateInfo'
+          uniqueItems: false
+        assignee:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Common.AssigneeV2'
           uniqueItems: false
       type: object
-      format: Enviance.RestServices.Ver2.Tasks.Notifications.DueDateCondition
+      format: Enviance.RestServices.Ver2.Tasks.Triggering.WorkflowTriggerInfo
     Enviance.RestServices.Ver2.Tasks.Schedules.DayOfMonthInfoExt:
       type: object
       format: Enviance.RestServices.Ver2.Tasks.Schedules.DayOfMonthInfoExt
-    Enviance.RestServices.Ver2.Tasks.Schedules.RecurrenceIntervalInfoExt:
-      type: object
-      format: Enviance.RestServices.Ver2.Tasks.Schedules.RecurrenceIntervalInfoExt
-    Enviance.RestServices.Ver2.Tasks.Notifications.NotificationRecipients:
+    Enviance.RestServices.Ver2.Tasks.Schedules.TaskScheduleInfo:
       properties:
-        toAssignees:
-          type: boolean
+        recurrenceType:
+          type: string
+          format: enum
           uniqueItems: false
-        toAssignor:
-          type: boolean
-          uniqueItems: false
-        users:
-          type: array
-          items:
-            type: string
-            format: guid
-          uniqueItems: false
-        groups:
-          type: array
-          items:
-            type: string
-            format: guid
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Tasks.Notifications.NotificationRecipients
-    Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo:
-      properties:
-        statusChangeDate:
+          enum:
+          - Hourly
+          - Daily
+          - Weekly
+          - Monthly
+          - Yearly
+          - AfterLastCompletion
+        startDate:
           type: string
           format: date-time
           uniqueItems: false
-        objectIdOrPath:
-          type: string
-          uniqueItems: false
-        dismissed:
-          type: boolean
-          uniqueItems: false
-        percentComplete:
-          type: string
-          format: byte
-          uniqueItems: false
-        hoursToComplete:
-          type: number
-          format: double
-          uniqueItems: false
-        costToComplete:
-          type: number
-          format: decimal
-          uniqueItems: false
-        comment:
-          type: string
-          uniqueItems: false
-        eventInstanceId:
-          type: string
-          format: guid
-          uniqueItems: false
-        compliancePeriodStartDate:
+        endDate:
           type: string
           format: date-time
           uniqueItems: false
-        compliancePeriodEndDate:
-          type: string
-          format: date-time
-          uniqueItems: false
-        comply:
+        startTime:
           type: string
           uniqueItems: false
-        ObjectId:
+        endTime:
           type: string
-          format: guid
           uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Tasks.TaskOccurrenceInfo
-    CreateTask:
-      properties:
-        taskInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.TaskInfo'
-        copyFrom:
-          type: string
+        recurrenceInterval:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Schedules.RecurrenceIntervalInfoExt'
+        dayOfMonth:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Tasks.Schedules.DayOfMonthInfoExt'
+        monthOfYear:
+          type: integer
+          format: int32
+          uniqueItems: false
+        TalLogicVersion:
+          type: integer
+          format: int16
           uniqueItems: false
       type: object
-      format: CreateTask
+      format: Enviance.RestServices.Ver2.Tasks.Schedules.TaskScheduleInfo
   securitySchemes:
     Basic:
       type: http

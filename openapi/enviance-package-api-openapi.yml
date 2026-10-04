@@ -1184,41 +1184,6 @@ components:
           uniqueItems: false
       type: object
       format: SavePackageAppData
-    CreatePackageItem:
-      properties:
-        packageItemInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreatePackageItem
-    UpdatePackageItem:
-      properties:
-        packageItemInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
-      type: object
-      format: UpdatePackageItem
-    Enviance.RestServices.Ver2.Packages.PackageItemInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        packageIdOrName:
-          type: string
-          uniqueItems: false
-        path:
-          type: string
-          uniqueItems: false
-        type:
-          type: string
-          uniqueItems: false
-        content:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.Packages.PackageItemInfo
     UpdatePackage:
       properties:
         packageInfo:
@@ -1265,6 +1230,38 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.Packages.PackageInfo
+    Enviance.RestServices.Ver2.Packages.PackageItemInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        packageIdOrName:
+          type: string
+          uniqueItems: false
+        path:
+          type: string
+          uniqueItems: false
+        type:
+          type: string
+          uniqueItems: false
+        content:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.Packages.PackageItemInfo
+    System.Object:
+      type: object
+      format: System.Object
+    CreatePackageItem:
+      properties:
+        packageItemInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreatePackageItem
     CreatePackage:
       properties:
         packageInfo:
@@ -1274,9 +1271,12 @@ components:
           uniqueItems: false
       type: object
       format: CreatePackage
-    System.Object:
+    UpdatePackageItem:
+      properties:
+        packageItemInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.Packages.PackageItemInfo'
       type: object
-      format: System.Object
+      format: UpdatePackageItem
   securitySchemes:
     Basic:
       type: http

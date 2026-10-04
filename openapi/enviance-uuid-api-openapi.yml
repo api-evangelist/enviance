@@ -153,6 +153,32 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    Enviance.RestServices.Ver2.UUID.Impl.Models.SystemModel:
+      type: object
+      format: Enviance.RestServices.Ver2.UUID.Impl.Models.SystemModel
+    Enviance.RestServices.Ver2.UUID.SessionInfo:
+      properties:
+        id:
+          type: string
+          format: guid
+          uniqueItems: false
+        systemId:
+          type: string
+          format: guid
+          uniqueItems: false
+        userId:
+          type: string
+          format: guid
+          uniqueItems: false
+        sessionTimeout:
+          type: integer
+          format: int32
+          uniqueItems: false
+        isAdmin:
+          type: boolean
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.UUID.SessionInfo
     Enviance.RestServices.Ver2.UUID.UserInfo:
       properties:
         userId:
@@ -178,32 +204,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.UUID.UserInfo
-    Enviance.RestServices.Ver2.UUID.SessionInfo:
-      properties:
-        id:
-          type: string
-          format: guid
-          uniqueItems: false
-        systemId:
-          type: string
-          format: guid
-          uniqueItems: false
-        userId:
-          type: string
-          format: guid
-          uniqueItems: false
-        sessionTimeout:
-          type: integer
-          format: int32
-          uniqueItems: false
-        isAdmin:
-          type: boolean
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.UUID.SessionInfo
-    Enviance.RestServices.Ver2.UUID.Impl.Models.SystemModel:
-      type: object
-      format: Enviance.RestServices.Ver2.UUID.Impl.Models.SystemModel
   securitySchemes:
     Basic:
       type: http

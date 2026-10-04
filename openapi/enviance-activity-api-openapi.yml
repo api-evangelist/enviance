@@ -500,37 +500,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    CreateActivity:
-      properties:
-        activityInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo'
-        copyFrom:
-          type: string
-          uniqueItems: false
-      type: object
-      format: CreateActivity
-    Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityPropertyMapInfo:
-      properties:
-        propertyIdOrName:
-          type: string
-          uniqueItems: false
-        valueHistory:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Activities.MaterialValueHistoryInfo'
-          uniqueItems: false
-      type: object
-      format: Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityPropertyMapInfo
-    Enviance.Business.Udf.Rest.UrlItem:
-      properties:
-        label:
-          type: string
-          uniqueItems: false
-        url:
-          type: string
-          uniqueItems: false
-      type: object
-      format: Enviance.Business.Udf.Rest.UrlItem
     Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo:
       properties:
         id:
@@ -578,6 +547,43 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Ver2.MaterialActivity.Activities.MaterialValueHistoryInfo
+    Enviance.Business.Udf.Rest.UrlItem:
+      properties:
+        label:
+          type: string
+          uniqueItems: false
+        url:
+          type: string
+          uniqueItems: false
+      type: object
+      format: Enviance.Business.Udf.Rest.UrlItem
+    UpdateActivity:
+      properties:
+        activityInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo'
+      type: object
+      format: UpdateActivity
+    CreateActivity:
+      properties:
+        activityInfo:
+          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo'
+        copyFrom:
+          type: string
+          uniqueItems: false
+      type: object
+      format: CreateActivity
+    Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityPropertyMapInfo:
+      properties:
+        propertyIdOrName:
+          type: string
+          uniqueItems: false
+        valueHistory:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Activities.MaterialValueHistoryInfo'
+          uniqueItems: false
+      type: object
+      format: Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityPropertyMapInfo
     Enviance.RestServices.Udfs.Property:
       properties:
         name:
@@ -609,12 +615,6 @@ components:
           uniqueItems: false
       type: object
       format: Enviance.RestServices.Udfs.Property
-    UpdateActivity:
-      properties:
-        activityInfo:
-          $ref: '#/components/schemas/Enviance.RestServices.Ver2.MaterialActivity.Activities.ActivityInfo'
-      type: object
-      format: UpdateActivity
   securitySchemes:
     Basic:
       type: http
